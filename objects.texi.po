@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2019-10-19 15:17+0900\n"
+"PO-Revision-Date: 2020-03-08 22:56+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -63,10 +63,8 @@ msgstr "primitive type"
 
 #. type: Plain text
 #: original_texis/objects.texi:32
-#, fuzzy
-#| msgid "A few fundamental object types are built into Emacs.  These, from which all other types are constructed, are called @dfn{primitive types}.  Each object belongs to one and only one primitive type.  These types include @dfn{integer}, @dfn{float}, @dfn{cons}, @dfn{symbol}, @dfn{string}, @dfn{vector}, @dfn{hash-table}, @dfn{subr}, and @dfn{byte-code function}, plus several special types, such as @dfn{buffer}, that are related to editing.  (@xref{Editing Types}.)"
 msgid "A few fundamental object types are built into Emacs.  These, from which all other types are constructed, are called @dfn{primitive types}.  Each object belongs to one and only one primitive type.  These types include @dfn{integer}, @dfn{float}, @dfn{cons}, @dfn{symbol}, @dfn{string}, @dfn{vector}, @dfn{hash-table}, @dfn{subr}, @dfn{byte-code function}, and @dfn{record}, plus several special types, such as @dfn{buffer}, that are related to editing.  (@xref{Editing Types}.)"
-msgstr "Emacsにはいくつかの基本オブジェクト型が組み込まれています。これらの型は他のすべての型を構成するもとであり、@dfn{プリミティブ型(primitive types: 基本型)}と呼ばれます。すべてのオブジェクトはただ1つのプリミティブ型に属します。これらの型には@dfn{整数(integer)}、@dfn{浮動小数点数(float)}、@dfn{コンス(cons)}、@dfn{シンボル(symbol)}、@dfn{文字列(string)}、@dfn{ベクター(vector)}、@dfn{ハッシュテーブル(hash-table)}、@dfn{サブルーチン(subr)}、@dfn{バイトコード関数(byte-code function)}、および@dfn{buffer}のような編集に関連した特別な型が含まれます(@ref{Editing Types}を参照)。"
+msgstr "Emacsにはいくつかの基本オブジェクト型が組み込まれています。これらの型は他のすべての型を構成するもとであり、@dfn{プリミティブ型(primitive types: 基本型)}と呼ばれます。すべてのオブジェクトはただ1つのプリミティブ型に属します。これらの型には@dfn{整数(integer)}、@dfn{浮動小数点数(float)}、@dfn{コンス(cons)}、@dfn{シンボル(symbol)}、@dfn{文字列(string)}、@dfn{ベクター(vector)}、@dfn{ハッシュテーブル(hash-table)}、@dfn{サブルーチン(subr)}、@dfn{バイトコード関数(byte-code function)}、@dfn{レコード(record)}、および@dfn{buffer}のような編集に関連した特別な型が含まれます(@ref{Editing Types}を参照)。"
 
 #. type: Plain text
 #: original_texis/objects.texi:35
@@ -465,27 +463,26 @@ msgstr "Lispで記述されてコンパイルされた関数。"
 #. type: subsection
 #: original_texis/objects.texi:163 original_texis/objects.texi:1354
 #: original_texis/objects.texi:1355
-#, fuzzy, no-wrap
-#| msgid "Vector Type"
+#, no-wrap
 msgid "Record Type"
-msgstr "Vector Type"
+msgstr "Record Type"
 
 #. type: menuentry
 #: original_texis/objects.texi:163
 msgid "Compound objects with programmer-defined types."
-msgstr ""
+msgstr "プログラーが定義する合成オブジェクト型。"
 
 #. type: subsection
 #: original_texis/objects.texi:163 original_texis/objects.texi:1364
 #: original_texis/objects.texi:1365
 #, no-wrap
 msgid "Type Descriptors"
-msgstr ""
+msgstr "Type Descriptors"
 
 #. type: menuentry
 #: original_texis/objects.texi:163
 msgid "Objects holding information about types."
-msgstr ""
+msgstr "型に関する情報を保持するオブジェクト。"
 
 #. type: subsection
 #: original_texis/objects.texi:163 original_texis/objects.texi:1376
@@ -723,10 +720,8 @@ msgstr "?Q @result{} 81     ?q @result{} 113\n"
 
 #. type: Plain text
 #: original_texis/objects.texi:291
-#, fuzzy
-#| msgid "You can use the same syntax for punctuation characters, but it is often a good idea to add a @samp{\\} so that the Emacs commands for editing Lisp code don't get confused.  For example, @samp{?\\(} is the way to write the open-paren character.  If the character is @samp{\\}, you @emph{must} use a second @samp{\\} to quote it: @samp{?\\\\}."
 msgid "You can use the same syntax for punctuation characters.  However, if the punctuation character has a special syntactic meaning in Lisp, you must quote it with a @samp{\\}.  For example, @samp{?\\(} is the way to write the open-paren character.  Likewise, if the character is @samp{\\}, you must use a second @samp{\\} to quote it: @samp{?\\\\}."
-msgstr "区切り文字(punctuation characters)にも同じ構文を使用できますが、Lispコードを編集するためのEmacsコマンドが混乱しないように、@samp{\\}を追加するのがよい場合がしばしばあります。たとえば開カッコを記述するために@samp{?\\(}と記述します。その文字が@samp{\\}の場合、それをクォートするために、@samp{?\\\\}のように2つ目の@samp{\\}を@emph{使用しなければなりません}。"
+msgstr "区切り文字(punctuation characters)にも同じ構文を使用できますが、区切り文字がLispで特別な意味をもつ場合には@samp{\\\\}でクォートしなければなりません。たとえば@samp{?\\\\(}が開カッコを記述する方法であり、同様に文字が@samp{\\}なら、@samp{?\\\\}のようにクォートするために2つ目の@samp{\\}を使用しなければなりません。"
 
 #. type: cindex
 #: original_texis/objects.texi:292
@@ -888,10 +883,8 @@ msgstr "バックスラッシュがエスケープ文字の役割を果たすの
 
 #. type: Plain text
 #: original_texis/objects.texi:352
-#, fuzzy
-#| msgid "A backslash is allowed, and harmless, preceding any character without a special escape meaning; thus, @samp{?\\+} is equivalent to @samp{?+}.  There is no reason to add a backslash before most characters.  However, you should add a backslash before any of the characters @samp{()\\|;'`\"#.,} to avoid confusing the Emacs commands for editing Lisp code.  You can also add a backslash before whitespace characters such as space, tab, newline and formfeed.  However, it is cleaner to use one of the easily readable escape sequences, such as @samp{\\t} or @samp{\\s}, instead of an actual whitespace character such as a tab or a space.  (If you do write backslash followed by a space, you should write an extra space after the character constant to separate it from the following text.)"
 msgid "A backslash is allowed, and harmless, preceding any character without a special escape meaning; thus, @samp{?\\+} is equivalent to @samp{?+}.  There is no reason to add a backslash before most characters.  However, you must add a backslash before any of the characters @samp{()[]\\;\"}, and you should add a backslash before any of the characters @samp{|'`#.,} to avoid confusing the Emacs commands for editing Lisp code.  You can also add a backslash before whitespace characters such as space, tab, newline and formfeed.  However, it is cleaner to use one of the easily readable escape sequences, such as @samp{\\t} or @samp{\\s}, instead of an actual whitespace character such as a tab or a space.  (If you do write backslash followed by a space, you should write an extra space after the character constant to separate it from the following text.)"
-msgstr "エスケープという特別な意味を与えずに、任意の文字の前にバックスラッシュの使用することは許されており、害もありません。したがって@samp{?\\+}は@samp{?+}と等価です。ほとんどの文字の前にバックスラッシュを追加することに理由はありません。しかしLispコードを編集するEmacsコマンドが混乱するのを避けるために、文字@samp{()\\|;'`\"#.,}の前にはバックスラッシュを追加するべきです。スペース、タブ、改行、フォームフィードのような空白文字の前にもバックスラッシュを追加できます。しかしタブやスペースspaceのような実際の空白文字のかわりに、@samp{\\t}や@samp{\\s}のような可読性のあるエスケープシーケンスを使用するほうが明解です(スペースを後にともなうバックスラッシュを記述する場合、後続のテキストと区別するために、文字定数の後に余分なスペースを記述すること)。"
+msgstr "エスケープという特別な意味を与えずに、任意の文字の前にバックスラッシュの使用することは許されていて害もありません。したがって@samp{?\\+}は@samp{?+}と等価です。ほとんどの文字の前にバックスラッシュを追加することに理由はありません。しかし文字@samp{()[]\\;\"}の前にはバックスラッシュを追加しなければならず、Lispコードを編集するEmacsコマンドが混乱するのを避けるために@samp{|'`#.,}の前にもバックスラッシュを追加するべきです。スペース、タブ、改行、フォームフィードのような空白文字の前にもバックスラッシュを追加できます。しかしタブやスペースspaceのような実際の空白文字のかわりに、@samp{\\t}や@samp{\\s}のような可読性のあるエスケープシーケンスを使用するほうが明解です(スペースを後にともなうバックスラッシュを記述する場合、後続のテキストと区別するために、文字定数の後に余分なスペースを記述すること)。"
 
 #. type: Plain text
 #: original_texis/objects.texi:359
@@ -919,19 +912,17 @@ msgstr "unicode character escape"
 #. type: enumerate
 #: original_texis/objects.texi:371
 msgid "You can specify characters by their Unicode names, if any.  @code{?\\N@{@var{NAME}@}} represents the Unicode character named @var{NAME}.  Thus, @samp{?\\N@{LATIN SMALL LETTER A WITH GRAVE@}} is equivalent to @code{?à} and denotes the Unicode character U+00E0.  To simplify entering multi-line strings, you can replace spaces in the names by non-empty sequences of whitespace (e.g., newlines)."
-msgstr ""
+msgstr "もしあればUnicode名で文字を指定できる。@code{?\\N@{@var{NAME}@}}は@var{NAME}という名前のUnicode文字を表す。したがって@samp{?\\N@{LATIN SMALL LETTER A WITH GRAVE@}}は@code{?à}と等価でありUnicode文字のU+00E0を意味する。名前中のスペースを空白文字(改行)の非空のシーケンスにして複数行文字列の入力を簡略化できる。"
 
 #. type: enumerate
 #: original_texis/objects.texi:383
 msgid "You can specify characters by their Unicode values.  @code{?\\N@{U+@var{X}@}} represents a character with Unicode code point @var{X}, where @var{X} is a hexadecimal number.  Also, @code{?\\u@var{xxxx}} and @code{?\\U@var{xxxxxxxx}} represent code points @var{xxxx} and @var{xxxxxxxx}, respectively, where each @var{x} is a single hexadecimal digit.  For example, @code{?\\N@{U+E0@}}, @code{?\\u00e0} and @code{?\\U000000E0} are all equivalent to @code{?à} and to @samp{?\\N@{LATIN SMALL LETTER A WITH GRAVE@}}.  The Unicode Standard defines code points only up to @samp{U+@var{10ffff}}, so if you specify a code point higher than that, Emacs signals an error."
-msgstr ""
+msgstr "Unicode値で文字を指定できる。@code{?\\N@{U+@var{X}@}}はUnicodeコードポイント@var{X} (16進数値)を表す。また@code{?\\u@var{xxxx}}と@code{?\\U@var{xxxxxxxx}}はそれぞれコードポイント@var{xxxx}と@var{xxxxxxxx}を表す@var{x}は(1つの16進数字)。たとえば@code{?\\N@{U+E0@}}、@code{?\\u00e0}、@code{?\\U000000E0}は@code{?à}と@samp{?\\N@{LATIN SMALL LETTER A WITH GRAVE@}}に等しい。Unicode標準は@samp{U+@var{10ffff}}以下のコードポイントだけを定義するので、これより大きいコードポイントではEmacsはエラーをシグナルする。"
 
 #. type: enumerate
 #: original_texis/objects.texi:392
-#, fuzzy
-#| msgid "Secondly, you can specify characters by their hexadecimal character codes.  A hexadecimal escape sequence consists of a backslash, @samp{x}, and the hexadecimal character code.  Thus, @samp{?\\x41} is the character @kbd{A}, @samp{?\\x1} is the character @kbd{C-a}, and @code{?\\xe0} is the character @kbd{à} (@kbd{a} with grave accent).  You can use any number of hex digits, so you can represent any character code in this way."
 msgid "You can specify characters by their hexadecimal character codes.  A hexadecimal escape sequence consists of a backslash, @samp{x}, and the hexadecimal character code.  Thus, @samp{?\\x41} is the character @kbd{A}, @samp{?\\x1} is the character @kbd{C-a}, and @code{?\\xe0} is the character @kbd{à} (@kbd{a} with grave accent).  You can use any number of hex digits, so you can represent any character code in this way."
-msgstr "次に文字を16進の文字コードで指定できます。16進エスケープシーケンスはバックスラッシュ、@samp{x}、および16進の文字コードにより構成されます。したがって@samp{?\\x41}は文字@kbd{A}、@samp{?\\x1}は文字@kbd{C-a}、@code{?\\xe0}は文字@kbd{à}(グレイブアクセントつきの@kbd{a})になります。任意の16進数を使用できるので、この方法で任意の文字を表すことができます。"
+msgstr "文字を16進の文字コードで指定できる。16進エスケープシーケンスはバックスラッシュ、@samp{x}、および16進の文字コードにより構成される。したがって@samp{?\\x41}は文字@kbd{A}、@samp{?\\x1}は文字@kbd{C-a}、@code{?\\xe0}は文字@kbd{à} (グレイブアクセントつきの@kbd{a})になる。任意の16進数を使用できるので、この方法で任意の文字を表すことができる。"
 
 #. type: cindex
 #: original_texis/objects.texi:394
@@ -941,10 +932,8 @@ msgstr "octal character code"
 
 #. type: enumerate
 #: original_texis/objects.texi:401
-#, fuzzy
-#| msgid "Thirdly, you can specify characters by their character code in octal.  An octal escape sequence consists of a backslash followed by up to three octal digits; thus, @samp{?\\101} for the character @kbd{A}, @samp{?\\001} for the character @kbd{C-a}, and @code{?\\002} for the character @kbd{C-b}.  Only characters up to octal code 777 can be specified this way."
 msgid "You can specify characters by their character code in octal.  An octal escape sequence consists of a backslash followed by up to three octal digits; thus, @samp{?\\101} for the character @kbd{A}, @samp{?\\001} for the character @kbd{C-a}, and @code{?\\002} for the character @kbd{C-b}.  Only characters up to octal code 777 can be specified this way."
-msgstr "最後に、8進の文字コードにより文字を指定できます。8進エスケープシーケンスは、3桁までの8進数字をともなうバックスラッシュにより形成されます。したがって@samp{?\\101}は文字@kbd{A}、@samp{?\\001}は文字@kbd{C-a}、@code{?\\002}は文字@kbd{C-b}を表します。この方法で指定できるのは、8進コード777までの文字だけです。"
+msgstr "8進の文字コードにより文字を指定できる。8進エスケープシーケンスは3桁までの8進数字をともなうバックスラッシュにより形成される。したがって@samp{?\\101}は文字@kbd{A}、@samp{?\\001}は文字@kbd{C-a}、@code{?\\002}は文字@kbd{C-b}を表す。この方法で指定できるのは8進コード777までの文字のみ。"
 
 #. type: Plain text
 #: original_texis/objects.texi:406
@@ -2133,11 +2122,7 @@ msgstr "ハッシュテーブルは非常に高速な照合テーブルの一種
 
 #. type: example
 #: original_texis/objects.texi:1259
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(make-hash-table)\n"
-#| "     @result{} #s(hash-table size 65 test eql rehash-size 1.5\n"
-#| "                             rehash-threshold 0.8 data ())\n"
+#, no-wrap
 msgid ""
 "(make-hash-table)\n"
 "     @result{} #s(hash-table size 65 test eql rehash-size 1.5\n"
@@ -2145,7 +2130,7 @@ msgid ""
 msgstr ""
 "(make-hash-table)\n"
 "     @result{} #s(hash-table size 65 test eql rehash-size 1.5\n"
-"                             rehash-threshold 0.8 data ())\n"
+"                             rehash-threshold 0.8125 data ())\n"
 
 #. type: Plain text
 #: original_texis/objects.texi:1263
@@ -2243,24 +2228,22 @@ msgstr "バイトコード関数オブジェクトのプリント表現と入力
 #. type: Plain text
 #: original_texis/objects.texi:1361
 msgid "A @dfn{record} is much like a @code{vector}.  However, the first element is used to hold its type as returned by @code{type-of}.  The purpose of records is to allow programmers to create objects with new types that are not built into Emacs."
-msgstr ""
+msgstr "@dfn{レコード(record)}は@code{vector}と似ていますが、最初の要素は@code{type-of}でリターンされる型を保持するために使用されます。レコードの主要目的はプログラマーがEmacsのビルトインではない新たな型を作成することを可能にすることです。"
 
 #. type: Plain text
 #: original_texis/objects.texi:1363
-#, fuzzy
-#| msgid "@xref{Vectors}, for functions that work with vectors."
 msgid "@xref{Records}, for functions that work with records."
-msgstr "ベクターに作用する関数については@ref{Vectors}を参照してください。"
+msgstr "レコードに作用する関数については@ref{Records}を参照してください。"
 
 #. type: Plain text
 #: original_texis/objects.texi:1372
 msgid "A @dfn{type descriptor} is a @code{record} which holds information about a type.  Slot 1 in the record must be a symbol naming the type, and @code{type-of} relies on this to return the type of @code{record} objects.  No other type descriptor slot is used by Emacs; they are free for use by Lisp extensions."
-msgstr ""
+msgstr "@dfn{型記述子(type descriptor)}は型に関する情報を保持する@code{record}です。レコードの1スロット目には型を命名するシンボルでなければならず、@code{type-of}は@code{record}オブジェクトの型をリターンするためにこれに依存しています。他の型記述子スロットをEmacsは使用しません。これらをLisp拡張が使用するのは自由です。"
 
 #. type: Plain text
 #: original_texis/objects.texi:1375
 msgid "An example of a type descriptor is any instance of @code{cl-structure-class}."
-msgstr ""
+msgstr "@code{cl-structure-class}のインスタンスはすべて型記述子の例です。"
 
 #. type: Plain text
 #: original_texis/objects.texi:1385
@@ -2408,41 +2391,38 @@ msgstr "背後のOS上で実行されるEmacsのサブプロセス。"
 #. type: subsection
 #: original_texis/objects.texi:1446 original_texis/objects.texi:1657
 #: original_texis/objects.texi:1658
-#, fuzzy, no-wrap
-#| msgid "Array Type"
+#, no-wrap
 msgid "Thread Type"
-msgstr "Array Type"
+msgstr "Thread Type"
 
 #. type: menuentry
 #: original_texis/objects.texi:1446
 msgid "A thread of Emacs Lisp execution."
-msgstr ""
+msgstr "Emacs Lispの実行スレッド。"
 
 #. type: subsection
 #: original_texis/objects.texi:1446 original_texis/objects.texi:1676
 #: original_texis/objects.texi:1677
-#, fuzzy, no-wrap
-#| msgid "Integer Type"
+#, no-wrap
 msgid "Mutex Type"
-msgstr "Integer Type"
+msgstr "Mutex Type"
 
 #. type: menuentry
 #: original_texis/objects.texi:1446
 msgid "An exclusive lock for thread synchronization."
-msgstr ""
+msgstr "スレッド同期のための排他ロック。"
 
 #. type: subsection
 #: original_texis/objects.texi:1446 original_texis/objects.texi:1695
 #: original_texis/objects.texi:1696
-#, fuzzy, no-wrap
-#| msgid "Char-Table Type"
+#, no-wrap
 msgid "Condition Variable Type"
-msgstr "Char-Table Type"
+msgstr "Condition Variable Type"
 
 #. type: menuentry
 #: original_texis/objects.texi:1446
 msgid "Condition variable for thread synchronization."
-msgstr ""
+msgstr "スレッド同期のための状態変数。"
 
 #. type: subsection
 #: original_texis/objects.texi:1446 original_texis/objects.texi:1714
@@ -2729,14 +2709,12 @@ msgstr "プロセスの作成、削除、プロセスに関する情報のリタ
 #. type: Plain text
 #: original_texis/objects.texi:1664
 msgid "A @dfn{thread} in Emacs represents a separate thread of Emacs Lisp execution.  It runs its own Lisp program, has its own current buffer, and can have subprocesses locked to it, i.e.@: subprocesses whose output only this thread can accept.  @xref{Threads}."
-msgstr ""
+msgstr "Emacsでの@dfn{スレッド(thread)}とはEmacs Lispの実行スレッドとは別のスレッドを表します。これは自身のLispプログラムを実行して、自身のカレントバッファーを所有して、そのスレッドにロックされたサブプロセスをもつことができます(サブプロセスの出力を受け取ることができるのはそのスレッドのみ)。@ref{Threads}を参照してください。"
 
 #. type: Plain text
 #: original_texis/objects.texi:1668
-#, fuzzy
-#| msgid "Process objects have no read syntax.  They print in hash notation, giving the name of the process:"
 msgid "Thread objects have no read syntax.  They print in hash notation, giving the name of the thread (if it has been given a name) or its address in core:"
-msgstr "プロセスオブジェクトは入力構文をもちません。プロセスオブジェクトはプロセス名を与えるハッシュ表記でプリントされます。"
+msgstr "スレッドオブジェクトは入力構文をもちません。スレッドオブジェクトは(名前を与えられていれば)スレッド名を与えるハッシュ表記かメモリー内のアドレスでプリントされます。"
 
 #. type: group
 #: original_texis/objects.texi:1673
@@ -2745,18 +2723,18 @@ msgid ""
 "(all-threads)\n"
 "    @result{} (#<thread 0176fc40>)\n"
 msgstr ""
+"(all-threads)\n"
+"    @result{} (#<thread 0176fc40>)\n"
 
 #. type: Plain text
 #: original_texis/objects.texi:1681
 msgid "A @dfn{mutex} is an exclusive lock that threads can own and disown, in order to synchronize between them.  @xref{Mutexes}."
-msgstr ""
+msgstr "@dfn{ミューテックス(mutex)}とはスレッド間で同期をとるためにスレッドが所有と非所有することができる排他ロックです。@ref{Mutexes}を参照してください。"
 
 #. type: Plain text
 #: original_texis/objects.texi:1685
-#, fuzzy
-#| msgid "Process objects have no read syntax.  They print in hash notation, giving the name of the process:"
 msgid "Mutex objects have no read syntax.  They print in hash notation, giving the name of the mutex (if it has been given a name) or its address in core:"
-msgstr "プロセスオブジェクトは入力構文をもちません。プロセスオブジェクトはプロセス名を与えるハッシュ表記でプリントされます。"
+msgstr "ミューテックスオブジェクトは入力構文をもちません。プロセスオブジェクトは(名前を与えられていれば)ミューテックス名を与えるハッシュ表記かメモリー内のアドレスでプリントされます。"
 
 #. type: group
 #: original_texis/objects.texi:1692
@@ -2767,18 +2745,20 @@ msgid ""
 "(make-mutex)\n"
 "    @result{} #<mutex 01c7e4e0>\n"
 msgstr ""
+"(make-mutex \"my-mutex\")\n"
+"    @result{} #<mutex my-mutex>\n"
+"(make-mutex)\n"
+"    @result{} #<mutex 01c7e4e0>\n"
 
 #. type: Plain text
 #: original_texis/objects.texi:1702
 msgid "A @dfn{condition variable} is a device for a more complex thread synchronization than the one supported by a mutex.  A thread can wait on a condition variable, to be woken up when some other thread notifies the condition."
-msgstr ""
+msgstr "@dfn{状態変数(condition variable)}はミューテックスがサポートするよりも複雑な非同期スレッドのためのデバイスです。スレッドは別のスレッドが状態を通知したときに再開するように状態変数を待機することができます。"
 
 #. type: Plain text
 #: original_texis/objects.texi:1706
-#, fuzzy
-#| msgid "Process objects have no read syntax.  They print in hash notation, giving the name of the process:"
 msgid "Condition variable objects have no read syntax.  They print in hash notation, giving the name of the condition variable (if it has been given a name) or its address in core:"
-msgstr "プロセスオブジェクトは入力構文をもちません。プロセスオブジェクトはプロセス名を与えるハッシュ表記でプリントされます。"
+msgstr "状態変数オブジェクトは入力構文をもちません。プロセスオブジェクトは(名前が与えられていれば)状態変数の名前を与えるハッシュ表記かメモリー内のアドレスでプリントされます。"
 
 #. type: group
 #: original_texis/objects.texi:1711
@@ -2787,6 +2767,8 @@ msgid ""
 "(make-condition-variable (make-mutex))\n"
 "    @result{} #<condvar 01c45ae8>\n"
 msgstr ""
+"(make-condition-variable (make-mutex))\n"
+"    @result{} #<condvar 01c45ae8>\n"
 
 #. type: Plain text
 #: original_texis/objects.texi:1724
@@ -3152,17 +3134,14 @@ msgstr "@ref{Interactive Call, commandp}を参照のこと。"
 
 #. type: item
 #: original_texis/objects.texi:1922
-#, fuzzy, no-wrap
-#| msgid "custom-variable-p"
+#, no-wrap
 msgid "condition-variable-p"
-msgstr "custom-variable-p"
+msgstr "condition-variable-p"
 
 #. type: table
 #: original_texis/objects.texi:1924
-#, fuzzy
-#| msgid "@xref{Variable Definitions, custom-variable-p}."
 msgid "@xref{Condition Variables, condition-variable-p}."
-msgstr "@ref{Variable Definitions, custom-variable-p}を参照のこと。"
+msgstr "@ref{Condition Variables, condition-variable-p}を参照のこと。"
 
 #. type: item
 #: original_texis/objects.texi:1925
@@ -3333,14 +3312,12 @@ msgstr "@ref{Predicates on Markers, markerp}を参照のこと。"
 #: original_texis/objects.texi:1970
 #, no-wrap
 msgid "mutexp"
-msgstr ""
+msgstr "mutexp"
 
 #. type: table
 #: original_texis/objects.texi:1972
-#, fuzzy
-#| msgid "@xref{Frames, framep}."
 msgid "@xref{Mutexes, mutexp}."
-msgstr "@ref{Frames, framep}を参照のこと。"
+msgstr "@ref{Mutexes, mutexp}を参照のこと。"
 
 #. type: item
 #: original_texis/objects.texi:1973
@@ -3399,17 +3376,14 @@ msgstr "@ref{Processes, processp}を参照のこと。"
 
 #. type: item
 #: original_texis/objects.texi:1988
-#, fuzzy, no-wrap
-#| msgid "keywordp"
+#, no-wrap
 msgid "recordp"
-msgstr "keywordp"
+msgstr "recordp"
 
 #. type: table
 #: original_texis/objects.texi:1990
-#, fuzzy
-#| msgid "@xref{Byte-Code Type, byte-code-function-p}."
 msgid "@xref{Record Type, recordp}."
-msgstr "@ref{Byte-Code Type, byte-code-function-p}を参照のこと。"
+msgstr "@ref{Record Type, recordp}を参照のこと。"
 
 #. type: item
 #: original_texis/objects.texi:1991
@@ -3481,14 +3455,12 @@ msgstr "@ref{Syntax Tables, syntax-table-p}を参照のこと。"
 #: original_texis/objects.texi:2009
 #, no-wrap
 msgid "threadp"
-msgstr ""
+msgstr "threadp"
 
 #. type: table
 #: original_texis/objects.texi:2011
-#, fuzzy
-#| msgid "@xref{Array Functions, arrayp}."
 msgid "@xref{Basic Thread Functions, threadp}."
-msgstr "@ref{Array Functions, arrayp}を参照のこと。"
+msgstr "@ref{Basic Thread Functions, threadp}を参照のこと。"
 
 #. type: item
 #: original_texis/objects.texi:2012
@@ -3558,10 +3530,8 @@ msgstr "type-of object"
 
 #. type: defun
 #: original_texis/objects.texi:2047
-#, fuzzy
-#| msgid "This function returns a symbol naming the primitive type of @var{object}.  The value is one of the symbols @code{bool-vector}, @code{buffer}, @code{char-table}, @code{compiled-function}, @code{cons}, @code{finalizer}, @code{float}, @code{font-entity}, @code{font-object}, @code{font-spec}, @code{frame}, @code{hash-table}, @code{integer}, @code{marker}, @code{overlay}, @code{process}, @code{string}, @code{subr}, @code{symbol}, @code{vector}, @code{window}, or @code{window-configuration}."
 msgid "This function returns a symbol naming the primitive type of @var{object}.  The value is one of the symbols @code{bool-vector}, @code{buffer}, @code{char-table}, @code{compiled-function}, @code{condition-variable}, @code{cons}, @code{finalizer}, @code{float}, @code{font-entity}, @code{font-object}, @code{font-spec}, @code{frame}, @code{hash-table}, @code{integer}, @code{marker}, @code{mutex}, @code{overlay}, @code{process}, @code{string}, @code{subr}, @code{symbol}, @code{thread}, @code{vector}, @code{window}, or @code{window-configuration}.  However, if @var{object} is a record, the type specified by its first slot is returned; @ref{Records}."
-msgstr "この関数は@var{object}の基本型を名前とするシンボルをリターンする。リターン値はシンボル@code{bool-vector}、@code{buffer}、@code{char-table}、@code{compiled-function}、@code{cons}、@code{finalizer}、@code{float}、@code{font-entity}、@code{font-object}、@code{font-spec}、@code{frame}、@code{hash-table}、@code{integer}、@code{marker}、@code{overlay}、@code{process}、@code{string}、@code{subr}、@code{symbol}、@code{vector}、@code{window}、@code{window-configuration}のいずれか。"
+msgstr "この関数は@var{object}の基本型を名前とするシンボルをリターンする。リターン値はシンボル@code{bool-vector}、@code{buffer}、@code{char-table}、@code{compiled-function}、@code{condition-variable}、@code{cons}、@code{finalizer}、@code{float}、@code{font-entity}、@code{font-object}、@code{font-spec}、@code{frame}、@code{hash-table}、@code{integer}、@code{marker}、@code{mutex}、@code{overlay}、@code{process}、@code{string}、@code{subr}、@code{symbol}、@code{thread}、@code{vector}、@code{window}、@code{window-configuration}のいずれか。ただし@var{object}がレコードなら最初のスロットで指定された型をリターンする。@ref{Records}を参照のこと。"
 
 #. type: example
 #: original_texis/objects.texi:2051
@@ -3575,14 +3545,7 @@ msgstr ""
 
 #. type: group
 #: original_texis/objects.texi:2060
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(type-of 'nil)\n"
-#| "     @result{} symbol\n"
-#| "(type-of '())    ; @r{@code{()} is @code{nil}.}\n"
-#| "     @result{} symbol\n"
-#| "(type-of '(x))\n"
-#| "     @result{} cons\n"
+#, no-wrap
 msgid ""
 "(type-of 'nil)\n"
 "     @result{} symbol\n"
@@ -3595,10 +3558,12 @@ msgid ""
 msgstr ""
 "(type-of 'nil)\n"
 "     @result{} symbol\n"
-"(type-of '())    ; @r{@code{()}は@code{nil}です。}\n"
+"(type-of '())    ; @r{@code{()}は@code{nil}}\n"
 "     @result{} symbol\n"
 "(type-of '(x))\n"
 "     @result{} cons\n"
+"(type-of (record 'foo))\n"
+"     @result{} foo\n"
 
 #. type: cindex
 #: original_texis/objects.texi:2066
@@ -3807,10 +3772,8 @@ msgstr ""
 
 #. type: defun
 #: original_texis/objects.texi:2213
-#, fuzzy
-#| msgid "Comparison of strings is case-sensitive, but does not take account of text properties---it compares only the characters in the strings.  @xref{Text Properties}.  Use @code{equal-including-properties} to also compare text properties.  For technical reasons, a unibyte string and a multibyte string are @code{equal} if and only if they contain the same sequence of character codes and all these codes are either in the range 0 through 127 (@acronym{ASCII}) or 160 through 255 (@code{eight-bit-graphic}).  (@pxref{Text Representations})."
 msgid "Comparison of strings is case-sensitive, but does not take account of text properties---it compares only the characters in the strings.  @xref{Text Properties}.  Use @code{equal-including-properties} to also compare text properties.  For technical reasons, a unibyte string and a multibyte string are @code{equal} if and only if they contain the same sequence of character codes and all these codes are in the range 0 through 127 (@acronym{ASCII})."
-msgstr "文字列の比較はcaseを区別するがテキストプロパティーは考慮しない --- これは文字列内の文字だけを比較する。@ref{Text Properties}を参照のこと。テキストプロパティーも比較する場合には、@code{equal-including-properties}を使用すること。技術的な理由によりユニバイト文字列とマルチバイト文字列は、それらが同じ文字シーケンスを含みすべてのコードが0から127(@acronym{ASCII})、または160から255(@code{8ビットグラフィック})の場合に限り@code{equal}となる(@ref{Text Representations}を参照)。"
+msgstr "文字列の比較はcaseを区別するがテキストプロパティーは考慮しない --- これは文字列内の文字だけを比較する。@ref{Text Properties}を参照のこと。テキストプロパティーも比較する場合には、@code{equal-including-properties}を使用すること。技術的な理由によりユニバイト文字列とマルチバイト文字列は、それらが同じ文字コードのシーケンスを含み、それらのコードがすべて0から127(@acronym{ASCII})の場合に限り@code{equal}となる(@ref{Text Representations}を参照)。"
 
 #. type: group
 #: original_texis/objects.texi:2218
