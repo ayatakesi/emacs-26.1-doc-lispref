@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Emacs 25,2\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-03-01 22:28+0900\n"
+"PO-Revision-Date: 2020-03-11 20:31+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -523,10 +523,8 @@ msgstr "この関数は正規表現@var{separators}(@ref{Regular Expressions}を
 
 #. type: defun
 #: original_texis/strings.texi:285
-#, fuzzy
-#| msgid "If @var{separators} is @code{nil} (or omitted), the default is the value of @code{split-string-default-separators}."
 msgid "If @var{separators} is @code{nil} (or omitted), the default is the value of @code{split-string-default-separators} and the function behaves as if @var{omit-nulls} were @code{t}."
-msgstr "@var{separators}が@code{nil}(または省略)なら、デフォルトは@code{split-string-default-separators}の値となる。"
+msgstr "@var{separators}が@code{nil} (か省略)ならデフォルトは@code{split-string-default-separators}の値となり、関数は@var{omit-nulls}が@code{t}であるかのように振る舞う。"
 
 #. type: defun
 #: original_texis/strings.texi:291
@@ -541,14 +539,12 @@ msgstr "オプションの引数@var{trim}が非@code{nil}なら、その値は�
 #. type: defun
 #: original_texis/strings.texi:300
 msgid "If you need to split a string into a list of individual command-line arguments suitable for @code{call-process} or @code{start-process}, see @ref{Shell Arguments, split-string-and-unquote}."
-msgstr "文字列を分割して@code{call-process}や@code{start-process}に適するような、個々のコマンドライン引数のリストにする必要がある場合は、@ref{Shell Arguments, split-string-and-unquote}を参照されたい。"
+msgstr "文字列を分割して@code{call-process}や@code{start-process}に適するような、個々のコマンドライン引数のリストにする必要がある場合は@ref{Shell Arguments, split-string-and-unquote}を参照のこと。"
 
 #. type: defun
 #: original_texis/strings.texi:302
-#, fuzzy
-#| msgid "More examples:"
 msgid "Examples:"
-msgstr "他にも例を示す:"
+msgstr "以下は例:"
 
 #. type: example
 #: original_texis/strings.texi:306
@@ -1042,15 +1038,14 @@ msgstr "locale環境をサポートしないシステムでは、この関数は
 
 #. type: defun
 #: original_texis/strings.texi:621
-#, fuzzy, no-wrap
-#| msgid "string-lessp string1 string2"
+#, no-wrap
 msgid "string-version-lessp string1 string2"
-msgstr "string-lessp string1 string2"
+msgstr "string-version-lessp string1 string2"
 
 #. type: defun
 #: original_texis/strings.texi:627
 msgid "This function compares strings lexicographically, except it treats sequences of numerical characters as if they comprised a base-ten number, and then compares the numbers.  So @samp{foo2.png} is ``smaller'' than @samp{foo12.png} according to this predicate, even if @samp{12} is lexicographically ``smaller'' than @samp{2}."
-msgstr ""
+msgstr "この関数は文字列を辞書順で比較するが、数字のシーケンスを10進数で構成されているかのように扱い、その数値を比較する。つまりたとえ辞書順で@samp{12}が@samp{2}より``小''だとしても、この述語に応じて@samp{foo12.png}より@samp{foo2.png}が``小''になる。"
 
 #. type: defun
 #: original_texis/strings.texi:629
@@ -1368,22 +1363,18 @@ msgstr "format string &rest objects"
 
 #. type: defun
 #: original_texis/strings.texi:818
-#, fuzzy
-#| msgid "This function returns a new string that is made by copying @var{string} and then replacing any format specification in the copy with encodings of the corresponding @var{objects}.  The arguments @var{objects} are the computed values to be formatted."
 msgid "This function returns a string equal to @var{string}, replacing any format specifications with encodings of the corresponding @var{objects}.  The arguments @var{objects} are the computed values to be formatted."
-msgstr "この関数は@var{string}をコピーしてから、対応する@var{objects}をエンコードする、そのコピー内の任意のフォーマット仕様(format specification)を置換して作成される、新しい文字列をリターンする。引数@var{objects}はフォーマットされる計算された値。"
+msgstr "この関数は@var{string}のすべてのフォーマット仕様を、対応する@var{objects}を復号化したものと置換したものと等しい文字列をリターンする。引数@var{objects}はフォーマットされる計算値。"
 
 #. type: defun
 #: original_texis/strings.texi:823
-#, fuzzy
-#| msgid "The characters in @var{string}, other than the format specifications, are copied directly into the output, including their text properties, if any."
 msgid "The characters in @var{string}, other than the format specifications, are copied directly into the output, including their text properties, if any.  Any text properties of the format specifications are copied to the produced string representations of the argument @var{objects}."
-msgstr "(もしあれば)@var{string}内のフォーマット仕様以外の文字は、テキストプロパティーを含めて出力に直接コピーされる。"
+msgstr "(もしあれば)@var{string}内のフォーマット仕様以外の文字はテキストプロパティーを含めて出力に直接コピーされる。フォーマット仕様のすべてのテキストプロパティは引数@var{objects}を表現する生成された文字列にコピーされる。"
 
 #. type: defun
 #: original_texis/strings.texi:828
 msgid "The output string need not be newly-allocated.  For example, if @code{x} is the string @code{\"foo\"}, the expressions @code{(eq x (format x))} and @code{(eq x (format \"%s\" x))} might both yield @code{t}."
-msgstr ""
+msgstr "出力される文字列は新規に割り当てられる必要はない。たとえば@code{x}が文字列@code{\"foo\"}なら@code{(eq x (format x))}と@code{(eq x (format \"%s\" x))}はいずれも@code{t}となるだろう。"
 
 #. type: defun
 #: original_texis/strings.texi:830
@@ -1395,25 +1386,23 @@ msgstr "format-message string &rest objects"
 #: original_texis/strings.texi:831
 #, no-wrap
 msgid "curved quotes, in formatted messages"
-msgstr ""
+msgstr "curved quotes, in formatted messages"
 
 #. type: cindex
 #: original_texis/strings.texi:832
 #, no-wrap
 msgid "curly quotes, in formatted messages"
-msgstr ""
+msgstr "curly quotes, in formatted messages"
 
 #. type: defun
 #: original_texis/strings.texi:836
-#, fuzzy
-#| msgid "This function acts like @code{format}, except it also converts any curved single quotes in @var{string} as per the value of @code{text-quoting-style}, and treats grave accent (@t{`}) and apostrophe (@t{'}) as if they were curved single quotes."
 msgid "This function acts like @code{format}, except it also converts any grave accents (@t{`}) and apostrophes (@t{'}) in @var{string} as per the value of @code{text-quoting-style}."
-msgstr "この関数は@code{format}と同様に機能するが、@code{text-quoting-style}の各値に応じて@var{string}内のすべてのcurved single quotes文字も変換して、グレイブアクセント(@t{`})とアポストロフィー(@t{'})があたかもcurved single quotes文字であるかのように扱う点が異なる。"
+msgstr "この関数は@code{format}と同様に機能するが、@var{string}内のすべてのグレイブアクセント(@t{`})とアポストロフィー(@t{'})を@code{text-quoting-style}の各値に応じて変換する点が異なる。"
 
 #. type: defun
 #: original_texis/strings.texi:841
 msgid "Typically grave accent and apostrophe in the format translate to matching curved quotes, e.g., @t{\"Missing `%s'\"} might result in @t{\"Missing ‘foo’\"}.  @xref{Text Quoting Style}, for how to influence or inhibit this translation."
-msgstr ""
+msgstr "フォーマット内のグレイブアクセントとアポストロフィーはマッチするcurved quotesに変換される(@t{\"Missing `%s'\"}は@t{\"Missing ‘foo’\"}という結果になる)この変換の影響と回避については@ref{Text Quoting Style}を参照のこと。"
 
 #. type: cindex
 #: original_texis/strings.texi:843
@@ -1583,7 +1572,7 @@ msgstr "%g"
 #. type: table
 #: original_texis/strings.texi:928
 msgid "Replace the specification with notation for a floating-point number, using either exponential notation or decimal-point notation.  The exponential notation is used if the exponent would be less than @minus{}4 or greater than or equal to the precision (default: 6).  By default, trailing zeros are removed from the fractional portion of the result and a decimal-point character appears only if it is followed by a digit."
-msgstr ""
+msgstr "指数表記か小数点表記のいずれかを使用してフォーマット仕様を浮動小数点数にたいする表記に置き換える。指数が@minus{}4未満または精度(デフォルトは6)以上なら指数表記を使用する。デフォルトでは結果の少数部の末尾の0は削除されて、小数点が現れるのは後に数字が続く場合のみ。"
 
 #. type: item
 #: original_texis/strings.texi:929
@@ -1593,10 +1582,8 @@ msgstr "%%"
 
 #. type: table
 #: original_texis/strings.texi:934
-#, fuzzy
-#| msgid "Replace the specification with a single @samp{%}.  This format specification is unusual in that it does not use a value.  For example, @code{(format \"%% %d\" 30)} returns @code{\"% 30\"}."
 msgid "Replace the specification with a single @samp{%}.  This format specification is unusual in that its only form is plain @samp{%%} and that it does not use a value.  For example, @code{(format \"%% %d\" 30)} returns @code{\"% 30\"}."
-msgstr "フォーマット仕様を1つの@samp{%}で置き換える。このフォーマット仕様は値を使用しない。たとえば@code{(format \"%% %d\" 30)}は@code{\"% 30\"}をリターンする。"
+msgstr "フォーマット仕様を1つの@samp{%}で置き換える。このフォーマット仕様は唯一のフォームが素の@samp{%%}であり値を使用しないという点で特殊。たとえば@code{(format \"%% %d\" 30)}は@code{\"% 30\"}をリターンする。"
 
 #. type: Plain text
 #: original_texis/strings.texi:938
@@ -1652,22 +1639,19 @@ msgstr ""
 
 #. type: Plain text
 #: original_texis/strings.texi:965
-#, fuzzy
-#| msgid "If @var{string} contains more than one format specification, the format specifications correspond to successive values from @var{objects}.  Thus, the first format specification in @var{string} uses the first such value, the second format specification uses the second such value, and so on.  Any extra format specifications (those for which there are no corresponding values) cause an error.  Any extra values to be formatted are ignored."
 msgid "By default, format specifications correspond to successive values from @var{objects}.  Thus, the first format specification in @var{string} uses the first such value, the second format specification uses the second such value, and so on.  Any extra format specifications (those for which there are no corresponding values) cause an error.  Any extra values to be formatted are ignored."
-msgstr "@var{string}に複数のフォーマット仕様が含まれる場合、フォーマット仕様は@var{objects}から連続して値を引き当てます。つまり、@var{string}内の1番目のフォーマット仕様は1番目の値、2番目のフォーマット仕様は2番目の値、...を使用します。余分なフォーマット仕様(対応する値がない場合)にはエラーとなります。フォーマットされる値が余分にある場合は無視されます。"
+msgstr "フォーマット仕様はデフォルトでは@var{objects}から連続して値を引き当てます。つまり@var{string}内の1番目のフォーマット仕様は1番目の値、2番目のフォーマット仕様は2番目の値、...を使用します。余分なフォーマット仕様(対応する値がない場合)にはエラーとなります。フォーマットされる値が余分にある場合には無視されます。"
 
 #. type: cindex
 #: original_texis/strings.texi:966
-#, fuzzy, no-wrap
-#| msgid "flags in format specifications"
+#, no-wrap
 msgid "field numbers in format spec"
-msgstr "flags in format specifications"
+msgstr "field numbers in format spec"
 
 #. type: Plain text
 #: original_texis/strings.texi:974
 msgid "A format specification can have a @dfn{field number}, which is a decimal number immediately after the initial @samp{%}, followed by a literal dollar sign @samp{$}.  It causes the format specification to convert the argument with the given number instead of the next argument.  Field numbers start at 1.  A format can contain either numbered or unnumbered format specifications but not both, except that @samp{%%} can be mixed with numbered specifications."
-msgstr ""
+msgstr "フォーマット仕様は@dfn{フィールド番号(field number)}をもつことができます。これは最初の@samp{%}の直後に10進数字、その後にドル記号@samp{$}が続きます。これにより次の引数ではなく与えられた番号の引数をフォーマット仕様に変換させることができます。フィールド番号は1から始まります。フォーマットのフォーマット仕様が番号を含むことも含まないことも可能ですが、両方を含むことはできません。ただし例外は@samp{%%}であり、これは番号付きのフォーマット仕様と混交できます。"
 
 #. type: example
 #: original_texis/strings.texi:978
@@ -1676,6 +1660,8 @@ msgid ""
 "(format \"%2$s, %3$s, %%, %1$s\" \"x\" \"y\" \"z\")\n"
 "     @result{} \"y, z, %, x\"\n"
 msgstr ""
+"(format \"%2$s, %3$s, %%, %1$s\" \"x\" \"y\" \"z\")\n"
+"     @result{} \"y, z, %, x\"\n"
 
 #. type: cindex
 #: original_texis/strings.texi:980
@@ -1685,10 +1671,8 @@ msgstr "flags in format specifications"
 
 #. type: Plain text
 #: original_texis/strings.texi:983
-#, fuzzy
-#| msgid "Immediately after the @samp{%} and before the optional width specifier, you can also put certain @dfn{flag characters}."
 msgid "After the @samp{%} and any field number, you can put certain @dfn{flag characters}."
-msgstr "@samp{%}の直後、オプションのフィールド幅指定子の前に@dfn{フラグ文字(flag characters)}を置くこともできます。"
+msgstr "@samp{%}とすべてのフィールド番号の後に@dfn{フラグ文字(flag characters)}を配置できます。"
 
 #. type: Plain text
 #: original_texis/strings.texi:991
@@ -1707,10 +1691,8 @@ msgstr "フラグ@samp{0}はスペースの代わりに文字@samp{0}でパデ�
 
 #. type: Plain text
 #: original_texis/strings.texi:1011
-#, fuzzy
-#| msgid "The flag @samp{-} causes the padding inserted by the width specifier, if any, to be inserted on the right rather than the left.  If both @samp{-} and @samp{0} are present, the @samp{0} flag is ignored."
 msgid "The flag @samp{-} causes any padding inserted by the width, if specified, to be inserted on the right rather than the left.  If both @samp{-} and @samp{0} are present, the @samp{0} flag is ignored."
-msgstr "フラグ@samp{-}はフィールド幅指定子により挿入されるパディングに作用し、もしパディングがあるなら左側ではなく右側にパディングされます。@samp{-}と@samp{0}の両方が指定されると@samp{0}フラグは無視されます。"
+msgstr "フラグ@samp{-}はフィールド幅指定子により挿入されるすべてのパディングに作用して、もしパディングが指定された場合には左側ではなく右側にパディングされます。@samp{-}と@samp{0}の両方が指定されると@samp{0}フラグは無視されます。"
 
 #. type: group
 #: original_texis/strings.texi:1016
@@ -1762,10 +1744,8 @@ msgstr "padding"
 
 #. type: Plain text
 #: original_texis/strings.texi:1033
-#, fuzzy
-#| msgid "A specification can have a @dfn{width}, which is a decimal number between the @samp{%} and the specification character.  If the printed representation of the object contains fewer characters than this width, @code{format} extends it with padding.  The width specifier is ignored for the @samp{%%} specification.  Any padding introduced by the width specifier normally consists of spaces inserted on the left:"
 msgid "A specification can have a @dfn{width}, which is a decimal number that appears after any field number and flags.  If the printed representation of the object contains fewer characters than this width, @code{format} extends it with padding.  Any padding introduced by the width normally consists of spaces inserted on the left:"
-msgstr "フォーマット仕様は@dfn{フィールド幅(width)}をもつことができます。これは@samp{%}とフォーマット仕様文字(specification character)の間の10進の数字です。そのオブジェクトのプリント表現がこのフィールド幅より少ない文字で構成される場合、@code{format}はパディングによりフィールド幅に拡張します。フォーマット仕様@samp{%%}ではフィールド幅の指定は無視されます。フィールド幅指定子により行なわれるパディングは、通常は左側にスペースを挿入します。"
+msgstr "フォーマット仕様は@dfn{フィールド幅(width)}をもつことができます。これはすべてのフィールド番号とフラグの後にある10進の数字です。オブジェクトのプリント表現がこのフィールド幅より少ない文字ｗ含む場合には、@code{format}はパディングによりフィールド幅に拡張します。フォーマット仕様@samp{%%}ではフィールド幅の指定は無視されます。フィールド幅指定子により行なわれるパディングは、通常は左側に挿入されるスペースで構成されます:"
 
 #. type: example
 #: original_texis/strings.texi:1037
@@ -1808,10 +1788,10 @@ msgstr "precision in format specifications"
 
 #. type: Plain text
 #: original_texis/strings.texi:1076
-#, fuzzy
-#| msgid "All the specification characters allow an optional @dfn{precision} before the character (after the width, if present).  The precision is a decimal-point @samp{.} followed by a digit-string.  For the floating-point specifications (@samp{%e}, @samp{%f}, @samp{%g}), the precision specifies how many decimal places to show; if zero, the decimal-point itself is also omitted.  For @samp{%s} and @samp{%S}, the precision truncates the string to the given width, so @samp{%.3s} shows only the first three characters of the representation for @var{object}.  For other specification characters, the effect of precision is what the local library functions of the @code{printf} family produce."
 msgid "All the specification characters allow an optional @dfn{precision} after the field number, flags and width, if present.  The precision is a decimal-point @samp{.} followed by a digit-string.  For the floating-point specifications (@samp{%e} and @samp{%f}), the precision specifies how many digits following the decimal point to show; if zero, the decimal-point itself is also omitted.  For @samp{%g}, the precision specifies how many significant digits to show (significant digits are the first digit before the decimal point and all the digits after it).  If the precision of %g is zero or unspecified, it is treated as 1.  For @samp{%s} and @samp{%S}, the precision truncates the string to the given width, so @samp{%.3s} shows only the first three characters of the representation for @var{object}.  For other specification characters, the effect of precision is what the local library functions of the @code{printf} family produce."
-msgstr "すべてのフォーマット仕様文字には、その文字の前(フィールド幅がある場合はその後)に、オプションで@dfn{精度(precision)}を指定できます。精度は小数点@samp{.}と、その後に桁文字列(digit-string)を指定します。浮動少数点数のフォーマット仕様(@samp{%e}、@samp{%f}、@samp{%g})では、精度は表示する小数点以下の桁数を指定します。0の場合は小数点も省略されます。@samp{%s}と@samp{%S}にたいしては、文字列を精度で指定された幅に切り詰めます。したがって@samp{%.3s}では、@var{object}にたいするプリント表現の最初の3文字だけが表示されます。他のフォーマット仕様文字にたいしては、精度の効果はローカルライブラリーの@code{printf}関数ファミリーが生成する効果となります。"
+msgstr ""
+"すべてのフォーマット仕様文字にはフィールド番号、フラグ、フィールド幅の後にオプションで@dfn{精度(precision)}を指定できます。精度は小数点@samp{.}と、その後に桁文字列(digit-string)を指定します。浮動少数点数のフォーマット仕様(@samp{%e}と@samp{%f})では、精度は表示する小数点以下の桁数を指定します。0なら小数点も省略されます。%gの精度が0か未指定なら1として扱われます。@samp{%s}と@samp{%S}では精度として与えられた幅に文字列が切り詰められるので、@samp{%.3s}では@var{object}の表現の最初の3文字だけが表示されます。その他の仕様文字では、@code{printf}ファミリーのローカルライブラリーが生成する精度の効果が表れます。 \n"
+"@samp{%s}と@samp{%S}にたいしては、文字列を精度で指定された幅に切り詰めます。したがって@samp{%.3s}では、@var{object}にたいするプリント表現の最初の3文字だけが表示されます。他のフォーマット仕様文字にたいしては、精度の効果はローカルライブラリーの@code{printf}関数ファミリーが生成する効果となります。"
 
 #. type: section
 #: original_texis/strings.texi:1078
@@ -2020,7 +2000,7 @@ msgstr ""
 #. type: Plain text
 #: original_texis/strings.texi:1199
 msgid "Note that case conversion is not a one-to-one mapping of codepoints and length of the result may differ from length of the argument.  Furthermore, because passing a character forces return type to be a character, functions are unable to perform proper substitution and result may differ compared to treating a one-character string.  For example:"
-msgstr ""
+msgstr "case変換コードポイントを1対1でマップするものではなく、結果の文字列長は引数の文字列長と異なるかもしれません。さらに文字を渡すことによりリターンされる型にも文字が強制されるので、関数は正しい置換を行えずに1文字の文字列を処理する場合とは結果が異なるかもしれません。たとえば:"
 
 #. type: group
 #: original_texis/strings.texi:1205
@@ -2029,19 +2009,18 @@ msgid ""
 "(upcase \"ﬁ\")  ; note: single character, ligature \"fi\"\n"
 "     @result{} \"FI\"\n"
 msgstr ""
+"(upcase \"ﬁ\")  ; 注意: 1文字の合字 \"fi\"\n"
+"     @result{} \"FI\"\n"
 
 #. type: group
 #: original_texis/strings.texi:1209
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(upcase ?x)\n"
-#| "     @result{} 88\n"
+#, no-wrap
 msgid ""
 "(upcase ?ﬁ)\n"
 "     @result{} 64257  ; i.e. ?ﬁ\n"
 msgstr ""
-"(upcase ?x)\n"
-"     @result{} 88\n"
+"(upcase ?ﬁ)\n"
+"     @result{} 64257  ; つまり ?ﬁ\n"
 
 #. type: group
 #: original_texis/strings.texi:1217
@@ -2050,29 +2029,28 @@ msgid ""
 "(upcase \"@r{fi}\")  ; note: single character, ligature \"fi\"\n"
 "     @result{} \"FI\"\n"
 msgstr ""
+"(upcase \"@r{fi}\")  ; 注意: 1文字の合字 \"fi\"\n"
+"     @result{} \"FI\"\n"
 
 #. type: group
 #: original_texis/strings.texi:1221
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(upcase ?x)\n"
-#| "     @result{} 88\n"
+#, no-wrap
 msgid ""
 "(upcase ?@r{fi})\n"
 "     @result{} 64257  ; i.e. ?@r{fi}\n"
 msgstr ""
-"(upcase ?x)\n"
-"     @result{} 88\n"
+"(upcase ?@r{fi})\n"
+"     @result{} 64257  ; つまり ?@r{fi}\n"
 
 #. type: Plain text
 #: original_texis/strings.texi:1229
 msgid "To avoid this, a character must first be converted into a string, using @code{string} function, before being passed to one of the casing functions.  Of course, no assumptions on the length of the result may be made."
-msgstr ""
+msgstr "これを避けるためにはcase関数のいずれかに文字を渡す前に@code{string}関数を使用して文字列に変換しなければなりません。もちろん結果の長さについて仮定はできません。"
 
 #. type: Plain text
 #: original_texis/strings.texi:1233
 msgid "Mapping for such special cases are taken from @code{special-uppercase}, @code{special-lowercase} and @code{special-titlecase} @xref{Character Properties}."
-msgstr ""
+msgstr "このような特殊ケースのマッピングは@code{special-uppercase}、@code{special-lowercase}、@code{special-titlecase}から取得されます。@ref{Character Properties}を参照してください。"
 
 #. type: Plain text
 #: original_texis/strings.texi:1236
