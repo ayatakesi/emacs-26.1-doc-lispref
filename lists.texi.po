@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:41+0900\n"
-"PO-Revision-Date: 2020-03-02 21:44+0900\n"
+"PO-Revision-Date: 2020-03-12 07:39+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -711,150 +711,150 @@ msgstr "これは@code{(cdr (cdr @var{cons-cell}))}か@code{(nthcdr 2 @var{cons-
 #: original_texis/lists.texi:365
 #, no-wrap
 msgid "caaar"
-msgstr ""
+msgstr "caaar"
 
 #. type: findex
 #: original_texis/lists.texi:366
 #, no-wrap
 msgid "caadr"
-msgstr ""
+msgstr "caadr"
 
 #. type: findex
 #: original_texis/lists.texi:367
 #, no-wrap
 msgid "cadar"
-msgstr ""
+msgstr "cadar"
 
 #. type: findex
 #: original_texis/lists.texi:368
 #, no-wrap
 msgid "caddr"
-msgstr ""
+msgstr "caddr"
 
 #. type: findex
 #: original_texis/lists.texi:369
 #, no-wrap
 msgid "cdaar"
-msgstr ""
+msgstr "cdaar"
 
 #. type: findex
 #: original_texis/lists.texi:370
 #, no-wrap
 msgid "cdadr"
-msgstr ""
+msgstr "cdadr"
 
 #. type: findex
 #: original_texis/lists.texi:371
 #, no-wrap
 msgid "cddar"
-msgstr ""
+msgstr "cddar"
 
 #. type: findex
 #: original_texis/lists.texi:372
 #, no-wrap
 msgid "cdddr"
-msgstr ""
+msgstr "cdddr"
 
 #. type: findex
 #: original_texis/lists.texi:373
 #, no-wrap
 msgid "caaaar"
-msgstr ""
+msgstr "caaaar"
 
 #. type: findex
 #: original_texis/lists.texi:374
 #, no-wrap
 msgid "caaadr"
-msgstr ""
+msgstr "caaadr"
 
 #. type: findex
 #: original_texis/lists.texi:375
 #, no-wrap
 msgid "caadar"
-msgstr ""
+msgstr "caadar"
 
 #. type: findex
 #: original_texis/lists.texi:376
 #, no-wrap
 msgid "caaddr"
-msgstr ""
+msgstr "caaddr"
 
 #. type: findex
 #: original_texis/lists.texi:377
 #, no-wrap
 msgid "cadaar"
-msgstr ""
+msgstr "cadaar"
 
 #. type: findex
 #: original_texis/lists.texi:378
 #, no-wrap
 msgid "cadadr"
-msgstr ""
+msgstr "cadadr"
 
 #. type: findex
 #: original_texis/lists.texi:379
 #, no-wrap
 msgid "caddar"
-msgstr ""
+msgstr "caddar"
 
 #. type: findex
 #: original_texis/lists.texi:380
 #, no-wrap
 msgid "cadddr"
-msgstr ""
+msgstr "cadddr"
 
 #. type: findex
 #: original_texis/lists.texi:381
 #, no-wrap
 msgid "cdaaar"
-msgstr ""
+msgstr "cdaaar"
 
 #. type: findex
 #: original_texis/lists.texi:382
 #, no-wrap
 msgid "cdaadr"
-msgstr ""
+msgstr "cdaadr"
 
 #. type: findex
 #: original_texis/lists.texi:383
 #, no-wrap
 msgid "cdadar"
-msgstr ""
+msgstr "cdadar"
 
 #. type: findex
 #: original_texis/lists.texi:384
 #, no-wrap
 msgid "cdaddr"
-msgstr ""
+msgstr "cdaddr"
 
 #. type: findex
 #: original_texis/lists.texi:385
 #, no-wrap
 msgid "cddaar"
-msgstr ""
+msgstr "cddaar"
 
 #. type: findex
 #: original_texis/lists.texi:386
 #, no-wrap
 msgid "cddadr"
-msgstr ""
+msgstr "cddadr"
 
 #. type: findex
 #: original_texis/lists.texi:387
 #, no-wrap
 msgid "cdddar"
-msgstr ""
+msgstr "cdddar"
 
 #. type: findex
 #: original_texis/lists.texi:388
 #, no-wrap
 msgid "cddddr"
-msgstr ""
+msgstr "cddddr"
 
 #. type: Plain text
 #: original_texis/lists.texi:397
 msgid "In addition to the above, 24 additional compositions of @code{car} and @code{cdr} are defined as @code{c@var{xxx}r} and @code{c@var{xxxx}r}, where each @code{@var{x}} is either @code{a} or @code{d}.  @code{cadr}, @code{caddr}, and @code{cadddr} pick out the second, third or fourth elements of a list, respectively.  @file{cl-lib} provides the same under the names @code{cl-second}, @code{cl-third}, and @code{cl-fourth}.  @xref{List Functions,,, cl, Common Lisp Extensions}."
-msgstr ""
+msgstr "上記に加えて@code{c@var{xxx}r}や@code{c@var{xxxx}r}のような@code{car}と@code{cdr}で構成される24の関数が定義されています。ここで@code{@var{x}}は@code{a}か@code{d}のいずれかです。@code{cadr}と@code{caddr}と@code{cadddr}はそれぞれリストの2つ目、3つ目、4つ目の要素です。@file{cl-lib}は同じものを@code{cl-second}、@code{cl-third}、@code{cl-fourth}という名前で提供しています。@ref{List Functions,,, cl, Common Lisp Extensions}を参照してください。"
 
 #. type: defun
 #: original_texis/lists.texi:398
@@ -2779,17 +2779,14 @@ msgstr "いくつかの観点において、プロパティーリストは連想
 
 #. type: defun
 #: original_texis/lists.texi:1514
-#, fuzzy, no-wrap
-#| msgid "assoc-default key alist &optional test default"
+#, no-wrap
 msgid "assoc key alist &optional testfn"
-msgstr "assoc-default key alist &optional test default"
+msgstr "assoc key alist &optional testfn"
 
 #. type: defun
 #: original_texis/lists.texi:1521
-#, fuzzy
-#| msgid "This function returns the first association for @var{key} in @var{alist}, comparing @var{key} against the alist elements using @code{equal} (@pxref{Equality Predicates}).  It returns @code{nil} if no association in @var{alist} has a @sc{car} @code{equal} to @var{key}.  For example:"
 msgid "This function returns the first association for @var{key} in @var{alist}, comparing @var{key} against the alist elements using @var{testfn} if it is non-@code{nil} and @code{equal} otherwise (@pxref{Equality Predicates}).  It returns @code{nil} if no association in @var{alist} has a @sc{car} equal to @var{key}.  For example:"
-msgstr "この関数は、alist要素にたいして@var{key}を比較するのに@code{equal}を使用して、@var{alist}内から@var{key}をもつ最初の連想をリターンする。@sc{car}が@var{key}と@code{equal}であるような連想値が@var{alist}になければ、この関数は@code{nil}をリターンする。たとえば:"
+msgstr "この関数はalist要素にたいして非@code{nil}なら@var{testfn}、それ以外ならを使用して、@var{alist}内から@var{key}をもつ最初の連想をリターンする。@sc{car}が@var{key}と@code{equal}であるような連想値が@var{alist}になければ、この関数は@code{nil}をリターンする。たとえば:"
 
 #. type: smallexample
 #: original_texis/lists.texi:1531
@@ -2877,10 +2874,8 @@ msgstr "assq key alist"
 
 #. type: defun
 #: original_texis/lists.texi:1570
-#, fuzzy
-#| msgid "This function is like @code{assoc} in that it returns the first association for @var{key} in @var{alist}, but it makes the comparison using @code{eq} instead of @code{equal}.  @code{assq} returns @code{nil} if no association in @var{alist} has a @sc{car} @code{eq} to @var{key}.  This function is used more often than @code{assoc}, since @code{eq} is faster than @code{equal} and most alists use symbols as keys.  @xref{Equality Predicates}."
 msgid "This function is like @code{assoc} in that it returns the first association for @var{key} in @var{alist}, but it makes the comparison using @code{eq}.  @code{assq} returns @code{nil} if no association in @var{alist} has a @sc{car} @code{eq} to @var{key}.  This function is used more often than @code{assoc}, since @code{eq} is faster than @code{equal} and most alists use symbols as keys.  @xref{Equality Predicates}."
-msgstr "この関数は、@var{alist}から@var{key}をもつ最初の連想値をリターンする点は@code{assoc}と同様だが、比較に@code{equal}ではなく@code{eq}を使用する点が異なる。@sc{car}が@var{key}と@code{eq}であるような連想値が@var{alist}内に存在しなければ、@code{assq}は@code{nil}をリターンする。@code{eq}は@code{equal}より早く、ほとんどのalistはキーにシンボルを使用するので、この関数は@code{assoc}より多用される。@ref{Equality Predicates}を参照のこと。"
+msgstr "この関数は@var{alist}から@var{key}をもつ最初の連想値をリターンする点は@code{assoc}と同様だが、比較に@code{eq}を使用する点が異なる。@sc{car}が@var{key}と@code{eq}であるような連想値が@var{alist}内に存在しなければ@code{assq}は@code{nil}をリターンする。@code{eq}は@code{equal}より高速であり、ほとんどのalistはキーにシンボルを使用するので、この関数は@code{assoc}より多用される。@ref{Equality Predicates}を参照のこと。"
 
 #. type: smallexample
 #: original_texis/lists.texi:1576
@@ -2931,22 +2926,19 @@ msgstr ""
 
 #. type: defun
 #: original_texis/lists.texi:1593
-#, fuzzy, no-wrap
-#| msgid "alist-get key value &optional default remove"
+#, no-wrap
 msgid "alist-get key alist &optional default remove testfn"
-msgstr "alist-get key value &optional default remove"
+msgstr "alist-get key alist &optional default remove testfn"
 
 #. type: defun
 #: original_texis/lists.texi:1601
 msgid "This function is similar to @code{assq}.  It finds the first association @w{@code{(@var{key} . @var{value})}} by comparing @var{key} with @var{alist} elements, and, if found, returns the @var{value} of that association.  If no association is found, the function returns @var{default}.  Comparison of @var{key} against @var{alist} elements uses the function specified by @var{testfn}, defaulting to @code{eq}."
-msgstr ""
+msgstr "この関数は@code{assq}と似ている。これは@var{alist}の要素の@var{key}を比較して最初の連想@w{@code{(@var{key} . @var{value})}}を見つける。連想が見つからなければ、関数は@var{default}をリターンする。@var{alist}にたいする@var{key}の比較には@var{testfn}で指定された関数を使用する(デフォルトは@code{eq})。"
 
 #. type: defun
 #: original_texis/lists.texi:1607
-#, fuzzy
-#| msgid "This is a generalized variable (@pxref{Generalized Variables}) that can be used to change a value with @code{setf}.  When using it to set a value, optional argument @var{remove} non-nil means to remove @var{key} from @var{alist} if the new value is @code{eql} to @var{default}."
 msgid "This is a generalized variable (@pxref{Generalized Variables})  that can be used to change a value with @code{setf}.  When using it to set a value, optional argument @var{remove} non-@code{nil} means to remove @var{key}'s association from @var{alist} if the new value is @code{eql} to @var{default}."
-msgstr "これは@code{setf}での値の変更に使用できる汎変数である(@ref{Generalized Variables}を参照)。値の値へのセットにこれを使用する際、オプション引数@var{remove}が非nilの場合は、新たな値が@var{default}と@code{eql}なら、@var{alist}から@var{key}を削除することを意味する。"
+msgstr "これは@code{setf}での値の変更に使用できる汎変数(@ref{Generalized Variables}を参照)。値の値へのセットにこれを使用する際にオプション引数@var{remove}が@code{nil}の場合は、新たな値が@var{default}と@code{eql}なら@var{alist}から@var{key}の連想を削除することを意味する。"
 
 #. type: defun
 #: original_texis/lists.texi:1609
