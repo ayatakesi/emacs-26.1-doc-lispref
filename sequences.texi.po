@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-03-02 21:46+0900\n"
+"PO-Revision-Date: 2020-03-12 20:35+0900\n"
 "Last-Translator: Takeshi Ayanokoji <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: Japanese <h1r0p@outlook.jp>\n"
 "Language: ja\n"
@@ -396,10 +396,9 @@ msgstr "この関数は@code{aref} (@ref{Array Functions}を参照)と@code{nth}
 
 #. type: defun
 #: original_texis/sequences.texi:154
-#, fuzzy, no-wrap
-#| msgid "copy-sequence sequence"
+#, no-wrap
 msgid "copy-sequence seqr"
-msgstr "copy-sequence sequence"
+msgstr "copy-sequence seqr"
 
 #. type: cindex
 #: original_texis/sequences.texi:155
@@ -410,21 +409,17 @@ msgstr "copying sequences"
 #. type: defun
 #: original_texis/sequences.texi:162
 msgid "This function returns a copy of @var{seqr}, which should be either a sequence or a record.  The copy is the same type of object as the original, and it has the same elements in the same order.  However, if @var{seqr} is empty, like a string or a vector of zero length, the value returned by this function might not be a copy, but an empty object of the same type and identical to @var{seqr}."
-msgstr ""
+msgstr "この関数は@var{seqr} (シーケンスかレコードであること)のコピーをリターンする。コピーはオリジナルと同じオブジェクト型であり、同じ要素を同じ順序でもつ。しかし@var{seqr}が空なら長さが0の文字列やベクターと同じように関数がリターンする値はコピーではないかもしれないが、@var{seqr}と同じ型の空のオブジェクトである。"
 
 #. type: defun
 #: original_texis/sequences.texi:168
-#, fuzzy
-#| msgid "Storing a new element into the copy does not affect the original @var{sequence}, and vice versa.  However, the elements of the new sequence are not copies; they are identical (@code{eq}) to the elements of the original.  Therefore, changes made within these elements, as found via the copied sequence, are also visible in the original sequence."
 msgid "Storing a new element into the copy does not affect the original @var{seqr}, and vice versa.  However, the elements of the copy are not copies; they are identical (@code{eq}) to the elements of the original.  Therefore, changes made within these elements, as found via the copy, are also visible in the original."
-msgstr "コピーに新しい要素を格納するのは、元の@var{sequence}に影響を与えずその逆も真である。しかし新しいシーケンス内の要素がコピーされたものでなければ、元のシーケンスの要素と同一(@code{eq})になる。したがって、コピーされたシーケンスを介して見つかった要素を変更すると、この変更は元のシーケンスでも見ることができる。"
+msgstr "コピーに新しい要素を格納するのは元の@var{seqr}に影響を与えずその逆も真である。しかし新しいシーケンス内の要素はコピーではなく、元のシーケンスの要素と同一(@code{eq})になる。したがってコピーされたシーケンスを介して見つかった要素を変更するとオリジナルでも変更を見ることができる。"
 
 #. type: defun
 #: original_texis/sequences.texi:173
-#, fuzzy
-#| msgid "If the sequence is a string with text properties, the property list in the copy is itself a copy, not shared with the original's property list.  However, the actual values of the properties are shared.  @xref{Text Properties}."
 msgid "If the argument is a string with text properties, the property list in the copy is itself a copy, not shared with the original's property list.  However, the actual values of the properties are shared.  @xref{Text Properties}."
-msgstr "シーケンスがテキストプロパティーをもつ文字列なら、コピー内のプロパティーリスト自身もコピーとなり、元のシーケンスのプロパティーリストと共有はされない。しかしプロパティーリストの実際の値は共有される。@ref{Text Properties}を参照のこと。"
+msgstr "引数がテキストプロパティーをもつ文字列なら、コピー内のプロパティーリスト自身もコピーとなり、元のシーケンスのプロパティーリストと共有はされない。しかしプロパティーリストの実際の値は共有される。@ref{Text Properties}を参照のこと。"
 
 #. type: defun
 #: original_texis/sequences.texi:176
@@ -913,7 +908,7 @@ msgstr "seq library"
 #: original_texis/sequences.texi:428
 #, no-wrap
 msgid "sequences, generalized"
-msgstr ""
+msgstr "sequences, generalized"
 
 #. type: Plain text
 #: original_texis/sequences.texi:432
@@ -1180,17 +1175,14 @@ msgstr ""
 
 #. type: defun
 #: original_texis/sequences.texi:582
-#, fuzzy, no-wrap
-#| msgid "seq-map function sequence"
+#, no-wrap
 msgid "seq-map-indexed function sequence"
-msgstr "seq-map function sequence"
+msgstr "seq-map-indexed function sequence"
 
 #. type: defun
 #: original_texis/sequences.texi:586
-#, fuzzy
-#| msgid "This function returns the result of applying @var{function} to each element of @var{sequence}.  The returned value is a list."
 msgid "This function returns the result of applying @var{function} to each element of @var{sequence} and its index within @var{seq}.  The returned value is a list."
-msgstr "この関数は@var{sequence}の各要素に@var{function}を適用した結果をリターンする。リターン値はリスト。"
+msgstr "この関数は@var{sequence}の各要素および@var{seq}であるようなインデックスに@var{function}を適用した結果をリターンする。リターン値はリスト。"
 
 #. type: group
 #: original_texis/sequences.texi:593
@@ -1201,6 +1193,10 @@ msgid ""
 "                 '(a b c))\n"
 "@result{} ((0 a) (b 1) (c 2))\n"
 msgstr ""
+"(seq-map-indexed (lambda (elt idx)\n"
+"                   (list idx elt))\n"
+"                 '(a b c))\n"
+"@result{} ((0 a) (b 1) (c 2))\n"
 
 #. type: defun
 #: original_texis/sequences.texi:597
@@ -1464,16 +1460,13 @@ msgstr ""
 
 #. type: group
 #: original_texis/sequences.texi:733
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(seq-every-p #'numberp [2 4 6])\n"
-#| "@result{} t\n"
+#, no-wrap
 msgid ""
 "(seq-every-p #'numberp [2 4 \"6\"])\n"
 "@result{} nil\n"
 msgstr ""
-"(seq-every-p #'numberp [2 4 6])\n"
-"@result{} t\n"
+"(seq-every-p #'numberp [2 4 \"6\"])\n"
+"@result{} nil\n"
 
 #. type: defun
 #: original_texis/sequences.texi:737
@@ -1546,17 +1539,14 @@ msgstr "この関数は@var{function}に応じてソートされた@var{sequence
 
 #. type: defun
 #: original_texis/sequences.texi:769
-#, fuzzy, no-wrap
-#| msgid "seq-count predicate sequence"
+#, no-wrap
 msgid "seq-sort-by function predicate sequence"
-msgstr "seq-count predicate sequence"
+msgstr "seq-sort-by function predicate sequence"
 
 #. type: defun
 #: original_texis/sequences.texi:773
-#, fuzzy
-#| msgid "This function separates the elements of @var{sequence} into an alist whose keys are the result of applying @var{function} to each element of @var{sequence}.  Keys are compared using @code{equal}."
 msgid "This function is similar to @code{seq-sort}, but the elements of @var{sequence} are transformed by applying @var{function} on them before being sorted.  @var{function} is a function of one argument."
-msgstr "この関数は@var{sequence}の各要素に@var{function}を適用して、その結果をキーとして@var{sequence}をalistに分割する。キーの比較には@code{equal}を使用する。"
+msgstr "この関数は@code{seq-sort}と似ているがソート前に@var{sequence}の要素に@var{function}を適用して変換する点が異なる。@var{function}は単一の引数を受け取る関数。"
 
 #. type: example
 #: original_texis/sequences.texi:777
@@ -1565,6 +1555,8 @@ msgid ""
 "(seq-sort-by #'seq-length #'> [\"a\" \"ab\" \"abc\"])\n"
 "@result{} [\"abc\" \"ab\" \"a\"]\n"
 msgstr ""
+"(seq-sort-by #'seq-length #'> [\"a\" \"ab\" \"abc\"])\n"
+"@result{} [\"abc\" \"ab\" \"a\"]\n"
 
 #. type: defun
 #: original_texis/sequences.texi:781
@@ -1599,42 +1591,33 @@ msgstr ""
 
 #. type: defun
 #: original_texis/sequences.texi:799
-#, fuzzy, no-wrap
-#| msgid "seq-intersection sequence1 sequence2 &optional function"
+#, no-wrap
 msgid "seq-set-equal-p sequence1 sequence2 &optional testfn"
-msgstr "seq-intersection sequence1 sequence2 &optional function"
+msgstr "seq-set-equal-p sequence1 sequence2 &optional testfn"
 
 #. type: defun
 #: original_texis/sequences.texi:804
-#, fuzzy
-#| msgid "This function returns the first element in @var{sequence} that is equal to @var{elt}.  If the optional argument @var{function} is non-@code{nil}, it is a function of two arguments to use instead of the default @code{equal}."
 msgid "This function checks whether @var{sequence1} and @var{sequence2} contain the same elements, regardless of the order. If the optional argument @var{testfn} is non-@code{nil}, it is a function of two arguments to use instead of the default @code{equal}."
-msgstr "この関数は@var{sequence}内の@var{elt}と@code{equal}であるような最初の要素をリターンする。オプション引数@var{function}が非@code{nil}なら、それはデフォルトの@code{equal}のかわりに使用する2つの引数を受け取る関数であること。"
+msgstr "この関数は順序とは無関係に@var{sequence1}と@var{sequence2}が同じ要素を含むかどうかをチェックする。オプション引数@var{testfn}が非@code{nil}なら、デフォルトの@code{equal}のかわりに使用する2つの引数を受け取る関数であること。"
 
 #. type: group
 #: original_texis/sequences.texi:809
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(seq-position '(a b c) 'b)\n"
-#| "@result{} 1\n"
+#, no-wrap
 msgid ""
 "(seq-set-equal-p '(a b c) '(c b a))\n"
 "@result{} t\n"
 msgstr ""
-"(seq-position '(a b c) 'b)\n"
-"@result{} 1\n"
+"(seq-set-equal-p '(a b c) '(c b a))\n"
+"@result{} t\n"
 
 #. type: group
 #: original_texis/sequences.texi:813
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(seq-position '(a b c) 'd)\n"
-#| "@result{} nil\n"
+#, no-wrap
 msgid ""
 "(seq-set-equal-p '(a b c) '(c b))\n"
 "@result{} nil\n"
 msgstr ""
-"(seq-position '(a b c) 'd)\n"
+"(seq-set-equal-p '(a b c) '(c b))\n"
 "@result{} nil\n"
 
 #. type: group
@@ -1644,18 +1627,17 @@ msgid ""
 "(seq-set-equal-p '(\"a\" \"b\" \"c\") '(\"c\" \"b\" \"a\"))\n"
 "@result{} t\n"
 msgstr ""
+"(seq-set-equal-p '(\"a\" \"b\" \"c\") '(\"c\" \"b\" \"a\"))\n"
+"@result{} t\n"
 
 #. type: group
 #: original_texis/sequences.texi:821
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(seq-position '(a b c) 'd)\n"
-#| "@result{} nil\n"
+#, no-wrap
 msgid ""
 "(seq-set-equal-p '(\"a\" \"b\" \"c\") '(\"c\" \"b\" \"a\") #'eq)\n"
 "@result{} nil\n"
 msgstr ""
-"(seq-position '(a b c) 'd)\n"
+"(seq-set-equal-p '(\"a\" \"b\" \"c\") '(\"c\" \"b\" \"a\") #'eq)\n"
 "@result{} nil\n"
 
 #. type: defun
@@ -1712,16 +1694,13 @@ msgstr ""
 
 #. type: group
 #: original_texis/sequences.texi:858
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(seq-uniq '(1 2 2.0 1.0) #'=)\n"
-#| "@result{} [3 4]\n"
+#, no-wrap
 msgid ""
 "(seq-uniq '(1 2 2.0 1.0) #'=)\n"
 "@result{} (1 2)\n"
 msgstr ""
 "(seq-uniq '(1 2 2.0 1.0) #'=)\n"
-"@result{} [3 4]\n"
+"@result{} (1 2)\n"
 
 #. type: defun
 #: original_texis/sequences.texi:862
@@ -1731,10 +1710,9 @@ msgstr "seq-subseq sequence start &optional end"
 
 #. type: cindex
 #: original_texis/sequences.texi:863
-#, fuzzy, no-wrap
-#| msgid "sequence"
+#, no-wrap
 msgid "sub-sequence"
-msgstr "sequence"
+msgstr "sub-sequence"
 
 #. type: defun
 #: original_texis/sequences.texi:868
@@ -1854,13 +1832,13 @@ msgstr "seq-intersection sequence1 sequence2 &optional function"
 #: original_texis/sequences.texi:931
 #, no-wrap
 msgid "sequences, intersection of"
-msgstr ""
+msgstr "sequences, intersection of"
 
 #. type: cindex
 #: original_texis/sequences.texi:932
 #, no-wrap
 msgid "intersection of sequences"
-msgstr ""
+msgstr "intersection of sequences"
 
 #. type: defun
 #: original_texis/sequences.texi:937
@@ -1939,26 +1917,25 @@ msgstr "seq-into sequence type"
 #: original_texis/sequences.texi:979
 #, no-wrap
 msgid "convert sequence to another type"
-msgstr ""
+msgstr "convert sequence to another type"
 
 #. type: cindex
 #: original_texis/sequences.texi:980
 #, no-wrap
 msgid "list to vector"
-msgstr ""
+msgstr "list to vector"
 
 #. type: cindex
 #: original_texis/sequences.texi:981
-#, fuzzy, no-wrap
-#| msgid "vector length"
+#, no-wrap
 msgid "vector to list"
-msgstr "vector length"
+msgstr "vector to list"
 
 #. type: cindex
 #: original_texis/sequences.texi:982
 #, no-wrap
 msgid "string to vector"
-msgstr ""
+msgstr "string to vector"
 
 #. type: defun
 #: original_texis/sequences.texi:986
@@ -2003,17 +1980,15 @@ msgstr "seq-min sequence"
 
 #. type: cindex
 #: original_texis/sequences.texi:1004
-#, fuzzy, no-wrap
-#| msgid "elements of sequences"
+#, no-wrap
 msgid "minimum value of sequence"
-msgstr "elements of sequences"
+msgstr "minimum value of sequence"
 
 #. type: cindex
 #: original_texis/sequences.texi:1005
-#, fuzzy, no-wrap
-#| msgid "elt sequence index"
+#, no-wrap
 msgid "sequence minimum"
-msgstr "elt sequence index"
+msgstr "sequence minimum"
 
 #. type: defun
 #: original_texis/sequences.texi:1009
@@ -2048,16 +2023,15 @@ msgstr "seq-max sequence"
 
 #. type: cindex
 #: original_texis/sequences.texi:1023
-#, fuzzy, no-wrap
-#| msgid "elements of sequences"
+#, no-wrap
 msgid "maximum value of sequence"
-msgstr "elements of sequences"
+msgstr "maximum value of sequence"
 
 #. type: cindex
 #: original_texis/sequences.texi:1024
 #, no-wrap
 msgid "sequence maximum"
-msgstr ""
+msgstr "sequence maximum"
 
 #. type: defun
 #: original_texis/sequences.texi:1027
@@ -2100,7 +2074,7 @@ msgstr "sequence iteration"
 #: original_texis/sequences.texi:1042
 #, no-wrap
 msgid "iteration over vector or string"
-msgstr ""
+msgstr "iteration over vector or string"
 
 #. type: defmac
 #: original_texis/sequences.texi:1046
@@ -2183,17 +2157,14 @@ msgstr "@result{} [3 4]\n"
 
 #. type: defun
 #: original_texis/sequences.texi:1082
-#, fuzzy, no-wrap
-#| msgid "seq-length sequence"
+#, no-wrap
 msgid "seq-random-elt sequence"
-msgstr "seq-length sequence"
+msgstr "seq-random-elt sequence"
 
 #. type: defun
 #: original_texis/sequences.texi:1084
-#, fuzzy
-#| msgid "This function returns the largest element of @var{sequence}.  The elements of @var{sequence} must be numbers or markers."
 msgid "This function returns an element of @var{sequence} taken at random."
-msgstr "この関数は@var{sequence}の最大の要素をリターンする。@var{sequence}の要素は数字かマーカーでなければならない。"
+msgstr "この関数は@var{sequence}の要素をランダムにリターンする。"
 
 #. type: group
 #: original_texis/sequences.texi:1097
@@ -2210,11 +2181,21 @@ msgid ""
 "(seq-random-elt [1 2 3 4])\n"
 "@result{} 1\n"
 msgstr ""
+"(seq-random-elt [1 2 3 4])\n"
+"@result{} 3\n"
+"(seq-random-elt [1 2 3 4])\n"
+"@result{} 2\n"
+"(seq-random-elt [1 2 3 4])\n"
+"@result{} 4\n"
+"(seq-random-elt [1 2 3 4])\n"
+"@result{} 2\n"
+"(seq-random-elt [1 2 3 4])\n"
+"@result{} 1\n"
 
 #. type: defun
 #: original_texis/sequences.texi:1101
 msgid "If @var{sequence} is empty, this function signals an error."
-msgstr ""
+msgstr "@var{sequence}が空ならこの関数はエラーをシグナルする。"
 
 #. type: cindex
 #: original_texis/sequences.texi:1105
@@ -2334,10 +2315,9 @@ msgstr ""
 
 #. type: defun
 #: original_texis/sequences.texi:1193
-#, fuzzy, no-wrap
-#| msgid "aref array index"
+#, no-wrap
 msgid "aref arr index"
-msgstr "aref array index"
+msgstr "aref arr index"
 
 #. type: cindex
 #: original_texis/sequences.texi:1194
@@ -2347,10 +2327,8 @@ msgstr "array elements"
 
 #. type: defun
 #: original_texis/sequences.texi:1197
-#, fuzzy
-#| msgid "This function returns the @var{index}th element of @var{array}.  The first element is at index zero."
 msgid "This function returns the @var{index}th element of the array or record @var{arr}.  The first element is at index zero."
-msgstr "この関数は @var{array}の@var{index}番目の要素をリターンする。1番目の要素のインデクスは0。"
+msgstr "この関数は@var{arr} (配列かレコード)の@var{index}番目の要素をリターンする。1番目の要素のインデクスは0。"
 
 #. type: group
 #: original_texis/sequences.texi:1204
@@ -3095,10 +3073,8 @@ msgstr "bool-vector-subsetp a b"
 
 #. type: defun
 #: original_texis/sequences.texi:1640
-#, fuzzy
-#| msgid "Return @code{t} if every @code{t} value in @var{a} is also t in @var{b}, @code{nil} otherwise.  All arguments should be bool vectors of the same length."
 msgid "Return @code{t} if every @code{t} value in @var{a} is also @code{t} in @var{b}, @code{nil} otherwise.  All arguments should be bool vectors of the same length."
-msgstr "@var{a}内のすべての@code{t}値が、@var{b}でも@code{t}値なら@code{t}、それ以外は@code{nil}をリターンする。引数にはすべて同じ長さのブールベクターを指定すること。"
+msgstr "@var{a}内のすべての@code{t}値が@var{b}でも@code{t}値なら@code{t}、それ以外は@code{nil}をリターンする。引数にはすべて同じ長さのブールベクターを指定すること。"
 
 #. type: defun
 #: original_texis/sequences.texi:1642
