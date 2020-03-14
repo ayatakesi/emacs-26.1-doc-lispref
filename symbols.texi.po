@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-03-02 21:49+0900\n"
+"PO-Revision-Date: 2020-03-15 01:43+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -444,12 +444,12 @@ msgstr ""
 #: original_texis/symbols.texi:276
 #, no-wrap
 msgid "gensym &optional prefix"
-msgstr ""
+msgstr "gensym &optional prefix"
 
 #. type: defun
 #: original_texis/symbols.texi:280
 msgid "This function returns a symbol using @code{make-symbol}, whose name is made by appending @code{gensym-counter} to @var{prefix}.  The prefix defaults to @code{\"g\"}."
-msgstr ""
+msgstr "この関数は@code{make-symbol}を使用して@var{prefix}に@code{gensym-counter}を付加した名前のシンボルをリターンする。プレフィックスのデフォルトは@code{\"g\"}。"
 
 #. type: defun
 #: original_texis/symbols.texi:282
