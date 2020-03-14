@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:41+0900\n"
-"PO-Revision-Date: 2019-10-19 08:45+0900\n"
+"PO-Revision-Date: 2020-03-15 01:39+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -254,10 +254,8 @@ msgstr "ハッシュテーブルに連想を追加するとき、そのテーブ
 
 #. type: table
 #: original_texis/hash.texi:140
-#, fuzzy
-#| msgid "If @var{rehash-size} is an integer, it should be positive, and the hash table grows by adding that much to the nominal size.  If @var{rehash-size} is floating point, it had better be greater than 1, and the hash table grows by multiplying the old size by that number."
 msgid "If @var{rehash-size} is an integer, it should be positive, and the hash table grows by adding approximately that much to the nominal size.  If @var{rehash-size} is floating point, it had better be greater than 1, and the hash table grows by multiplying the old size by approximately that number."
-msgstr "@var{rehash-size}が整数の場合(それは正であるべきです)、通常のサイズに@var{rehash-size}を加えることにより、ハッシュテーブルが拡張されます。@var{rehash-size}が浮動小数の場合(1より大きい方がよい)は、古いサイズにその数を乗じることにより、ガッシュテーブルが拡張されます。"
+msgstr "@var{rehash-size}が整数(正であること)なら、通常のサイズに@var{rehash-size}に近い値を加えることによりハッシュテーブルが拡張される。@var{rehash-size}が浮動小数(1より大きい方がよい)なら、古いサイズにその数に近い値を乗じることによりハッシュテーブルが拡張される。"
 
 #. type: table
 #: original_texis/hash.texi:142
@@ -272,10 +270,8 @@ msgstr ":rehash-threshold @var{threshold}"
 
 #. type: table
 #: original_texis/hash.texi:150
-#, fuzzy
-#| msgid "This specifies the criterion for when the hash table is ``full'' (so it should be made larger).  The value, @var{threshold}, should be a positive floating-point number, no greater than 1.  The hash table is ``full'' whenever the actual number of entries exceeds this fraction of the nominal size.  The default for @var{threshold} is 0.8."
 msgid "This specifies the criterion for when the hash table is full (so it should be made larger).  The value, @var{threshold}, should be a positive floating-point number, no greater than 1.  The hash table is full whenever the actual number of entries exceeds the nominal size multiplied by an approximation to this value.  The default for @var{threshold} is 0.8125."
-msgstr "これは、ハッシュテーブルが``一杯(full)''(なのでもっと大きく拡張する必要がある)だと判断される基準を指定します。@var{threshold}の値は、1以下の、正の浮動小数点数であるべきです。実際のエントリー数が、通常のサイズにたいする指定した割合を超えた場合、そのハッシュテーブルは``一杯''になります。@var{threshold}のデフォルトは、0.8です。"
+msgstr "これはハッシュテーブルが一杯(なのでもっと大きく拡張する必要がある)だと判断される基準を指定する。@var{threshold}の値は1以下の正の浮動小数点数であること。実際のエントリー数が通常のサイズにたいする指定した割合に近い値を超えるとハッシュテーブルは一杯(full)になる。@var{threshold}のデフォルトは0.8125。"
 
 #. type: Plain text
 #: original_texis/hash.texi:160
@@ -457,10 +453,9 @@ msgstr "指定された関数は、プロパティー@code{hash-table-test}の�
 
 #. type: defun
 #: original_texis/hash.texi:272
-#, fuzzy, no-wrap
-#| msgid "sxhash obj"
+#, no-wrap
 msgid "sxhash-equal obj"
-msgstr "sxhash obj"
+msgstr "sxhash-equal obj"
 
 #. type: defun
 #: original_texis/hash.texi:276
@@ -469,64 +464,50 @@ msgstr "この関数はLispオブジェクト@var{obj}のハッシュコード�
 
 #. type: defun
 #: original_texis/hash.texi:280
-#, fuzzy
-#| msgid "If two objects @var{obj1} and @var{obj2} are equal, then @code{(sxhash @var{obj1})} and @code{(sxhash @var{obj2})} are the same integer."
 msgid "If two objects @var{obj1} and @var{obj2} are @code{equal}, then @code{(sxhash-equal @var{obj1})} and @code{(sxhash-equal @var{obj2})} are the same integer."
-msgstr "2つのオブジェクト@var{obj1}と@var{obj2}がequalの場合、@code{(sxhash @var{obj1})}と@code{(sxhash @var{obj2})}は同じ整数になります。"
+msgstr "2つのオブジェクト@var{obj1}と@var{obj2}が等しければ@code{(sxhash-equal @var{obj1})}と@code{(sxhash-equal @var{obj2})}は同じ整数になる。"
 
 #. type: defun
 #: original_texis/hash.texi:285
-#, fuzzy
-#| msgid "If the two objects are not equal, the values returned by @code{sxhash} are usually different, but not always; once in a rare while, by luck, you will encounter two distinct-looking objects that give the same result from @code{sxhash}."
 msgid "If the two objects are not @code{equal}, the values returned by @code{sxhash-equal} are usually different, but not always; once in a rare while, by luck, you will encounter two distinct-looking objects that give the same result from @code{sxhash-equal}."
-msgstr "2つのオブジェクトがequalでない場合、通常は@code{sxhash}がreturnする値は異なりますが、常に異なるとは限りません。稀にですが(運次第)、@code{sxhash}が同じ結果を与える、2つの異なって見えるオブジェクトに遭遇するかもしれません。"
+msgstr "2つのオブジェクトが@code{equal}でなければ通常は@code{sxhash-equal}がreturnする値は異なるが、常に異なるとは限らない。稀(運次第)に@code{sxhash-equal}が同じ結果を与える、2つの異なって見えるオブジェクトに遭遇するかもしれない。"
 
 #. type: defun
 #: original_texis/hash.texi:289
 msgid "@b{Common Lisp note:} In Common Lisp a similar function is called @code{sxhash}.  Emacs provides this name as a compatibility alias for @code{sxhash-equal}."
-msgstr ""
+msgstr "@b{Common Lispに関する注意: }Common Lispではこれに似た関数は@code{sxhash}と呼ばれる。Emacsは互換性のために@code{sxhash-equal}にたいするエイリアスとしてこの名前を提供している。"
 
 #. type: defun
 #: original_texis/hash.texi:291
-#, fuzzy, no-wrap
-#| msgid "sxhash obj"
+#, no-wrap
 msgid "sxhash-eq obj"
-msgstr "sxhash obj"
+msgstr "sxhash-eq obj"
 
 #. type: defun
 #: original_texis/hash.texi:294
-#, fuzzy
-#| msgid "This function returns a hash code for Lisp object @var{obj}.  This is an integer which reflects the contents of @var{obj} and the other Lisp objects it points to."
 msgid "This function returns a hash code for Lisp object @var{obj}.  Its result reflects identity of @var{obj}, but not its contents."
-msgstr "この関数は、Lispオブジェクト@var{obj}にたいするハッシュコードをreturnします。return値は、@var{obj}と、それが指す別のLispオブジェクトの内容を表す整数です。"
+msgstr "この関数はLispオブジェクト@var{obj}にたいするハッシュコードをリターンする。結果は@var{obj}の識別値でありコンテンツではない。"
 
 #. type: defun
 #: original_texis/hash.texi:298
-#, fuzzy
-#| msgid "If two objects @var{obj1} and @var{obj2} are equal, then @code{(sxhash @var{obj1})} and @code{(sxhash @var{obj2})} are the same integer."
 msgid "If two objects @var{obj1} and @var{obj2} are @code{eq}, then @code{(sxhash-eq @var{obj1})} and @code{(sxhash-eq @var{obj2})} are the same integer."
-msgstr "2つのオブジェクト@var{obj1}と@var{obj2}がequalの場合、@code{(sxhash @var{obj1})}と@code{(sxhash @var{obj2})}は同じ整数になります。"
+msgstr "2つのオブジェクト@var{obj1}と@var{obj2}が@code{eq}なら@code{(sxhash-eq @var{obj1})}と@code{(sxhash-eq @var{obj2})}は同じ整数。"
 
 #. type: defun
 #: original_texis/hash.texi:300
-#, fuzzy, no-wrap
-#| msgid "sxhash obj"
+#, no-wrap
 msgid "sxhash-eql obj"
-msgstr "sxhash obj"
+msgstr "sxhash-eql obj"
 
 #. type: defun
 #: original_texis/hash.texi:305
-#, fuzzy
-#| msgid "This function returns a hash code for Lisp object @var{obj}.  This is an integer which reflects the contents of @var{obj} and the other Lisp objects it points to."
 msgid "This function returns a hash code for Lisp object @var{obj} suitable for @code{eql} comparison.  I.e. it reflects identity of @var{obj} except for the case where the object is a float number, in which case hash code is generated for the value."
-msgstr "この関数は、Lispオブジェクト@var{obj}にたいするハッシュコードをreturnします。return値は、@var{obj}と、それが指す別のLispオブジェクトの内容を表す整数です。"
+msgstr "この関数は@code{eql}による比較に適したLispオブジェクト@var{obj}にたいするハッシュコードをリターンする。つまり浮動小数点数以外の@var{obj}ならそれにたいする識別値(浮動小数点数ならその値にたいするハッシュコード)を生成する。"
 
 #. type: defun
 #: original_texis/hash.texi:309
-#, fuzzy
-#| msgid "If two objects @var{obj1} and @var{obj2} are equal, then @code{(sxhash @var{obj1})} and @code{(sxhash @var{obj2})} are the same integer."
 msgid "If two objects @var{obj1} and @var{obj2} are @code{eql}, then @code{(sxhash-eql @var{obj1})} and @code{(sxhash-eql @var{obj2})} are the same integer."
-msgstr "2つのオブジェクト@var{obj1}と@var{obj2}がequalの場合、@code{(sxhash @var{obj1})}と@code{(sxhash @var{obj2})}は同じ整数になります。"
+msgstr "2つのオブジェクト@var{obj1}と@var{obj2}が@code{eql}なら@code{(sxhash-eql @var{obj1})}と@code{(sxhash-eql @var{obj2})}は同じ整数。"
 
 #. type: Plain text
 #: original_texis/hash.texi:313
@@ -535,13 +516,7 @@ msgstr "以下はlcaseを区別しない文字列のキーをもつハッシュ�
 
 #. type: example
 #: original_texis/hash.texi:319
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(defun case-fold-string= (a b)\n"
-#| "  (eq t (compare-strings a nil nil b nil nil t)))\n"
-#| "(defun case-fold-string-hash (a)\n"
-#| "  (sxhash (upcase a)))\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "(defun case-fold-string= (a b)\n"
 "  (eq t (compare-strings a nil nil b nil nil t)))\n"
@@ -552,7 +527,7 @@ msgstr ""
 "(defun case-fold-string= (a b)\n"
 "  (eq t (compare-strings a nil nil b nil nil t)))\n"
 "(defun case-fold-string-hash (a)\n"
-"  (sxhash (upcase a)))\n"
+"  (sxhash-equal (upcase a)))\n"
 "\n"
 
 #. type: example
@@ -580,16 +555,11 @@ msgstr "以下は事前に定義されたテスト値@code{equal}と等価なテ
 
 #. type: example
 #: original_texis/hash.texi:332
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(define-hash-table-test 'contents-hash 'equal 'sxhash)\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "(define-hash-table-test 'contents-hash 'equal 'sxhash-equal)\n"
 "\n"
-msgstr ""
-"(define-hash-table-test 'contents-hash 'equal 'sxhash)\n"
-"\n"
+msgstr "(define-hash-table-test 'contents-hash 'equal 'sxhash-equal)\n\n"
 
 #. type: example
 #: original_texis/hash.texi:334
