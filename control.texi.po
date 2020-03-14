@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:40+0900\n"
-"PO-Revision-Date: 2020-03-02 22:23+0900\n"
+"PO-Revision-Date: 2020-03-15 05:37+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -529,7 +529,7 @@ msgstr "pcase expression &rest clauses"
 #. type: defmac
 #: original_texis/control.texi:322
 msgid "Evaluate @var{expression} and choose among an arbitrary number of alternatives based on the value of @var{expression}.  The possible alternatives are specified by @var{clauses}, each of which must be a list of the form @code{(@var{pattern} @var{body-forms}@dots{})}.  @code{pcase} tries to match the value of @var{expression} to the @var{pattern} of each clause, in textual order.  If the value matches, the clause succeeds; @code{pcase} then evaluates its @var{body-forms}, and returns the value of the last of @var{body-forms}.  Any remaining @var{clauses} are ignored.  If no clauses match, then the @code{pcase} form evaluates to @code{nil}."
-msgstr ""
+msgstr "@var{expression}を評価して@var{expression}の値にもとづいて任意の個数の選択肢から選択を行う。可能な選択肢は@var{clauses}で指定する。それらは@code{(@var{pattern} @var{body-forms}@dots{})}という形式のリストでなければならない。@code{pcase}は@var{expression}の値と各clauseの@var{pattern}にたいしてテキスト順でマッチを試みる。値がマッチしたらそのclauseは成功となり@code{pcase}はその@code{pcase}clauseの@var{body-forms}を評価して、@var{body-forms}の最後の値をリターンする。@var{clauses}の残りはすべて無視される。マッチがなければ@code{pcase}フォームは@code{nil}に評価される。"
 
 #. type: defmac
 #: original_texis/control.texi:327
@@ -1787,7 +1787,7 @@ msgstr "2つの引数 --- エラーシンボル@code{error}と@code{format-messa
 #. type: defun
 #: original_texis/control.texi:1109
 msgid "Typically grave accent and apostrophe in the format translate to matching curved quotes, e.g., @t{\"Missing `%s'\"} might result in @t{\"Missing ‘foo’\"}.  @xref{Text Quoting Style}, for how to influence or inhibit this translation."
-msgstr ""
+msgstr "@t{\"Missing `%s'\"}が@t{\"Missing ‘foo’\"}となるように、通常はフォーマット内のgrave accentとapostropheはマッチするcurved quotesに変換される。この変換の効果や抑制については@ref{Text Quoting Style}を参照のこと。"
 
 #. type: defun
 #: original_texis/control.texi:1115
