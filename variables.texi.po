@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1-\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-03-02 22:58+0900\n"
+"PO-Revision-Date: 2020-03-16 21:13+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -129,16 +129,15 @@ msgstr "変数に新しい値を格納する。"
 
 #. type: node
 #: original_texis/variables.texi:47 original_texis/variables.texi:809
-#, fuzzy, no-wrap
-#| msgid "Setting Variables"
+#, no-wrap
 msgid "Watching Variables"
-msgstr "Setting Variables"
+msgstr "Watching Variables"
 
 #. type: section
 #: original_texis/variables.texi:47 original_texis/variables.texi:810
 #, no-wrap
 msgid "Running a function when a variable is changed."
-msgstr ""
+msgstr "変数が変更されたときに実行される関数。"
 
 #. type: node
 #: original_texis/variables.texi:47 original_texis/variables.texi:869
@@ -190,17 +189,14 @@ msgstr "ディレクトリー内のすべてのファイルで共通のローカ
 #. type: section
 #: original_texis/variables.texi:47 original_texis/variables.texi:2058
 #: original_texis/variables.texi:2059
-#, fuzzy, no-wrap
-#| msgid "Directory Local Variables"
+#, no-wrap
 msgid "Connection Local Variables"
-msgstr "Directory Local Variables"
+msgstr "Connection Local Variables"
 
 #. type: menuentry
 #: original_texis/variables.texi:47
-#, fuzzy
-#| msgid "Local variables common to all files in a directory."
 msgid "Local variables common for remote connections."
-msgstr "ディレクトリー内のすべてのファイルで共通のローカル変数。"
+msgstr "リモート接続で共通なローカル変数。"
 
 #. type: section
 #: original_texis/variables.texi:47 original_texis/variables.texi:2220
@@ -403,12 +399,12 @@ msgstr "これらの定数はスペシャルフォーム@code{defconst}(@ref{Def
 #: original_texis/variables.texi:142
 #, no-wrap
 msgid "read-only variables"
-msgstr ""
+msgstr "read-only variables"
 
 #. type: Plain text
 #: original_texis/variables.texi:148
 msgid "A small number of additional symbols are made read-only for various practical reasons.  These include @code{enable-multibyte-characters}, @code{most-positive-fixnum}, @code{most-negative-fixnum}, and a few others.  Any attempt to set or bind these also signals a @code{setting-constant} error."
-msgstr ""
+msgstr "現実的な種々の理由により、追加で少数のシンボルが読み取り専用になります。これらには@code{enable-multibyte-characters}、@code{most-positive-fixnum}、@code{most-negative-fixnum}の他にいくつかのシンボルが含まれます。これらにたいしてセットやバインドを試みると、すべて@code{setting-constant}エラーがシグナルされます。"
 
 #. type: cindex
 #: original_texis/variables.texi:151
@@ -441,10 +437,8 @@ msgstr "グローバル変数は新しい値で明示的に置き換えるまで
 
 #. type: Plain text
 #: original_texis/variables.texi:169
-#, fuzzy
-#| msgid "For example, when a function is called, its argument variables receive local values, which are the actual arguments supplied to the function call; these local bindings take effect within the body of the function.  To take another example, the @code{let} special form explicitly establishes local bindings for specific variables, which take effect within the body of the @code{let} form."
 msgid "For example, when a function is called, its argument variables receive local values, which are the actual arguments supplied to the function call; these local bindings take effect within the body of the function.  To take another example, the @code{let} special form explicitly establishes local bindings for specific variables, which take effect only within the body of the @code{let} form."
-msgstr "たとえば、関数が呼び出されるとき、関数の引数となる変数はローカル値(その関数の呼び出しにおいて実際の引数に与えられた値)を受け取ります。これらのローカルバインディングは、その関数のbody内で効果をもちます。他にも、たとえばスペシャルフォーム@code{let}は特定の変数にたいして明示的にローカルなバインディングを確立し、これは@code{let}フォームのbody内で効果を持ちます。"
+msgstr "たとえば関数が呼び出されるとき、関数の引数となる変数はローカル値(その関数の呼び出しにおいて実際の引数に与えられた値)を受け取ります。これらのローカルバインディングは関数のbody内で効果をもちます。他にもたとえばスペシャルフォーム@code{let}は特定の変数にたいして明示的にローカルなバインディングを確立して、これは@code{let}フォームのbody内だけで効果を持ちます。"
 
 #. type: Plain text
 #: original_texis/variables.texi:172
@@ -491,10 +485,8 @@ msgstr "let (bindings@dots{}) forms@dots{}"
 
 #. type: defspec
 #: original_texis/variables.texi:209
-#, fuzzy
-#| msgid "This special form sets up local bindings for a certain set of variables, as specified by @var{bindings}, and then evaluates all of the @var{forms} in textual order.  Its return value is the value of the last form in @var{forms}."
 msgid "This special form sets up local bindings for a certain set of variables, as specified by @var{bindings}, and then evaluates all of the @var{forms} in textual order.  Its return value is the value of the last form in @var{forms}.  The local bindings set up by @code{let} will be in effect only within the body of @var{forms}."
-msgstr "このスペシャルフォームは、@var{bindings}により指定される特定の変数セットにたいするローカルバインディングをセットアップしてから、@var{forms}のすべてをテキスト順に評価します。これは@var{forms}内の最後のフォームの値をreturnします。"
+msgstr "このスペシャルフォームは@var{bindings}により指定される特定の変数セットにたいするローカルバインディングをセットアップしてから、@var{forms}のすべてをテキスト順に評価する。これは@var{forms}内の最後のフォームの値をリターンする。@code{let}がセットアップしたローカルバインディングは@var{forms}のbody内でのみ効果をもつ。"
 
 #. type: defspec
 #: original_texis/variables.texi:215
@@ -876,7 +868,7 @@ msgstr "@var{value}が指定されていて@var{symbol}がvoid(たとえばこ�
 #. type: defspec
 #: original_texis/variables.texi:453
 msgid "Note that specifying a value, even @code{nil}, marks the variable as special permanently.  Whereas if @var{value} is omitted then the variable is only marked special locally (i.e.@: within the current lexical scope, or file if at the top-level).  This can be useful for suppressing byte compilation warnings, see @ref{Compiler Errors}."
-msgstr ""
+msgstr "たとえ@code{nil}であっても値を指定することにより、その変数は特別だと永続的にマークされることに注意。一方で@var{value}が省略されると変数はローカル(カレントのレキシカルスコープまたはトップレベルにあればファイル)でのみ特別だとマークされる。これはバイトコンパイルの警告を抑止するために有用。@ref{Compiler Errors}を参照のこと。"
 
 #. type: defspec
 #: original_texis/variables.texi:458
@@ -938,7 +930,7 @@ msgstr "@code{defvar}フォームは@var{symbol}をリターンするが、こ�
 #. type: defspec
 #: original_texis/variables.texi:499
 msgid "For a more elaborate example of using @code{defvar} without a value, see @ref{Local defvar example}."
-msgstr ""
+msgstr "値をもたない@code{defvar}のより詳細な使用例は@ref{Local defvar example}を参照のこと。"
 
 #. type: defspec
 #: original_texis/variables.texi:502
@@ -1136,19 +1128,18 @@ msgstr ""
 #. type: table
 #: original_texis/variables.texi:599
 msgid "The variable is intended for internal use and is defined in the file @file{@var{prefix}.el}.  (Emacs code contributed before 2018 may follow other conventions, which are being phased out.)"
-msgstr ""
+msgstr "これは内部的な使用を意図した変数でありファイル@file{@var{prefix}.el}内で定義される(他の規約にしたがうかもしれない2018年以前に貢献されたEmacsコードは段階的に廃止される)。"
 
 #. type: item
 #: original_texis/variables.texi:600
-#, fuzzy, no-wrap
-#| msgid "@dots{}-function"
+#, no-wrap
 msgid "@dots{}-internal"
-msgstr "@dots{}-function"
+msgstr "@dots{}-internal"
 
 #. type: table
 #: original_texis/variables.texi:604
 msgid "The variable is intended for internal use and is defined in C code.  (Emacs code contributed before 2018 may follow other conventions, which are being phased out.)"
-msgstr ""
+msgstr "これは内部的な使用を意図した変数でありファイルCコード内で定義される(他の規約にしたがうかもしれない2018年以前に貢献されたEmacsコードは段階的に廃止される)。"
 
 #. type: Plain text
 #: original_texis/variables.texi:608
@@ -1503,98 +1494,94 @@ msgstr ""
 
 #. type: cindex
 #: original_texis/variables.texi:811
-#, fuzzy, no-wrap
-#| msgid "variable with constant value"
+#, no-wrap
 msgid "variable watchpoints"
-msgstr "variable with constant value"
+msgstr "variable watchpoints"
 
 #. type: cindex
 #: original_texis/variables.texi:812
 #, no-wrap
 msgid "watchpoints for Lisp variables"
-msgstr ""
+msgstr "watchpoints for Lisp variables"
 
 #. type: Plain text
 #: original_texis/variables.texi:819
 msgid "It is sometimes useful to take some action when a variable changes its value.  The watchpoint facility provides the means to do so.  Some possible uses for this feature include keeping display in sync with variable settings, and invoking the debugger to track down unexpected changes to variables (@pxref{Variable Debugging})."
-msgstr ""
+msgstr "変数の値が変化したときに何らかのアクションを行えれば便利なときがあります。watchpoint機能はそのための機能を提供します。この機能の有効な利用方法としては変数セッティングと表示の同期、変数への予期せぬ変更を追跡するためのデバッガの呼び出しが含まれます(@ref{Variable Debugging}を参照)。"
 
 #. type: Plain text
 #: original_texis/variables.texi:822
 msgid "The following functions may be used to manipulate and query the watch functions for a variable."
-msgstr ""
+msgstr "以下の関数は関数にたいするwatch関数の操作や問い合わせに使用できます。"
 
 #. type: defun
 #: original_texis/variables.texi:823
 #, no-wrap
 msgid "add-variable-watcher symbol watch-function"
-msgstr ""
+msgstr "add-variable-watcher symbol watch-function"
 
 #. type: defun
 #: original_texis/variables.texi:827
 msgid "This function arranges for @var{watch-function} to be called whenever @var{symbol} is modified.  Modifications through aliases (@pxref{Variable Aliases}) will have the same effect."
-msgstr ""
+msgstr "この関数は@var{symbol}が変化したときは常に@var{watch-function}が呼び出されるようにアレンジする。エイリアスを介した変更にも同じ効果をもつ(@ref{Variable Aliases}を参照)。"
 
 #. type: defun
 #: original_texis/variables.texi:830
 msgid "@var{watch-function} will be called with 4 arguments: (@var{symbol} @var{newval} @var{operation} @var{where})."
-msgstr ""
+msgstr "@var{watch-function}は4つの引数で呼び出される(@var{symbol} @var{newval} @var{operation} @var{where})。"
 
 #. type: defun
 #: original_texis/variables.texi:837
 msgid "@var{symbol} is the variable being changed.  @var{newval} is the value it will be changed to.  @var{operation} is a symbol representing the kind of change, one of: `set', `let', `unlet', `makunbound', and `defvaralias'.  @var{where} is a buffer if the buffer-local value of the variable is being changed, @code{nil} otherwise."
-msgstr ""
+msgstr "@var{symbol}は変更された変数、@var{newval}は変更される新しい値、@var{operation}は変更の種別を表すシンボルであり`set'、`let'、`unlet'、`makunbound'、`defvaralias'のいずれか。@var{where}はその変数のバッファーローカル値が変更された場合にはバッファー、それ以外なら@code{nil}。"
 
 #. type: defun
 #: original_texis/variables.texi:839
 #, no-wrap
 msgid "remove-variable-watch symbol watch-function"
-msgstr ""
+msgstr "remove-variable-watch symbol watch-function"
 
 #. type: defun
 #: original_texis/variables.texi:842
 msgid "This function removes @var{watch-function} from @var{symbol}'s list of watchers."
-msgstr ""
+msgstr "この関数は@var{symbol}のwatcherリストから@var{watch-function}を削除する。"
 
 #. type: defun
 #: original_texis/variables.texi:844
-#, fuzzy, no-wrap
-#| msgid "special-variable-p symbol"
+#, no-wrap
 msgid "get-variable-watchers symbol"
-msgstr "special-variable-p symbol"
+msgstr "get-variable-watchers symbol"
 
 #. type: defun
 #: original_texis/variables.texi:847
-#, fuzzy
-#| msgid "This function returns non-@code{nil} if @var{sym} is a risky variable, based on the above criteria."
 msgid "This function returns the list of @var{symbol}'s active watcher functions."
-msgstr "この関数は、@var{sym}が上記の条件にもとづき危険な変数の場合は、非非@code{nil}をreturnします。"
+msgstr "この関数は@var{symbol}のアクティブなwatcher関数のリストをリターンする。"
 
 #. type: subsection
 #: original_texis/variables.texi:849
 #, no-wrap
 msgid "Limitations"
-msgstr ""
+msgstr "Limitations"
 
 #. type: Plain text
 #: original_texis/variables.texi:853
 msgid "There are a couple of ways in which a variable could be modified (or at least appear to be modified) without triggering a watchpoint."
-msgstr ""
+msgstr "watchpointをトリガーせずに変数が変更される(または少なくとも変更されたように見える)方法がいくつかあります。"
 
 #. type: Plain text
 #: original_texis/variables.texi:857
 msgid "Since watchpoints are attached to symbols, modification to the objects contained within variables (e.g., by a list modification function @pxref{Modifying Lists}) is not caught by this mechanism."
-msgstr ""
+msgstr "watchpointはシンボルにアタッチされるので変数内に含まれるオブジェクトの変更(リスト変更関数による変更。@ref{Modifying Lists}を参照のこと)はこのメカニズムにより検出されません。"
 
 #. type: Plain text
 #: original_texis/variables.texi:860
 msgid "Additionally, C code can modify the value of variables directly, bypassing the watchpoint mechanism."
-msgstr ""
+msgstr "さらにCのコードはwatchpointメカニズムをバイパスして変数の値を直接変更できます。"
 
 #. type: Plain text
 #: original_texis/variables.texi:867
 msgid "A minor limitation of this feature, again because it targets symbols, is that only variables of dynamic scope may be watched.  This poses little difficulty, since modifications to lexical variables can be discovered easily by inspecting the code within the scope of the variable (unlike dynamic variables, which can be modified by any code at all, @pxref{Variable Scoping})."
-msgstr ""
+msgstr "繰り返しになりますがこれはシンボルをターゲットとするので、この機能のマイナーな制限はダイナミックなスコープをもつ変数だけをウォッチできるということです。レキシカル変数への変更は変数スコープ内のコードを調べれば容易に発見できるので、これが問題をもたらすことは稀でしょう(結局のところいかなるコードからも変更され得るダイナミック変数とは異なる。@ref{Variable Scoping}を参照のこと)。"
 
 #. type: section
 #: original_texis/variables.texi:870
@@ -1877,10 +1864,8 @@ msgstr "ある変数がグローバルな定義をもたなければ、ローカ
 
 #. type: itemize
 #: original_texis/variables.texi:1014
-#, fuzzy
-#| msgid "Otherwise, define the variable with @code{defvar}, @code{defconst}, or @code{defcustom}.  @xref{Defining Variables}.  Usually, the definition should be at top-level in an Emacs Lisp file.  As far as possible, it should include a documentation string which explains the meaning and purpose of the variable.  You should also choose the variable's name to avoid name conflicts (@pxref{Coding Conventions})."
 msgid "Otherwise, define the variable with @code{defvar}, @code{defconst} (@pxref{Defining Variables}), or @code{defcustom} (@pxref{Variable Definitions}).  Usually, the definition should be at top-level in an Emacs Lisp file.  As far as possible, it should include a documentation string which explains the meaning and purpose of the variable.  You should also choose the variable's name to avoid name conflicts (@pxref{Coding Conventions})."
-msgstr "それ以外では、@code{defvar}、@code{defconst}、@code{defcustom}で変数を定義します。@ref{Defining Variables}を参照してください。この定義は通常、Emacs Lispファイル内のトップレベルにあるべきです。この定義には可能な限り、変数の意味と目的を説明するドキュメント文字列を含めるべきです。名前の衝突を避けるように、変数を命名することも行うべきです(@ref{Coding Conventions}を参照してください)。"
+msgstr "それ以外では@code{defvar}、@code{defconst} (@ref{Defining Variables}を参照)、@code{defcustom} (@ref{Variable Definitions}を参照)で変数を定義する。この定義は通常はEmacs Lispファイル内のトップレベルであること。この定義には可能な限り変数の意味と目的を説明するドキュメント文字列を含めること。また名前の衝突を避けるように変数を命名すること(@ref{Coding Conventions}を参照)。"
 
 #. type: itemize
 #: original_texis/variables.texi:1020
@@ -1894,12 +1879,7 @@ msgstr "たとえば@code{case-fold-search}のようなカスタマイズ可能�
 
 #. type: group
 #: original_texis/variables.texi:1030
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(defun search-for-abc ()\n"
-#| "  \"Search for the string \\\"abc\\\", ignoring case differences.\"\n"
-#| "  (let ((case-fold-search nil))\n"
-#| "    (re-search-forward \"abc\")))\n"
+#, no-wrap
 msgid ""
 "(defun search-for-abc ()\n"
 "  \"Search for the string \\\"abc\\\", ignoring case differences.\"\n"
@@ -1908,15 +1888,13 @@ msgid ""
 msgstr ""
 "(defun search-for-abc ()\n"
 "  \"Search for the string \\\"abc\\\", ignoring case differences.\"\n"
-"  (let ((case-fold-search nil))\n"
+"  (let ((case-fold-search t))\n"
 "    (re-search-forward \"abc\")))\n"
 
 #. type: Plain text
 #: original_texis/variables.texi:1043
-#, fuzzy
-#| msgid "Lexical binding was introduced to Emacs, as an optional feature, in version 24.1.  We expect its importance to increase in the future.  Lexical binding opens up many more opportunities for optimization, so programs using it are likely to run faster in future Emacs versions.  Lexical binding is also more compatible with concurrency, which we want to add to Emacs in the future."
 msgid "Lexical binding was introduced to Emacs, as an optional feature, in version 24.1.  We expect its importance to increase with time.  Lexical binding opens up many more opportunities for optimization, so programs using it are likely to run faster in future Emacs versions.  Lexical binding is also more compatible with concurrency, which was added to Emacs in version 26.1."
-msgstr "Emacsのバージョン24.1から、オプションの機能としてレキシカルバインディングが導入されました。わたしたちは、この機能の重要さが、将来において重要になることを期待します。レキシカルバインディングは最適化の機会をより広げるので、この機能を使用するプログラムはおそらく、将来のEmacsバージョンで高速に実行されるようになるでしょう。レキシカルバインディングは、わたしたちがEmacsに将来追加したいと考える並列性(concurrency)とも互換をもっています。"
+msgstr "Emacsのバージョン24.1からオプションの機能としてレキシカルバインディングが導入されました。わたしたちはこの機能の重要性が時とともに増加することを期待します。レキシカルバインディングは最適化の機会をより広げるので、この機能を使用するプログラムはおそらく将来のEmacsバージョンで高速に実行されるようになるでしょう。レキシカルバインディングは、わたしたちがバージョン26。1のEmacsで追加した並列性(concurrency)とも互換があります。"
 
 #. type: Plain text
 #: original_texis/variables.texi:1047
@@ -2117,12 +2095,12 @@ msgstr "レキシカルバインディングが有効な場合でも、特定の
 #. type: anchor{#1}
 #: original_texis/variables.texi:1180
 msgid "Local defvar example"
-msgstr ""
+msgstr "Local defvar example"
 
 #. type: Plain text
 #: original_texis/variables.texi:1180
 msgid "Using @code{defvar} without a value, it is possible to bind a variable dynamically just in one file, or in just one part of a file while still binding it lexically elsewhere.  For example:"
-msgstr ""
+msgstr "値なしで@code{defvar}を使用することにより、他の場所ではレキシカルにバインドされている状態のまま、単一ファイルやファイルの一部だけで変数をダイナミックにバインドすることが可能になります。たとえば:"
 
 #. type: group
 #: original_texis/variables.texi:1188
@@ -2135,6 +2113,12 @@ msgid ""
 "      x)))\n"
 "\n"
 msgstr ""
+"(let (_)\n"
+"  (defvar x)      ; @r{@code{x}へのletバインドはこのlet内ではダイナミック}\n"
+"  (let ((x -99))  ; @r{これは@code{x}のダイナミックバインド}\n"
+"    (defun get-dynamic-x ()\n"
+"      x)))\n"
+"\n"
 
 #. type: group
 #: original_texis/variables.texi:1192
@@ -2145,6 +2129,10 @@ msgid ""
 "    x))\n"
 "\n"
 msgstr ""
+"(let ((x 'lexical)) ; @r{これは@code{x}のレキシカルバインド}\n"
+"  (defun get-lexical-x ()\n"
+"    x))\n"
+"\n"
 
 #. type: group
 #: original_texis/variables.texi:1199
@@ -2157,6 +2145,12 @@ msgid ""
 "          (get-dynamic-x))))\n"
 "    @result{} (lexical dynamic)\n"
 msgstr ""
+"(let (_)\n"
+"  (defvar x)\n"
+"  (let ((x 'dynamic))\n"
+"    (list (get-lexical-x)\n"
+"          (get-dynamic-x))))\n"
+"    @result{} (lexical dynamic)\n"
 
 #. type: defun
 #: original_texis/variables.texi:1202
@@ -2198,10 +2192,8 @@ msgstr "どの変数が変数定義をもつ必要があるか見つけるシン
 
 #. type: Plain text
 #: original_texis/variables.texi:1236
-#, fuzzy
-#| msgid "(To silence byte-compiler warnings about unused variables, just use a variable name that start with an underscore.  The byte-compiler interprets this as an indication that this is a variable known not to be used.)"
 msgid "(To silence byte-compiler warnings about unused variables, just use a variable name that starts with an underscore.  The byte-compiler interprets this as an indication that this is a variable known not to be used.)"
-msgstr "(使用されていない変数についての警告を抑制するためには、単に変数名をアンダースコアーで開始します。そうすれば、バイトコンパイラーはこれを、変数が使用されないことを示すと解釈します。)"
+msgstr "(使用されていない変数についての警告を抑制するためには単に変数名をアンダースコアーで開始する。そうすればバイトコンパイラーは変数が使用されないことを示すと解釈する。)"
 
 #. type: cindex
 #: original_texis/variables.texi:1239
@@ -2461,7 +2453,7 @@ msgstr "変数を@code{let}バインディングでバッファーローカル�
 #. type: deffn
 #: original_texis/variables.texi:1402 original_texis/variables.texi:1444
 msgid "It is an error to make a constant or a read-only variable buffer-local.  @xref{Constant Variables}."
-msgstr ""
+msgstr "定数や読み取り専用の変数をバッファーローカルにするとエラーになる。@ref{Constant Variables}を参照のこと。"
 
 #. type: deffn
 #: original_texis/variables.texi:1406
@@ -3086,10 +3078,9 @@ msgstr "これは正規表現のリストである。ファイルがこのリス
 
 #. type: defun
 #: original_texis/variables.texi:1791
-#, fuzzy, no-wrap
-#| msgid "hack-local-variables &optional mode-only"
+#, no-wrap
 msgid "hack-local-variables &optional handle-mode"
-msgstr "hack-local-variables &optional mode-only"
+msgstr "hack-local-variables &optional handle-mode"
 
 #. type: defun
 #: original_texis/variables.texi:1798
@@ -3103,10 +3094,8 @@ msgstr "この関数は@code{file-local-variables-alist}内に格納されたali
 
 #. type: defun
 #: original_texis/variables.texi:1817
-#, fuzzy
-#| msgid "If the optional argument @var{mode-only} is non-@code{nil}, then all this function does is return a symbol specifying the major mode, if the @w{@samp{-*-}} line or the local variables list specifies one, and @code{nil} otherwise.  It does not set the mode nor any other file-local variable."
 msgid "If the optional argument @var{handle-mode} is @code{t}, then all this function does is return a symbol specifying the major mode, if the @w{@samp{-*-}} line or the local variables list specifies one, and @code{nil} otherwise.  It does not set the mode or any other file-local variable.  If @var{handle-mode} has any value other than @code{nil} or @code{t}, any settings of @samp{mode} in the @w{@samp{-*-}} line or the local variables list are ignored, and the other settings are applied.  If @var{handle-mode} is @code{nil}, all the file local variables are set."
-msgstr "オプションの引数@var{mode-only}が非@code{nil}の場合、この関数が行うのはメジャーモードを指定するシンボルをreturnするのがすべてで、@w{@samp{-*-}}行またはローカル変数リストがメジャーモードを指定していればそのモード、それ以外は@code{nil}をreturnします。この関数はモードや他のファイルローカル変数をセットしません。"
+msgstr "オプションの引数@var{handle-mode}が@code{t}なら、この関数が行うのはメジャーモードを指定するシンボルをリターンすることだけであり、@w{@samp{-*-}}行やローカル変数リストがメジャーモードを指定していればそのモード、それ以外は@code{nil}をリターンする。この関数はモードや他のファイルローカル変数をセットしない。@var{handle-mode}の値が@code{nil}と@code{t}のいずれでもなければ@w{@samp{-*-}}行の@samp{mode}に関するすべてのセッティングとローカル変数リストは無視されて、別のセッティングが適用される。@var{handle-mode}が@code{nil}ならすべてのファイルローカル変数がセットされる。"
 
 #. type: defvar
 #: original_texis/variables.texi:1819
@@ -3156,23 +3145,23 @@ msgstr "ある変数にたいして@code{safe-local-variable}プロパティー�
 #: original_texis/variables.texi:1849
 #, no-wrap
 msgid "autoload cookie, and safe values of variable"
-msgstr ""
+msgstr "autoload cookie, and safe values of variable"
 
 #. type: Plain text
 #: original_texis/variables.texi:1858
 msgid "When defining a user option using @code{defcustom}, you can set its @code{safe-local-variable} property by adding the arguments @code{:safe @var{function}} to @code{defcustom} (@pxref{Variable Definitions}).  However, a safety predicate defined using @code{:safe} will only be known once the package that contains the @code{defcustom} is loaded, which is often too late.  As an alternative, you can use the autoload cookie (@pxref{Autoload}) to assign the option its safety predicate, like this:"
-msgstr ""
+msgstr "@code{defcustom}を使用してユーザーオプションを定義する際には、@code{defcustom}に引数@code{:safe @var{function}}を追加して@code{safe-local-variable}プロパティをセットできます(@ref{Variable Definitions}を参照)。しかし@code{:safe}を使用して定義された安全性の述語は、その@code{defcustom}を含むパッケージのロード時の一度だけ認識されるものであり、それでは遅すぎることがしばしばあります。代替策としては、以下のようにオプションに安全性の述語を割り当てるためにautoloadクッキー(@ref{Autoload}を参照)を使用できます:"
 
 #. type: lisp
 #: original_texis/variables.texi:1861
 #, no-wrap
 msgid ";;;###autoload (put '@var{var} 'safe-local-variable '@var{pred})\n"
-msgstr ""
+msgstr ";;;###autoload (put '@var{var} 'safe-local-variable '@var{pred})\n"
 
 #. type: Plain text
 #: original_texis/variables.texi:1868
 msgid "The safe value definitions specified with @code{autoload} are copied into the package's autoloads file (@file{loaddefs.el} for most packages bundled with Emacs), and are known to Emacs since the beginning of a session."
-msgstr ""
+msgstr "@code{autoload}で指定された安全な値の定義は、そのパッケージのautoloadファイル(Emacsに同梱されたパッケージのほとんどでは@file{loaddefs.el})にコピーされて、セッションの開始からEmacsにより認識されます。"
 
 #. type: defopt
 #: original_texis/variables.texi:1869
@@ -3294,10 +3283,8 @@ msgstr "Constant dir-locals-file"
 
 #. type: defvr
 #: original_texis/variables.texi:1981
-#, fuzzy
-#| msgid "This constant is the name of the file where Emacs expects to find the directory-local variables.  The name of the file is @file{.dir-locals.el}@footnote{ The MS-DOS version of Emacs uses @file{_dir-locals.el} instead, due to limitations of the DOS filesystems.  }.  A file by that name in a directory causes Emacs to apply its settings to any file in that directory or any of its subdirectories (optionally, you can exclude subdirectories; see below).  If some of the subdirectories have their own @file{.dir-locals.el} files, Emacs uses the settings from the deepest file it finds starting from the file's directory and moving up the directory tree.  The file specifies local variables as a specially formatted list; see @ref{Directory Variables, , Per-directory Local Variables, emacs, The GNU Emacs Manual}, for more details."
 msgid "This constant is the name of the file where Emacs expects to find the directory-local variables.  The name of the file is @file{.dir-locals.el}@footnote{ The MS-DOS version of Emacs uses @file{_dir-locals.el} instead, due to limitations of the DOS filesystems.  }.  A file by that name in a directory causes Emacs to apply its settings to any file in that directory or any of its subdirectories (optionally, you can exclude subdirectories; see below).  If some of the subdirectories have their own @file{.dir-locals.el} files, Emacs uses the settings from the deepest file it finds starting from the file's directory and moving up the directory tree.  This constant is also used to derive the name of a second dir-locals file @file{.dir-locals-2.el}.  If this second dir-locals file is present, then that is loaded instead of @file{.dir-locals.el}.  This is useful when @file{.dir-locals.el} is under version control in a shared repository and cannot be used for personal customizations.  The file specifies local variables as a specially formatted list; see @ref{Directory Variables, , Per-directory Local Variables, emacs, The GNU Emacs Manual}, for more details."
-msgstr "この定数は、Emacsがディレクトリーローカル変数が見つけることができる期待する、ファイルの名前です。ファイル名は、@file{.dir-locals.el}@footnote{MS-DOS版のEmacsは、DOSファイルシステムの制限により、かわりに@file{_dir-locals.el}という名前を使用します。}です。ディレクトリー内でその名前をもつファイルにより、Emacsはディレクトリー内の任意のファイル、または任意のサブディレクトリー(オプションでサブディレクトリーを除外できます。以下を参照してください)にセッティングを適用します。独自に@file{.dir-locals.el}をもつサブディレクトリーがある場合、Emacsはサブディレクトリーで見つかった1番深いファイルのディレクトリーからディレクトリーツリーを上方に移動しながら、1番深いファイルのセッティングを使用します。このファイルは、ローカル変数をフォーマットされたリストとして指定します。詳細は、@ref{Directory Variables, , Per-directory Local Variables, emacs, The GNU Emacs Manual}を参照してください。"
+msgstr "この定数はEmacsがディレクトリーローカル変数を見つけることができると期待するファイルの名前。ファイル名は@file{.dir-locals.el}@footnote{MS-DOS版のEmacsはDOSファイルシステムの制限により、かわりに@file{_dir-locals.el}という名前を使用します。}。ディレクトリー内でその名前をもつファイルによりEmacsはディレクトリー内の任意のファイル、または任意のサブディレクトリー(オプションでサブディレクトリーを除外できる。以下参照し)にセッティングを適用する。独自に@file{.dir-locals.el}をもつサブディレクトリーがある場合には、Emacsはサブディレクトリーで見つかったもっとも深いファイルのディレクトリーからディレクトリーツリーを上方に移動しながら、もっとも深いファイルのセッティングを使用する。この定数は2番目のdir-localsファイル@file{.dir-locals-2.el}の名前を導出するためにも使用される。この2番目のdir-localsファイルが与えられた場合には、そのファイルが@file{.dir-locals.el}のかわりにロードされる。これは@file{.dir-locals.el}がバージョンコントロールの共有リポジトリの配下にあって個人のカスタマイズ用に使用できないときに有用。このファイルはローカル変数をフォーマットされたリストとして指定する。詳細は@ref{Directory Variables, , Per-directory Local Variables, emacs, The GNU Emacs Manual}を参照のこと。"
 
 #. type: defun
 #: original_texis/variables.texi:1983
@@ -3390,12 +3377,12 @@ msgstr "@code{nil}ならディレクトリーローカル変数は無視され�
 #: original_texis/variables.texi:2060
 #, no-wrap
 msgid "connection local variables"
-msgstr ""
+msgstr "connection local variables"
 
 #. type: Plain text
 #: original_texis/variables.texi:2065
 msgid "Connection-local variables provide a general mechanism for different variable settings in buffers with a remote connection.  They are bound and set depending on the remote connection a buffer is dedicated to."
-msgstr ""
+msgstr "接続ローカル変数(connection-local variable)はリモート接続をもつバッファにおいて、異なる変数セッティングにたいする汎用のメカニズムを提供します。これはそのリモート接続に専用のバッファーに応じてバインドおよびセットされる変数です。"
 
 #. type: defun
 #: original_texis/variables.texi:2066
