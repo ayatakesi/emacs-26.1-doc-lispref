@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:41+0900\n"
-"PO-Revision-Date: 2020-03-04 21:12+0900\n"
+"PO-Revision-Date: 2020-03-19 22:17+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -399,40 +399,38 @@ msgstr "この関数は@var{object}が任意の種類の関数(@code{funcall}に
 #. type: Plain text
 #: original_texis/functions.texi:148
 msgid "It is also possible to find out how many arguments an arbitrary function expects:"
-msgstr ""
+msgstr "任意の関数が期待する引数の個数を調べることもできます:"
 
 #. type: defun
 #: original_texis/functions.texi:149
 #, no-wrap
 msgid "func-arity function"
-msgstr ""
+msgstr "func-arity function"
 
 #. type: defun
 #: original_texis/functions.texi:157
-#, fuzzy
-#| msgid "This function provides information about the argument list of a primitive, @var{subr}.  The returned value is a pair @code{(@var{min} . @var{max})}.  @var{min} is the minimum number of args.  @var{max} is the maximum number or the symbol @code{many}, for a function with @code{&rest} arguments, or the symbol @code{unevalled} if @var{subr} is a special form."
 msgid "This function provides information about the argument list of the specified @var{function}.  The returned value is a cons cell of the form @w{@code{(@var{min} . @var{max})}}, where @var{min} is the minimum number of arguments, and @var{max} is either the maximum number of arguments, or the symbol @code{many} for functions with @code{&rest} arguments, or the symbol @code{unevalled} if @var{function} is a special form."
-msgstr "この関数はプリミティブ@var{subr}の引数リストについての情報を提供します。retrun値は、@code{(@var{min} . @var{max})}というペアーです。@var{min}は引数の最小数です。@var{max}は最大数、または引数@code{&rest}を伴う関数にたいしてはシンボル@code{many}、@var{subr}がスペシャルフォームの場合はシンボル@code{unevalled}です。"
+msgstr "この関数は指定された@var{function}の引数リストに関する情報を提供する。リターン値は@w{@code{(@var{min} . @var{max})}}という形式のコンスセル。ここで@var{min}は引数の最小個数、@var{max}は引数の最大個数、または@code{&rest}引数をもつ関数では@code{many}、@var{function}がスペシャルフォームならシンボル@code{unevalled}。"
 
 #. type: defun
 #: original_texis/functions.texi:160
 msgid "Note that this function might return inaccurate results in some situations, such as the following:"
-msgstr ""
+msgstr "以下のようにある状況下ではこの関数は不正確な結果をリターンすることに注意:"
 
 #. type: itemize
 #: original_texis/functions.texi:165
 msgid "Functions defined using @code{apply-partially} (@pxref{Calling Functions, apply-partially})."
-msgstr ""
+msgstr "@code{apply-partially}を使用して定義された関数(@ref{Calling Functions, apply-partially}を参照)。"
 
 #. type: itemize
 #: original_texis/functions.texi:169
 msgid "Functions that are advised using @code{advice-add} (@pxref{Advising Named Functions})."
-msgstr ""
+msgstr "@code{advice-add}を使用して定義された関数(@ref{Advising Named Functions}を参照)。"
 
 #. type: itemize
 #: original_texis/functions.texi:173
 msgid "Functions that determine the argument list dynamically, as part of their code."
-msgstr ""
+msgstr "コードの一部として引数リストを直接判断する関数。"
 
 #. type: Plain text
 #: original_texis/functions.texi:180
@@ -500,7 +498,7 @@ msgstr "subr-arity subr"
 #. type: defun
 #: original_texis/functions.texi:213
 msgid "This works like @code{func-arity}, but only for built-in functions and without symbol indirection.  It signals an error for non-built-in functions.  We recommend to use @code{func-arity} instead."
-msgstr ""
+msgstr "これは@code{func-arity}と同様だがシンボルインダイレクションなしのビルトイン関数にたいしてのみ機能する。非ビルトイン関数にたいしてはエラーをシグナルする。かわりに@code{func-arity}の使用を推奨する。"
 
 #. type: Plain text
 #: original_texis/functions.texi:221
@@ -924,7 +922,7 @@ msgstr "マクロ定義内に記述された引数は、ユーザーがマクロ
 #. type: Plain text
 #: original_texis/functions.texi:508
 msgid "Do not use this feature if you want to deprecate the calling convention and favor the one you advertise by the above specification.  Instead, use the @code{advertised-calling-convention} declaration (@pxref{Declare Form}) or @code{set-advertised-calling-convention} (@pxref{Obsolete Functions}), because these two will cause the byte compiler emit a warning message when it compiles Lisp programs which use the deprecated calling convention."
-msgstr ""
+msgstr "呼び出し規約を廃止して上記の仕様で示す規約を公開したければ、この機能を使用してはなりません。かわりに廃止された呼び出し規約を使用するLispプログラムのバイトコンパイル時に警告メッセージを発する宣言@code{advertised-calling-convention} (@ref{Declare Form}を参照)か@code{set-advertised-calling-convention} (@ref{Obsolete Functions}を参照)を使用してください。"
 
 #. type: section
 #: original_texis/functions.texi:510
@@ -988,7 +986,7 @@ msgstr "関数として使用しているシンボルを、変数としても利
 #. type: Plain text
 #: original_texis/functions.texi:563
 msgid "By convention, if a function's symbol consists of two names separated by @samp{--}, the function is intended for internal use and the first part names the file defining the function.  For example, a function named @code{vc-git--rev-parse} is an internal function defined in @file{vc-git.el}.  Internal-use functions written in C have names ending in @samp{-internal}, e.g., @code{bury-buffer-internal}.  Emacs code contributed before 2018 may follow other internal-use naming conventions, which are being phased out."
-msgstr ""
+msgstr "慣例により関数のシンボルが@samp{--}で分割される2つの名前で構成される場合には、その関数は内部的な使用を意図しており、名前の最初の部分は関数を定義するファイルです。たとえば@code{vc-git--rev-parse}という名前の関数は@file{vc-git.el}で定義される内部関数です。Cで記述された内部関数は@code{bury-buffer-internal}のように名前が@samp{-internal}で終わります。2018年より前に貢献されたEmacsコードは内部的な使用にたいして別の命名規約を使用するかもしれませんが、これらは徐々に廃止されます。"
 
 #. type: cindex
 #: original_texis/functions.texi:566
@@ -1095,17 +1093,15 @@ msgstr ""
 
 #. type: cindex
 #: original_texis/functions.texi:622
-#, fuzzy, no-wrap
-#| msgid "advising functions"
+#, no-wrap
 msgid "override existing functions"
-msgstr "advising functions"
+msgstr "override existing functions"
 
 #. type: cindex
 #: original_texis/functions.texi:623
-#, fuzzy, no-wrap
-#| msgid "How to use an existing function."
+#, no-wrap
 msgid "redefine existing functions"
-msgstr "既存の関数を使う方法。"
+msgstr "既存の関数の再定義。"
 
 #. type: defmac
 #: original_texis/functions.texi:630
@@ -1252,7 +1248,7 @@ msgstr "inline-letevals (bindings@dots{}) body@dots{}"
 #. type: defmac
 #: original_texis/functions.texi:734
 msgid "This is similar to @code{let} (@pxref{Local Variables}): it sets up local variables as specified by @var{bindings}, and then evaluates @var{body} with those bindings in effect.  Each element of @var{bindings} should be either a symbol or a list of the form @w{@code{(@var{var} @var{expr})}}; the result is to evaluate @var{expr} and bind @var{var} to the result.  The tail of @var{bindings} can be either @code{nil} or a symbol which should hold a list of arguments, in which case each argument is evaluated, and the symbol is bound to the resulting list."
-msgstr ""
+msgstr "これは@code{let} (@ref{Local Variables}を参照)と似ている。@var{bindings}で指定されたローカル変数をセットアップしてから、その効力の下で@var{body}を評価する。@var{bindings}の要素はそれぞれシンボルか@w{@code{(@var{var} @var{expr})}}という形式のリストであること。@var{expr}を評価した結果を@var{var}にバインドしたものが結果となる。@var{bindings}の終端の要素は@code{nil}か引数リストを保持するシンボルが可能。シンボルなら引数はそれぞれ評価されて結果となるリストにシンボルがバインドされる。"
 
 #. type: defmac
 #: original_texis/functions.texi:736
@@ -1587,10 +1583,8 @@ msgstr "mapping functions"
 
 #. type: Plain text
 #: original_texis/functions.texi:948
-#, fuzzy
-#| msgid "A @dfn{mapping function} applies a given function (@emph{not} a special form or macro) to each element of a list or other collection.  Emacs Lisp has several such functions; this section describes @code{mapcar}, @code{mapc}, and @code{mapconcat}, which map over a list.  @xref{Definition of mapatoms}, for the function @code{mapatoms} which maps over the symbols in an obarray.  @xref{Definition of maphash}, for the function @code{maphash} which maps over key/value associations in a hash table."
 msgid "A @dfn{mapping function} applies a given function (@emph{not} a special form or macro) to each element of a list or other collection.  Emacs Lisp has several such functions; this section describes @code{mapcar}, @code{mapc}, @code{mapconcat}, and @code{mapcan}, which map over a list.  @xref{Definition of mapatoms}, for the function @code{mapatoms} which maps over the symbols in an obarray.  @xref{Definition of maphash}, for the function @code{maphash} which maps over key/value associations in a hash table."
-msgstr "@dfn{マップ関数(mapping function)}は与えられた関数(スペシャルフォームやマクロでは@emph{ない})を、リストや他のコレクションの各要素に適用します。Emacs Lispにはそのような関数がいくつかあります。このセクションでは、リストにたいしてマッピングを行う@code{mapcar}、@code{mapc}、@code{mapconcat}を説明します。obarray内のシンボルにたいしてマッピングを行う関数@code{mapatoms}は、@ref{Definition of mapatoms}を参照してください。ハッシュテーブル内のkey/value関係にたいしてマッピングを行う関数@code{maphash}は、@ref{Definition of maphash}を参照してください。"
+msgstr "@dfn{マップ関数(mapping function)}は与えられた関数(スペシャルフォームやマクロでは@emph{ない})をリストや他のコレクションの各要素に適用します。Emacs Lispにはそのような関数がいくつかあります。このセクションではリストにたいしてマッピングを行う@code{mapcar}、@code{mapc}、@code{mapconcat}、@code{mapcan}を説明します。obarray内のシンボルにたいしてマッピングを行う関数@code{mapatoms}は@ref{Definition of mapatoms}を参照してください。ハッシュテーブル内のkey/value関係にたいしてマッピングを行う関数@code{maphash}は@ref{Definition of maphash}を参照してください。"
 
 #. type: Plain text
 #: original_texis/functions.texi:953
@@ -1684,15 +1678,14 @@ msgstr ""
 
 #. type: defun
 #: original_texis/functions.texi:999
-#, fuzzy, no-wrap
-#| msgid "mapcar function sequence"
+#, no-wrap
 msgid "mapcan function sequence"
-msgstr "mapcar function sequence"
+msgstr "mapcan function sequence"
 
 #. type: defun
 #: original_texis/functions.texi:1006
 msgid "This function applies @var{function} to each element of @var{sequence}, like @code{mapcar}, but instead of collecting the results into a list, it returns a single list with all the elements of the results (which must be lists), by altering the results (using @code{nconc}; @pxref{Rearrangement}).  Like with @code{mapcar}, @var{sequence} can be of any type except a char-table."
-msgstr ""
+msgstr "この関数は@code{mapcar}のように@var{sequence}の各要素に@var{function}を適用するが、結果をリストに収集するかわりに結果を変更(@code{nconc}を使用。@pxref{Rearrangement}を参照)して結果のすべての要素を単一のリストでリターンする。@code{mapcar}と同様に@var{sequence}には文字テーブルを除く任意のタイプのシーケンスを指定できる。"
 
 #. type: group
 #: original_texis/functions.texi:1015
@@ -1705,6 +1698,12 @@ msgid ""
 "(mapcan 'list '(a b c d))\n"
 "     @result{} (a b c d)\n"
 msgstr ""
+";; @r{以下と:}\n"
+"(mapcar 'list '(a b c d))\n"
+"     @result{} ((a) (b) (c) (d))\n"
+";; @r{以下を比較してみよ:}\n"
+"(mapcan 'list '(a b c d))\n"
+"     @result{} (a b c d)\n"
 
 #. type: defun
 #: original_texis/functions.texi:1019
@@ -2050,12 +2049,12 @@ msgstr "引数は@code{car}が@var{object}と@code{eql}であるようなコン�
 #: original_texis/functions.texi:1259
 #, no-wrap
 msgid "struct-type"
-msgstr ""
+msgstr "struct-type"
 
 #. type: table
 #: original_texis/functions.texi:1263
 msgid "The argument must be an instance of a class named @var{struct-type} defined with @code{cl-defstruct} (@pxref{Structures,,, cl, Common Lisp Extensions for GNU Emacs Lisp}), or of one of its child classes."
-msgstr ""
+msgstr "引数は@code{cl-defstruct} (@ref{Structures,,, cl, Common Lisp Extensions for GNU Emacs Lisp}を参照)で定義された@var{struct-type}という名前のクラス、またはその子クラスのインスタンスでなければならない。"
 
 #. type: defmac
 #: original_texis/functions.texi:1274
@@ -2759,10 +2758,8 @@ msgstr "depth"
 
 #. type: table
 #: original_texis/functions.texi:1645
-#, fuzzy
-#| msgid "This specifies how to order the advices, in case several advices are present.  By default, the depth is 0.  A depth of 100 indicates that this advice should be kept as deep as possible, whereas a depth of -100 indicates that it should stay as the outermost advice.  When two advices specify the same depth, the most recently added advice will be outermost."
 msgid "This specifies how to order the advice, should several pieces of advice be present.  By default, the depth is 0.  A depth of 100 indicates that this piece of advice should be kept as deep as possible, whereas a depth of @minus{}100 indicates that it should stay as the outermost piece.  When two pieces of advice specify the same depth, the most recently added one will be outermost."
-msgstr "これは複数のアドバイスが与えられたときに、どのようにアドバイスを順番づけるかを指定します。depthのデフォルト0です。depthが100のとき、このアドバイスは可能な限りの深さを保持すべきことを意味し、-100のときは最外のアドバイスに留めることを意味します。同じdepthで2つのアドバイスが指定された場合、もっとも最近に追加されたアドバイスが最外になります。"
+msgstr "これは複数のアドバイスが与えられたときにアドバイスを順番づける方法を指定します。depthのデフォルト0です。depthが100のときにはアドバイスが可能な限りの深さを保持すべきことを、-100のときは最外のアドバイスに留めることを意味します。同じdepthで2つのアドバイスが指定された場合には、もっとも最近に追加されたアドバイスが最外になります。"
 
 #. type: table
 #: original_texis/functions.texi:1658
@@ -2879,7 +2876,7 @@ msgstr "define-advice symbol (where lambda-list &optional name depth) &rest body
 #. type: defmac
 #: original_texis/functions.texi:1763
 msgid "This macro defines a piece of advice and adds it to the function named @var{symbol}.  The advice is an anonymous function if @var{name} is @code{nil} or a function named @code{symbol@@name}.  See @code{advice-add} for explanation of other arguments."
-msgstr ""
+msgstr "このマクロはアドバイスを定義して@var{symbol}という名前の関数に追加する。@var{name}が@code{nil}か@code{symbol@@name}という名前の関数ならアドバイスは無名関数。他の引数についての説明は@code{advice-add}を参照のこと。"
 
 #. type: defun
 #: original_texis/functions.texi:1765
@@ -3128,20 +3125,19 @@ msgstr "old advices, porting"
 #: original_texis/functions.texi:1908
 #, no-wrap
 msgid "advices, porting from @code{defadvice}"
-msgstr ""
+msgstr "advices, porting from @code{defadvice}"
 
 #. type: findex
 #: original_texis/functions.texi:1909
-#, fuzzy, no-wrap
-#| msgid "piece of advice"
+#, no-wrap
 msgid "defadvice"
-msgstr "piece of advice"
+msgstr "defadvice"
 
 #. type: findex
 #: original_texis/functions.texi:1910
 #, no-wrap
 msgid "ad-activate"
-msgstr ""
+msgstr "ad-activate"
 
 #. type: Plain text
 #: original_texis/functions.texi:1915
@@ -3350,10 +3346,8 @@ msgstr ""
 
 #. type: Plain text
 #: original_texis/functions.texi:2044
-#, fuzzy
-#| msgid "In addition, you can mark a certain a particular calling convention for a function as obsolete:"
 msgid "In addition, you can mark a particular calling convention for a function as obsolete:"
-msgstr "加えて、陳腐化した関数にたいする特定の呼び出し規約をマークできます。"
+msgstr "加えて陳腐化した関数にたいする特定の呼び出し規約をマークできます。"
 
 #. type: defun
 #: original_texis/functions.texi:2045
@@ -3436,10 +3430,8 @@ msgstr "インライン関数を定義した後そのインライン展開はマ
 
 #. type: Plain text
 #: original_texis/functions.texi:2116
-#, fuzzy
-#| msgid "It's possible to define a macro to expand into the same code that an inline function would execute (@pxref{Macros}).  But the macro would be limited to direct use in expressions---a macro cannot be called with @code{apply}, @code{mapcar} and so on.  Also, it takes some work to convert an ordinary function into a macro.  To convert it into an inline function is easy; just replace @code{defun} with @code{defsubst}.  Since each argument of an inline function is evaluated exactly once, you needn't worry about how many times the body uses the arguments, as you do for macros."
 msgid "It's possible to use @code{defmacro} to define a macro to expand into the same code that an inline function would execute (@pxref{Macros}).  But the macro would be limited to direct use in expressions---a macro cannot be called with @code{apply}, @code{mapcar} and so on.  Also, it takes some work to convert an ordinary function into a macro.  To convert it into an inline function is easy; just replace @code{defun} with @code{defsubst}.  Since each argument of an inline function is evaluated exactly once, you needn't worry about how many times the body uses the arguments, as you do for macros."
-msgstr "インライン関数が実行するのと同じコードに展開されるマクロ(@ref{Macros}を参照してください)を定義することは可能です。しかし式内でのマクロの直接の使用には制限があります --- @code{apply}、@code{mapcar}などでマクロを呼び出すことはできません。通常の関数からマクロへの変換には、そのための余分な作業が必要になります。通常の関数をインライン関数に変換するのは簡単です。@code{defun}を@code{defsubst}に置き換えるだけです。インライン関数の引数はそれぞれ正確に1回評価されるので、マクロのときのように、bodyで引数を何回使用するか心配する必要はありません。"
+msgstr "インライン関数が実行するのと同じコードに展開されるマクロ(@ref{Macros}を参照してください)を定義するために@code{defmacro}を使用できます。しかし式内でのマクロの直接の使用には制限があります --- @code{apply}、@code{mapcar}などでマクロを呼び出すことはできません。通常の関数からマクロへの変換には余分な作業が必要になります。通常の関数をインライン関数に変換するのは簡単です。@code{defun}を@code{defsubst}に置き換えるだけです。インライン関数の引数はそれぞれ正確に1回評価されるので、マクロのときのようにbodyで引数を何回使用するかを心配する必要はありません。"
 
 #. type: Plain text
 #: original_texis/functions.texi:2120
@@ -3609,32 +3601,23 @@ msgstr "declare-function"
 
 #. type: Plain text
 #: original_texis/functions.texi:2223
-#, fuzzy
-#| msgid "Byte-compiling a file often produces warnings about functions that the compiler doesn't know about (@pxref{Compiler Errors}).  Sometimes this indicates a real problem, but usually the functions in question are defined in other files which would be loaded if that code is run.  For example, byte-compiling @file{fortran.el} used to warn:"
 msgid "Byte-compiling a file often produces warnings about functions that the compiler doesn't know about (@pxref{Compiler Errors}).  Sometimes this indicates a real problem, but usually the functions in question are defined in other files which would be loaded if that code is run.  For example, byte-compiling @file{simple.el} used to warn:"
-msgstr "あるファイルをバイトコンパイルするとき、コンパイラーが知らない関数について警告が生成されるときがあります(@ref{Compiler Errors}を参照してください)。実際に問題がある場合もありますが、問題となっている関数がそのコードの実行時にロードされる他のファイルで定義されている場合が通常です。たとえば以前は、@file{fortran.el}をバイトコンパイルすると、以下のような警告が出ていました:"
+msgstr "あるファイルをバイトコンパイルするとき、コンパイラーが知らない関数について警告が生成されるときがあります(@ref{Compiler Errors}を参照してください)。実際に問題がある場合もありますが、問題となっている関数がそのコードの実行時にロードされる他のファイルで定義されている場合が通常です。たとえば以前は@file{simple.el}をバイトコンパイルすると以下のような警告が出ていました:"
 
 #. type: example
 #: original_texis/functions.texi:2227
-#, fuzzy, no-wrap
-#| msgid ""
-#| "In end of data:\n"
-#| "fortran.el:2152:1:Warning: the function `gud-find-c-expr' is not\n"
-#| "    known to be defined.\n"
+#, no-wrap
 msgid ""
 "simple.el:8727:1:Warning: the function ‘shell-mode’ is not known to be\n"
 "    defined.\n"
 msgstr ""
-"In end of data:\n"
-"fortran.el:2152:1:Warning: the function `gud-find-c-expr' is not\n"
-"    known to be defined.\n"
+"simple.el:8727:1:Warning: the function ‘shell-mode’ is not known to be\n"
+"    defined.\n"
 
 #. type: Plain text
 #: original_texis/functions.texi:2235
-#, fuzzy
-#| msgid "In fact, @code{gud-find-c-expr} is only used in the function that Fortran mode uses for the local value of @code{gud-find-expr-function}, which is a callback from GUD; if it is called, the GUD functions will be loaded.  When you know that such a warning does not indicate a real problem, it is good to suppress the warning.  That makes new warnings which might mean real problems more visible.  You do that with @code{declare-function}."
 msgid "In fact, @code{shell-mode} is used only in a function that executes @code{(require 'shell)} before calling @code{shell-mode}, so @code{shell-mode} will be defined properly at run-time.  When you know that such a warning does not indicate a real problem, it is good to suppress the warning.  That makes new warnings which might mean real problems more visible.  You do that with @code{declare-function}."
-msgstr "実際のところ、@code{gud-find-c-expr}は、Fortranモードが使用する@code{gud-find-expr-function}のローカル値(GUDからのコールバック)の中だけで使用されていて、呼びだされた場合はGUD関数がロードされます。そのような警告が実際には問題を示さないことを知っているときには、警告を抑制したほうがよいでしょう。そうすれば、実際に問題があることを示す新しい警告の識別性が良くなります。@code{declare-function}を使用して、これを行うことができます。"
+msgstr "実際のところ@code{shell-mode}は@code{(require 'shell)}を実行する関数内の@code{shell-mode}を呼び出す前でのみ使用されるので、@code{shell-mode}は実行時に正しく定義されるでしょう。そのような警告が実際には問題を示さないことを知っているときには警告を抑制したほうがよいでしょう。そうすれば実際に問題があることを示す新しい警告の識別性が良くなります。これは@code{declare-function}を使用して行うことができます。"
 
 #. type: Plain text
 #: original_texis/functions.texi:2238
@@ -3643,24 +3626,19 @@ msgstr "必要なのは問題となっている関数を最初に使用する前
 
 #. type: example
 #: original_texis/functions.texi:2241
-#, fuzzy, no-wrap
-#| msgid "(declare-function gud-find-c-expr \"gud.el\" nil)\n"
+#, no-wrap
 msgid "(declare-function shell-mode \"shell\" ())\n"
-msgstr "(declare-function gud-find-c-expr \"gud.el\" nil)\n"
+msgstr "(declare-function shell-mode \"shell\" ())\n"
 
 #. type: Plain text
 #: original_texis/functions.texi:2246
-#, fuzzy
-#| msgid "This says that @code{gud-find-c-expr} is defined in @file{gud.el} (the @samp{.el} can be omitted).  The compiler takes for granted that that file really defines the function, and does not check."
 msgid "This says that @code{shell-mode} is defined in @file{shell.el} (the @samp{.el} can be omitted).  The compiler takes for granted that that file really defines the function, and does not check."
-msgstr "これは@code{gud-find-c-expr}が@file{gud.el}(@samp{.el}は省略可)の中で定義していることを告げます。コンパイラーは関数がそのファイルで実際に定義されているとみなし、チェックを行いません。"
+msgstr "これは@code{shell-mode}が@file{shell.el} (@samp{.el}は省略可)の中で定義していることを告げます。コンパイラーは関数がそのファイルで実際に定義されているとみなしてチェックを行いません。"
 
 #. type: Plain text
 #: original_texis/functions.texi:2253
-#, fuzzy
-#| msgid "The optional third argument specifies the argument list of @code{gud-find-c-expr}.  In this case, it takes no arguments (@code{nil} is different from not specifying a value).  In other cases, this might be something like @code{(file &optional overwrite)}.  You don't have to specify the argument list, but if you do the byte compiler can check that the calls match the declaration."
 msgid "The optional third argument specifies the argument list of @code{shell-mode}.  In this case, it takes no arguments (@code{nil} is different from not specifying a value).  In other cases, this might be something like @code{(file &optional overwrite)}.  You don't have to specify the argument list, but if you do the byte compiler can check that the calls match the declaration."
-msgstr "3つ目の引数はオプションで、@code{gud-find-c-expr}の引数リストを指定します。この例では、引数はありません(@code{nil}と値を指定しないのは、異なります)。それ以外の場合は、@code{(file &optional overwrite)}のようになります。引数リストを指定する必要はありませんが、指定すればコンパイラーはその呼び出しが宣言と合致するかチェックできます。"
+msgstr "3つ目の引数はオプションであり@code{shell-mode}の引数リストを指定します。この例では引数はありません(@code{nil}と値を指定しないのは異なる)。それ以外の場合には@code{(file &optional overwrite)}のようになります。引数リストを指定する必要はありませんが、指定すればコンパイラーはその呼び出しが宣言と合致するかチェックできます。"
 
 #. type: defmac
 #: original_texis/functions.texi:2254
@@ -3671,7 +3649,7 @@ msgstr "declare-function function file &optional arglist fileonly"
 #. type: defmac
 #: original_texis/functions.texi:2265
 msgid "Tell the byte compiler to assume that @var{function} is defined in the file @var{file}.  The optional third argument @var{arglist} is either @code{t}, meaning the argument list is unspecified, or a list of formal parameters in the same style as @code{defun}.  An omitted @var{arglist} defaults to @code{t}, not @code{nil}; this is atypical behavior for omitted arguments, and it means that to supply a fourth but not third argument one must specify @code{t} for the third-argument placeholder instead of the usual @code{nil}.  The optional fourth argument @var{fileonly} non-@code{nil} means check only that @var{file} exists, not that it actually defines @var{function}."
-msgstr ""
+msgstr "ファイル@var{file}内で@var{function}が定義されているとみなすようにバイトコンパイラーに告げる。オプションの3つ目の引数@var{arglist}は@code{t} (引数リストが未指定という意味)、または@code{defun}と同スタイルな正式パラメーターリストのいずれか。@var{arglist}を省略した際のデフォルトは@code{nil}ではなく@code{t}。これは引数省略時の非定形な挙動であり、3つ目の引数を指定せずに4つ目引数を与える場合には通常の@code{nil}のかわりに3つ目の引数のプレースホルダーに@code{t}を指定しなければならないことを意味する。オプションの4つ目の引数@var{fileonly}が非@code{nil}なら実際に@var{function}が定義されているかではなく@var{file}の存在だけをチェックすることを意味する。"
 
 #. type: Plain text
 #: original_texis/functions.texi:2272
