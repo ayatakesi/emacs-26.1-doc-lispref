@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:40+0900\n"
-"PO-Revision-Date: 2019-10-26 00:52+0900\n"
+"PO-Revision-Date: 2020-03-19 22:44+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -548,12 +548,12 @@ msgstr "グループ内のアイテムの名前が@var{prefix}で始まり、カ
 #: original_texis/customize.texi:261
 #, no-wrap
 msgid "@code{custom-group} property"
-msgstr ""
+msgstr "@code{custom-group} property"
 
 #. type: defmac
 #: original_texis/customize.texi:267
 msgid "The variables and subgroups of a group are stored in the @code{custom-group} property of the group's symbol.  @xref{Symbol Plists}.  The value of that property is a list of pairs whose @code{car} is the variable or subgroup symbol and the @code{cdr} is either @code{custom-variable} or @code{custom-group}."
-msgstr ""
+msgstr "変数およびグループのサブグループはグループのシンボルの@code{custom-group}プロパティに格納される。@ref{Symbol Plists}を参照のこと。このプロパティの値は@code{car}が変数またはサブグループのシンボル、@code{cdr}が@code{custom-variable}か@code{custom-group}のいずれかであるようなリスト。"
 
 #. type: defopt
 #: original_texis/customize.texi:269
@@ -1169,10 +1169,8 @@ msgstr "directory"
 
 #. type: table
 #: original_texis/customize.texi:610
-#, fuzzy
-#| msgid "The value must be a directory name.  The widget provides completion."
 msgid "The value must be a directory.  The widget provides completion."
-msgstr "値はディレクトリー名でなければなりません。ウィジェットは補完を提供します。"
+msgstr "値はディレクトリーでなければならない。ウィジェットは補完を提供する。"
 
 #. type: item
 #: original_texis/customize.texi:611
@@ -2535,10 +2533,8 @@ msgstr "ここでリストエントリーは@code{custom-set-faces}のときと�
 
 #. type: Plain text
 #: original_texis/customize.texi:1445
-#, fuzzy
-#| msgid "In theory, a theme file can also contain other Lisp forms, which would be evaluated when loading the theme, but that is ``bad form''.  To protect against loading themes containing malicious code, Emacs displays the source file and asks for confirmation from the user before loading any non-built-in theme for the first time."
 msgid "In theory, a theme file can also contain other Lisp forms, which would be evaluated when loading the theme, but that is bad form.  To protect against loading themes containing malicious code, Emacs displays the source file and asks for confirmation from the user before loading any non-built-in theme for the first time.  As such, themes are not ordinarily byte-compiled, and source files always take precedence when Emacs is looking for a theme to load."
-msgstr "原則的に、テーマファイルは他のLispフォームを含むこともでき、それらはそのテーマがロードされるときに評価されるでしょうが、これは``悪いフォーム''です。悪意のあるコードを含むテーマのロードを防ぐために、最初に非ビルトインテーマをロードする前に、Emacsはソースファイルを表示して、ユーザーにたいして確認を求めます。"
+msgstr "原則的にテーマファイルは他のLispフォームを含むこともでき、それらはそのテーマがロードされるときに評価されるでしょうが、これは悪いフォームです。悪意のあるコードを含むテーマのロードを防ぐために最初に非ビルトインテーマをロードする前に、Emacsはソースファイルを表示してユーザーに確認を求めます。このようにテーマは通常はバイトコンパイルされずにEmacsがテーマをロードする際には常にソースファイルが優先されます。"
 
 #. type: Plain text
 #: original_texis/customize.texi:1448
