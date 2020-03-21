@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Emacs 24.5\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:40+0900\n"
-"PO-Revision-Date: 2020-03-04 21:46+0900\n"
+"PO-Revision-Date: 2020-03-21 09:46+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -249,10 +249,8 @@ msgstr "byte-compile-debug"
 
 #. type: Plain text
 #: original_texis/compile.texi:99
-#, fuzzy
-#| msgid "Sometimes, the byte compiler produces warning and/or error messages (@pxref{Compiler Errors}, for details).  These messages are recorded in a buffer called @file{*Compile-Log*}, which uses Compilation mode.  @xref{Compilation Mode,,,emacs, The GNU Emacs Manual}."
 msgid "Sometimes, the byte compiler produces warning and/or error messages (@pxref{Compiler Errors}, for details).  These messages are normally recorded in a buffer called @file{*Compile-Log*}, which uses Compilation mode.  @xref{Compilation Mode,,,emacs, The GNU Emacs Manual}.  However, if the variable @code{byte-compile-debug} is non-@code{nil}, error messages will be signaled as Lisp errors instead (@pxref{Errors})."
-msgstr "バイトコンパイラーが警告、および/またはエラーメッセージを生成することもあります(詳細は@ref{Compiler Errors}を参照)。これらのメッセージはCompilationモードが使用する@file{*Compile-Log*}と呼ばれるバッファーに記録されます。@ref{Compilation Mode,,,emacs, The GNU Emacs Manual}を参照してください。"
+msgstr "バイトコンパイラーが警告および/またはエラーメッセージを生成することもあります(詳細は@ref{Compiler Errors}を参照)。これらのメッセージは通常はCompilationモードが使用する@file{*Compile-Log*}と呼ばれるバッファーに記録されます。@ref{Compilation Mode,,,emacs, The GNU Emacs Manual}を参照してください。しかし変数@code{byte-compile-debug}が非@code{nil}ならエラーメッセージはLispエラーとしてシグナルされます(@ref{Errors}を参照)。"
 
 #. type: cindex
 #: original_texis/compile.texi:100
@@ -334,14 +332,12 @@ msgstr "Command compile-defun &optional arg"
 #. type: deffn
 #: original_texis/compile.texi:161
 msgid "This command reads the defun containing point, compiles it, and evaluates the result.  If you use this on a defun that is actually a function definition, the effect is to install a compiled version of that function."
-msgstr "このコマンドはポイントを含むdefunを読み取りそれをコンパイルして、結果を評価します。実際に関数定義であるようなdefunでこれを使用した場合は、その関数のコンパイル済みバージョンをインストールする効果があります。"
+msgstr "このコマンドはポイントを含むdefunを読み取りそれをコンパイルして結果を評価する。実際に関数定義であるようなdefunでこれを使用した場合には、その関数のコンパイル済みバージョンをインストールする効果がある。"
 
 #. type: deffn
 #: original_texis/compile.texi:165
-#, fuzzy
-#| msgid "@code{compile-defun} normally displays the result of evaluation in the echo area, but if @var{arg} is non-@code{nil}, it inserts the result in the current buffer after the form it compiled."
 msgid "@code{compile-defun} normally displays the result of evaluation in the echo area, but if @var{arg} is non-@code{nil}, it inserts the result in the current buffer after the form it has compiled."
-msgstr "@code{compile-defun}は通常、評価した結果をエコーエリアに表示しますが、@var{arg}が非@code{nil}の場合は、そのフォームをコンパイルした後にカレントバッファーに結果を挿入します。"
+msgstr "@code{compile-defun}は通常は評価した結果をエコーエリアに表示するが、@var{arg}が非@code{nil}ならフォームをコンパイルした後にカレントバッファーに結果を挿入する。"
 
 #. type: deffn
 #: original_texis/compile.texi:167
@@ -755,10 +751,9 @@ msgstr "compiler errors"
 
 #. type: cindex
 #: original_texis/compile.texi:437
-#, fuzzy, no-wrap
-#| msgid "compiler errors"
+#, no-wrap
 msgid "byte-compiler errors"
-msgstr "compiler errors"
+msgstr "byte-compiler errors"
 
 #. type: Plain text
 #: original_texis/compile.texi:444
@@ -774,25 +769,25 @@ msgstr "あるエラーがプログラムのシンタックスに由来する場
 #: original_texis/compile.texi:454
 #, no-wrap
 msgid "byte-compiler warnings"
-msgstr ""
+msgstr "byte-compiler warnings"
 
 #. type: cindex
 #: original_texis/compile.texi:455
 #, no-wrap
 msgid "free variable, byte-compiler warning"
-msgstr ""
+msgstr "free variable, byte-compiler warning"
 
 #. type: cindex
 #: original_texis/compile.texi:456
 #, no-wrap
 msgid "reference to free variable, compilation warning"
-msgstr ""
+msgstr "reference to free variable, compilation warning"
 
 #. type: cindex
 #: original_texis/compile.texi:457
 #, no-wrap
 msgid "function not known to be defined, compilation warning"
-msgstr ""
+msgstr "function not known to be defined, compilation warning"
 
 #. type: Plain text
 #: original_texis/compile.texi:463
@@ -838,17 +833,13 @@ msgstr "@var{variable}への参照は@code{if}文の@var{then-form}内になけ�
 
 #. type: itemize
 #: original_texis/compile.texi:499
-#, fuzzy
-#| msgid "You can tell the compiler that a function is defined using @code{declare-function}. @xref{Declaring Functions}."
 msgid "You can tell the compiler that a function is defined using @code{declare-function}.  @xref{Declaring Functions}."
-msgstr "コンパイラーに関数が@code{declare-function}を使用して定義されていると告げることができます。@ref{Declaring Functions}を参照してください。"
+msgstr "コンパイラーに関数が@code{declare-function}を使用して定義されていると告げることができる。@ref{Declaring Functions}を参照のこと。"
 
 #. type: itemize
 #: original_texis/compile.texi:506
-#, fuzzy
-#| msgid "Likewise, you can tell the compiler that a variable is defined using @code{defvar} with no initial value.  (Note that this marks the variable as special.)  @xref{Defining Variables}."
 msgid "Likewise, you can tell the compiler that a variable is defined using @code{defvar} with no initial value.  (Note that this marks the variable as special, i.e.@: dynamically bound, but only within the current lexical scope, or file if at top-level.)  @xref{Defining Variables}."
-msgstr "同じように、その変数が初期値なしの@code{defvar}を使用して定義されているとコンパイラーに告げることができます。(これはその変数を特別な変数としてマークすることに注意してください。@ref{Defining Variables}を参照してください。"
+msgstr "同じように変数が初期値なしの@code{defvar}を使用して定義されているとコンパイラーに告げることができる(カレントレキシカルスコープ、またはトップレベルにあればファイルでのみダイナミックにバインドされているとして変数を特別な変数としてマークすることに注意。@ref{Defining Variables}を参照のこと。"
 
 #. type: Plain text
 #: original_texis/compile.texi:510
@@ -878,15 +869,14 @@ msgstr "変数@code{byte-compile-warnings}をセットすることにより、�
 
 #. type: vindex
 #: original_texis/compile.texi:528
-#, fuzzy, no-wrap
-#| msgid "byte-compile-dynamic"
+#, no-wrap
 msgid "byte-compile-error-on-warn"
-msgstr "byte-compile-dynamic"
+msgstr "byte-compile-error-on-warn"
 
 #. type: Plain text
 #: original_texis/compile.texi:532
 msgid "Sometimes you may wish the byte-compiler warnings to be reported using @code{error}.  If so, set @code{byte-compile-error-on-warn} to a non-@code{nil} value."
-msgstr ""
+msgstr "@code{error}を使用してバイトコンパイラーの警告が報告されることを望む場合があるかもしれません。そのような場合には@code{byte-compile-error-on-warn}を非@code{nil}値にセットしてください。"
 
 #. type: section
 #: original_texis/compile.texi:534
