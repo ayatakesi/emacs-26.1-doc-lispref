@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:41+0900\n"
-"PO-Revision-Date: 2020-03-04 21:16+0900\n"
+"PO-Revision-Date: 2020-03-21 07:20+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -294,10 +294,8 @@ msgstr "file-error"
 
 #. type: defun
 #: original_texis/loading.texi:168
-#, fuzzy
-#| msgid "If @code{load} can't find the file to load, then normally it signals the error @code{file-error} (with @samp{Cannot open load file @var{filename}}).  But if @var{missing-ok} is non-@code{nil}, then @code{load} just returns @code{nil}."
 msgid "If @code{load} can't find the file to load, then normally it signals a @code{file-error} (with @samp{Cannot open load file @var{filename}}).  But if @var{missing-ok} is non-@code{nil}, then @code{load} just returns @code{nil}."
-msgstr "@code{load}がロードするファイルを見つけられなかった場合、通常は(@samp{Cannot open load file @var{filename}}のメッセージとともに)エラー@code{file-error}がシグナルされます。しかし@var{missing-ok}が非@code{nil}の場合、@code{load}は単に@code{nil}をリターンします。"
+msgstr "@code{load}がロードするファイルを見つけられなかった場合には、通常は(@samp{Cannot open load file @var{filename}}のメッセージとともに) @code{file-error}がシグナルされる。しかし@var{missing-ok}が非@code{nil}なら@code{load}は単に@code{nil}をリターンする。"
 
 #. type: defun
 #: original_texis/loading.texi:172
@@ -468,10 +466,8 @@ msgstr "load-path"
 
 #. type: defvar
 #: original_texis/loading.texi:285
-#, fuzzy
-#| msgid "The value of this variable is a list of directories to search when loading files with @code{load}.  Each element is a string (which must be a directory name) or @code{nil} (which stands for the current working directory)."
 msgid "The value of this variable is a list of directories to search when loading files with @code{load}.  Each element is a string (which must be a directory) or @code{nil} (which stands for the current working directory)."
-msgstr "この変数の値は、@code{load}でファイルをロードするとき検索するディレクトリーのリストです。リストの各要素は文字列(ディレクトリー名でなければなりません)、または@code{nil}(カレントワーキングディレクトリーを意味します)です。"
+msgstr "この変数の値は@code{load}でファイルをロードするとき検索するディレクトリーのリスト。リストの各要素は文字列(ディレクトリーでなければならない)、または@code{nil} (カレントワーキングディレクトリーを意味する)。"
 
 #. type: Plain text
 #: original_texis/loading.texi:291
@@ -540,10 +536,8 @@ msgstr "環境変数@env{EMACSLOADPATH}がセットされていたら、上述�
 
 #. type: Plain text
 #: original_texis/loading.texi:344
-#, fuzzy
-#| msgid "The syntax of @env{EMACSLOADPATH} is the same as used for @code{PATH}; directory names are separated by @samp{:} (or @samp{;}, on some operating systems)."
 msgid "The syntax of @env{EMACSLOADPATH} is the same as used for @code{PATH}; directories are separated by @samp{:} (or @samp{;}, on some operating systems)."
-msgstr "@env{EMACSLOADPATH}の構文は、@code{PATH}で使用される構文と同様です。ディレクトリー名は@samp{:}(オペレーティングシステムによっては@samp{;})で区切られます。"
+msgstr "@env{EMACSLOADPATH}の構文は@code{PATH}で使用される構文と同様。ディレクトリーは@samp{:} (オペレーティングシステムによっては@samp{;})で区切られる。"
 
 #. type: Plain text
 #: original_texis/loading.texi:350
@@ -687,15 +681,14 @@ msgstr "@dfn{オートロード(autoload: 自動ロード)}の機能により、
 
 #. type: node
 #: original_texis/loading.texi:473 original_texis/loading.texi:706
-#, fuzzy, no-wrap
-#| msgid "Autoload"
+#, no-wrap
 msgid "When to Autoload"
-msgstr "Autoload"
+msgstr "When to Autoload"
 
 #. type: menuentry
 #: original_texis/loading.texi:473
 msgid "When to Use Autoload."
-msgstr ""
+msgstr "autoloadを使用するべきとき。"
 
 #. type: Plain text
 #: original_texis/loading.texi:484
@@ -1001,38 +994,38 @@ msgstr "この関数はオートロードオブジェクト@var{autoload}によ�
 #: original_texis/loading.texi:707
 #, no-wrap
 msgid "When to Use Autoload"
-msgstr ""
+msgstr "When to Use Autoload"
 
 #. type: cindex
 #: original_texis/loading.texi:708
 #, no-wrap
 msgid "autoload, when to use"
-msgstr ""
+msgstr "autoload, when to use"
 
 #. type: Plain text
 #: original_texis/loading.texi:715
 msgid "Do not add an autoload comment unless it is really necessary.  Autoloading code means it is always globally visible.  Once an item is autoloaded, there is no compatible way to transition back to it not being autoloaded (after people become accustomed to being able to use it without an explicit load)."
-msgstr ""
+msgstr "本当に必要でなければautoloadコメントを追加しないでください。コードをautoloadすることは、それが常にグローバルに可視になることを意味しています。一度あるアイテムがautoloadされれば、autoload以前の状態(autoload後には明示的なロードなしで通常のように使用できる)に戻るための互換性のある手段はありません。"
 
 #. type: itemize
 #: original_texis/loading.texi:723
 msgid "The most common items to autoload are the interactive entry points to a library.  For example, if @file{python.el} is a library defining a major-mode for editing Python code, autoload the definition of the @code{python-mode} function, so that people can simply use @kbd{M-x python-mode} to load the library."
-msgstr ""
+msgstr "autoloadするアイテムとしてもっとも一般的なライブラリーにたいするインタラクティブなエントリーポイント。たとえばPythonコードの編集用のメジャーモードを定義するライブラリーが@file{python.el}なら、@code{python-mode}関数の定義をautoloadすればユーザーは単に@kbd{M-x python-mode}を使用してライブラリーをロードできる。"
 
 #. type: itemize
 #: original_texis/loading.texi:729
 msgid "Variables usually don't need to be autoloaded.  An exception is if the variable on its own is generally useful without the whole defining library being loaded.  (An example of this might be something like @code{find-exec-terminator}.)"
-msgstr ""
+msgstr "変数は通常はautoloadする必要はない。例外はライブラリー定義全体をロードしなくても変数自体が有用な場合(これの例としては@code{find-exec-terminator}のようなものが該当するだろう)。"
 
 #. type: itemize
 #: original_texis/loading.texi:732
 msgid "Don't autoload a user option just so that a user can set it."
-msgstr ""
+msgstr "ユーザーがセットできるように、ユーザーオプションをautoloadしないこと。"
 
 #. type: itemize
 #: original_texis/loading.texi:740
 msgid "Never add an autoload @emph{comment} to silence a compiler warning in another file.  In the file that produces the warning, use @code{(defvar foo)} to silence an undefined variable warning, and @code{declare-function} (@pxref{Declaring Functions}) to silence an undefined function warning; or require the relevant library; or use an explicit autoload @emph{statement}."
-msgstr ""
+msgstr "別ファイルでのコンパイラー警告を抑制するためにautoloadの@emph{コメント}を決して追加してはならない。警告の発生元となるファイルでは未定義の変数にたいする警告の抑制には@code{(defvar foo)}、未定義の関数にたいする警告の抑制には@code{declare-function} (@ref{Declaring Functions}を参照)を使用するか、あるいは使用する関連ライブラリーをrequireしたり明示的にautoloadの@emph{命令文}を使用すること。"
 
 #. type: cindex
 #: original_texis/loading.texi:744
@@ -1303,10 +1296,8 @@ msgstr "@var{noerror}が非@code{nil}なら、ファイルの実際のロード�
 
 #. type: defun
 #: original_texis/loading.texi:944
-#, fuzzy
-#| msgid "If loading the file succeeds but does not provide @var{feature}, @code{require} signals an error, @samp{Required feature @var{feature} was not provided}."
 msgid "If loading the file succeeds but does not provide @var{feature}, @code{require} signals an error about the missing feature."
-msgstr "ファイルのロードは成功したが@var{feature}をプロバイドしていない場合、@code{require}は@samp{Required feature @var{feature} was not provided}のようにエラーをシグナルします。"
+msgstr "ファイルのロードは成功したが@var{feature}をプロバイドしていない場合には、@code{require}は欠落している機能に関するエラーをシグナルする。"
 
 #. type: defun
 #: original_texis/loading.texi:946
@@ -1664,7 +1655,7 @@ msgstr "module-file-suffix"
 #. type: defvar
 #: original_texis/loading.texi:1156
 msgid "This variable holds the system-dependent value of the file-name extension of the module files.  Its value is @file{.so} on POSIX hosts and @file{.dll} on MS-Windows."
-msgstr ""
+msgstr "この変数はモジュールファイルにたいするシステム依存なファイル名拡張子を保持する。POSIXホストでは@file{.so}、MS-Windowsでは@file{.dll}。"
 
 #. type: findex
 #: original_texis/loading.texi:1158
@@ -1718,4 +1709,4 @@ msgstr "Emacsのロード可能モジュールは、configure時にオプショ�
 #. type: Plain text
 #: original_texis/loading.texi:1191
 msgid "If you write your own dynamic modules, you may wish to verify their conformance to the Emacs dynamic module API.  Invoking Emacs with the @kbd{--module-assertions} option will help you in this matter.  @xref{Initial Options,,,emacs, The GNU Emacs Manual}."
-msgstr ""
+msgstr "自身でダイナミックモジュールを記述する場合には、EmacsのダイナミックモジュールAPIにたいする準拠を検証したいかもしれません。@kbd{--module-assertions}オプションでEmacsを呼び出すことがその助けとなるでしょう。@ref{Initial Options,,,emacs, The GNU Emacs Manual}を参照してください。"
