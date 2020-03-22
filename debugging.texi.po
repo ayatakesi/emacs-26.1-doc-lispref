@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Emacs-24.5\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:40+0900\n"
-"PO-Revision-Date: 2020-03-05 01:06+0900\n"
+"PO-Revision-Date: 2020-03-22 06:24+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -50,15 +50,14 @@ msgstr "Emacs LispにたいするソースレベルデバッガのEdebugを使�
 
 #. type: cindex
 #: original_texis/debugging.texi:23
-#, fuzzy, no-wrap
-#| msgid "Debugging Lisp Programs"
+#, no-wrap
 msgid "tracing Lisp programs"
-msgstr "Debugging Lisp Programs"
+msgstr "tracing Lisp programs"
 
 #. type: itemize
 #: original_texis/debugging.texi:31
 msgid "You can trace the execution of functions involved in the problem using the tracing facilities provided by the @file{trace.el} package.  This package provides the functions @code{trace-function-foreground} and @code{trace-function-background} for tracing function calls, and @code{trace-values} for adding values of select variables to the trace.  For the details, see the documentation of these facilities in @file{trace.el}."
-msgstr ""
+msgstr "@file{trace.el}パッケージが提供するトレース機能を使用して問題に関する関数の実行をトレースできます。このパッケージは関数呼び出しのトレース用に@code{trace-function-foreground}と@code{trace-function-background}、値をトレースする変数の追加用に@code{trace-values}という関数を提供する。詳細は@file{trace.el}にあるこれらの機能のドキュメントを参照のと。"
 
 #. type: itemize
 #: original_texis/debugging.texi:35
@@ -210,17 +209,14 @@ msgstr "特定の関数が呼び出されたときにデバッガにエンター
 
 #. type: node
 #: original_texis/debugging.texi:88 original_texis/debugging.texi:304
-#, fuzzy, no-wrap
-#| msgid "Error Debugging"
+#, no-wrap
 msgid "Variable Debugging"
-msgstr "Error Debugging"
+msgstr "Variable Debugging"
 
 #. type: menuentry
 #: original_texis/debugging.texi:88
-#, fuzzy
-#| msgid "Entering it when a certain function is called."
 msgid "Entering it when a variable is modified."
-msgstr "特定の関数が呼び出されたときにデバッガにエンターする。"
+msgstr "変数が変更されたときにデバッガにエンターする。"
 
 #. type: node
 #: original_texis/debugging.texi:88 original_texis/debugging.texi:334
@@ -357,10 +353,8 @@ msgstr "eval-expression-debug-on-error"
 
 #. type: defopt
 #: original_texis/debugging.texi:150
-#, fuzzy
-#| msgid "If this variable has a non-@code{nil} value (the default), running the command @code{eval-expression} causes @code{debug-on-error} to be temporarily bound to to @code{t}.  @xref{Lisp Eval,, Evaluating Emacs-Lisp Expressions, emacs, The GNU Emacs Manual}."
 msgid "If this variable has a non-@code{nil} value (the default), running the command @code{eval-expression} causes @code{debug-on-error} to be temporarily bound to @code{t}.  @xref{Lisp Eval,, Evaluating Emacs-Lisp Expressions, emacs, The GNU Emacs Manual}."
-msgstr "この変数が非@code{nil}値(デフォルト)の場合は、コマンド@code{eval-expression}の実行により、一時的に@code{debug-on-error}が@code{t}がバインドされます。@ref{Lisp Eval,, Evaluating Emacs-Lisp Expressions, emacs, The GNU Emacs Manual}を参照してください。"
+msgstr "この変数が非@code{nil}値(デフォルト)なら、コマンド@code{eval-expression}の実行により一時的に@code{debug-on-error}が@code{t}がバインドされる。@ref{Lisp Eval,, Evaluating Emacs-Lisp Expressions, emacs, The GNU Emacs Manual}を参照のこと。"
 
 #. type: defopt
 #: original_texis/debugging.texi:153
@@ -608,57 +602,53 @@ msgstr "この関数は@var{function-name}にたいする@code{debug-on-entry}�
 
 #. type: subsection
 #: original_texis/debugging.texi:305
-#, fuzzy, no-wrap
-#| msgid "Entering the debugger when an error happens."
+#, no-wrap
 msgid "Entering the debugger when a variable is modified"
-msgstr "エラー発生時にデバッガにエンターする。"
+msgstr "変数の変更時にデバッガにエンターする。"
 
 #. type: cindex
 #: original_texis/debugging.texi:306
 #, no-wrap
 msgid "variable write debugging"
-msgstr ""
+msgstr "variable write debugging"
 
 #. type: cindex
 #: original_texis/debugging.texi:307
 #, no-wrap
 msgid "debugging changes to variables"
-msgstr ""
+msgstr "debugging changes to variables"
 
 #. type: Plain text
 #: original_texis/debugging.texi:312
 msgid "Sometimes a problem with a function is due to a wrong setting of a variable.  Setting up the debugger to trigger whenever the variable is changed is a quick way to find the origin of the setting."
-msgstr ""
+msgstr "不正な変数のセッティングが関数に問題をもたらすときがあります。元のセッティングを調べるためには、変数の変更時に常にデバッガがトリガーされるようにセットアップするのが手軽な方法です。"
 
 #. type: deffn
 #: original_texis/debugging.texi:313
 #, no-wrap
 msgid "Command debug-on-variable-change variable"
-msgstr ""
+msgstr "Command debug-on-variable-change variable"
 
 #. type: deffn
 #: original_texis/debugging.texi:316
 msgid "This function arranges for the debugger to be called whenever @var{variable} is modified."
-msgstr ""
+msgstr "この関数は@var{variable}の変更時に常にデバッガが呼び出されるようにアレンジする。"
 
 #. type: deffn
 #: original_texis/debugging.texi:322
 msgid "It is implemented using the watchpoint mechanism, so it inherits the same characteristics and limitations: all aliases of @var{variable} will be watched together, only dynamic variables can be watched, and changes to the objects referenced by variables are not detected.  For details, see @ref{Watching Variables}."
-msgstr ""
+msgstr "これはwatchpointメカニズムを使用して実装されているので同じような特徴と制限を継承する。つまり@var{variable}のすべてのエイリアスは一緒にwatchされて、watch対象はダイナミック変数のみであり変数から参照されるオブジェクトの変更は検出されない。詳細は@ref{Watching Variables}を参照のこと。"
 
 #. type: deffn
 #: original_texis/debugging.texi:324
-#, fuzzy, no-wrap
-#| msgid "Command cancel-debug-on-entry &optional function-name"
+#, no-wrap
 msgid "Command cancel-debug-on-variable-change &optional variable"
-msgstr "Command cancel-debug-on-entry &optional function-name"
+msgstr "Command cancel-debug-on-variable-change &optional variable"
 
 #. type: deffn
 #: original_texis/debugging.texi:331
-#, fuzzy
-#| msgid "This function undoes the effect of @code{debug-on-entry} on @var{function-name}.  When called interactively, it prompts for @var{function-name} in the minibuffer.  If @var{function-name} is omitted or @code{nil}, it cancels break-on-entry for all functions.  Calling @code{cancel-debug-on-entry} does nothing to a function which is not currently set up to break on entry."
 msgid "This function undoes the effect of @code{debug-on-variable-change} on @var{variable}.  When called interactively, it prompts for @var{variable} in the minibuffer.  If @var{variable} is omitted or @code{nil}, it cancels break-on-change for all variables.  Calling @code{cancel-debug-on-variable-change} does nothing to a variable which is not currently set up to break on change."
-msgstr "この関数は@var{function-name}にたいする@code{debug-on-entry}の効果をアンドゥします。インタラクティブに呼び出されたときは、ミニバッファーで@var{function-name}の入力を求めます。@var{function-name}が省略された、あるいは@code{nil}の場合は、すべての関数にたいするbreak-on-entryをキャンセルします。エントリー時にbreakするようセットアップされていない関数に@code{cancel-debug-on-entry}を呼び出したときは、何も行いません。"
+msgstr "この関数は@var{variable}にたいする@code{debug-on-variable-change}の効果をアンドゥする。インタラクティブに呼び出されたときはミニバッファーで@var{variable}の入力をもとめる。@var{variable}が省略か@code{nil}ならすべての変数にたいする変更時のブレークを取り消す。カレントで変更時にブレークするようにセットアップされていない変数にたいして@code{cancel-debug-on-variable-change}の呼び出しは何も行わない。"
 
 #. type: subsection
 #: original_texis/debugging.texi:335
@@ -1073,10 +1063,9 @@ msgstr "関数にたいしてLispが渡す1つ目の引数は、その関数が�
 
 #. type: defun
 #: original_texis/debugging.texi:622
-#, fuzzy, no-wrap
-#| msgid "Command backtrace"
+#, no-wrap
 msgid "backtrace"
-msgstr "Command backtrace"
+msgstr "backtrace"
 
 #. type: cindex
 #: original_texis/debugging.texi:623
@@ -1181,46 +1170,33 @@ msgstr ""
 #: original_texis/debugging.texi:674
 #, no-wrap
 msgid "debugger-stack-frame-as-list"
-msgstr ""
+msgstr "debugger-stack-frame-as-list"
 
 #. type: defopt
 #: original_texis/debugging.texi:679
 msgid "If this variable is non-@code{nil}, every stack frame of the backtrace is displayed as a list.  This aims at improving the backtrace readability at the cost of special forms no longer being visually different from regular function calls."
-msgstr ""
+msgstr "この変数が非@code{nil}ならバックトレースのすべてのスタックフレームはリストとして表示される。これは通常の関数呼び出しとバックトレースの特殊形式の視覚的な違いによるコストをなくして、バックトレースの可読性を向上することが目的。"
 
 #. type: defopt
 #: original_texis/debugging.texi:682
 msgid "With @code{debugger-stack-frame-as-list} non-@code{nil}, the above example would look as follows:"
-msgstr ""
+msgstr "@code{debugger-stack-frame-as-list}が非@code{nil}なら上記の例は以下のようになる:"
 
 #. type: group
 #: original_texis/debugging.texi:688
-#, fuzzy, no-wrap
-#| msgid ""
-#| "----------- Buffer: backtrace-output ------------\n"
-#| "  backtrace()\n"
-#| "  (list ...computing arguments...)\n"
+#, no-wrap
 msgid ""
 "----------- Buffer: backtrace-output ------------\n"
 "  (backtrace)\n"
 "  (list ...computing arguments...)\n"
 msgstr ""
 "----------- Buffer: backtrace-output ------------\n"
-"  backtrace()\n"
+"  (backtrace)\n"
 "  (list ...computing arguments...)\n"
 
 #. type: smallexample
 #: original_texis/debugging.texi:697
-#, fuzzy, no-wrap
-#| msgid ""
-#| "  (progn ...)\n"
-#| "  eval((progn (1+ var) (list (quote testing) (backtrace))))\n"
-#| "  (setq ...)\n"
-#| "  (save-excursion ...)\n"
-#| "  (let ...)\n"
-#| "  (with-output-to-temp-buffer ...)\n"
-#| "  eval((with-output-to-temp-buffer ...))\n"
-#| "  eval-last-sexp-1(nil)\n"
+#, no-wrap
 msgid ""
 "  (progn ...)\n"
 "  (eval (progn (1+ var) (list (quote testing) (backtrace))))\n"
@@ -1232,28 +1208,24 @@ msgid ""
 "  (eval-last-sexp-1 nil)\n"
 msgstr ""
 "  (progn ...)\n"
-"  eval((progn (1+ var) (list (quote testing) (backtrace))))\n"
+"  (eval (progn (1+ var) (list (quote testing) (backtrace))))\n"
 "  (setq ...)\n"
 "  (save-excursion ...)\n"
 "  (let ...)\n"
 "  (with-output-to-temp-buffer ...)\n"
-"  eval((with-output-to-temp-buffer ...))\n"
-"  eval-last-sexp-1(nil)\n"
+"  (eval (with-output-to-temp-buffer ...))\n"
+"  (eval-last-sexp-1 nil)\n"
 
 #. type: group
 #: original_texis/debugging.texi:701
-#, fuzzy, no-wrap
-#| msgid ""
-#| "  eval-last-sexp(nil)\n"
-#| "  call-interactively(eval-last-sexp)\n"
-#| "----------- Buffer: backtrace-output ------------\n"
+#, no-wrap
 msgid ""
 "  (eval-last-sexp nil)\n"
 "  (call-interactively eval-last-sexp)\n"
 "----------- Buffer: backtrace-output ------------\n"
 msgstr ""
-"  eval-last-sexp(nil)\n"
-"  call-interactively(eval-last-sexp)\n"
+"  (eval-last-sexp nil)\n"
+"  (call-interactively eval-last-sexp)\n"
 "----------- Buffer: backtrace-output ------------\n"
 
 #. type: defvar
@@ -1329,35 +1301,34 @@ msgstr "この変数は時代遅れであり将来のバージョンで削除さ
 
 #. type: defun
 #: original_texis/debugging.texi:740
-#, fuzzy, no-wrap
-#| msgid "backtrace-frame frame-number"
+#, no-wrap
 msgid "backtrace-frame frame-number &optional base"
-msgstr "backtrace-frame frame-number"
+msgstr "backtrace-frame frame-number &optional base"
 
 #. type: defun
 #: original_texis/debugging.texi:744
 msgid "The function @code{backtrace-frame} is intended for use in Lisp debuggers.  It returns information about what computation is happening in the stack frame @var{frame-number} levels down."
-msgstr "関数@code{backtrace-frame}はLispデバッガ内での使用を意図している。これは@var{frame-number}レベル下位のスタックフレームで、何の評価が行われているかに関する情報をリターンする。"
+msgstr "関数@code{backtrace-frame}はLispデバッガ内での使用を意図している。これは@var{frame-number}レベル下位のスタックフレームで何の評価が行われているかに関する情報をリターンする。"
 
 #. type: defun
 #: original_texis/debugging.texi:747
 msgid "If that frame has not evaluated the arguments yet, or is a special form, the value is @code{(nil @var{function} @var{arg-forms}@dots{})}."
-msgstr "そのフレームがまだ引数を評価していない、またはそのフレームがスペシャルフォームの場合、値は@code{(nil @var{function} @var{arg-forms}@dots{})}。"
+msgstr "そのフレームがまだ引数を評価していない、またはそのフレームがスペシャルフォームなら値は@code{(nil @var{function} @var{arg-forms}@dots{})}。"
 
 #. type: defun
 #: original_texis/debugging.texi:751
 msgid "If that frame has evaluated its arguments and called its function already, the return value is @code{(t @var{function} @var{arg-values}@dots{})}."
-msgstr "そのフレームが引数を評価して関数をすでに呼び出していたら、リターン値は@code{(t @var{function} @var{arg-values}@dots{})}。"
+msgstr "そのフレームが引数を評価して関数をすでに呼び出していたらリターン値は@code{(t @var{function} @var{arg-values}@dots{})}。"
 
 #. type: defun
 #: original_texis/debugging.texi:756
 msgid "In the return value, @var{function} is whatever was supplied as the @sc{car} of the evaluated list, or a @code{lambda} expression in the case of a macro call.  If the function has a @code{&rest} argument, that is represented as the tail of the list @var{arg-values}."
-msgstr "リターン値の@var{function}は何であれ評価されたリストの@sc{car}として提供される。マクロ呼び出しの場合は@code{lambda}式になる。その関数に@code{&rest}引数があればリスト@var{arg-values}の末尾に示される。"
+msgstr "リターン値の@var{function}は何であれ評価されたリストの@sc{car}として提供される。マクロ呼び出しなら@code{lambda}式。その関数に@code{&rest}引数があればリスト@var{arg-values}の末尾に示される。"
 
 #. type: defun
 #: original_texis/debugging.texi:759
 msgid "If @var{base} is specified, @var{frame-number} counts relative to the topmost frame whose @var{function} is @var{base}."
-msgstr ""
+msgstr "@var{base}を指定すると@var{frame-number}は@var{function}が@var{base}であるようなフレームの上端から相対的に数えられる。"
 
 #. type: defun
 #: original_texis/debugging.texi:762
@@ -1368,29 +1339,27 @@ msgstr "@var{frame-number}が範囲外なら@code{backtrace-frame}は@code{nil}�
 #: original_texis/debugging.texi:764
 #, no-wrap
 msgid "mapbacktrace function &optional base"
-msgstr ""
+msgstr "mapbacktrace function &optional base"
 
 #. type: defun
 #: original_texis/debugging.texi:768
 msgid "The function @code{mapbacktrace} calls @var{function} once for each frame in the backtrace, starting at the first frame whose function is @var{base} (or from the top if @var{base} is omitted or @code{nil})."
-msgstr ""
+msgstr "関数@code{mapbacktrace}はバックトレース上の関数が@var{base}であるようなフレーム(@var{base}が省略か@code{nil}なら先頭)から順に各フレームにたいして一度@var{function}を呼び出す。"
 
 #. type: defun
 #: original_texis/debugging.texi:771
 msgid "@var{function} is called with four arguments: @var{evald}, @var{func}, @var{args}, and @var{flags}."
-msgstr ""
+msgstr "@var{function}は@var{evald}、@var{func}、@var{args}、@var{flags}という4つの引数で呼び出される。"
 
 #. type: defun
 #: original_texis/debugging.texi:774
-#, fuzzy
-#| msgid "If that frame has not evaluated the arguments yet, or is a special form, the value is @code{(nil @var{function} @var{arg-forms}@dots{})}."
 msgid "If a frame has not evaluated its arguments yet or is a special form, @var{evald} is @code{nil} and @var{args} is a list of forms."
-msgstr "そのフレームがまだ引数を評価していない場合、またはそのフレームがスペシャルフォームの場合、値は@code{(nil @var{function} @var{arg-forms}@dots{})}です。"
+msgstr "そのフレームがまだ引数を評価していない、またはそのフレームがスペシャルフォームなら@var{evald}は@code{nil}、@var{args}はフォームのリスト。"
 
 #. type: defun
 #: original_texis/debugging.texi:780
 msgid "If a frame has evaluated its arguments and called its function already, @var{evald} is @code{t} and @var{args} is a list of values.  @var{flags} is a plist of properties of the current frame: currently, the only supported property is @code{:debug-on-exit}, which is @code{t} if the stack frame's @code{debug-on-exit} flag is set."
-msgstr ""
+msgstr "フレームが引数を評価して関数を呼び出し済みなら@var{evald}は@code{t}、@var{args}は値リスト。@var{flags}はカレントフレームのプロパティのplist。サポートされるプロパティは現在のところ@code{:debug-on-exit}のみであり、そのスタックフレームの@code{debug-on-exit}フラグがセットされていれば@code{t}。"
 
 #. type: include
 #: original_texis/debugging.texi:782
@@ -1610,7 +1579,7 @@ msgstr "profile"
 #: original_texis/debugging.texi:921
 #, no-wrap
 msgid "performance analysis"
-msgstr ""
+msgstr "performance analysis"
 
 #. type: cindex
 #: original_texis/debugging.texi:922
@@ -1626,31 +1595,23 @@ msgstr "memory usage"
 
 #. type: Plain text
 #: original_texis/debugging.texi:931
-#, fuzzy
-#| msgid "If your program is working correctly, but you want to make it run more quickly or efficiently, the first thing to do is @dfn{profile} your code so that you know how it is using resources.  If you find that one particular function is responsible for a significant portion of the runtime, you can start looking for ways to optimize that piece."
 msgid "If your program is working correctly, but not fast enough, and you want to make it run more quickly or efficiently, the first thing to do is @dfn{profile} your code so that you know where it spends most of the execution time.  If you find that one particular function is responsible for a significant portion of the execution time, you can start looking for ways to optimize that piece."
-msgstr "プログラムは正常に機能しているものの、より高速にまたは効率的に実行させたい場合にまず行うべきは、そのプログラムがリソースをどのように使用するか知るために、コードを@dfn{プロファイル(profile)}することです。ある特定の関数の実行が、実行時間のうち無視できない割り合いを占めるようなら、その部分を最適化する方法を探すことを開始できます。"
+msgstr "プログラムは正常に機能しているものの、十分に高速ではないのでより高速かつ効率的に実行させたい場合には、そのプログラムが実行時間の大半をどこで消費しているか知るために、コードを@dfn{プロファイル(profile)}することが最初に行うべきことです。ある特定の関数の実行が実行時間のうちの無視できない割り合いを占めるようなら、その部分を最適化する方法を探すことを開始できます。"
 
 #. type: Plain text
 #: original_texis/debugging.texi:943
-#, fuzzy
-#| msgid "Emacs has built-in support for this.  To begin profiling, type @kbd{M-x profiler-start}.  You can choose to profile by processor usage, memory usage, or both.  After doing some work, type @kbd{M-x profiler-report} to display a summary buffer for each resource that you chose to profile.  The names of the report buffers include the times at which the reports were generated, so you can generate another report later on without erasing previous results.  When you have finished profiling, type @kbd{M-x profiler-stop} (there is a small overhead associated with profiling)."
 msgid "Emacs has built-in support for this.  To begin profiling, type @kbd{M-x profiler-start}.  You can choose to profile by processor usage, memory usage, or both.  Then run the code you'd like to speed up.  After that, type @kbd{M-x profiler-report} to display a summary buffer for each resource (cpu and memory) that you chose to profile.  The names of the report buffers include the times at which the reports were generated, so you can generate another report later on without erasing previous results.  When you have finished profiling, type @kbd{M-x profiler-stop} (there is a small overhead associated with profiling, so we don't recommend leaving it active except when you are actually running the code you want to examine)."
-msgstr "Emacsには、このためのビルトインサポートがあります。プロファイリングを開始するには、@kbd{M-x profiler-start}をタイプします。プロファイルはプロセッサー使用(processor usage)、メモリー使用(memory usage)、またはその両方を選択できます。何らかの処理を行った後に@kbd{M-x profiler-report}とタイプすると、プロファイルに選択した各リソースがsummaryバッファーに表示されます。reportバッファーの名前には、そのレポートが生成された時刻が含まれるので、前の結果を消去せずに後で他のレポートを生成できます。プロファイリングが終了したら、@kbd{M-x profiler-stop}とタイプしてください(プロファイリングに関連したオーバーヘッドが少しあるからです)。"
+msgstr "Emacsにはこのためのビルトインサポートがあります。プロファイリングを開始するには@kbd{M-x profiler-start}をタイプします。プロファイルはプロセッサー使用(processor usage)かメモリー使用(memory usage)、またはその両方を選択できます。それから高速化したいコードを実行します。その後に@kbd{M-x profiler-report}とタイプするとプロファイルに選択した各リソース(CPUとメモリー)がsummaryバッファーに表示されます。reportバッファーの名前にはレポートが生成された時刻が含まれるので、前の結果を消去せずに後で他のレポートを生成できます。プロファイリングが終了したら@kbd{M-x profiler-stop}とタイプしてください(プロファイリングに関連したオーバーヘッドが若干あるので実際に調査したいコードの実行中以外にアクティブのままに放置することは推奨しない)。"
 
 #. type: Plain text
 #: original_texis/debugging.texi:952
-#, fuzzy
-#| msgid "The profiler report buffer shows, on each line, a function that was called, followed by how much resource (processor or memory) it used in absolute and percentage times since profiling started.  If a given line has a @samp{+} symbol at the left-hand side, you can expand that line by typing @key{RET}, in order to see the function(s) called by the higher-level function.  Pressing @key{RET} again will collapse back to the original state."
 msgid "The profiler report buffer shows, on each line, a function that was called, followed by how much resources (cpu or memory) it used in absolute and percentage terms since profiling started.  If a given line has a @samp{+} symbol at the left-hand side, you can expand that line by typing @kbd{@key{RET}}, in order to see the function(s) called by the higher-level function.  Use a prefix argument (@kbd{C-u @key{RET}}) to see the whole call tree below a function.  Pressing @kbd{@key{RET}} again will collapse back to the original state."
-msgstr "profiler reportバッファーでは、各行に呼び出された関数と、その後にプロファイリングが開始されてから使用したリソース(プロセッサーまたはメモリー)の絶対時間とパーセンテージ時間が表示されます。左側にシンボル@samp{+}のある行では@key{RET}をタイプして行を展開して、高位レベルの関数に呼び出された関数を確認できます。もう一度@key{RET}をタイプすると、元の状態へと行が折り畳まれます。"
+msgstr "profiler reportバッファーでは、各行に呼び出された関数、その後にプロファイリングが開始されてから使用したリソース(CPUまたはメモリー)の絶対時間とパーセンテージが表示されます。左側にシンボル@samp{+}のある行では@kbd{@key{RET}}をタイプして行を展開して高位レベルの関数に呼び出された関数を確認できます。関数ツリー配下全体の呼び出しを確認するにはプレフィクス引数を使用します(@kbd{C-u @key{RET}})。もう一度@kbd{@key{RET}}をタイプすれば元の状態へと行が折り畳まれます。"
 
 #. type: Plain text
 #: original_texis/debugging.texi:957
-#, fuzzy
-#| msgid "Press @kbd{j} or @kbd{mouse-2} to jump to the definition of a function.  Press @kbd{d} to view a function's documentation.  You can save a profile to a file using @kbd{C-x C-w}.  You can compare two profiles using @kbd{=}."
 msgid "Press @kbd{j} or @kbd{mouse-2} to jump to the definition of a function at point.  Press @kbd{d} to view a function's documentation.  You can save a profile to a file using @kbd{C-x C-w}.  You can compare two profiles using @kbd{=}."
-msgstr "@kbd{j}または@kbd{mouse-2}を押下すると、関数の定義にジャンプします。@kbd{d}を押下すると、関数のドキュメントを閲覧できます。@kbd{C-x C-w}を使用して、プロファイルをファイルに保存できます。@kbd{=}を使用すれば、2つのプロファイルを比較することができます。"
+msgstr "@kbd{j}か@kbd{mouse-2}を押下するとポイント位置の関数の定義にジャンプします。@kbd{d}を押下すると関数のドキュメントを閲覧できます。@kbd{C-x C-w}を使用してプロファイルをファイルに保存できます。@kbd{=}を使用すれば2つのプロファイルを比較することができます。"
 
 #. type: file{#1}
 #: original_texis/debugging.texi:960
@@ -1667,7 +1628,7 @@ msgstr "timing programs"
 #. type: Plain text
 #: original_texis/debugging.texi:972
 msgid "The @file{elp} library offers an alternative approach, which is useful when you know in advance which Lisp function(s) you want to profile.  Using that library, you begin by setting @code{elp-function-list} to the list of function symbols---those are the functions you want to profile.  Then type @w{@kbd{M-x elp-instrument-list @key{RET} nil @key{RET}}} to arrange for profiling those functions.  After running the code you want to profile, invoke @w{@kbd{M-x elp-results}} to display the current results.  See the file @file{elp.el} for more detailed instructions.  This approach is limited to profiling functions written in Lisp, it cannot profile Emacs primitives."
-msgstr ""
+msgstr "@file{elp}ライブラリーはプロファイルしたいLisp関数が事前に解っているときに有用な別のアプローチを選択肢として提供します。このライブラリーの使用するには、まず@code{elp-function-list}に関数シンボルのリスト(プロファイルしたい関数)をセットします。それから関数をプロファイル用にアレンジするために@w{@kbd{M-x elp-instrument-list @key{RET} nil @key{RET}}}とタイプします。プロファイルしたいコードの実行後に@w{@kbd{M-x elp-results}}を呼び出してカレント結果を表示します。処理手順の詳細については@file{elp.el}ファイルを参照してください。このアプローチはLispで記述された関数のプロファイリングに限定されており、Emacsプリミティブのプロファイルはできません。 "
 
 #. type: file{#1}
 #: original_texis/debugging.texi:973
@@ -1683,10 +1644,8 @@ msgstr "benchmarking"
 
 #. type: Plain text
 #: original_texis/debugging.texi:980
-#, fuzzy
-#| msgid "You can check the speed of individual Emacs Lisp forms using the @file{benchmark} library.  See the functions @code{benchmark-run} and @code{benchmark-run-compiled} in @file{benchmark.el}."
 msgid "You can measure the time it takes to evaluate individual Emacs Lisp forms using the @file{benchmark} library.  See the macros @code{benchmark-run} and @code{benchmark-run-compiled} in @file{benchmark.el}.  You can also use the @code{benchmark} command for timing forms interactively."
-msgstr "@file{benchmark}ライブラリーを使用して、Emacs Lispフォームのスピードwpy個別にチェックできます。@file{benchmark.el}内の関数@code{benchmark-run}、および@code{benchmark-run-compiled}を参照してください。"
+msgstr "@file{benchmark}ライブラリーを使用して個々のEmacs Lispフォームの評価に消費される時間を計測できます。@file{benchmark.el}内のマクロ@code{benchmark-run}と@code{benchmark-run-compiled}を参照してください。フォームをインタラクティブに時間計測するために@code{benchmark}コマンドも使用できます。"
 
 #. type: cindex
 #: original_texis/debugging.texi:983
