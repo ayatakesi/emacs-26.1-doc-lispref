@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Emacs-24.5\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2019-11-03 20:27+0900\n"
+"PO-Revision-Date: 2020-03-22 21:51+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -665,7 +665,7 @@ msgstr "binary I/O in batch mode"
 #. type: Plain text
 #: original_texis/streams.texi:350
 msgid "When reading or writing from the standard input/output streams of the Emacs process in batch mode, it is sometimes required to make sure any arbitrary binary data will be read/written verbatim, and/or that no translation of newlines to or from CR-LF pairs is performed.  This issue does not exist on POSIX hosts, only on MS-Windows and MS-DOS@.  The following function allows you to control the I/O mode of any standard stream of the Emacs process."
-msgstr ""
+msgstr "batchモードのEmacsプロセスの標準入力や標準出力のストリームにたいして読み取りや書き込みを行う際には、任意のバイナリーデータにたいしてそのまま読み取りや書き込みを行うことや、改行とCR-LFの変換を何も行わないことを保証することが要求される場合があります。この問題はMS-WindowsとMS-DOSだけに存在する問題であり、POSIXではそのような問題はありません。以下の関数によりEmacsプロセスのすべての標準ストリームのI/Oモードを制御することができます。"
 
 #. type: defun
 #: original_texis/streams.texi:351
@@ -676,7 +676,7 @@ msgstr "set-binary-mode stream mode"
 #. type: defun
 #: original_texis/streams.texi:359
 msgid "Switch @var{stream} into binary or text I/O mode.  If @var{mode} is non-@code{nil}, switch to binary mode, otherwise switch to text mode.  The value of @var{stream} can be one of @code{stdin}, @code{stdout}, or @code{stderr}.  This function flushes any pending output data of @var{stream} as a side effect, and returns the previous value of I/O mode for @var{stream}.  On POSIX hosts, it always returns a non-@code{nil} value and does nothing except flushing pending output."
-msgstr ""
+msgstr "@var{stream}のI/Oモードのバイナリーとテキストを切り替える。@var{mode}が非@code{nil}ならバイナリーモード、それ以外ならテキストモードに切り替える。@var{stream}の値は@code{stdin}、@code{stdout}、@code{stderr}のいずれか。この関数は副作用として@var{stream}の保留中の出力データをすべてフラッシュして、@var{stream}の以前のI/Oモードの値をリターンする。POSIXでは常に非@code{nil}値をリターンして、保留中の出力のフラッシュ以外は何も行わない。"
 
 #. type: cindex
 #: original_texis/streams.texi:363
@@ -924,15 +924,12 @@ msgstr ""
 
 #. type: group
 #: original_texis/streams.texi:508
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(print \"This is the output\" 'eat-output)\n"
-#| "     @result{} \"This is the output\"\n"
+#, no-wrap
 msgid ""
 "(print \"This is the output\" #'eat-output)\n"
 "     @result{} \"This is the output\"\n"
 msgstr ""
-"(print \"This is the output\" 'eat-output)\n"
+"(print \"This is the output\" #'eat-output)\n"
 "     @result{} \"This is the output\"\n"
 
 #. type: group
@@ -975,44 +972,40 @@ msgstr "@code{concat}を呼び出してリストを文字列に変換すれば�
 #: original_texis/streams.texi:533
 #, no-wrap
 msgid "@code{stderr} stream, use for debugging"
-msgstr ""
+msgstr "@code{stderr} stream, use for debugging"
 
 #. type: anchor{#1}
 #: original_texis/streams.texi:535
 msgid "external-debugging-output"
-msgstr ""
+msgstr "external-debugging-output"
 
 #. type: defun
 #: original_texis/streams.texi:535
 #, no-wrap
 msgid "external-debugging-output character"
-msgstr ""
+msgstr "external-debugging-output character"
 
 #. type: defun
 #: original_texis/streams.texi:538
 msgid "This function can be useful as an output stream when debugging.  It writes @var{character} to the standard error stream."
-msgstr ""
+msgstr "この関数はデバッグ時の出力ストリームとして有用。これは標準エラーストリームに@var{character}を書き込む。"
 
 #. type: defun
 #: original_texis/streams.texi:540
-#, fuzzy
-#| msgid "For example:"
 msgid "For example"
-msgstr "たとえば:"
+msgstr "たとえば"
 
 #. type: group
 #: original_texis/streams.texi:545
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(print \"This is the output\" 'eat-output)\n"
-#| "     @result{} \"This is the output\"\n"
+#, no-wrap
 msgid ""
 "(print \"This is the output\" #'external-debugging-output)\n"
 "@print{} This is the output\n"
 "@result{} \"This is the output\"\n"
 msgstr ""
-"(print \"This is the output\" 'eat-output)\n"
-"     @result{} \"This is the output\"\n"
+"(print \"This is the output\" #'external-debugging-output)\n"
+"@print{} This is the output\n"
+"@result{} \"This is the output\"\n"
 
 #. type: Plain text
 #: original_texis/streams.texi:554
@@ -1074,10 +1067,8 @@ msgstr ""
 
 #. type: Plain text
 #: original_texis/streams.texi:593
-#, fuzzy
-#| msgid "In the functions below, @var{stream} stands for an output stream.  (See the previous section for a description of output streams.)  If @var{stream} is @code{nil} or omitted, it defaults to the value of @code{standard-output}."
 msgid "In the functions below, @var{stream} stands for an output stream.  (See the previous section for a description of output streams.  Also @xref{external-debugging-output}, a useful stream value for debugging.)  If @var{stream} is @code{nil} or omitted, it defaults to the value of @code{standard-output}."
-msgstr "以下の関数では、@var{stream}は出力ストリームを意味します。(出力ストリームの説明は、前のセクションを参照してください。) @var{stream}が@code{nil}、または省略された場合のデフォルトは、@code{standard-output}の値になります。"
+msgstr "以下の関数では@var{stream}は出力ストリームを意味します(出力ストリームの説明は前のセクションを参照。デバッグではストリーム値として@ref{external-debugging-output}も有用) @var{stream}が@code{nil}か省略された場合のデフォルトは@code{standard-output}の値です。"
 
 #. type: defun
 #: original_texis/streams.texi:594
@@ -1196,7 +1187,7 @@ msgstr "newline in print"
 #. type: defun
 #: original_texis/streams.texi:661
 msgid "This function outputs a newline to @var{stream}.  The name stands for ``terminate print''.  If @var{ensure} is non-@code{nil} no newline is printed if @var{stream} is already at the beginning of a line.  Note in this case @var{stream} can not be a function and an error is signaled if it is.  This function returns @code{t} if a newline is printed."
-msgstr ""
+msgstr "この関数は@var{stream}に改行を出力する。名前の由来は``terminate print(プリントを終端する)''。@var{ensure}が非@code{nil}の場合には、@var{stream}がすでに行頭にあれば改行をプリントしない。この場合には@var{stream}に関数は指定できず、指定するとエラーがシグナルされる。この関数は改行をプリントしたら@code{t}をリターンする。"
 
 #. type: defun
 #: original_texis/streams.texi:663
@@ -1323,7 +1314,7 @@ msgstr "この関数は@code{prin1}と同じように@var{object}を@var{stream}
 #. type: Plain text
 #: original_texis/streams.texi:729
 msgid "If you need to use binary I/O in batch mode, e.g., use the functions described in this section to write out arbitrary binary data or avoid conversion of newlines on non-POSIX hosts, see @ref{Input Functions, set-binary-mode}."
-msgstr ""
+msgstr "任意のバイナリーデータを書き込んだり非POSIXホストで改行変換を回避するためにこのセクションで説明した関数を使用してbatchモードでバイナリーI/Oモードを使用する必要がある場合には@ref{Input Functions, set-binary-mode}を参照してください。"
 
 #. type: section
 #: original_texis/streams.texi:731
@@ -1426,17 +1417,14 @@ msgstr "2つ目の式では@code{prin1}を呼び出す間は@code{print-escape-n
 
 #. type: defvar
 #: original_texis/streams.texi:781
-#, fuzzy, no-wrap
-#| msgid "escape characters"
+#, no-wrap
 msgid "print-escape-control-characters"
-msgstr "escape characters"
+msgstr "print-escape-control-characters"
 
 #. type: defvar
 #: original_texis/streams.texi:787
-#, fuzzy
-#| msgid "If this variable is non-@code{nil}, then unibyte non-@acronym{ASCII} characters in strings are unconditionally printed as backslash sequences by the print functions @code{prin1} and @code{print} that print with quoting."
 msgid "If this variable is non-@code{nil}, control characters in strings are printed as backslash sequences by the print functions @code{prin1} and @code{print} that print with quoting.  If this variable and @code{print-escape-newlines} are both non-@code{nil}, the latter takes precedences for newlines and formfeeds."
-msgstr "この変数が非@code{nil}の場合、クォートつきでプリントするプリント関数@code{prin1}および@code{print}は、文字列内のユニバイトの非@acronym{ASCII}文字を無条件でバックスラッシュシーケンスとしてプリントする。"
+msgstr "この変数が非@code{nil}なら、クォートつきでプリントするプリント関数@code{prin1}と@code{print}は、文字列内のコントロール文字をバックスラッシュシーケンスとしてプリントする。この変数と@code{print-escape-newlines}がいずれも非@code{nil}なら改行と改頁には後者が優先される。"
 
 #. type: defvar
 #: original_texis/streams.texi:789
