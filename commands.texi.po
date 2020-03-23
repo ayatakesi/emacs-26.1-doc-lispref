@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:40+0900\n"
-"PO-Revision-Date: 2020-03-06 08:04+0900\n"
+"PO-Revision-Date: 2020-03-23 20:00+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -849,10 +849,8 @@ msgstr "D"
 
 #. type: table
 #: original_texis/commands.texi:401
-#, fuzzy
-#| msgid "A directory name.  The default is the current default directory of the current buffer, @code{default-directory} (@pxref{File Name Expansion}).  Existing, Completion, Default, Prompt."
 msgid "A directory.  The default is the current default directory of the current buffer, @code{default-directory} (@pxref{File Name Expansion}).  Existing, Completion, Default, Prompt."
-msgstr "ディレクトリー名。デフォルトはカレントバッファーのカレントのデフォルトディレクトリー@code{default-directory}(@ref{File Name Expansion}を参照)。[Existing]、[Completion]、[Default]、[Prompt]"
+msgstr "ディレクトリー。デフォルトはカレントバッファーのカレントのデフォルトディレクトリー@code{default-directory} (@ref{File Name Expansion}を参照)。[Existing]、[Completion]、[Default]、[Prompt]"
 
 #. type: item
 #: original_texis/commands.texi:402
@@ -1503,13 +1501,7 @@ msgstr "通常は@code{execute-extended-command}は@kbd{M-x}の定義なので�
 
 #. type: group
 #: original_texis/commands.texi:754
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(execute-extended-command 3)\n"
-#| "---------- Buffer: Minibuffer ----------\n"
-#| "3 M-x forward-word RET\n"
-#| "---------- Buffer: Minibuffer ----------\n"
-#| "     @result{} t\n"
+#, no-wrap
 msgid ""
 "(execute-extended-command 3)\n"
 "---------- Buffer: Minibuffer ----------\n"
@@ -1519,7 +1511,7 @@ msgid ""
 msgstr ""
 "(execute-extended-command 3)\n"
 "---------- Buffer: Minibuffer ----------\n"
-"3 M-x forward-word RET\n"
+"3 M-x forward-word @key{RET}\n"
 "---------- Buffer: Minibuffer ----------\n"
 "     @result{} t\n"
 
@@ -1943,10 +1935,8 @@ msgstr "@code{composition} property, and point display"
 
 #. type: Plain text
 #: original_texis/commands.texi:1013
-#, fuzzy
-#| msgid "It is not easy to display a value of point in the middle of a sequence of text that has the @code{display}, @code{composition} or is invisible.  Therefore, after a command finishes and returns to the command loop, if point is within such a sequence, the command loop normally moves point to the edge of the sequence."
 msgid "Emacs cannot display the cursor when point is in the middle of a sequence of text that has the @code{display} or @code{composition} property, or is invisible.  Therefore, after a command finishes and returns to the command loop, if point is within such a sequence, the command loop normally moves point to the edge of the sequence."
-msgstr "プロパティ@code{display}や@code{composition}をｍつテキストや、非表示のテキストシーケンスの中間でポイント値を表示するのは、簡単ではありません。したがって、コマンドが終了した後にコマンドループにリターンするとき、そのようなシーケンス中にポイントがある場合、コマンドループは通常ポイントをそのようなシーケンスの端に移動します。"
+msgstr "Emacsは@code{display}や@code{composition}のプロパティをもつテキストや、非表示のテキストシーケンスの中間にポイントがあるときにカーソルを表示することはできません。したがってコマンドが終了した後にコマンドループにリターンする際にそのようなシーケンス中にポイントがある場合には、コマンドループは通常はポイントをそのようなシーケンスの端に移動します。"
 
 #. type: Plain text
 #: original_texis/commands.texi:1016
@@ -4714,22 +4704,22 @@ msgstr "この関数は1つの文字を読み取ってリターンするため�
 #: original_texis/commands.texi:2622
 #, no-wrap
 msgid "read-multiple-choice prompt choices"
-msgstr ""
+msgstr "read-multiple-choice prompt choices"
 
 #. type: defun
 #: original_texis/commands.texi:2625
 msgid "Ask user a multiple choice question.  @var{prompt} should be a string that will be displayed as the prompt."
-msgstr ""
+msgstr "複数の選択肢のある問いをユーザーに尋ねる。@var{prompt}はプロンプトとして表示する文字列であること。"
 
 #. type: defun
 #: original_texis/commands.texi:2631
 msgid "@var{choices} is an alist where the first element in each entry is a character to be entered, the second element is a short name for the entry to be displayed while prompting (if there's room, it might be shortened), and the third, optional entry is a longer explanation that will be displayed in a help buffer if the user requests more help."
-msgstr ""
+msgstr "@var{choices}は各エントリーの1つ目の要素が入力される文字、2つ目の要素がプロンプトを表示する際にそのエントリーにたいして表示する短い名前であるようなalist(スペースがあれば短縮され得る)であり、3つ目のオプションのエントリーはユーザーがより多くのヘルプを要求した際にヘルプバッファーに表示する長い説明。"
 
 #. type: defun
 #: original_texis/commands.texi:2633
 msgid "The return value is the matching value from @var{choices}."
-msgstr ""
+msgstr "リターン値は@var{choices}のマッチする値。"
 
 #. type: lisp
 #: original_texis/commands.texi:2640
@@ -4741,11 +4731,16 @@ msgid ""
 "   (?s \"session only\" \"Accept certificate this session only.\")\n"
 "   (?n \"no\" \"Refuse to use certificate, close connection.\")))\n"
 msgstr ""
+"(read-multiple-choice\n"
+" \"Continue connecting?\"\n"
+" '((?a \"always\" \"Accept certificate for this and future sessions.\")\n"
+"   (?s \"session only\" \"Accept certificate this session only.\")\n"
+"   (?n \"no\" \"Refuse to use certificate, close connection.\")))\n"
 
 #. type: defun
 #: original_texis/commands.texi:2644
 msgid "The @code{read-multiple-choice-face} face is used to highlight the matching characters in the name string on graphical terminals."
-msgstr ""
+msgstr "グラフィカル端末で名前文字列にマッチする文字をハイライトするために@code{read-multiple-choice-face}フェイスが使用される。"
 
 #. type: subsection
 #: original_texis/commands.texi:2648
@@ -5161,15 +5156,14 @@ msgstr ""
 
 #. type: defvar
 #: original_texis/commands.texi:2921
-#, fuzzy, no-wrap
-#| msgid "while-no-input body@dots{}"
+#, no-wrap
 msgid "while-no-input-ignore-events"
-msgstr "while-no-input body@dots{}"
+msgstr "while-no-input-ignore-events"
 
 #. type: defvar
 #: original_texis/commands.texi:2924
 msgid "This variable allow setting which special events @code{while-no-input} should ignore.  It is a list of symbols."
-msgstr ""
+msgstr "この変数は@code{while-no-input}が無視するべきスペシャルイベントのセッティングを可能にする。これはシンボルのリスト。"
 
 #. type: defun
 #: original_texis/commands.texi:2927
