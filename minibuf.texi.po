@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Emacs-24.5\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:41+0900\n"
-"PO-Revision-Date: 2020-03-05 01:11+0900\n"
+"PO-Revision-Date: 2020-03-23 19:21+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -224,10 +224,8 @@ msgstr "ミニバッファー内のテキストは常に@dfn{プロンプト文�
 
 #. type: Plain text
 #: original_texis/minibuf.texi:72
-#, fuzzy
-#| msgid "The minibuffer's window is normally a single line; it grows automatically if the contents require more space.  Whilst it is active, you can explicitly resize it temporarily with the window sizing commands; it reverts to its normal size when the minibuffer is exited.  When the minibuffer is not active, you can resize it permanently by using the window sizing commands in the frame's other window, or dragging the mode line with the mouse.  (Due to details of the current implementation, for this to work @code{resize-mini-windows} must be @code{nil}.)  If the frame contains just a minibuffer, you can change the minibuffer's size by changing the frame's size."
 msgid "The minibuffer's window is normally a single line; it grows automatically if the contents require more space.  Whilst the minibuffer is active, you can explicitly resize its window temporarily with the window sizing commands; the window reverts to its normal size when the minibuffer is exited.  When the minibuffer is not active, you can resize its window permanently by using the window sizing commands in the frame's other window, or dragging the mode line with the mouse.  (Due to details of the current implementation, for this to work @code{resize-mini-windows} must be @code{nil}.)  If the frame contains just a minibuffer window, you can change its size by changing the frame's size."
-msgstr "ミニバッファーのウィンドウは、通常は1行です。ミニバッファーのコンテンツがより多くのスペースを要求する場合は、自動的に拡張されます。ミニバッファーのウィンドウがアクティブな間は、ウィンドウのサイズ変更コマンドで一時的にウィンドウのサイズを変更できます。サイズの変更は、ミニバッファーをexitしたとき、通常のサイズにリバートされます。ミニバッファーがアクティブでないときはフレーム内の他のウィンドウでウィンドウのサイズ変更コマンドを使用するか、マウスでモードラインをドラッグして、ミニバッファーのサイズを永続的に変更できます。(現実装では、これが機能するには@code{resize-mini-windows}が@code{nil}でなければなりません。) フレームがミニバッファーだけを含む場合は、そのフレームのサイズを変更してミニバッファーのサイズを変更できます。"
+msgstr "ミニバッファーのウィンドウは通常は1行です。ミニバッファーのコンテンツがより多くのスペースを要求する場合には自動的に拡張されます。ミニバッファーのウィンドウがアクティブな間はウィンドウのサイズ変更コマンドで一時的にウィンドウのサイズを変更できます。サイズの変更はミニバッファーをexitしたときに通常のサイズにリバートされます。ミニバッファーがアクティブでないときはフレーム内の他のウィンドウでウィンドウのサイズ変更コマンドを使用するか、マウスでモードラインをドラッグして、ミニバッファーのウィンドウのサイズを永続的に変更できます(現実装ではこれが機能するには@code{resize-mini-windows}が@code{nil}でなければならない)。フレームがミニバッファーウィンドウだけを含む場合にはフレームのサイズを変更してミニバッファーのサイズを変更できます。"
 
 #. type: Plain text
 #: original_texis/minibuf.texi:77
@@ -311,7 +309,7 @@ msgstr "引数@var{default}はヒストリーコマンドを通じて利用で�
 #. type: defun
 #: original_texis/minibuf.texi:157
 msgid "If @var{read} is non-@code{nil}, then @var{default} is also used as the input to @code{read}, if the user enters empty input.  If @var{default} is a list of strings, the first string is used as the input.  If @var{default} is @code{nil}, empty input results in an @code{end-of-file} error.  However, in the usual case (where @var{read} is @code{nil}), @code{read-from-minibuffer} ignores @var{default} when the user enters empty input and returns an empty string, @code{\"\"}.  In this respect, it differs from all the other minibuffer input functions in this chapter."
-msgstr "@var{read}が非@code{nil}なら、ユーザーの入力が空のときの@code{read}の入力としても@var{default}が使用される。@var{default}が文字列リストの!は、最初の文字列が入力として使用される。@var{default}が@code{nil}なら、空の入力は@code{end-of-file}エラーとなる。しかし通常(@var{read}が@code{nil})の場合には、ユーザーの入力が空のとき@code{read-from-minibuffer}は@var{default}を無視して空文字列@code{\"\"}をリターンする。この点ではこの関数はこのチャプターの他のどのミニバッファー入力関数とも異なる。"
+msgstr "@var{read}が非@code{nil}なら、ユーザーの入力が空のときの@code{read}の入力としても@var{default}が使用される。@var{default}が文字列リストの場合には最初の文字列が入力として使用される。@var{default}が@code{nil}なら、空の入力は@code{end-of-file}エラーとなる。しかし通常(@var{read}が@code{nil})の場合には、ユーザーの入力が空のとき@code{read-from-minibuffer}は@var{default}を無視して空文字列@code{\"\"}をリターンする。この点ではこの関数はこのチャプターの他のどのミニバッファー入力関数とも異なる。"
 
 #. type: defun
 #: original_texis/minibuf.texi:163
@@ -330,20 +328,19 @@ msgstr "変数@code{minibuffer-allow-text-properties}が非@code{nil}なら、�
 
 #. type: vindex
 #: original_texis/minibuf.texi:174
-#, fuzzy, no-wrap
-#| msgid "minibuffer-allow-text-properties"
+#, no-wrap
 msgid "minibuffer-prompt-properties"
-msgstr "minibuffer-allow-text-properties"
+msgstr "minibuffer-prompt-properties"
 
 #. type: defun
 #: original_texis/minibuf.texi:179
 msgid "The text properties in @code{minibuffer-prompt-properties} are applied to the prompt.  By default, this property list defines a face to use for the prompt.  This face, if present, is applied to the end of the face list and merged before display."
-msgstr ""
+msgstr "@code{minibuffer-prompt-properties}内のテキストプロパティはプロンプトに適用される。このプロパティリストはデフォルトではプロンプトに使用するフェイスを定義する。このフェイスが与えられるとフェイスリストの最後に適用されて表示前にマージされる。"
 
 #. type: defun
 #: original_texis/minibuf.texi:183
 msgid "If the user wants to completely control the look of the prompt, the most convenient way to do that is to specify the @code{default} face at the end of all face lists.  For instance:"
-msgstr ""
+msgstr "ユーザーがプロンプトの外観を完全に制御したければすべてのフェイスリストの最後に@code{default}フェイスを指定するのがもっとも簡便な方法である。たとえば:"
 
 #. type: lisp
 #: original_texis/minibuf.texi:189
@@ -354,6 +351,10 @@ msgid ""
 "  (propertize \"Bold\" 'face '(bold default))\n"
 "  (propertize \" and normal: \" 'face '(default))))\n"
 msgstr ""
+"(read-from-minibuffer\n"
+" (concat\n"
+"  (propertize \"Bold\" 'face '(bold default))\n"
+"  (propertize \" and normal: \" 'face '(default))))\n"
 
 #. type: defun
 #: original_texis/minibuf.texi:196 original_texis/minibuf.texi:1054
@@ -2248,10 +2249,8 @@ msgstr "グラフィカルなファイルダイアログを使用したときの
 
 #. type: defun
 #: original_texis/minibuf.texi:1445
-#, fuzzy
-#| msgid "@code{read-file-name} does not automatically expand the returned file name.  You must call @code{expand-file-name} yourself if an absolute file name is required."
 msgid "@code{read-file-name} does not automatically expand the returned file name.  You can call @code{expand-file-name} yourself if an absolute file name is required."
-msgstr "@code{read-file-name}はリターンするファイル名を自動的に展開しない。絶対ファイル名が必要ならば、自分で@code{expand-file-name}を呼び出さなければならない。"
+msgstr "@code{read-file-name}はリターンするファイル名を自動的に展開しない。絶対ファイル名が必要ならば自分で@code{expand-file-name}を呼び出すことができる。"
 
 #. type: defun
 #: original_texis/minibuf.texi:1454
@@ -2806,10 +2805,8 @@ msgstr "このアブノーマルフックの値は関数のリストである。
 
 #. type: defvar
 #: original_texis/minibuf.texi:1885
-#, fuzzy
-#| msgid "When the command @code{completion-at-point} runs, it calls the functions in the list one by one, without any argument.  Each function should return @code{nil} if it is unable to produce a completion table for the text at point.  Otherwise it should return a list of the form"
 msgid "When the command @code{completion-at-point} runs, it calls the functions in the list one by one, without any argument.  Each function should return @code{nil} unless it can and wants to take responsibility for the completion data for the text at point.  Otherwise it should return a list of the following form:"
-msgstr "コマンド@code{completion-at-point}が実行されると、引数なしでリスト内の関数が1つずつ呼び出される。それぞれの関数は、ポイント位置のテキストにたいして補完テーブルを生成できない場合は@code{nil}をリターンする。生成できた場合は、以下の形式のリストをリターンする"
+msgstr "コマンド@code{completion-at-point}が実行されると引数なしでリスト内の関数が1つずつ呼び出される。それぞれの関数はポイント位置のテキストにたいして補完テーブルを生成でき、かつそれに責任を負いたいのでなければ@code{nil}をリターンすること。それ以外なら以下の形式のリストをリターンすること:"
 
 #. type: example
 #: original_texis/minibuf.texi:1888
@@ -2847,7 +2844,7 @@ msgstr "値が@code{no}の場合は、もし補完テーブルがポイント位
 #. type: defvar
 #: original_texis/minibuf.texi:1923
 msgid "The functions on this hook should generally return quickly, since they may be called very often (e.g., from @code{post-command-hook}).  Supplying a function for @var{collection} is strongly recommended if generating the list of completions is an expensive operation.  Emacs may internally call functions in @code{completion-at-point-functions} many times, but care about the value of @var{collection} for only some of these calls.  By supplying a function for @var{collection}, Emacs can defer generating completions until necessary.  You can use @code{completion-table-dynamic} to create a wrapper function:"
-msgstr ""
+msgstr "このフック上の関数は(たとえば@code{post-command-hook}から)頻繁に呼び出され得るので一般的には素早くリターンすること。補完リストの生成が高価な処理なら@var{collection}にたいする関数の提供を強く推奨する。Emacsは@code{completion-at-point-functions}内の関数を頻繁に呼び出すかもしれないが、それらの呼び出しのいくつかにたいしてのみ@var{collection}の値を考慮する。@var{collection}にたいして関数を提供することによりEmacsは必要になるまで補完の生成を遅延できる。ラッパー関数を作成するために@code{completion-table-dynamic}を使用できる:"
 
 #. type: smallexample
 #: original_texis/minibuf.texi:1928
@@ -2886,14 +2883,12 @@ msgstr ""
 #. type: defvar
 #: original_texis/minibuf.texi:1943
 msgid "Additionally, the @var{collection} should generally not be pre-filtered based on the current text between @var{start} and @var{end}, because that is the responsibility of the caller of @code{completion-at-point-functions} to do that according to the completion styles it decides to use."
-msgstr ""
+msgstr "さらに一般的には@var{collection}は@var{start}と@var{end}の間のカレントのテキストにもとづいて事前にフィルターされるべきではない。なぜなら使用を判断した補完スタイルに応じてこれを行うのは@code{completion-at-point-functions}の呼び出し側の責任だからである。"
 
 #. type: defvar
 #: original_texis/minibuf.texi:1950
-#, fuzzy
-#| msgid "A function in @code{completion-at-point-functions} may also return a function.  In that case, that returned function is called, with no argument, and it is entirely responsible for performing the completion.  We discourage this usage; it is intended to help convert old code to using @code{completion-at-point}."
 msgid "A function in @code{completion-at-point-functions} may also return a function instead of a list as described above.  In that case, that returned function is called, with no argument, and it is entirely responsible for performing the completion.  We discourage this usage; it is only intended to help convert old code to using @code{completion-at-point}."
-msgstr "@code{completion-at-point-functions}内の関数も関数をリターンするかもしれない。その場合は引数なしでリターンされた関数が呼び出され、その関数が補完処理の全責任を負う。この方法は推奨されない。これは@code{completion-at-point}を使用する古いコードの救済を意図したもののだからである。"
+msgstr "@code{completion-at-point-functions}内の関数も上述のリストのかわりに関数をリターンするかもしれない。その場合には引数なしでリターンされた関数が呼び出されて、その関数が補完処理の全責任を負う。この方法は推奨されない。これは@code{completion-at-point}を使用する古いコードの救済だけを意図したものだからである。"
 
 #. type: defvar
 #: original_texis/minibuf.texi:1955
@@ -3323,12 +3318,12 @@ msgstr "Definition of minibuffer-window"
 #. type: defun
 #: original_texis/minibuf.texi:2273
 msgid "This function returns the minibuffer window used for frame @var{frame}.  If @var{frame} is @code{nil}, that stands for the selected frame."
-msgstr ""
+msgstr "この関数はフレーム@var{frame}にたいして使用されるミニバッファーウィンドウをリターンする。@var{frame}が@code{nil}ならそれは選択されたフレームを意味する。"
 
 #. type: defun
 #: original_texis/minibuf.texi:2279
 msgid "Note that the minibuffer window used by a frame need not be part of that frame---a frame that has no minibuffer of its own necessarily uses some other frame's minibuffer window.  The minibuffer window of a minibuffer-less frame can be changed by setting that frame's @code{minibuffer} frame parameter (@pxref{Buffer Parameters})."
-msgstr ""
+msgstr "フレームが使用するミニバッファーウィンドウがフレームの一部である必要はないことに注意(ミニバッファーをもたないフレームは必要に応じて別のフレームのミニバッファーウィンドウを使用する)。ミニバッファーのないフレームのミニバッファーウィンドウは、そのフレームの@code{minibuffer}フレームパラメーターをセットすることにより変更できる(@ref{Buffer Parameters}を参照)。"
 
 #. type: defun
 #: original_texis/minibuf.texi:2281
@@ -3338,13 +3333,8 @@ msgstr "set-minibuffer-window window"
 
 #. type: defun
 #: original_texis/minibuf.texi:2287
-#, fuzzy
-#| msgid "This function specifies @var{window} as the minibuffer window to use.  This affects where the minibuffer is displayed if you put text in it without invoking the usual minibuffer commands.  It has no effect on the usual minibuffer input functions because they all start by choosing the minibuffer window according to the current frame."
 msgid "This function specifies @var{window} as the minibuffer window to use.  This affects where the minibuffer is displayed if you put text in it without invoking the usual minibuffer commands.  It has no effect on the usual minibuffer input functions because they all start by choosing the minibuffer window according to the selected frame."
-msgstr ""
-"この関数はミニバッファーウィンドウとして@var{window}を使用するよう指定する。\n"
-"This function specifies as the minibuffer window to use.\n"
-"これは通常のミニバッファーコマンドを呼び出さずにミニバッファーにテキストを入力する場合、そのミニバッファーがどこに表示されるかに影響を及ぼす。通常のミニバッファー入力関数はすべてカレントフレームに対応するミニバッファーを選択して開始されるので、影響はない。"
+msgstr "この関数はミニバッファーウィンドウとして@var{window}を使用するよう指定する。これは通常のミニバッファーコマンドを呼び出さずにミニバッファーにテキストを入力する場合には、ミニバッファーをどこに表示するかに影響を及ぼす。通常のミニバッファー入力関数はすべて選択されたフレームに対応するミニバッファーを選択して開始されるので影響はない。"
 
 #. type: defun
 #: original_texis/minibuf.texi:2290
@@ -3359,10 +3349,8 @@ msgstr "この関数は@var{window}がミニバッファーウィンドウなら
 
 #. type: Plain text
 #: original_texis/minibuf.texi:2297
-#, fuzzy
-#| msgid "This function returns non-@code{nil} if @var{window} is the currently active minibuffer window."
 msgid "The following function returns the window showing the currently active minibuffer."
-msgstr "この関数は@var{window}がカレントでアクティブなミニバッファーウィンドウの場合は、非@code{nil}をリターンする。"
+msgstr "以下の関数はカレントでアクティブなミニバッファーを表示しているウィンドウをリターンします。"
 
 #. type: defun
 #: original_texis/minibuf.texi:2298
@@ -3372,17 +3360,13 @@ msgstr "active-minibuffer-window"
 
 #. type: defun
 #: original_texis/minibuf.texi:2301
-#, fuzzy
-#| msgid "This function returns the currently active minibuffer window, or @code{nil} if there is none."
 msgid "This function returns the window of the currently active minibuffer, or @code{nil} if there is no active minibuffer."
-msgstr "この関数はカレントでアクティブなミニバッファーウィンドウ、アクティブなウィンドウがない場合は@code{nil}をリターンする。"
+msgstr "この関数はカレントでアクティブなミニバッファーのウィンドウ、アクティブなミニバッファーがなければ@code{nil}をリターンする。"
 
 #. type: Plain text
 #: original_texis/minibuf.texi:2307
-#, fuzzy
-#| msgid "It is not correct to determine whether a given window is a minibuffer by comparing it with the result of @code{(minibuffer-window)}, because there can be more than one minibuffer window if there is more than one frame."
 msgid "It is not sufficient to determine whether a given window shows the currently active minibuffer by comparing it with the result of @code{(minibuffer-window)}, because there can be more than one minibuffer window if there is more than one frame."
-msgstr "@code{(minibuffer-window)}の結果を比較して、与えられたウィンドウがミニバッファーかどうか判断するのは正しくない。なぜなら複数のフレームがある場合、ミニバッファーウィンドウも複数あり得るからである。"
+msgstr "@code{(minibuffer-window)}の結果の比較だけでは、与えられたウィンドウがカレントでアクティブなミニバッファーを表示するかどうかを判断するのは不十分である。なぜなら複数のフレームがある場合にはミニバッファーウィンドウも複数あり得る。"
 
 #. type: defun
 #: original_texis/minibuf.texi:2308
@@ -3392,10 +3376,8 @@ msgstr "minibuffer-window-active-p window"
 
 #. type: defun
 #: original_texis/minibuf.texi:2311
-#, fuzzy
-#| msgid "This function returns non-@code{nil} if @var{window} is the currently active minibuffer window."
 msgid "This function returns non-@code{nil} if @var{window} shows the currently active minibuffer."
-msgstr "この関数は@var{window}がカレントでアクティブなミニバッファーウィンドウの場合は、非@code{nil}をリターンする。"
+msgstr "この関数は@var{window}がカレントでアクティブなミニバッファーを表示するウィンドウなら非@code{nil}をリターンする。"
 
 #. type: Plain text
 #: original_texis/minibuf.texi:2315
@@ -3427,7 +3409,7 @@ msgstr "このオプションはミニバッファーウィンドウの自動的
 #. type: Plain text
 #: original_texis/minibuf.texi:2340
 msgid "Note that the values of the above two variables take effect at display time, so let-binding them around code which produces echo-area messages will not work.  If you want to prevent resizing of minibuffer windows when displaying long messages, bind the @code{message-truncate-lines} variable instead (@pxref{Echo Area Customization})."
-msgstr ""
+msgstr "上記の2つの変数の値は表示時に効果を発揮するので、エコーエリアのメッセージを生成するコードの前後でこれらの変数をletバインドしても機能しないことに注意してください。長いメッセージを表示する際にミニバッファーウィンドウのリサイズを抑止したければ、かわりに@code{message-truncate-lines}変数をバインドしてください(@ref{Echo Area Customization}を参照)。"
 
 #. type: cindex
 #: original_texis/minibuf.texi:2344
@@ -3548,17 +3530,13 @@ msgstr "enable-recursive-minibuffers"
 
 #. type: defopt
 #: original_texis/minibuf.texi:2402
-#, fuzzy
-#| msgid "If this variable is non-@code{nil}, you can invoke commands (such as @code{find-file}) that use minibuffers even while the minibuffer window is active.  Such invocation produces a recursive editing level for a new minibuffer.  The outer-level minibuffer is invisible while you are editing the inner one."
 msgid "If this variable is non-@code{nil}, you can invoke commands (such as @code{find-file}) that use minibuffers even while the minibuffer is active.  Such invocation produces a recursive editing level for a new minibuffer.  The outer-level minibuffer is invisible while you are editing the inner one."
-msgstr "この変数が非@code{nil}の場合は、ミニバッファーウィンドウがアクティブでも、(@code{find-file}のような)ミニバッファーを使用するコマンドを呼び出すことができる。このような呼び出しは、新たなミニバッファーにたいして再帰編集レベル(recursive editing level)を生成する。内側レベルの編集の間、外側レベルのミニバッファーは非表示になる。"
+msgstr "この変数が非@code{nil}ならミニバッファーがアクティブでも、(@code{find-file}のような)ミニバッファーを使用するコマンドを呼び出すことができる。このような呼び出しは新たなミニバッファーにたいして再帰編集レベル(recursive editing level)を生成する。内側レベルの編集の間は外側レベルのミニバッファーは非表示になる。"
 
 #. type: defopt
 #: original_texis/minibuf.texi:2406
-#, fuzzy
-#| msgid "If this variable is @code{nil}, you cannot invoke minibuffer commands when the minibuffer window is active, not even if you switch to another window to do it."
 msgid "If this variable is @code{nil}, you cannot invoke minibuffer commands when the minibuffer is active, not even if you switch to another window to do it."
-msgstr "この変数が@code{nil}の場合、ミニバッファーウィンドウがアクティブなときは、たとえ他のウィンドウに切り替えても、ミニバッファーコマンドの呼び出しはできない。"
+msgstr "この変数が@code{nil}ならミニバッファーがアクティブなときは、たとえ他のウィンドウに切り替えてもミニバッファーコマンドの呼び出しはできない。"
 
 #. type: Plain text
 #: original_texis/minibuf.texi:2416
@@ -3595,20 +3573,19 @@ msgstr "これはミニバッファーがエンターされたときは常に実
 
 #. type: defmac
 #: original_texis/minibuf.texi:2431
-#, fuzzy, no-wrap
-#| msgid "minibuffer-setup-hook"
+#, no-wrap
 msgid "minibuffer-with-setup-hook function &rest body"
-msgstr "minibuffer-setup-hook"
+msgstr "minibuffer-with-setup-hook function &rest body"
 
 #. type: defmac
 #: original_texis/minibuf.texi:2438
 msgid "This macro executes @var{body} after arranging for the specified @var{function} to be called via @code{minibuffer-setup-hook}.  By default, @var{function} is called before the other functions in the @code{minibuffer-setup-hook} list, but if @var{function} is of the form @w{@code{(:append @var{func})}}, @var{func} will be called @emph{after} the other hook functions."
-msgstr ""
+msgstr "このマクロは指定された@var{function}が@code{minibuffer-setup-hook}を通じて呼び出されるように計らった後に@var{body}を実行する。デフォルトでは@var{function}は@code{minibuffer-setup-hook}リストの他の関数の前に呼び出されるが、@var{function}が@w{@code{(:append @var{func})}}というフォームなら、@var{func}は他のフック関数の@emph{後}に呼び出される。"
 
 #. type: defmac
 #: original_texis/minibuf.texi:2442
 msgid "The @var{body} forms should not use the minibuffer more than once.  If the minibuffer is re-entered recursively, @var{function} will only be called once, for the outermost use of the minibuffer."
-msgstr ""
+msgstr "@var{body}はミニバッファーを複数回使用しないこと。ミニバッファーが再帰的に再エンターされると、@var{function}は最外のミニバッファーの使用にたいして1回だけ呼び出されるだろう。"
 
 #. type: defvar
 #: original_texis/minibuf.texi:2444
@@ -3661,10 +3638,8 @@ msgstr "minibuffer-selected-window"
 
 #. type: defun
 #: original_texis/minibuf.texi:2466
-#, fuzzy
-#| msgid "This function returns the window that was selected when the minibuffer was entered.  If selected window is not a minibuffer window, it returns @code{nil}."
 msgid "This function returns the window that was selected just before the minibuffer window was selected.  If the selected window is not a minibuffer window, it returns @code{nil}."
-msgstr "この関数はミニバッファーがエンターされたときに選択されていたウィンドウをリターンする。選択されたウィンドウがミニバッファー以外のときは、@code{nil}をリターンする。"
+msgstr "この関数はミニバッファーウィンドウが選択される直前に選択されていたウィンドウをリターンする。選択されたウィンドウがミニバッファーウィンドウ以外なら@code{nil}をリターンする。"
 
 #. type: vindex
 #: original_texis/minibuf.texi:2468
