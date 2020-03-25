@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-03-07 03:46+0900\n"
+"PO-Revision-Date: 2020-03-25 20:47+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -576,7 +576,7 @@ msgstr "メジャーモードコマンドは変数@code{mode-name}にそのモ�
 #. type: itemize
 #: original_texis/modes.texi:320
 msgid "Calling the major mode command twice in direct succession should not fail and should do the same thing as calling the command only once.  In other words, the major mode command should be idempotent."
-msgstr ""
+msgstr "連続してメジャーモードコマンドを直接呼び出しても失敗せずに、1回だけ呼び出されたときと同じことを行うこと。言い換えるとメジャーモードコマンドはべき等であること。"
 
 #. type: cindex
 #: original_texis/modes.texi:322
@@ -727,10 +727,8 @@ msgstr "major mode hook"
 
 #. type: itemize
 #: original_texis/modes.texi:461
-#, fuzzy
-#| msgid "Each major mode should have a normal @dfn{mode hook} named @code{@var{modename}-mode-hook}.  The very last thing the major mode command should do is to call @code{run-mode-hooks}.  This runs the normal hook @code{change-major-mode-after-body-hook}, the mode hook, and then the normal hook @code{after-change-major-mode-hook}.  @xref{Mode Hooks}."
 msgid "Each major mode should have a normal @dfn{mode hook} named @code{@var{modename}-mode-hook}.  The very last thing the major mode command should do is to call @code{run-mode-hooks}.  This runs the normal hook @code{change-major-mode-after-body-hook}, the mode hook, the function @code{hack-local-variables} (when the buffer is visiting a file), and then the normal hook @code{after-change-major-mode-hook}.  @xref{Mode Hooks}."
-msgstr "すべてのメジャーモードは、@code{@var{modename}-mode-hook}という名前のノーマルな@dfn{モードフック(mode hook)}をもつべきである。メジャーモードコマンドが一番最後に行うべきことは、@code{run-mode-hooks}の呼び出しである。これは、ノーマルフック@code{change-major-mode-after-body-hook}、モードフック、その後に@code{after-change-major-mode-hook}を実行する。@ref{Mode Hooks}を参照のこと。"
+msgstr "すべてのメジャーモードは@code{@var{modename}-mode-hook}という名前のノーマルな@dfn{モードフック(mode hook)}をもつこと。メジャーモードコマンドが一番最後に@code{run-mode-hooks}を呼び出すこと。これはノーマルフック@code{change-major-mode-after-body-hook}、モードフック、(バッファーがファイルをvisitしていれば)関数@code{hack-local-variables}、その後にノーマルフック@code{after-change-major-mode-hook}を実行する。@ref{Mode Hooks}を参照のこと。"
 
 #. type: itemize
 #: original_texis/modes.texi:471
@@ -821,10 +819,8 @@ msgstr "Command normal-mode &optional find-file"
 
 #. type: deffn
 #: original_texis/modes.texi:544
-#, fuzzy
-#| msgid "This function establishes the proper major mode and buffer-local variable bindings for the current buffer.  First it calls @code{set-auto-mode} (see below), then it runs @code{hack-local-variables} to parse, and bind or evaluate as appropriate, the file's local variables (@pxref{File Local Variables})."
 msgid "This function establishes the proper major mode and buffer-local variable bindings for the current buffer.  It calls @code{set-auto-mode} (see below).  As of Emacs 26.1, it no longer runs @code{hack-local-variables}, this now being done in @code{run-mode-hooks} at the initialization of major modes (@pxref{Mode Hooks})."
-msgstr "この関数は、カレントバッファーにたいして適切なメジャーモードと、バッファーローカル変数のバインディングを設定する。これはまず@code{set-auto-mode}(以下参照)を呼び出し、その後に@code{hack-local-variables}を実行してパース処理を行って、そのファイルのローカル変数(@ref{File Local Variables}を参照)を適切にバインド、または評価する。"
+msgstr "この関数はカレントバッファーにたいして適切なメジャーモード、およびバッファーローカル変数のバインディングを設定する。これは@code{set-auto-mode} (以下参照)を呼び出す。Emacs 26.1ではもはや@code{hack-local-variables}を呼び出さずに、メジャーモードの初期化時の@code{run-mode-hooks}でこれが行われる(@ref{Mode Hooks}を参照)。"
 
 #. type: deffn
 #: original_texis/modes.texi:552
@@ -838,10 +834,8 @@ msgstr "インタラクティブに@code{normal-mode}を実行すると、引数
 
 #. type: deffn
 #: original_texis/modes.texi:560
-#, fuzzy
-#| msgid "The function calls @code{set-auto-mode} to choose a major mode.  If this does not specify a mode, the buffer stays in the major mode determined by the default value of @code{major-mode} (see below)."
 msgid "The function calls @code{set-auto-mode} to choose and set a major mode.  If this does not specify a mode, the buffer stays in the major mode determined by the default value of @code{major-mode} (see below)."
-msgstr "この関数は、メジャーモードを選択するために@code{set-auto-mode}を呼び出す。この関数がモードを特定しない場合、そのバッファーの@code{major-mode}(以下参照)のデフォルト値により決定されるメジャーモードに留まる。"
+msgstr "この関数はメジャーモードを選択してセットするために@code{set-auto-mode}を呼び出す。この関数がモードを特定しなければバッファーの@code{major-mode} (以下参照)のデフォルト値により決定されるメジャーモードに留まる。"
 
 #. type: cindex
 #: original_texis/modes.texi:561
@@ -868,10 +862,8 @@ msgstr "visited file mode"
 
 #. type: defun
 #: original_texis/modes.texi:580
-#, fuzzy
-#| msgid "This function selects the major mode that is appropriate for the current buffer.  It bases its decision (in order of precedence) on the @w{@samp{-*-}} line, on any @samp{mode:} local variable near the end of a file, on the @w{@samp{#!}} line (using @code{interpreter-mode-alist}), on the text at the beginning of the buffer (using @code{magic-mode-alist}), and finally on the visited file name (using @code{auto-mode-alist}).  @xref{Choosing Modes, , How Major Modes are Chosen, emacs, The GNU Emacs Manual}.  If @code{enable-local-variables} is @code{nil}, @code{set-auto-mode} does not check the @w{@samp{-*-}} line, or near the end of the file, for any mode tag."
 msgid "This function selects and sets the major mode that is appropriate for the current buffer.  It bases its decision (in order of precedence) on the @w{@samp{-*-}} line, on any @samp{mode:} local variable near the end of a file, on the @w{@samp{#!}} line (using @code{interpreter-mode-alist}), on the text at the beginning of the buffer (using @code{magic-mode-alist}), and finally on the visited file name (using @code{auto-mode-alist}).  @xref{Choosing Modes, , How Major Modes are Chosen, emacs, The GNU Emacs Manual}.  If @code{enable-local-variables} is @code{nil}, @code{set-auto-mode} does not check the @w{@samp{-*-}} line, or near the end of the file, for any mode tag."
-msgstr "この関数は、カレントバッファーにたいして適切なメジャーモードを選択する。この選択は、関数自身の(優先順位による)決定にもとづく。優先順位は、@w{@samp{-*-}}行、ファイル終端近傍の任意の@samp{mode:}ローカル変数、@w{@samp{#!}}行(@code{interpreter-mode-alist}を使用)、バッファーの先頭のテキスト(@code{magic-mode-alist}を使用)、最後がvisitされるファイル名(@code{auto-mode-alist}を使用)の順である。@ref{Choosing Modes, , How Major Modes are Chosen, emacs, The GNU Emacs Manual}を参照のこと。@code{enable-local-variables}が@code{nil}の場合、@code{set-auto-mode}は@w{@samp{-*-}}行、およびファイル終端近傍にたいして、modeタグのチェックを何もしない。"
+msgstr "この関数はカレントバッファーにたいして適切なメジャーモードを選択してセットする。この選択は関数自身の(優先順位による)決定にもとづく。優先順位は@w{@samp{-*-}}行、ファイル終端近傍の任意の@samp{mode:}ローカル変数、@w{@samp{#!}}行(@code{interpreter-mode-alist}を使用)、バッファーの先頭のテキスト(@code{magic-mode-alist}を使用)、最後がvisitされるファイル名(@code{auto-mode-alist}を使用)の順。@ref{Choosing Modes, , How Major Modes are Chosen, emacs, The GNU Emacs Manual}を参照のこと。@code{enable-local-variables}が@code{nil}なら@code{set-auto-mode}は@w{@samp{-*-}}行とファイル終端近傍にたいしてmodeタグのチェックを何も行わない。"
 
 #. type: vindex
 #: original_texis/modes.texi:581
@@ -1132,10 +1124,8 @@ msgstr "新たなモードは自身のabbrevテーブル(略語テーブル)を�
 
 #. type: itemize
 #: original_texis/modes.texi:766
-#, fuzzy
-#| msgid "The new mode has its own mode hook, @code{@var{variant}-hook}.  It runs this hook, after running the hooks of its ancestor modes, with @code{run-mode-hooks}, as the last thing it does. @xref{Mode Hooks}."
 msgid "The new mode has its own mode hook, @code{@var{variant}-hook}.  It runs this hook, after running the hooks of its ancestor modes, with @code{run-mode-hooks}, as the last thing it does, apart from running any @code{:after-hook} form it may have.  @xref{Mode Hooks}."
-msgstr "新たなモードは、自身のモードフック@code{@var{variant}-hook}をもつ。これは、このフックを実行した後に、最後に@code{run-mode-hooks}により、自身の祖先のモードのフックを実行する。"
+msgstr "新たなモードは自身のモードフック@code{@var{variant}-hook}をもつ。これはフックを実行した後に@code{:after-hook}があればそれを実行して、それとは別に最後に@code{run-mode-hooks}によって自身の祖先のモードのフックを実行する。"
 
 #. type: defmac
 #: original_texis/modes.texi:772
@@ -1159,10 +1149,8 @@ msgstr "引数@var{docstring}は新たなモードにたいするドキュメン
 
 #. type: defmac
 #: original_texis/modes.texi:792
-#, fuzzy
-#| msgid "The @var{keyword-args} are pairs of keywords and values.  The values are evaluated.  The following keywords are currently supported:"
 msgid "The @var{keyword-args} are pairs of keywords and values.  The values, except for @code{:after-hook}'s, are evaluated.  The following keywords are currently supported:"
-msgstr "@var{keyword-args}は、キーワードと値のペアーです。値は評価されます。現在、以下のキーワードがサポートされています:"
+msgstr "@var{keyword-args}はキーワードと値のペアー。@code{:after-hook}のものを除いて値は評価される。現在のところ以下のキーワードがサポートされる:"
 
 #. type: item
 #: original_texis/modes.texi:794
@@ -1201,12 +1189,12 @@ msgstr "これが指定する場合、値はそのモードにたいするカス
 #: original_texis/modes.texi:815
 #, no-wrap
 msgid ":after-hook"
-msgstr ""
+msgstr ":after-hook"
 
 #. type: table
 #: original_texis/modes.texi:823
 msgid "This optional keyword specifies a single Lisp form to evaluate as the final act of the mode function, after the mode hooks have been run.  It should not be quoted.  Since the form might be evaluated after the mode function has terminated, it should not access any element of the mode function's local state.  An @code{:after-hook} form is useful for setting up aspects of the mode which depend on the user's settings, which in turn may have been changed in a mode hook."
-msgstr ""
+msgstr "このオプションのｋｅｙはモードフック実行後にモード関数の最後の活動として評価される単一のLispフォームを指定する。クォートしないこと。モードにが終了した後にフォーが評価されるので、モード関数のローカル状態のすべての要素にアクセスするべきではない。@code{:after-hook}フォームはモードフックで変更されているかもしれないユーザーのセッティングに依存するモードの様相をセットアップするために有用。"
 
 #. type: defmac
 #: original_texis/modes.texi:826
@@ -1356,17 +1344,13 @@ msgstr "run-mode-hooks &rest hookvars"
 
 #. type: defun
 #: original_texis/modes.texi:938
-#, fuzzy
-#| msgid "Major modes should run their mode hook using this function.  It is similar to @code{run-hooks} (@pxref{Hooks}), but it also runs @code{change-major-mode-after-body-hook} and @code{after-change-major-mode-hook}."
 msgid "Major modes should run their mode hook using this function.  It is similar to @code{run-hooks} (@pxref{Hooks}), but it also runs @code{change-major-mode-after-body-hook}, @code{hack-local-variables} (when the buffer is visiting a file) (@pxref{File Local Variables}), and @code{after-change-major-mode-hook}.  The last thing it does is to evaluate any @code{:after-hook} forms declared by parent modes (@pxref{Derived Modes})."
-msgstr "メジャーモード、この関数を使用してそれらのモードフックを実行すべきである。これは@code{run-hooks}(@ref{Hooks}を参照)と似ているが、@code{change-major-mode-after-body-hook}と@code{after-change-major-mode-hook}も実行する。"
+msgstr "メジャーモードはこの関数を使用してモードフックを実行すること。これは@code{run-hooks} (@ref{Hooks}を参照)と似ているが@code{change-major-mode-after-body-hook}、(バッファーがファイルをvisitしていれば)@code{hack-local-variables} (@ref{File Local Variables}を参照)、@code{after-change-major-mode-hook}も実行する。これは最後に親モード(@ref{Derived Modes}を参照)で宣言されている@code{:after-hook}フォームをすべて評価する。"
 
 #. type: defun
 #: original_texis/modes.texi:944
-#, fuzzy
-#| msgid "When this function is called during the execution of a @code{delay-mode-hooks} form, it does not run the hooks immediately.  Instead, it arranges for the next call to @code{run-mode-hooks} to run them."
 msgid "When this function is called during the execution of a @code{delay-mode-hooks} form, it does not run the hooks or @code{hack-local-variables} or evaluate the forms immediately.  Instead, it arranges for the next call to @code{run-mode-hooks} to run them."
-msgstr "この関数が、@code{delay-mode-hooks}フォーム実行中に呼び出されたときは、それらのフックを即座には実行しない。かわりに、次の@code{run-mode-hooks}呼び出しでそれらを実行するようにアレンジする。"
+msgstr "この関数が@code{delay-mode-hooks}フォーム実行中に呼び出されたときはフックや@code{hack-local-variables}の実行、およびフォームの評価を即座には行わない。かわりに次の@code{run-mode-hooks}呼び出しでそれらを実行するようにアレンジする。"
 
 #. type: defmac
 #: original_texis/modes.texi:946
@@ -2052,15 +2036,7 @@ msgstr "以下はこの挙動の実装方法を示す例である(@code{define-m
 
 #. type: example
 #: original_texis/modes.texi:1398
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(interactive (list (or current-prefix-arg 'toggle)))\n"
-#| "(let ((enable (if (eq arg 'toggle)\n"
-#| "                  (not foo-mode) ; @r{this mode's mode variable}\n"
-#| "                (> (prefix-numeric-value arg) 0))))\n"
-#| "  (if enable\n"
-#| "      @var{do-enable}\n"
-#| "    @var{do-disable}))\n"
+#, no-wrap
 msgid ""
 "(interactive (list (or current-prefix-arg 'toggle)))\n"
 "(let ((enable\n"
@@ -2072,9 +2048,10 @@ msgid ""
 "    @var{do-disable}))\n"
 msgstr ""
 "(interactive (list (or current-prefix-arg 'toggle)))\n"
-"(let ((enable (if (eq arg 'toggle)\n"
-"                  (not foo-mode) ; @r{このモードのモード変数}\n"
-"                (> (prefix-numeric-value arg) 0))))\n"
+"(let ((enable\n"
+"       (if (eq arg 'toggle)\n"
+"           (not foo-mode) ; @r{そのモードのモード変数}\n"
+"         (> (prefix-numeric-value arg) 0))))\n"
 "  (if enable\n"
 "      @var{do-enable}\n"
 "    @var{do-disable}))\n"
@@ -2109,7 +2086,7 @@ msgstr "しかしこれは頻繁には行われない。"
 #. type: itemize
 #: original_texis/modes.texi:1424
 msgid "Enabling or disabling a minor mode twice in direct succession should not fail and should do the same thing as enabling or disabling it only once.  In other words, the minor mode command should be idempotent."
-msgstr ""
+msgstr "マイナーモードを2回連続で直接有効(や無効)にしても失敗せずに、1回だけ有効(や無効)にしたときと同じことを行うこと。言い換えるとマイナーモードコマンドはべき等であること。"
 
 #. type: itemize
 #: original_texis/modes.texi:1430
@@ -2204,10 +2181,8 @@ msgstr "@code{self-insert-command}, minor modes"
 
 #. type: Plain text
 #: original_texis/modes.texi:1509
-#, fuzzy
-#| msgid "One use of minor mode keymaps is to modify the behavior of certain self-inserting characters so that they do something else as well as self-insert.  (Another way to customize @code{self-insert-command} is through @code{post-self-insert-hook}.  Apart from this, the facilities for customizing @code{self-insert-command} are limited to special cases, designed for abbrevs and Auto Fill mode.  Do not try substituting your own definition of @code{self-insert-command} for the standard one.  The editor command loop handles this function specially.)"
 msgid "One use of minor mode keymaps is to modify the behavior of certain self-inserting characters so that they do something else as well as self-insert.  (Another way to customize @code{self-insert-command} is through @code{post-self-insert-hook}, see @ref{Commands for Insertion}.  Apart from this, the facilities for customizing @code{self-insert-command} are limited to special cases, designed for abbrevs and Auto Fill mode.  Do not try substituting your own definition of @code{self-insert-command} for the standard one.  The editor command loop handles this function specially.)"
-msgstr "特定の自己挿入文字にたいして、自己挿入と同様に他の何かを行うように振る舞いを変更するのは、マイナーモードキーマップの1つの使い方です。(@code{self-insert-command}をカスタマイズする別の方法は、@code{post-self-insert-hook}を通じて行う方法です。これ以外の@code{self-insert-command}カスタマイズ用機能は特別なケースに限定されていて、abbrevモードとAuto Fillモードのためにデザインされています。@code{self-insert-command}にたいする標準定義を、あなた独自の定義に置き換えることを試みてはなりません。エディターコマンドループは、この関数を特別に処理します。)"
+msgstr "特定の自己挿入文字にたいして自己挿入と同様に他の何かを行うように振る舞いを変更するのは、マイナーモードキーマップの1つの使い方です。(@code{self-insert-command}をカスタマイズする別の方法は@code{post-self-insert-hook}を通じて行う方法。@ref{Commands for Insertion}を参照のこと。これ以外の@code{self-insert-command}カスタマイズ用の機能は特別なケースに限定されておりabbrevモードとAuto Fillモードのためにデザインされている。@code{self-insert-command}の標準定義から独自の定義への置き換えを試みてはならない。エディターコマンドループはこの関数を特別に処理する。)"
 
 #. type: Plain text
 #: original_texis/modes.texi:1515
@@ -2611,10 +2586,8 @@ msgstr "Mode Line Basics"
 
 #. type: Plain text
 #: original_texis/modes.texi:1754
-#, fuzzy
-#| msgid "The contents of each mode line are specified by the buffer-local variable @code{mode-line-format} (@pxref{Mode Line Top}).  This variable holds a @dfn{mode line construct}: a template that controls what is displayed on the buffer's mode line.  The value of @code{header-line-format} specifies the buffer's header line in the same way.  All windows for the same buffer use the same @code{mode-line-format} and @code{header-line-format}."
 msgid "The contents of each mode line are specified by the buffer-local variable @code{mode-line-format} (@pxref{Mode Line Top}).  This variable holds a @dfn{mode line construct}: a template that controls what is displayed on the buffer's mode line.  The value of @code{header-line-format} specifies the buffer's header line in the same way.  All windows for the same buffer use the same @code{mode-line-format} and @code{header-line-format} unless a @code{mode-line-format} or @code{header-line-format} parameter has been specified for that window (@pxref{Window Parameters})."
-msgstr "それぞれのモードラインのコンテンツは、バッファーローカル変数@code{mode-line-format}により指定されます(@ref{Mode Line Top}を参照)。この変数は@dfn{モードライン構成(mode line construct)}を保持します。これは、そのバッファーのモードラインに何を表示するかを制御するテンプレートです。@code{header-line-format}の値は、同じ方法によりそのバッファーのヘッダーラインを指定します。同一のバッファーにたいするすべてのウィンドウは、同じ@code{mode-line-format}と@code{header-line-format}を使用します。"
+msgstr "各モードラインのコンテンツはバッファーローカル変数@code{mode-line-format}により指定されます(@ref{Mode Line Top}を参照)。この変数は@dfn{モードライン構成(mode line construct)}を保持します。これはバッファーのモードラインに何を表示するかを制御するテンプレートです。@code{header-line-format}の値は同じ方法によりバッファーのヘッダーラインを指定します。同一のバッファーにたいするすべてのウィンドウは、@code{mode-line-format}や@code{header-line-format}のパラメーター(@ref{Window Parameters}を参照)がそのウィンドウに指定されていなければ、同じ@code{mode-line-format}と@code{header-line-format}を使用します。"
 
 #. type: Plain text
 #: original_texis/modes.texi:1764
@@ -2980,15 +2953,14 @@ msgstr "この変数はバッファー内での位置を表示する。デフォ
 
 #. type: defopt
 #: original_texis/modes.texi:1988
-#, fuzzy, no-wrap
-#| msgid "mode-line-position"
+#, no-wrap
 msgid "mode-line-percent-position"
-msgstr "mode-line-position"
+msgstr "mode-line-percent-position"
 
 #. type: defopt
 #: original_texis/modes.texi:1994
 msgid "This option is used in @code{mode-line-position}.  Its value specifies both the buffer percentage to display (one of @code{nil}, @code{\"%o\"}, @code{\"%p\"}, @code{\"%P\"} or @code{\"%q\"}, @pxref{%-Constructs}) and a width to space-fill or truncate to.  You are recommended to set this option with the @code{customize-variable} facility."
-msgstr ""
+msgstr "このオプションは@code{mode-line-position}の中で使用される。これの値はバッファーのパーセンテージ(@code{nil}、@code{\"%o\"}、@code{\"%p\"}、@code{\"%P\"}、@code{\"%q\"}のいずれか。@ref{%-Constructs}を参照)とフィルするスペースか切り詰めの幅の両方を指定する。このオプションは@code{customize-variable}機能でセットすることを推奨する。"
 
 #. type: defvar
 #: original_texis/modes.texi:1996
@@ -3226,23 +3198,19 @@ msgstr "%c"
 
 #. type: table
 #: original_texis/modes.texi:2137
-#, fuzzy
-#| msgid "The current line number of point, counting within the accessible portion of the buffer."
 msgid "The current column number of point, counting from zero starting at the left margin of the window."
-msgstr "ポイント位置のカレント行番号。そのバッファーのアクセス可能な範囲内でカウントされる。"
+msgstr "ポイント位置のカレント列番号。そのウィンドウの左マージンより0からカウントされる。"
 
 #. type: item
 #: original_texis/modes.texi:2138
 #, no-wrap
 msgid "%C"
-msgstr ""
+msgstr "%C"
 
 #. type: table
 #: original_texis/modes.texi:2141
-#, fuzzy
-#| msgid "The current line number of point, counting within the accessible portion of the buffer."
 msgid "The current column number of point, counting from one starting at the left margin of the window."
-msgstr "ポイント位置のカレント行番号。そのバッファーのアクセス可能な範囲内でカウントされる。"
+msgstr "ポイント位置のカレント列番号。そのウィンドウの左マージンより1からカウントされる。"
 
 #. type: item
 #: original_texis/modes.texi:2142
@@ -3325,12 +3293,12 @@ msgstr "ナローイングが有効なときは@samp{Narrow}、それ以外は�
 #: original_texis/modes.texi:2171
 #, no-wrap
 msgid "%o"
-msgstr ""
+msgstr "%o"
 
 #. type: table
 #: original_texis/modes.texi:2176
 msgid "The degree of @dfn{travel} of the window through (the visible portion of) the buffer, i.e. the size of the text above the top of the window expressed as a percentage of all the text outside the window, or @samp{Top}, @samp{Bottom} or @samp{All}."
-msgstr ""
+msgstr "バッファー(の可視な範囲)を通じてウィンドウが@dfn{travel} した割合(ウィンドウ外部にあるすべてのテキストにたいしてウィンドウ上端の上にあるテキストのサイズのパーセンテージまたは@samp{Top}、@samp{Bottom}、@samp{All})。"
 
 #. type: item
 #: original_texis/modes.texi:2177
@@ -3358,12 +3326,12 @@ msgstr "ウィンドウの@strong{最下部}より上にあるバッファーテ
 #: original_texis/modes.texi:2188
 #, no-wrap
 msgid "%q"
-msgstr ""
+msgstr "%q"
 
 #. type: table
 #: original_texis/modes.texi:2191
 msgid "The percentages of text above both the @strong{top} and the @strong{bottom} of the window, separated by @samp{-}, or @samp{All}."
-msgstr ""
+msgstr "@samp{-}で区切ったウィンドウの@strong{上端}および@strong{下端}より上にあるテキストのパーセンテージ、または@samp{All}。"
 
 #. type: item
 #: original_texis/modes.texi:2192
@@ -5099,10 +5067,8 @@ msgstr "@var{matcher}が関数であるような要素は、たとえ少量の�
 
 #. type: Plain text
 #: original_texis/modes.texi:3386
-#, fuzzy
-#| msgid "The @code{font-lock-multiline} property is meant to ensure proper refontification; it does not automatically identify new multiline constructs.  Identifying the requires that Font Lock mode operate on large enough chunks at a time.  This will happen by accident on many cases, which may give the impression that multiline constructs magically work.  If you set the @code{font-lock-multiline} variable non-@code{nil}, this impression will be even stronger, since the highlighting of those constructs which are found will be properly updated from then on.  But that does not work reliably."
 msgid "The @code{font-lock-multiline} property is meant to ensure proper refontification; it does not automatically identify new multiline constructs.  Identifying them requires that Font Lock mode operate on large enough chunks at a time.  This will happen by accident on many cases, which may give the impression that multiline constructs magically work.  If you set the @code{font-lock-multiline} variable non-@code{nil}, this impression will be even stronger, since the highlighting of those constructs which are found will be properly updated from then on.  But that does not work reliably."
-msgstr "@code{font-lock-multiline}プロパティは、正しい再フォント表示を確実に行うことを意図しています。これは、新たな複数行構造を自動的に認識しません。Font Lockの処理を要するものにたいする認識は、一度に処理を行うのに十分な大きさのchunkにたいして行われます。これは多くの場合にアクシデントにより発生し得るかもしれないので、複数行構造が不可解に機能するような印象を与えるかもしれません。変数@code{font-lock-multiline}を非@code{nil}にセットした場合、発見されたこれらの構造にたいするハイライトは、変数をセットした後は正しく更新されるので、さらにこの印象が強くなるでしょう。しかし、これは信頼性をもって機能しません。"
+msgstr "@code{font-lock-multiline}プロパティは正しい再フォント表示を確実に行うことを意図しています。これは新たな複数行構造を自動的に認識しません。それらを認識するためにはFont Lockが一度に十分な大きさのchunkを処理することを要求します。これは多くの場合にアクシデントにより発生し得るかもしれないので、複数行構造が不可解に機能するような印象を与えるかもしれません。変数@code{font-lock-multiline}を非@code{nil}にセットした場合には、発見されたこれらの構造にたいするハイライトは変数をセットした後は正しく更新されるので、さらにこの印象が強くなるでしょう。しかしこれは信頼性をもって機能しません。"
 
 #. type: Plain text
 #: original_texis/modes.texi:3390
@@ -5350,10 +5316,8 @@ msgstr "この関数を呼び出せば@code{forward-sexp}、@code{backward-sexp}
 
 #. type: Plain text
 #: original_texis/modes.texi:3554
-#, fuzzy
-#| msgid "Calling `smie-setup' is also sufficient to make TAB indentation work in the expected way, extends @code{blink-matching-paren} to apply to elements like @code{begin...end}, and provides some commands that you can bind in the major mode keymap."
 msgid "Calling @code{smie-setup} is also sufficient to make @key{TAB} indentation work in the expected way, extends @code{blink-matching-paren} to apply to elements like @code{begin...end}, and provides some commands that you can bind in the major mode keymap."
-msgstr "`smie-setup'の呼び出しもまた、TABによるインデントを期待通り機能させ、@code{begin...end}のような要素に適用するために@code{blink-matching-paren}を拡張し、そのメジャーモードのキーマップ内でバインドできるいくつかのコマンドを提供するのに十分です。"
+msgstr "@code{smie-setup}の呼び出しは@code{begin...end}のような要素に適用するために@code{blink-matching-paren}を拡張して@key{TAB}によるインデントを期待通り機能させるとともに、メジャーモードのキーマップ内でバインドできるいくつかのコマンドの提供を満足します。"
 
 #. type: deffn
 #: original_texis/modes.texi:3555
