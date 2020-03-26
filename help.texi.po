@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:41+0900\n"
-"PO-Revision-Date: 2019-12-06 19:48+0900\n"
+"PO-Revision-Date: 2020-03-26 21:42+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -86,12 +86,12 @@ msgstr "カレントキーバインディングの置き換え。"
 #: original_texis/help.texi:434
 #, no-wrap
 msgid "Text Quoting Style"
-msgstr ""
+msgstr "Text Quoting Style"
 
 #. type: menuentry
 #: original_texis/help.texi:40
 msgid "Quotation marks in doc strings and messages."
-msgstr ""
+msgstr "ドキュメント文字列やメッセージの中のクォーテーションマーク。"
 
 #. type: node
 #: original_texis/help.texi:40 original_texis/help.texi:480
@@ -677,7 +677,7 @@ msgstr "`"
 #. type: table
 #: original_texis/help.texi:341
 msgid "(grave accent) stands for a left quote.  This generates a left single quotation mark, an apostrophe, or a grave accent depending on the value of @code{text-quoting-style}.  @xref{Text Quoting Style}."
-msgstr ""
+msgstr "グレイブアクセント(grave accent)は左クォートを意味する。これは@code{text-quoting-style}の値に応じて左シングルクォーテーションマーク、アポストロフィ、グレイブアクセントのいずれかを生成する。@ref{Text Quoting Style}を参照のこと。"
 
 #. type: item
 #: original_texis/help.texi:342
@@ -688,7 +688,7 @@ msgstr "'"
 #. type: table
 #: original_texis/help.texi:346
 msgid "(apostrophe) stands for a right quote.  This generates a right single quotation mark or an apostrophe depending on the value of @code{text-quoting-style}."
-msgstr ""
+msgstr "アポストロフィ(apostrophe)は右クォートを意味する。これは@code{text-quoting-style}の値に応じて右シングルクォーテーションマーク、アポストロフィのいずれかを生成する。@ref{Text Quoting Style}を参照のこと。"
 
 #. type: item
 #: original_texis/help.texi:347
@@ -727,12 +727,12 @@ msgstr "curly quotes"
 #. type: defopt
 #: original_texis/help.texi:369
 msgid "The value of this variable is a symbol that specifies the style Emacs should use for single quotes in the wording of help and messages.  If the variable's value is @code{curve}, the style is @t{‘like this’} with curved single quotes.  If the value is @code{straight}, the style is @t{'like this'} with straight apostrophes.  If the value is @code{grave}, quotes are not translated and the style is @t{`like this'} with grave accent and apostrophe, the standard style before Emacs version 25.  The default value @code{nil} acts like @code{curve} if curved single quotes seem to be displayable, and like @code{grave} otherwise."
-msgstr ""
+msgstr "この変数の値はヘルプやメッセージの文章内のシングルクォートにたいしてEmacsが使用するべきスタイルを指定するシンボル。この変数の値が@code{curve}なら@t{‘like this’}のようなcurved single quotesスタイル。値が@code{straight}なら@t{'like this'}のようなstraight apostrophesスタイル。値が@code{grave}ならクォートは変換せずに、@t{`like this'}のようなEmacsバージョン25以前の標準のgrave accentとapostropheによるスタイル。デフォルト値の@code{nil}はcurved single quotesが表示可能なようなら@code{curve}、それ以外なら@code{grave}のように機能する。"
 
 #. type: defopt
 #: original_texis/help.texi:373 original_texis/help.texi:478
 msgid "This option is useful on platforms that have problems with curved quotes.  You can customize it freely according to your personal preference."
-msgstr ""
+msgstr "このオプションはcurved quotesに問題があるプラットフォームで有用。個人の好みに応じてこれを自由にカスタマイズできる。"
 
 #. type: defun
 #: original_texis/help.texi:375
@@ -842,17 +842,17 @@ msgstr "ドキュメント文字列内のテキストにたいしては他にも
 #. type: Plain text
 #: original_texis/help.texi:448
 msgid "Typically, grave accents and apostrophes are treated specially in documentation strings and diagnostic messages, and translate to matching single quotation marks (also called ``curved quotes'').  For example, the documentation string @t{\"Alias for `foo'.\"} and the function call @code{(message \"Alias for `foo'.\")} both translate to @t{\"Alias for ‘foo’.\"}.  Less commonly, Emacs displays grave accents and apostrophes as themselves, or as apostrophes only (e.g., @t{\"Alias for 'foo'.\"}).  Documentation strings and message formats should be written so that they display well with any of these styles.  For example, the documentation string @t{\"Alias for 'foo'.\"} is probably not what you want, as it can display as @t{\"Alias for ’foo’.\"}, an unusual style in English."
-msgstr ""
+msgstr "ドキュメント文字列や診断メッセージの中では、グレイブアクセント(grave accent)とアポストロフィ(apostrophe)は通常は特別に扱われてマッチするシングルクォーテーションマーク(``curved quotes''とも呼ばれる)に変換されます。たとえばドキュメント文字列@t{\"Alias for `foo'.\"}と関数呼び出し@code{(message \"Alias for `foo'.\")}はどちらも@t{\"Alias for ‘foo’.\"}に変換されます。あまり一般的ではありませんが、Emacsがグレイブアクセントとアポストロフィをそのまま表示したり、アポストロフィだけ(@t{\"Alias for 'foo'.\"})を表示する場合もあります。ドキュメント文字列やメッセージフォーマットは、これらのスタイルすべてで良好に表示されるように記述する必要があります。たとえば通常の英語スタイル@t{\"Alias for ’foo’.\"}で表示できるのならば、ドキュメント文字列@t{\"Alias for 'foo'.\"}はあなたが望むスタイルではないでしょう。"
 
 #. type: Plain text
 #: original_texis/help.texi:460
 msgid "Sometimes you may need to display a grave accent or apostrophe without translation, regardless of text quoting style.  In a documentation string, you can do this with escapes.  For example, in the documentation string @t{\"\\\\=`(a ,(sin 0)) ==> (a 0.0)\"} the grave accent is intended to denote Lisp code, so it is escaped and displays as itself regardless of quoting style.  In a call to @code{message} or @code{error}, you can avoid translation by using a format @t{\"%s\"} with an argument that is a call to @code{format}.  For example, @code{(message \"%s\" (format \"`(a ,(sin %S)) ==> (a %S)\" x (sin x)))} displays a message that starts with grave accent regardless of text quoting style."
-msgstr ""
+msgstr "テキストのクォートスタイルとは無関係に変換なしでグレイブアクセントやアポストロフィの表示を要するときがあるかもしれません。ドキュメント文字列ではエスケープでこれを行うことができます。たとえばドキュメント文字列@t{\"\\\\=`(a ,(sin 0)) ==> (a 0.0)\"}では、グレイブアクセントはLispコードの表現を意図しているので、グレイブアクセントエスケープしてクォートスタイルとは無関係にそれ自身を表示します。@code{message}や@code{error}の呼び出しでは、フォーマット@t{\"%s\"}と@code{format}呼び出しを引数として変換を回避できます。たとえば@code{(message \"%s\" (format \"`(a ,(sin %S)) ==> (a %S)\" x (sin x)))}はテキストのクォートスタイルに関わらず、グレイブアクセントで始まるメッセージを表示します。"
 
 #. type: defopt
 #: original_texis/help.texi:474
 msgid "The value of this user option is a symbol that specifies the style Emacs should use for single quotes in the wording of help and messages.  If the option's value is @code{curve}, the style is @t{‘like this’} with curved single quotes.  If the value is @code{straight}, the style is @t{'like this'} with straight apostrophes.  If the value is @code{grave}, quotes are not translated and the style is @t{`like this'} with grave accent and apostrophe, the standard style before Emacs version 25.  The default value @code{nil} acts like @code{curve} if curved single quotes seem to be displayable, and like @code{grave} otherwise."
-msgstr ""
+msgstr "このユーザーオプションの値はヘルプやメッセージの文言中のシングルクォートにたいして、Emacsが使用するべきスタイルを指定するシンボル。このオプションの値が@code{curve}なら@t{‘like this’}のようなcurved single quotesスタイル。値が@code{straight}なら@t{'like this'}のような素のアポストロフィスタイル。値が@code{grave}ならクォートは変換せずに、@t{`like this'}のようなEmacsバージョン25以前の標準スタイルであるグレイブアクセントとアポストロフィのスタイル。デフォルト値の@code{nil}はcurved single quotesが表示可能なようなら@code{curve}、それ以外なら@code{grave}のように機能する。"
 
 #. type: section
 #: original_texis/help.texi:481
@@ -1307,17 +1307,14 @@ msgstr "help-window-select"
 
 #. type: defmac
 #: original_texis/help.texi:747
-#, fuzzy, no-wrap
-#| msgid "with-help-window buffer-name body@dots{}"
+#, no-wrap
 msgid "with-help-window buffer-or-name body@dots{}"
-msgstr "with-help-window buffer-name body@dots{}"
+msgstr "with-help-window buffer-or-name body@dots{}"
 
 #. type: defmac
 #: original_texis/help.texi:758
-#, fuzzy
-#| msgid "This macro evaluates @var{body} like @code{with-output-to-temp-buffer} (@pxref{Temporary Displays}), inserting any output produced by its forms into a buffer named @var{buffer-name}.  (Usually, @var{buffer-name} should be the value returned by the function @code{help-buffer}.)  It also puts the specified buffer into Help mode and displays a message telling the user how to quit and scroll the help window.  It selects the help window if the current value of the user option @code{help-window-select} has been set accordingly.  It returns the last value in @var{body}."
 msgid "This macro evaluates @var{body} like @code{with-output-to-temp-buffer} (@pxref{Temporary Displays}), inserting any output produced by its forms into a buffer specified by @var{buffer-or-name}, which can be a buffer or the name of a buffer.  (Frequently, @var{buffer-or-name} is the value returned by the function @code{help-buffer}.)  This macro puts the specified buffer into Help mode and displays a message telling the user how to quit and scroll the help window.  It selects the help window if the current value of the user option @code{help-window-select} has been set accordingly.  It returns the last value in @var{body}."
-msgstr "このマクロは、@code{with-output-to-temp-buffer}(@ref{Temporary Displays}を参照)のように@var{body}を評価して、そのフォームが生成したすべての出力を、@var{buffer-name}という名前のバッファーに挿入する(@var{buffer-name}は、通常は関数@code{help-buffer}によりリターンされる値であるべきだろう)。これは、指定されたバッファーをHelpモードに置き、ヘルプウィンドウをquit、およびスクロールする方法を告げるメッセージを表示する。これは、ユーザーオプション@code{help-window-select}のカレント値が適切にセットされていれば、ヘルプウィンドウの選択も行う。これは@var{body}内の最後の値をリターンする。"
+msgstr "このマクロは@code{with-output-to-temp-buffer} (@ref{Temporary Displays}を参照)のように@var{body}を評価して、そのフォームが生成したすべての出力を@var{buffer-name}で指定されるバッファーに挿入する(@var{buffer-name}は関数@code{help-buffer}によりリターンされる値であることが多い)。このマクロは指定されたバッファーをHelpモードにして、ヘルプウィンドウのquitやスクロールする方法を告げるメッセージを表示する。これはユーザーオプション@code{help-window-select}のカレント値が適切にセットされていればヘルプウィンドウの選択も行う。これは@var{body}内の最後の値をリターンする。"
 
 #. type: defun
 #: original_texis/help.texi:760
