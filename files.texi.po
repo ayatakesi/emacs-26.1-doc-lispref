@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:41+0900\n"
-"PO-Revision-Date: 2020-03-07 04:34+0900\n"
+"PO-Revision-Date: 2020-04-07 01:22+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -128,12 +128,12 @@ msgstr "ファイル名のリネームやパーミッションの変更など。
 #: original_texis/files.texi:50 original_texis/files.texi:1931
 #, no-wrap
 msgid "Files and Storage"
-msgstr ""
+msgstr "Files and Storage"
 
 #. type: menuentry
 #: original_texis/files.texi:50
 msgid "Surviving power and media failures"
-msgstr ""
+msgstr "電源喪失とメディアエラーへの対処"
 
 #. type: section
 #: original_texis/files.texi:50 original_texis/files.texi:1953
@@ -572,10 +572,8 @@ msgstr "saving buffers"
 
 #. type: Plain text
 #: original_texis/files.texi:338
-#, fuzzy
-#| msgid "When you edit a file in Emacs, you are actually working on a buffer that is visiting that file---that is, the contents of the file are copied into the buffer and the copy is what you edit.  Changes to the buffer do not change the file until you @dfn{save} the buffer, which means copying the contents of the buffer into the file."
 msgid "When you edit a file in Emacs, you are actually working on a buffer that is visiting that file---that is, the contents of the file are copied into the buffer and the copy is what you edit.  Changes to the buffer do not change the file until you @dfn{save} the buffer, which means copying the contents of the buffer into the file.  Buffers which are not visiting a file can still be ``saved'', in a sense, using functions in the buffer-local @code{write-contents-functions} hook."
-msgstr "Emacs内でファイルを編集とき、実際にはそのファイルをvisitしているバッファーにたいして編集を行っています。つまり、ファイルのコンテンツをバッファーにコピーして、編集しているのはそのコピーなのです。そのバッファーにを変更しても、バッファーを@dfn{保存(save)}するまでファイルは変更されません。保存とは、バッファーのコンテンツをファイルにコピーすることを意味します。"
+msgstr "Emacs内でファイルを編集する際には、実際にはそのファイルをvisitしているバッファーにたいして編集を行っています。つまりファイルのコンテンツをバッファーにコピーしてそのコピーを編集しています。そのバッファーを変更してもバッファーを@dfn{保存(save)}するまでファイルは変更されません。保存とはバッファーのコンテンツをファイルにコピーすることを意味します。ファイルをvisitしていないバッファーでも、バッファーローカルんｑ@code{write-contents-functions}の関数を使用することにより``saved(保存済み)''にすることができます。"
 
 #. type: deffn
 #: original_texis/files.texi:339
@@ -628,21 +626,20 @@ msgstr "このコマンドはファイルをvisitしている変更されたバ�
 #: original_texis/files.texi:373
 #, no-wrap
 msgid "save-some-buffers-default-predicate"
-msgstr ""
+msgstr "save-some-buffers-default-predicate"
 
 #. type: deffn
 #: original_texis/files.texi:386
-#, fuzzy
-#| msgid "The optional @var{pred} argument controls which buffers to ask about (or to save silently if @var{save-silently-p} is non-@code{nil}).  If it is @code{nil}, that means to ask only about file-visiting buffers.  If it is @code{t}, that means also offer to save certain other non-file buffers---those that have a non-@code{nil} buffer-local value of @code{buffer-offer-save} (@pxref{Killing Buffers}).  A user who says @samp{yes} to saving a non-file buffer is asked to specify the file name to use.  The @code{save-buffers-kill-emacs} function passes the value @code{t} for @var{pred}."
 msgid "The optional @var{pred} argument provides a predicate that controls which buffers to ask about (or to save silently if @var{save-silently-p} is non-@code{nil}).  If @var{pred} is @code{nil}, that means to use the value of @code{save-some-buffers-default-predicate} instead of @var{pred}.  If the result is @code{nil}, it means ask only about file-visiting buffers.  If it is @code{t}, that means also offer to save certain other non-file buffers---those that have a non-@code{nil} buffer-local value of @code{buffer-offer-save} (@pxref{Killing Buffers}).  A user who says @samp{yes} to saving a non-file buffer is asked to specify the file name to use.  The @code{save-buffers-kill-emacs} function passes the value @code{t} for @var{pred}."
-msgstr "オプション引数@var{pred}は、どのバッファーで確認を求めるか(または@var{save-silently-p}が非@code{nil}の場合は、どのバッファーで確認せずに保存するか)を制御する。これが@code{nil}の場合、それはファイルをvisitしているバッファーにたいしてのみ確認を求めることを意味する。@code{t}の場合、それは、@code{buffer-offer-save}のバッファーローカル値が@code{nil}であるような、非ファイルバッファー以外の特定のバッファーの保存も提案することを意味する(@ref{Killing Buffers}を参照)。ユーザーが、非ファイルバッファーの保存にたいして@samp{yes}と応えると、保存に使用するファイル名の指定を求める。@code{save-buffers-kill-emacs}関数は、@var{pred}にたいして値@code{t}を渡す。"
+msgstr ""
+"オプション引数@var{pred}は、どのバッファーで確認を求めるか(または@var{save-silently-p}が非@code{nil}ならどのバッファーで確認せずに保存するか)を制御する。\n"
+"\n"
+"@var{pred}が@code{nil}なら、@var{pred}のかわりに@code{save-some-buffers-default-predicate}の値を使用することを意味する。その結果が@code{nil}ならファイルをvisitしているバッファーにたいしてのみ確認を求めることを意味する。@code{t}なら@code{buffer-offer-save}のバッファーローカル値が@code{nil}であるような非ファイルバッファー以外の特定のバッファーの保存も提案することを意味する(@ref{Killing Buffers}を参照)。ユーザーが非ファイルバッファーの保存にたいして@samp{yes}と応えると保存に使用するファイル名の指定を求める。@code{save-buffers-kill-emacs}関数は@var{pred}にたいして値@code{t}を渡す。"
 
 #. type: deffn
 #: original_texis/files.texi:391
-#, fuzzy
-#| msgid "If @var{pred} is neither @code{t} nor @code{nil}, then it should be a function of no arguments.  It will be called in each buffer to decide whether to offer to save that buffer.  If it returns a non-@code{nil} value in a certain buffer, that means do offer to save that buffer."
 msgid "If the predicate is neither @code{t} nor @code{nil}, then it should be a function of no arguments.  It will be called in each buffer to decide whether to offer to save that buffer.  If it returns a non-@code{nil} value in a certain buffer, that means do offer to save that buffer."
-msgstr "@var{pred}が@code{t}と@code{nil}のどちらでもない場合、それは引数なしの関数であること。その関数は、そのバッファーの保存するを提案するか否かを決定するために、バッファーごとに呼び出されるだろう。これが特定のバッファーで非@code{nil}値をリターンした場合は、バッファーの保存を提案することを意味する。"
+msgstr "述語が@code{t}と@code{nil}のいずれでもなければ引数なしの関数であること。その関数はバッファーの保存を提案するか否かを決定するためにバッファーごとに呼び出される。これが特定のバッファーで非@code{nil}値をリターンすればバッファー保存の提案を行うことを意味する。"
 
 #. type: deffn
 #: original_texis/files.texi:393
@@ -667,10 +664,8 @@ msgstr "@var{confirm}が非@code{nil}なら、それは既存のファイルを�
 
 #. type: deffn
 #: original_texis/files.texi:410
-#, fuzzy
-#| msgid "If @var{filename} is an existing directory, or a symbolic link to one, @code{write-file} uses the name of the visited file, in directory @var{filename}.  If the buffer is not visiting a file, it uses the buffer name instead."
 msgid "If @var{filename} is a directory name (@pxref{Directory Names}), @code{write-file} uses the name of the visited file, in directory @var{filename}.  If the buffer is not visiting a file, it uses the buffer name instead."
-msgstr "@var{filename}が既存のディレクトリーであったり、既存のディレクトリーへのシンボリックリンクの場合、@code{write-file}はディレクトリー@var{filename}内でvisitされているファイルの名前を使用する。そのバッファーがファイルをvisitしていない場合は、かわりにバッファーの名前を使用する。"
+msgstr "@var{filename}がディレクトリー名(@ref{Directory Names}を参照)、または既存のディレクトリーへのシンボリックリンクなら、@code{write-file}はディレクトリー@var{filename}内でvisitされているファイルの名前を使用する。そのバッファーがファイルをvisitしていなければ、かわりにバッファーの名前を使用する。"
 
 #. type: Plain text
 #: original_texis/files.texi:418
@@ -727,10 +722,8 @@ msgstr "write-contents-functions"
 
 #. type: defvar
 #: original_texis/files.texi:468
-#, fuzzy
-#| msgid "This works just like @code{write-file-functions}, but it is intended for hooks that pertain to the buffer's contents, not to the particular visited file or its location.  Such hooks are usually set up by major modes, as buffer-local bindings for this variable.  This variable automatically becomes buffer-local whenever it is set; switching to a new major mode always resets this variable, but calling @code{set-visited-file-name} does not."
 msgid "This works just like @code{write-file-functions}, but it is intended for hooks that pertain to the buffer's contents, not to the particular visited file or its location, and can be used to create arbitrary save processes for buffers that aren't visiting files at all.  Such hooks are usually set up by major modes, as buffer-local bindings for this variable.  This variable automatically becomes buffer-local whenever it is set; switching to a new major mode always resets this variable, but calling @code{set-visited-file-name} does not."
-msgstr "これは正に@code{write-file-functions}と同様に機能するが、こちらはvisitしている特定のファイルやファイルの場所ではなく、バッファーのコンテンツに関連するフックを意図している。そのようなフックは、この変数にたいするバッファーローカルなバインディングとして、通常はメジャーモードにより作成される。この変数は、セットされた際は、常に自動的にバッファーローカルになる。新たなメジャーモードへの切り替えは、常にこの変数をリセットするが、@code{set-visited-file-name}の呼び出しではリセットされない。"
+msgstr "これは正に@code{write-file-functions}と同様に機能するが、こちらはvisitしている特定のファイルやファイルの場所ではなくバッファーのコンテンツに関連するフックを意図しており、実際にはファイルをvisitしていないバッファーにたいして任意の保存処理を作成するために使用できる。そのようなフックは、この変数にたいするバッファーローカルなバインディングとして、通常はメジャーモードにより作成される。この変数はセットされた際には常に自動的にバッファーローカルになる。新たなメジャーモードへの切り替えは常にこの変数をリセットするが、@code{set-visited-file-name}の呼び出しではリセットされない。"
 
 #. type: defvar
 #: original_texis/files.texi:472
@@ -740,7 +733,7 @@ msgstr "このフック内の関数のいずれかが非@code{nil}をリター�
 #. type: defvar
 #: original_texis/files.texi:479
 msgid "When using this hook to save buffers that are not visiting files (for instance, special-mode buffers), keep in mind that, if the function fails to save correctly and returns a @code{nil} value, @code{save-buffer} will go on to prompt the user for a file to save the buffer in.  If this is undesirable, consider having the function fail by raising an error."
-msgstr ""
+msgstr "(スペシャルモードのバッファーのような)ファイルをvisitしていないバッファーを保存するためにこのフックを利用する際には、その関数が正常に保存することに失敗して@code{nil}値をリターンすると、@code{save-buffer}がユーザーにたいしてバッファーを保存するファイルの入力を求めることに留意。これが望ましくなければエラーのレイズによる関数の失敗を考慮されたい。"
 
 #. type: defopt
 #: original_texis/files.texi:481
@@ -872,10 +865,8 @@ msgstr "insert-file-contents-literally filename &optional visit beg end replace"
 
 #. type: defun
 #: original_texis/files.texi:588
-#, fuzzy
-#| msgid "This function works like @code{insert-file-contents} except that it does not run @code{find-file-hook}, and does not do format decoding, character code conversion, automatic uncompression, and so on."
 msgid "This function works like @code{insert-file-contents} except that it does not run @code{after-insert-file-functions}, and does not do format decoding, character code conversion, automatic uncompression, and so on."
-msgstr "この関数は@code{insert-file-contents}のように機能するが、@code{find-file-hook}を実行せず、フォーマットのデコード、文字コード変換、自動解凍、...などを行わない点が異なる。"
+msgstr "この関数は@code{insert-file-contents}のように機能するが、@code{after-insert-file-functions}を実行せずフォーマットのデコード、文字コード変換、自動解凍、...などを行わない点が異なる。"
 
 #. type: Plain text
 #: original_texis/files.texi:593
@@ -946,12 +937,12 @@ msgstr "@var{start}が文字列なら、@code{write-region}はバッファーの
 msgid "If @var{append} is non-@code{nil}, then the specified text is appended to the existing file contents (if any).  If @var{append} is a number, @code{write-region} seeks to that byte offset from the start of the file and writes the data from there."
 msgstr "@var{append}が非@code{nil}なら、指定されたテキストが(もしあれば)既存のファイルコンテンツに追加される。@var{append}が数字なら@code{write-region}はファイル開始位置からそのバイトオフセットをseekしてデータをそこに書き込む。"
 
+# pointed-to fileの訳注は以下を参照
+# https://books.google.co.jp/books?id=o9K8KEQic5sC&pg=PA105&lpg=PA105&dq=what+is+%22pointed-to+file%22&source=bl&ots=lYUX0698mz&sig=ACfU3U3m4dvB-WroL51o8bue11wL6QzvKA&hl=ja&sa=X&ved=2ahUKEwj-s7DE9L7oAhWpyYsBHc-hC8kQ6AEwBHoECAgQAQ#v=onepage&q=what%20is%20%22pointed-to%20file%22&f=false
 #. type: deffn
 #: original_texis/files.texi:646
-#, fuzzy
-#| msgid "If @var{mustbenew} is non-@code{nil}, then @code{write-region} asks for confirmation if @var{filename} names an existing file.  If @var{mustbenew} is the symbol @code{excl}, then @code{write-region} does not ask for confirmation, but instead it signals an error @code{file-already-exists} if the file already exists."
 msgid "If @var{mustbenew} is non-@code{nil}, then @code{write-region} asks for confirmation if @var{filename} names an existing file.  If @var{mustbenew} is the symbol @code{excl}, then @code{write-region} does not ask for confirmation, but instead it signals an error @code{file-already-exists} if the file already exists.  Although @code{write-region} normally follows a symbolic link and creates the pointed-to file if the symbolic link is dangling, it does not follow symbolic links if @var{mustbenew} is @code{excl}."
-msgstr "@var{mustbenew}が非@code{nil}の場合、@code{write-region}はもし@var{filename}が既存ファイルの名前なら確認を求める。@var{mustbenew}がシンボル@code{excl}なら、ファイルがすでに存在する場合は@code{write-region}は確認を求めるかわりに、エラー@code{file-already-exists}をシグナルする。"
+msgstr "@var{mustbenew}が非@code{nil}の場合には、@var{filename}が既存ファイルの名前なら@code{write-region}は確認を求める。@var{mustbenew}がシンボル@code{excl}なら、ファイルがすでに存在する場合には@code{write-region}は確認を求めるかわりにエラー@code{file-already-exists}をシグナルする。たとえ@code{write-region}が通常はシンボリックリンクをフォローして、もしシンボリックリンクが壊れていればpointed-toファイル(訳注: ファイルへのハードリンクにたいするポインター)を作成するとしても、@var{mustbenew}が@code{excl}ならシンボリックリンクをフォローしない。"
 
 #. type: deffn
 #: original_texis/files.texi:651
@@ -985,15 +976,14 @@ msgstr "@code{write-region}は通常はエコーエリア内にメッセージ@s
 
 #. type: defvar
 #: original_texis/files.texi:686
-#, fuzzy, no-wrap
-#| msgid "write-region-annotate-functions"
+#, no-wrap
 msgid "write-region-inhibit-fsync"
-msgstr "write-region-annotate-functions"
+msgstr "write-region-inhibit-fsync"
 
 #. type: defvar
 #: original_texis/files.texi:693
 msgid "If this variable's value is @code{nil}, @code{write-region} uses the @code{fsync} system call after writing a file.  Although this slows Emacs down, it lessens the risk of data loss after power failure.  If the value is @code{t}, Emacs does not use @code{fsync}.  The default value is @code{nil} when Emacs is interactive, and @code{t} when Emacs runs in batch mode.  @xref{Files and Storage}."
-msgstr ""
+msgstr "この変数の値が@code{nil}なら@code{write-region}はファイル書き込み後にシステムコール@code{fsync}を使用する。これはたとえEmacsを低速化するとしても、電源喪失時のデータ損失リスクを軽減する。値が@code{t}ならEmacsは@code{fsync}を使用しない。デフォルト値はEmacsが対話的に実行されていれば@code{nil}、batchモードで実行時には@code{t}。@ref{Files and Storage}を参照のこと。"
 
 #. type: defmac
 #: original_texis/files.texi:695
@@ -1261,10 +1251,8 @@ msgstr "file accessibility"
 
 #. type: Plain text
 #: original_texis/files.texi:835
-#, fuzzy
-#| msgid "These functions test for permission to access a file for reading, writing, or execution.  Unless explicitly stated otherwise, they recursively follow symbolic links for their file name arguments, at all levels (at the level of the file itself and at all levels of parent directories)."
 msgid "These functions test for permission to access a file for reading, writing, or execution.  Unless explicitly stated otherwise, they follow symbolic links.  @xref{Kinds of Files}."
-msgstr "以下の関数は、あるファイルを読み取り、書き込み、実行するためのパーミッションをテストします。明示しない限り、これらの関数はファイル名引数にたいするシンボリックリンクを、すべてのレベル(ファイル自身のレベルおよび親ディレクトリーのレベル)において再帰的にフォローします。"
+msgstr "以下の関数はファイルにたいする読み取り、書き込み、実行のパーミッションをテストします。これらの関数は明示しない限りボリックリンクをフォローします。@ref{Kinds of Files}を参照してください。"
 
 #. type: Plain text
 #: original_texis/files.texi:840
@@ -1279,10 +1267,8 @@ msgstr "file-exists-p filename"
 
 #. type: defun
 #: original_texis/files.texi:848
-#, fuzzy
-#| msgid "This function returns @code{t} if a file named @var{filename} appears to exist.  This does not mean you can necessarily read the file, only that you can find out its attributes.  (On Unix and GNU/Linux, this is true if the file exists and you have execute permission on the containing directories, regardless of the permissions of the file itself.)"
 msgid "This function returns @code{t} if a file named @var{filename} appears to exist.  This does not mean you can necessarily read the file, only that you can find out its attributes.  (On GNU and other POSIX-like systems, this is true if the file exists and you have execute permission on the containing directories, regardless of the permissions of the file itself.)"
-msgstr "この関数は、ファイル名@var{filename}が存在しているようなら@code{t}をリターンする。これは、そのファイルが読み取り可能である必要はなく、ファイルの属性を調べることが可能なこと意味する(UnixおよびGNU/Linuではなく、そのファイルが存在し、かつそのファイルを含むディレクトリーの実行パーミッションをもつ場合に@code{t}となり、そのファイル自体のパーミッションは無関係である)。"
+msgstr "この関数はファイル名@var{filename}が存在しているようなら@code{t}をリターンする。これはファイルが読み取り可能である必要はなく、ファイルの属性を調べることが可能なこと意味する(Unixやその他のPOSIXシステム類ではファイルが存在してファイルを含むディレクトリーの実行パーミッションをもつ場合にはファイル自体のパーミッションに関わらず@code{t})。"
 
 #. type: defun
 #: original_texis/files.texi:851
@@ -1291,10 +1277,8 @@ msgstr "ファイルが存在しない、またはACLポリシーがファイル
 
 #. type: defun
 #: original_texis/files.texi:856
-#, fuzzy
-#| msgid "Directories are files, so @code{file-exists-p} returns @code{t} when given a directory name.  However, symbolic links are treated specially; @code{file-exists-p} returns @code{t} for a symbolic link name only if the target file exists."
 msgid "Directories are files, so @code{file-exists-p} can return @code{t} when given a directory.  However, because @code{file-exists-p} follows symbolic links, it returns @code{t} for a symbolic link name only if the target file exists."
-msgstr "ディレクトリーはファイルなので、ディレクトリー名が与えられた場合、@code{file-exists-p}は@code{t}をリターンする。しかし、シンボリックリンクは特別に扱われる。@code{file-exists-p}はターゲットファイルが存在する場合のみ、シンボリックリンクにたいして@code{t}をリターンする。"
+msgstr "ディレクトリーはファイルなので、ディレクトリーが与えられると@code{file-exists-p}は@code{t}をリターンするかもしれない。しかし@code{file-exists-p}はシンボリックリンクをフォローするので、ターゲットファイルが存在する場合のみシンボリックリンク名にたいして@code{t}をリターンする。"
 
 #. type: defun
 #: original_texis/files.texi:858
@@ -1315,10 +1299,8 @@ msgstr "file-executable-p filename"
 
 #. type: defun
 #: original_texis/files.texi:869
-#, fuzzy
-#| msgid "This function returns @code{t} if a file named @var{filename} exists and you can execute it.  It returns @code{nil} otherwise.  On Unix and GNU/Linux, if the file is a directory, execute permission means you can check the existence and attributes of files inside the directory, and open those files if their modes permit."
 msgid "This function returns @code{t} if a file named @var{filename} exists and you can execute it.  It returns @code{nil} otherwise.  On GNU and other POSIX-like systems, if the file is a directory, execute permission means you can check the existence and attributes of files inside the directory, and open those files if their modes permit."
-msgstr "この関数は、@var{filename}という名前のファイルが存在し、それを実行することが可能な場合は@code{t}をリターンする。それ以外は@code{nil}をリターンする。UnixおよびGNU/Linuxシステムでは、そのファイルがディレクトリーの場合、実行パーミッションはディレクトリー内のファイルの存在と属性をチェックでき、ファイルのモードが許せばオープンできることを意味する。"
+msgstr "この関数は、@var{filename}という名前のファイルが存在して、それを実行することが可能なら@code{t}をリターンする。それ以外は@code{nil}をリターンする。Unixやその他のPOSIXシステム類ではファイルがディレクトリーなら実行パーミッションはディレクトリー内のファイルの存在と属性をチェックできるので、ファイルのモードが許せばオープンできることを意味する。"
 
 #. type: defun
 #: original_texis/files.texi:871
@@ -1401,10 +1383,8 @@ msgstr "オプション引数@var{group}が非@code{nil}なら、この関数は
 
 #. type: defun
 #: original_texis/files.texi:922
-#, fuzzy
-#| msgid "This function is not available on systems that don't support symbolic links."
 msgid "This function does not follow symbolic links."
-msgstr "この関数は、シンボリックリンクをサポートしないシステムでは利用できない。"
+msgstr "この関数はシンボリックリンクをフォローしない。"
 
 #. type: defun
 #: original_texis/files.texi:924
@@ -1438,10 +1418,8 @@ msgstr "file modes"
 
 #. type: defun
 #: original_texis/files.texi:933
-#, fuzzy
-#| msgid "This function returns the @dfn{mode bits} of @var{filename}---an integer summarizing its read, write, and execution permissions.  Symbolic links in @var{filename} are recursively followed at all levels.  If the file does not exist, the return value is @code{nil}."
 msgid "This function returns the @dfn{mode bits} of @var{filename}---an integer summarizing its read, write, and execution permissions.  This function follows symbolic links.  If the file does not exist, the return value is @code{nil}."
-msgstr "この関数は、@var{filename}の@dfn{モードビット(mode bits)}をリターンする。これは読み取り、書き込み、実行パーミッションを要約する整数である。@var{filename}でのシンボリックリンクは、すべての階層において再帰的にフォローされる。ファイルが存在しない場合のリターン値は@code{nil}である。"
+msgstr "この関数は@var{filename}の@dfn{モードビット(mode bits)}をリターンする。これは読み取り、書き込み、実行パーミッションを要約する整数。この関数はシンボリックリンクを許容する。ファイルが存在しなければリターン値は@code{nil}。"
 
 #. type: defun
 #: original_texis/files.texi:941
@@ -1507,10 +1485,8 @@ msgstr "file modes and MS-DOS"
 
 #. type: defun
 #: original_texis/files.texi:977
-#, fuzzy
-#| msgid "@strong{MS-DOS note:} On MS-DOS, there is no such thing as an ``executable'' file mode bit.  So @code{file-modes} considers a file executable if its name ends in one of the standard executable extensions, such as @file{.com}, @file{.bat}, @file{.exe}, and some others.  Files that begin with the Unix-standard @samp{#!} signature, such as shell and Perl scripts, are also considered executable.  Directories are also reported as executable, for compatibility with Unix.  These conventions are also followed by @code{file-attributes} (@pxref{File Attributes})."
 msgid "@strong{MS-DOS note:} On MS-DOS, there is no such thing as an executable file mode bit.  So @code{file-modes} considers a file executable if its name ends in one of the standard executable extensions, such as @file{.com}, @file{.bat}, @file{.exe}, and some others.  Files that begin with the POSIX-standard @samp{#!} signature, such as shell and Perl scripts, are also considered executable.  Directories are also reported as executable, for compatibility with POSIX@.  These conventions are also followed by @code{file-attributes} (@pxref{File Attributes})."
-msgstr "@strong{MS-DOSにたいする注意:} MS-DOSでは、``実行可能''を表すようなファイルのモードビットは存在しない。そのため、@code{file-modes}はファイル名が@file{.com}、@file{.bat}、@file{.exe}などのような標準的な実行可能な拡張子のいずれかで終わる場合は、ファイルを実行可能であると判断する。Unix標準の@samp{#!}署名で始まるshellスクリプトやPerlスクリプトも、実行可能と判断される。Unixとの互換性のために、ディレクトリーも実行可能と報告される。@code{file-attributes}(@ref{File Attributes}を参照)も、これらの慣習にしたがう。"
+msgstr "@strong{MS-DOSにたいする注意:} MS-DOSでは実行可能であることをを表すようなファイルのモードビットは存在しない。そのため@code{file-modes}はファイル名が@file{.com}、@file{.bat}、@file{.exe}などのような標準的な実行可能な拡張子のいずれかで終わる場合にはファイルを実行可能であると判断する。POSIX標準の@samp{#!}署名で始まるshellスクリプトやPerlスクリプトも実行可能と判断される。POSIXとの互換性のためにディレクトリーも実行可能と報告される。@code{file-attributes} (@ref{File Attributes}を参照)もこれらの慣習にしたがう。"
 
 #. type: subsection
 #: original_texis/files.texi:980
@@ -1532,10 +1508,9 @@ msgstr "classification of file types"
 
 #. type: cindex
 #: original_texis/files.texi:983 original_texis/files.texi:997
-#, fuzzy, no-wrap
-#| msgid "file symbolic links"
+#, no-wrap
 msgid "symbolic links"
-msgstr "file symbolic links"
+msgstr "symbolic links"
 
 #. type: Plain text
 #: original_texis/files.texi:987
@@ -1545,7 +1520,7 @@ msgstr "このセクションではディレクトリー、シンボリックリ
 #. type: Plain text
 #: original_texis/files.texi:995
 msgid "Symbolic links are ordinarily followed wherever they appear.  For example, to interpret the file name @file{a/b/c}, any of @file{a}, @file{a/b}, and @file{a/b/c} can be symbolic links that are followed, possibly recursively if the link targets are themselves symbolic links.  However, a few functions do not follow symbolic links at the end of a file name (@file{a/b/c} in this example).  Such a function is said to @dfn{not follow symbolic links}."
-msgstr ""
+msgstr "シンボリックリンクは通常はそれが出現した場合には常にフォローされます。たとえばファイル名@file{a/b/c}を解釈するためにシンボリックリンクかもしれない@file{a}、@file{a/b}、@file{a/b/c}はすべてフォローされて、リンクターゲット自身がシンボリックリンクなら再帰的にフォローされるかもしれません。しかしいくつかの関数は最後のファイル名(この例では@file{a/b/c})ではシンボリックリンクをフォローしません。そのような関数のことを@dfn{シンボリックリンク非フォロー(not follow symbolic links)}と呼びます。"
 
 #. type: defun
 #: original_texis/files.texi:996
@@ -1555,10 +1530,8 @@ msgstr "file-symlink-p filename"
 
 #. type: defun
 #: original_texis/files.texi:1003
-#, fuzzy
-#| msgid "If the file @var{filename} is a symbolic link, the @code{file-symlink-p} function returns its (non-recursive) link target as a string.  (The link target string is not necessarily the full absolute file name of the target; determining the full file name that the link points to is nontrivial, see below.)  If the leading directories of @var{filename} include symbolic links, this function recursively follows them."
 msgid "If the file @var{filename} is a symbolic link, this function does not follow it and instead returns its link target as a string.  (The link target string is not necessarily the full absolute file name of the target; determining the full file name that the link points to is nontrivial, see below.)"
-msgstr "ファイル@var{filename}がシンボリックリンクの場合、@code{file-symlink-p}関数は(非再帰的な)リンクターゲットを文字列としてリターンする(リンクターゲット文字列は、そのターゲットの完全な絶対ファイル名である必要はない。リンクが指すのが完全なファイル名か判断するのは、簡単な処理ではない。以下を参照されたい)。@var{filename}のディレクトリー部分(leading directory)にシンボリックリンクが含まれる場合、この関数はそれらを再帰的にフォローする。"
+msgstr "ファイル@var{filename}がシンボリックリンクなら@code{file-symlink-p}関数はリンクをフォローせずに、かわりにリンクターゲットを文字列としてリターンする(リンクターゲット文字列はターゲットの完全な絶対ファイル名である必要はない。リンクが指すのが完全なファイル名かどうかを判断するのは簡単な処理ではない。以下参照)。"
 
 #. type: defun
 #: original_texis/files.texi:1006
@@ -1612,10 +1585,8 @@ msgstr ""
 
 #. type: defun
 #: original_texis/files.texi:1033
-#, fuzzy
-#| msgid "Note that in the third example, the function returned @file{sym-link}, but did not proceed to resolve it, although that file is itself a symbolic link.  This is what we meant by ``non-recursive'' above---the process of following the symbolic links does not recurse if the link target is itself a link."
 msgid "Note that in the third example, the function returned @file{sym-link}, but did not proceed to resolve it, although that file is itself a symbolic link.  That is because this function does not follow symbolic links---the process of following the symbolic links does not apply to the last component of the file name."
-msgstr "3つ目の例では、関数は@file{sym-link}をリターンするものの、たとえそれ自体がシンボリックリンクであっても、リンク先の解決を行わないことに注意されたい。これが上述した``非再帰的(non-recursive)''の意味するところであり、シンボリックリンクをフォローする処理は、そのリンクターゲット自体がリンクの場合、再帰的には行われない。"
+msgstr "3つ目の例では関数は@file{sym-link}をリターンするが、たとえそれ自体がシンボリックリンクであってもリンク先の解決を行わないことに注意。これは関数がシンボリックリンクをフォローしない、すなわちシンボリックリンクをフォローする処理はファイル名の最後のコンポーネントには適用されないからである。"
 
 #. type: defun
 #: original_texis/files.texi:1040
@@ -1650,10 +1621,8 @@ msgstr "file-directory-p filename"
 
 #. type: defun
 #: original_texis/files.texi:1067
-#, fuzzy
-#| msgid "This function returns @code{t} if @var{filename} is the name of an existing directory, @code{nil} otherwise."
 msgid "This function returns @code{t} if @var{filename} is the name of an existing directory, @code{nil} otherwise.  This function follows symbolic links."
-msgstr "この関数は、@var{filename}が既存のディレクトリー名なら@code{t}、それ以外は@code{nil}をリターンする。"
+msgstr "この関数は@var{filename}が既存のディレクトリー名なら@code{t}、それ以外は@code{nil}をリターンする。この関数はシンボリックリンクをフォローする。"
 
 #. type: group
 #: original_texis/files.texi:1072
@@ -1715,10 +1684,8 @@ msgstr "file-regular-p filename"
 
 #. type: defun
 #: original_texis/files.texi:1098
-#, fuzzy
-#| msgid "This function returns @code{t} if the file @var{filename} exists and is a regular file (not a directory, named pipe, terminal, or other I/O device)."
 msgid "This function returns @code{t} if the file @var{filename} exists and is a regular file (not a directory, named pipe, terminal, or other I/O device).  This function follows symbolic links."
-msgstr "この関数は、ファイル@var{filename}が存在し、かつそれが通常ファイル(ディレクトリー、名前付きパイプ、端末、その他I/Oデバイス以外)の場合は@code{t}をリターンする。"
+msgstr "この関数はファイル@var{filename}が存在して、それが通常ファイル(ディレクトリー、名前付きパイプ、端末、その他I/Oデバイス以外)なら@code{t}をリターンする。この関数はシンボリックリンクをフォローする。"
 
 #. type: cindex
 #: original_texis/files.texi:1102
@@ -1749,15 +1716,13 @@ msgstr "この関数は環境変数を展開しない。これを行うのは@co
 
 #. type: defun
 #: original_texis/files.texi:1129
-#, fuzzy
-#| msgid "If you may need to follow symbolic links preceding @samp{..}@: appearing as a name component, call @code{file-truename} without prior direct or indirect calls to @code{expand-file-name}.  Otherwise, the file name component immediately preceding @samp{..} will be ``simplified away'' before @code{file-truename} is called.  To eliminate the need for a call to @code{expand-file-name}, @code{file-truename} handles @samp{~} in the same way that @code{expand-file-name} does.  @xref{File Name Expansion,, Functions that Expand Filenames}."
 msgid "If you may need to follow symbolic links preceding @samp{..}@: appearing as a name component, call @code{file-truename} without prior direct or indirect calls to @code{expand-file-name}.  Otherwise, the file name component immediately preceding @samp{..} will be simplified away before @code{file-truename} is called.  To eliminate the need for a call to @code{expand-file-name}, @code{file-truename} handles @samp{~} in the same way that @code{expand-file-name} does."
-msgstr "名前コンポーネントに出現する@samp{..}に先行するシンボリックリンクリンクをフォローする必要がある場合は、直接間接を問わず@code{expand-file-name}を呼び出す前に、@code{file-truename}を呼び出すこと。そうしないと、@samp{..}の直前にある名前コンポーネントは、@code{file-truename}が呼び出される前に``簡略化''により取り除かれてしまう。@code{expand-file-name}呼び出しの必要を無くすため、@code{file-truename}は@code{expand-file-name}が行うのと同じ方法で@samp{~}を扱う。@ref{File Name Expansion,, Functions that Expand Filenames}を参照のこと。"
+msgstr "名前コンポーネントに出現する@samp{..}に先行するシンボリックリンクリンクをフォローする必要がある場合には直接と間接を問わず、@code{expand-file-name}を呼び出す前に@code{file-truename}を呼び出すこと。そうしないと@samp{..}の直前にある名前コンポーネントは、@code{file-truename}が呼び出される前の簡略化により取り除かれてしまう。@code{expand-file-name}呼び出しの必要を無くすために、@code{file-truename}は@code{expand-file-name}が行うのと同じ方法で@samp{~}を扱う。@ref{File Name Expansion,, Functions that Expand Filenames}を参照のこと。"
 
 #. type: defun
 #: original_texis/files.texi:1133
 msgid "If the target of a symbolic links has remote file name syntax, @code{file-truename} returns it quoted.  @xref{File Name Expansion,, Functions that Expand Filenames}."
-msgstr ""
+msgstr "シンボリックリンクのターゲットがリモートファイル名の構文をもつ場合には、@code{file-truename}はそれをクォートしてリターンする。@ref{File Name Expansion,, Functions that Expand Filenames}を参照のこと。"
 
 #. type: defun
 #: original_texis/files.texi:1135
@@ -1811,20 +1776,19 @@ msgstr "この関数はファイル@var{file1}と@var{file2}の名前が同じ�
 
 #. type: defun
 #: original_texis/files.texi:1169
-#, fuzzy, no-wrap
-#| msgid "file-name-absolute-p filename"
+#, no-wrap
 msgid "file-name-case-insensitive-p filename"
-msgstr "file-name-absolute-p filename"
+msgstr "file-name-case-insensitive-p filename"
 
 #. type: defun
 #: original_texis/files.texi:1179
 msgid "Sometimes file names or their parts need to be compared as strings, in which case it's important to know whether the underlying filesystem is case-insensitive.  This function returns @code{t} if file @var{filename} is on a case-insensitive filesystem.  It always returns @code{t} on MS-DOS and MS-Windows.  On Cygwin and macOS, filesystems may or may not be case-insensitive, and the function tries to determine case-sensitivity by a runtime test.  If the test is inconclusive, the function returns @code{t} on Cygwin and @code{nil} on macOS."
-msgstr ""
+msgstr "ファイル名やその一部にたいして文字列としての比較を要する場合には、背景にあるファイルシステムが非caseセンシティブ(case-insensitive: 大文字小文字を区別しない)かどうかを知ることが重要になる。この関数はファイル@var{filename}が非caseセンシティブなファイルシステムにあれば@code{t}をリターンする。MS-DOSとMS-Windowsでは常に@code{t}をリターンする。CygwinとmacOSでは非caseセンシティブかもしれないので、実行時テストによりcaseセンシティブ性の判定を試みる。テストで決定されなければCygwinなら@code{t}、macOSなら@code{nil}をリターンする。"
 
 #. type: defun
 #: original_texis/files.texi:1186
 msgid "Currently this function always returns @code{nil} on platforms other than MS-DOS, MS-Windows, Cygwin, and macOS.  It does not detect case-insensitivity of mounted filesystems, such as Samba shares or NFS-mounted Windows volumes.  On remote hosts, it assumes @code{t} for the @samp{smb} method.  For all other connection methods, runtime tests are performed."
-msgstr ""
+msgstr "この関数は現在のところMS-DOS、MS-Windows、Cygwin、macOS以外のプラットフォームでは常に@code{nil}をリターンする。これはSamba共有やNFSマウントされたWindowsボリュームのようにマウントされたファイルシステムのcaseセンシティブ性は検知しない。リモートホストでは@samp{smb}メソッドにたいしては@code{t}とみなす。"
 
 #. type: defun
 #: original_texis/files.texi:1188
@@ -1946,20 +1910,18 @@ msgstr "Definition of file-attributes"
 
 #. type: defun
 #: original_texis/files.texi:1263
-#, fuzzy
-#| msgid "This function returns a list of attributes of file @var{filename}.  If the specified file cannot be opened, it returns @code{nil}.  The optional parameter @var{id-format} specifies the preferred format of attributes @acronym{UID} and @acronym{GID} (see below)---the valid values are @code{'string} and @code{'integer}.  The latter is the default, but we plan to change that, so you should specify a non-@code{nil} value for @var{id-format} if you use the returned @acronym{UID} or @acronym{GID}."
 msgid "This function returns a list of attributes of file @var{filename}.  If the specified file's attributes cannot be accessed, it returns @code{nil}.  This function does not follow symbolic links.  The optional parameter @var{id-format} specifies the preferred format of attributes @acronym{UID} and @acronym{GID} (see below)---the valid values are @code{'string} and @code{'integer}.  The latter is the default, but we plan to change that, so you should specify a non-@code{nil} value for @var{id-format} if you use the returned @acronym{UID} or @acronym{GID}."
-msgstr "この関数は、ファイル@var{filename}の属性(attributes)のリストをリターンする。オープンできないファイルが指定された場合は、@code{nil}をリターンする。オプション引数@var{id-format}は、属性@acronym{UID}および@acronym{GID}(以下参照)にたいして望ましいフォーマットを指定し、有効な値は@code{'string}および@code{'integer}である。デフォルトは@code{'integer}だが、わたしたちはこれの変更を計画しているので、リターンされる@acronym{UID}または@acronym{GID}を使用する場合は、@var{id-format}にたいして非@code{nil}値を指定するべきである。"
+msgstr "この関数はファイル@var{filename}の属性(attributes)のリストをリターンする。オープンできないファイルが指定された場合は、@code{nil}をリターンする。指定されたファイルの属性にアクセスできなければ@code{nil}をリターンする。この関数はシンボリックリンクをフォローしない。オプション引数@var{id-format}は属性@acronym{UID}と@acronym{GID}(以下参照)にたいして望ましいフォーマットを指定する。有効な値は@code{'string}と@code{'integer}。デフォルトは@code{'integer}だが、わたしたちはこれの変更を計画しているので、リターンされる@acronym{UID}や@acronym{GID}を使用する場合には@var{id-format}にたいして非@code{nil}値を指定すること。"
 
 #. type: defun
 #: original_texis/files.texi:1270
 msgid "On GNU platforms when operating on a local file, this function is atomic: if the filesystem is simultaneously being changed by some other process, this function returns the file's attributes either before or after the change.  Otherwise this function is not atomic, and might return @code{nil} if it detects the race condition, or might return a hodgepodge of the previous and current file attributes."
-msgstr ""
+msgstr "GNUプラットフォームではこの関数はロックファイル処理時はアトミックである。別のプロセスによりファイルシステムが同時に変更された場合には、この関数は変更の前か後のいずれかのファイル属性をリターンする。それ以外ならこの関数はアトミックではなく競合状態を検知したら@code{nil}、または以前とカレントが混ざったファイル属性をリターンするかもしれない。"
 
 #. type: defun
 #: original_texis/files.texi:1274
 msgid "Accessor functions are provided to access the elements in this list.  The accessors are mentioned along with the descriptions of the elements below."
-msgstr ""
+msgstr "このリスト内の要素にアクセスするためにアクセッサ関数が提供される。このアクセッサ以下の要素の記述とともに示される。"
 
 #. type: defun
 #: original_texis/files.texi:1276
@@ -1968,38 +1930,28 @@ msgstr "リストの要素は順に:"
 
 #. type: enumerate
 #: original_texis/files.texi:1282
-#, fuzzy
-#| msgid "@code{t} for a directory, a string for a symbolic link (the name linked to), or @code{nil} for a text file."
 msgid "@code{t} for a directory, a string for a symbolic link (the name linked to), or @code{nil} for a text file (@code{file-attribute-type})."
-msgstr "ディレクトリーにたいしては@code{t}、シンボリックリンクにたいしては文字列(リンクされる名前)、テキストファイルにたいしては@code{nil}。"
+msgstr "ディレクトリーにたいしては@code{t}、シンボリックリンクにたいしては文字列(リンクされる名前)、テキストファイル(@code{file-attribute-type})にたいしては@code{nil}。"
 
 #. type: enumerate
 #: original_texis/files.texi:1288
-#, fuzzy
-#| msgid "The number of names the file has.  Alternate names, also known as hard links, can be created by using the @code{add-name-to-file} function (@pxref{Changing Files})."
 msgid "The number of names the file has (@code{file-attribute-link-number}).  Alternate names, also known as hard links, can be created by using the @code{add-name-to-file} function (@pxref{Changing Files})."
-msgstr "そのファイルがもつ名前の個数。ハードリンクとして知られる代替え名は、関数@code{add-name-to-file}を使用して作成できる(@ref{Changing Files}を参照)。"
+msgstr "そのファイルがもつ名前の個数(@code{file-attribute-link-number})。ハードリンクとして知られる代替え名は関数@code{add-name-to-file}を使用して作成できる(@ref{Changing Files}を参照)。"
 
 #. type: enumerate
 #: original_texis/files.texi:1293
-#, fuzzy
-#| msgid "The file's @acronym{UID}, normally as a string.  However, if it does not correspond to a named user, the value is a number."
 msgid "The file's @acronym{UID}, normally as a string (@code{file-attribute-user-id}).  However, if it does not correspond to a named user, the value is a number."
-msgstr "ファイルの@acronym{UID}で、通常は文字列。しかし、名前をもつユーザーに対応しない場合、値は整数。"
+msgstr "ファイルの@acronym{UID}であり通常は文字列@code{file-attribute-user-id}。しかし名前をもつユーザーに対応しなければ値は整数。"
 
 #. type: enumerate
 #: original_texis/files.texi:1296
-#, fuzzy
-#| msgid "The file's @acronym{GID}, likewise."
 msgid "The file's @acronym{GID}, likewise (@code{file-attribute-group-id})."
-msgstr "同様に、ファイルの@acronym{GID}。"
+msgstr "同様にファイルの@acronym{GID} (@code{file-attribute-group-id})。"
 
 #. type: enumerate
 #: original_texis/files.texi:1305
-#, fuzzy
-#| msgid "The time of last access, as a list of four integers @code{(@var{sec-high} @var{sec-low} @var{microsec} @var{picosec})}.  (This is similar to the value of @code{current-time}; see @ref{Time of Day}.)  Note that on some FAT-based filesystems, only the date of last access is recorded, so this time will always hold the midnight of the day of last access."
 msgid "The time of last access, as a list of four integers @code{(@var{sec-high} @var{sec-low} @var{microsec} @var{picosec})} (@code{file-attribute-access-time}).  (This is similar to the value of @code{current-time}; see @ref{Time of Day}.)  The value is truncated to that of the filesystem's timestamp resolution; for example, on some FAT-based filesystems, only the date of last access is recorded, so this time will always hold the midnight of the day of the last access."
-msgstr "最終アクセス時刻を表す、4つの整数@code{(@var{sec-high} @var{sec-low} @var{microsec} @var{picosec})}からなるリスト(これは@code{current-time}の値と似ている。@ref{Time of Day}を参照されたい)。いくつかのFATベースのファイルシステムでは、最終アクセスの日付だけが記録されるので、この時刻には常に最終アクセス日の真夜中が保持されることに注意。"
+msgstr "最終アクセス時刻を表す4つの整数@code{(@var{sec-high} @var{sec-low} @var{microsec} @var{picosec})}からなるリスト(@code{file-attribute-access-time}。これは@code{current-time}の値と似ている。@ref{Time of Day}を参照)。値はファイルシステムのタイムスタンプの精度に切り詰められる。たとえばFATベースのいくつかのファイルシステムでは最終アクセスの日付だけが記録されるので、この時刻には常に最終アクセス日の真夜中が保持されることに注意。"
 
 #. type: cindex
 #: original_texis/files.texi:1306
@@ -2009,31 +1961,23 @@ msgstr "modification time of file"
 
 #. type: enumerate
 #: original_texis/files.texi:1311
-#, fuzzy
-#| msgid "The time of last modification as a list of four integers (as above).  This is the last time when the file's contents were modified."
 msgid "The time of last modification as a list of four integers (as above)  (@code{file-attribute-modification-time}).  This is the last time when the file's contents were modified."
-msgstr "最終変更時刻を表す4つの整数からなるリスト(上記参照)。これは、ファイルのコンテンツが変更された最終時刻である。"
+msgstr "最終変更時刻を表す4つの整数からなるリスト(@code{file-attribute-modification-time}。上記参照)。これはファイルのコンテンツが変更された最終時刻。"
 
 #. type: enumerate
 #: original_texis/files.texi:1318
-#, fuzzy
-#| msgid "The time of last status change as a list of four integers (as above).  This is the time of the last change to the file's access mode bits, its owner and group, and other information recorded in the filesystem for the file, beyond the file's contents."
 msgid "The time of last status change as a list of four integers (as above)  (@code{file-attribute-status-change-time}).  This is the time of the last change to the file's access mode bits, its owner and group, and other information recorded in the filesystem for the file, beyond the file's contents."
-msgstr "ステータスの最終変更時刻を表す4つの整数からなるリスト(上記参照)。これはファイルのアクセスモードビット、所有者とグループ、およびファイルにたいしてファイルのコンテンツ以外にファイルシステムが記録するその他の情報にたいする最終変更時刻である。"
+msgstr "ステータスの最終変更時刻を表す4つの整数からなるリスト(@code{file-attribute-status-change-time}。上記参照)。これはファイルのアクセスモードビット、所有者とグループ、およびファイルにたいしてファイルのコンテンツ以外にファイルシステムが記録するその他の情報にたいする最終変更時刻。"
 
 #. type: enumerate
 #: original_texis/files.texi:1322
-#, fuzzy
-#| msgid "The size of the file in bytes.  This is floating point if the size is too large to fit in a Lisp integer."
 msgid "The size of the file in bytes (@code{file-attribute-size}).  This is floating point if the size is too large to fit in a Lisp integer."
-msgstr "ファイルのサイズ(バイト)。Lisp整数の範囲を超える大きさのサイズでは浮動小数点数。"
+msgstr "ファイルのバイトサイズ(@code{file-attribute-size})。Lisp整数の範囲を超える大きさのサイズでは浮動小数点数。"
 
 #. type: enumerate
 #: original_texis/files.texi:1326
-#, fuzzy
-#| msgid "The file's modes, as a string of ten letters or dashes, as in @samp{ls -l}."
 msgid "The file's modes, as a string of ten letters or dashes, as in @samp{ls -l} (@code{file-attribute-modes})."
-msgstr "@samp{ls -l}で表示されるような、10個の文字、またはダッシュからなる文字列で表されるファイルのモード。"
+msgstr "@samp{ls -l}で表示されるような10個の文字、またはダッシュからなる文字列で表されるファイルのモード(@code{file-attribute-modes})。"
 
 #. type: enumerate
 #: original_texis/files.texi:1329
@@ -2042,17 +1986,13 @@ msgstr "後方互換のために提供される不定値。"
 
 #. type: enumerate
 #: original_texis/files.texi:1340
-#, fuzzy
-#| msgid "The file's inode number.  If possible, this is an integer.  If the inode number is too large to be represented as an integer in Emacs Lisp but dividing it by @math{2^{16}} yields a representable integer, then the value has the form @code{(@var{high} . @var{low})}, where @var{low} holds the low 16 bits.  If the inode number is too wide for even that, the value is of the form @code{(@var{high} @var{middle} . @var{low})}, where @code{high} holds the high bits, @var{middle} the middle 24 bits, and @var{low} the low 16 bits."
 msgid "The file's inode number (@code{file-attribute-inode-number}).  If possible, this is an integer.  If the inode number is too large to be represented as an integer in Emacs Lisp but dividing it by @math{2^{16}} yields a representable integer, then the value has the form @code{(@var{high} . @var{low})}, where @var{low} holds the low 16 bits.  If the inode number is too wide for even that, the value is of the form @code{(@var{high} @var{middle} . @var{low})}, where @code{high} holds the high bits, @var{middle} the middle 24 bits, and @var{low} the low 16 bits."
-msgstr "ファイルのinode番号。可能な場合は整数。Emacs Lispの整数として表せる範囲より大きいinode番号は、整数で表現可能な値を得るために@math{2^{16}}で除され@code{(@var{high} . @var{low})}という形式の値になる。ここで@var{low}は下位16ビットである。それにたいしてさえinode番号が大きい場合、値は@code{(@var{high} @var{middle} . @var{low})}という形式になる。ここで@code{high}は上位ビット、@var{middle}は中位24ビット、@var{low}は下位16ビットを保持する。"
+msgstr "ファイルのinode番号(@code{file-attribute-inode-number})。可能な場合には整数。Emacs Lispの整数として表せる範囲より大きいinode番号は、整数で表現可能な値を得るために@math{2^{16}}で除されて@code{(@var{high} . @var{low})}という形式の値になる。ここで@var{low}は下位16ビット。それにたいしてさえinode番号が大きければ値は@code{(@var{high} @var{middle} . @var{low})}という形式になる。ここで@code{high}は上位ビット、@var{middle}は中位24ビット、@var{low}は下位16ビットを保持する。"
 
 #. type: enumerate
 #: original_texis/files.texi:1349
-#, fuzzy
-#| msgid "The filesystem number of the device that the file is on.  Depending on the magnitude of the value, this can be either an integer or a cons cell, in the same manner as the inode number.  This element and the file's inode number together give enough information to distinguish any two files on the system---no two files can have the same values for both of these numbers."
 msgid "The filesystem number of the device that the file is on @code{file-attribute-device-number}).  Depending on the magnitude of the value, this can be either an integer or a cons cell, in the same manner as the inode number.  This element and the file's inode number together give enough information to distinguish any two files on the system---no two files can have the same values for both of these numbers."
-msgstr "そのファイルがあるデバイスのファイルシステム番号。その大きさにより、値は整数、またはinode番号と同じ様式のコンスセルとなる。この要素とファイルのinode番号を併せれば、システム上の2つを区別するに足る情報が得られる(2つのファイルがこれら両方の番号で同じ値をもつことはできない)。"
+msgstr "そのファイルがあるデバイスのファイルシステム番号(@code{file-attribute-device-number})。その大きさにより値は整数、またはinode番号と同じ様式のコンスセル。この要素とファイルのinode番号を併せればシステム上の2つを区別するのに足る情報が得られる(2つのファイルがこれら両方の番号で同じ値をもつことはできない)。"
 
 #. type: defun
 #: original_texis/files.texi:1352
@@ -2226,10 +2166,8 @@ msgstr "file-nlinks filename"
 
 #. type: defun
 #: original_texis/files.texi:1417
-#, fuzzy
-#| msgid "This function returns the number of names (i.e., hard links) that file @var{filename} has.  If the file does not exist, this function returns @code{nil}.  Note that symbolic links have no effect on this function, because they are not considered to be names of the files they link to."
 msgid "This function returns the number of names (i.e., hard links) that file @var{filename} has.  If the file does not exist, this function returns @code{nil}.  Note that symbolic links have no effect on this function, because they are not considered to be names of the files they link to.  This function does not follow symbolic links."
-msgstr "この関数は、ファイル@var{filename}がもつ名前(ハードリンク)の個数をリターンする。ファイルが存在しない場合、この関数は@code{nil}をリターンする。シンボリックリンクは、リンク先のファイルの名前とは判断されないので、この関数に影響しないことに注意。"
+msgstr "この関数はファイル@var{filename}がもつ名前(ハードリンク)の個数をリターンする。ファイルが存在しなければ、この関数は@code{nil}をリターンする。シンボリックリンクはリンク先のファイルの名前とは判断されないので、この関数に影響しないことに注意。この関数はシンボリックリンクをフォローしない。"
 
 #. type: group
 #: original_texis/files.texi:1423
@@ -2418,7 +2356,7 @@ msgstr "オプション引数@var{predicate}が非@code{nil}なら、それは�
 #. type: defun
 #: original_texis/files.texi:1548
 msgid "This function will normally skip directories, so if you want it to find directories, make sure the @var{predicate} function returns @code{dir-ok} for them.  For example:"
-msgstr ""
+msgstr "この関数は通常はディレクトリーをスキップするので、ディレクトリーを探したければ、@var{predicate}関数がディレクトリーにたいして確実に@code{dir-ok}をリターンすること。たとえば:"
 
 #. type: example
 #: original_texis/files.texi:1552
@@ -2427,6 +2365,8 @@ msgid ""
 "(locate-file \"html\" '(\"/var/www\" \"/srv\") nil\n"
 "             (lambda (f) (if (file-directory-p f) 'dir-ok)))\n"
 msgstr ""
+"(locate-file \"html\" '(\"/var/www\" \"/srv\") nil\n"
+"             (lambda (f) (if (file-directory-p f) 'dir-ok)))\n"
 
 #. type: defun
 #: original_texis/files.texi:1558
@@ -2477,17 +2417,17 @@ msgstr "setting modes of files"
 #. type: Plain text
 #: original_texis/files.texi:1583
 msgid "The functions in this section rename, copy, delete, link, and set the modes (permissions) of files.  Typically, they signal a @code{file-error} error if they fail to perform their function, reporting the system-dependent error message that describes the reason for the failure.  If they fail because a file is missing, they signal a @code{file-missing} error instead."
-msgstr ""
+msgstr "このセクションの関数はファイルのリネーム、コピー、削除やリンク、モードをセットします。これらの関数は処理に失敗すると、通常は失敗の理由を記述するシステム依存のエラーメッセージを報告する@code{file-error}エラーをシグナルします。ファイルが存在しないために失敗すると、かわりに@code{file-missing}エラーをシグナルします。"
 
 #. type: Plain text
 #: original_texis/files.texi:1587
 msgid "For performance, the operating system may cache or alias changes made by these functions instead of writing them immediately to secondary storage.  @xref{Files and Storage}."
-msgstr ""
+msgstr "性能的な理由によりオペレーティングシステムはこれらの関数により行われた変更を2次記憶装置に書き込むかわりに、キャッシュしたりエイリアスするかもしれません。@ref{Files and Storage}を参照してください。"
 
 #. type: Plain text
 #: original_texis/files.texi:1597
 msgid "In the functions that have an argument @var{newname}, if this argument is a directory name it is treated as if the nondirectory part of the source name were appended.  Typically, a directory name is one that ends in @samp{/} (@pxref{Directory Names}).  For example, if the old name is @file{a/b/c}, the @var{newname} @file{d/e/f/} is treated as if it were @file{d/e/f/c}.  This special treatment does not apply if @var{newname} is not a directory name but names a file that is a directory; for example, the @var{newname} @file{d/e/f} is left as-is even if @file{d/e/f} happens to be a directory."
-msgstr ""
+msgstr "引数@var{newname}をもつ関数では、それがディレクトリー名ならsource名の非ディレクトリー部分が追加されたかのように扱われます。ディレクトリー名は通常は@samp{/}で終端されます(@ref{Directory Names}を参照)。たとえば@var{oldname}が@file{a/b/c}で@var{newname}が@file{d/e/f/}なら@file{d/e/f/c}であるかのように処理されます。@var{newname}がディレクトリー名ではなくディレクトリーであるような名前なら、この特別な扱いは適用されません。たとえば@var{newname}の@file{d/e/f}がディレクトリーでも、そのまま処理されます。"
 
 #. type: Plain text
 #: original_texis/files.texi:1601
@@ -2535,7 +2475,7 @@ msgstr "この関数は、@var{oldname}という名前のファイルに@var{new
 #. type: deffn
 #: original_texis/files.texi:1629
 msgid "If @var{newname} is a symbolic link, its directory entry is replaced, not the directory entry it points to.  If @var{oldname} is a symbolic link, this function might or might not follow the link; it does not follow the link on GNU platforms.  If @var{oldname} is a directory, this function typically fails, although for the superuser on a few old-fashioned non-GNU platforms it can succeed and create a filesystem that is not tree-structured."
-msgstr ""
+msgstr "@var{newname}がシンボリックリンクなら、リンクが指すディレクトリーエントリーではなく、シンボリックリンクリンクのディレクトリーエントリーが置き換えられる。@var{oldname}がシンボリックリンクなら、この関数はリンクをフォローする可能性があるが、GNUプラットフォームではリンクをフォローしない。@var{oldname}がディレクトリーなら、たとえ処理を正常に行ってツリー構造ではないファイルシステムを作成できる古い様式の非GNUプラットフォームのスーパーユーザーでも、この関数は通常は失敗する。"
 
 #. type: deffn
 #: original_texis/files.texi:1632
@@ -2646,44 +2586,39 @@ msgstr "このコマンドは@var{filename}を@var{newname}にリネームする
 
 #. type: deffn
 #: original_texis/files.texi:1699
-#, fuzzy
-#| msgid "If @var{filename} has additional names aside from @var{filename}, it continues to have those names.  In fact, adding the name @var{newname} with @code{add-name-to-file} and then deleting @var{filename} has the same effect as renaming, aside from momentary intermediate states."
 msgid "If @var{filename} has additional names aside from @var{filename}, it continues to have those names.  In fact, adding the name @var{newname} with @code{add-name-to-file} and then deleting @var{filename} has the same effect as renaming, aside from momentary intermediate states and treatment of errors, directories and symbolic links."
-msgstr "@var{filename}が@var{filename}とは別に追加の名前をもつ場合、それらは自身の名前をもち続ける。実際のところ、@code{add-name-to-file}で名前@var{newname}を追加してから@var{filename}を削除するのは、瞬間的な遷移状態を別とすると、リネームと同じ効果がある。"
+msgstr "@var{filename}が@var{filename}とは別に追加の名前をもつ場合には、それらは自身の名前をもち続ける。実際のところ@code{add-name-to-file}で名前@var{newname}を追加してから@var{filename}を削除するのは、瞬間的な遷移状態とエラーの処理、ディレクトリーとシンボリックリンクを別とすればリネームと同じ効果がある。"
 
 #. type: deffn
 #: original_texis/files.texi:1704
 msgid "This command does not follow symbolic links.  If @var{filename} is a symbolic link, this command renames the symbolic link, not the file it points to.  If @var{newname} is a symbolic link, its directory entry is replaced, not the directory entry it points to."
-msgstr ""
+msgstr "このコマンドはシンボリックリンクをフォローしない。@var{filename}がシンボリックリンクなら、このコマンドはリンクが指すファイルではなくシンボリックリンクをリネームする。@var{newname}がシンボリックリンクなら、リンクが指すディレクトリーエントリーではなくリンクのディレクトリーエントリーを置き換える。"
 
 #. type: deffn
 #: original_texis/files.texi:1711
 msgid "This command does nothing if @var{filename} and @var{newname} are the same directory entry, i.e., if they refer to the same parent directory and give the same name within that directory.  Otherwise, if @var{filename} and @var{newname} name the same file, this command does nothing on POSIX-conforming systems, and removes @var{filename} on some non-POSIX systems."
-msgstr ""
+msgstr "@var{filename}と@var{newname}が同じディレクトリーエントリー(親ディレクトリーが同じでありそのディレクトリー内で同じ名前を与える)なら、このコマンドは何もしない。それ以外なら@var{filename}と@var{newname}が同一のファイルを命名する場合には、このコマンドはPOSIX準拠システムでは何も行わなず、いくつかの非POSIXシステムでは@var{filename}を削除する。"
 
 #. type: deffn
 #: original_texis/files.texi:1714
 msgid "If @var{newname} exists, then it must be an empty directory if @var{oldname} is a directory and a non-directory otherwise."
-msgstr ""
+msgstr "@var{newname}がすでに存在する場合には@var{oldname}がディレクトリーなら空のディレクトリー、非ディレクトリーなら非ディレクトリーでなければならない。"
 
 #. type: deffn
 #: original_texis/files.texi:1716
-#, fuzzy, no-wrap
-#| msgid "Command copy-file oldname newname &optional ok-if-exists time preserve-uid-gid preserve-extended-attributes"
+#, no-wrap
 msgid "Command copy-file oldname newname &optional ok-if-already-exists time preserve-uid-gid preserve-extended-attributes"
-msgstr "Command copy-file oldname newname &optional ok-if-exists time preserve-uid-gid preserve-extended-attributes"
+msgstr "Command copy-file oldname newname &optional ok-if-already-exists time preserve-uid-gid preserve-extended-attributes"
 
 #. type: deffn
 #: original_texis/files.texi:1722
-#, fuzzy
-#| msgid "This command copies the file @var{oldname} to @var{newname}.  An error is signaled if @var{oldname} does not exist.  If @var{newname} names a directory, it copies @var{oldname} into that directory, preserving its final name component."
 msgid "This command copies the file @var{oldname} to @var{newname}.  An error is signaled if @var{oldname} is not a regular file.  If @var{newname} names a directory, it copies @var{oldname} into that directory, preserving its final name component."
-msgstr "このコマンドは、ファイル@var{oldname}を@var{newname}にコピーする。@var{oldname}が存在しない場合は、エラーをシグナルする。@var{newname}がディレクトリーの場合は、その最後の名前コンポーネントを保持するように、そのディレクトリーの中に@var{oldname}をコピーする。"
+msgstr "このコマンドはファイル@var{oldname}を@var{newname}にコピーする。@var{oldname}が通常のファイルでなければエラーをシグナルする。@var{newname}がディレクトリーなら最後の名前コンポーネントを保持するようにディレクトリーの中に@var{oldname}をコピーする。"
 
 #. type: deffn
 #: original_texis/files.texi:1725
 msgid "This function follows symbolic links, except that it does not follow a dangling symbolic link to create @var{newname}."
-msgstr ""
+msgstr "この関数は@var{newname}を作成するために壊れたシンボリックリンクをフォローしない点を除いて、シンボリックリンクをフォローする。"
 
 #. type: deffn
 #: original_texis/files.texi:1732
@@ -2707,10 +2642,9 @@ msgstr "それ以外では、@var{newname}が既存ファイルならファイ�
 
 #. type: deffn
 #: original_texis/files.texi:1752
-#, fuzzy, no-wrap
-#| msgid "Command make-symbolic-link filename newname  &optional ok-if-exists"
+#, no-wrap
 msgid "Command make-symbolic-link target newname &optional ok-if-already-exists"
-msgstr "Command make-symbolic-link filename newname  &optional ok-if-exists"
+msgstr "Command make-symbolic-link target newname &optional ok-if-already-exists"
 
 #. type: pindex
 #: original_texis/files.texi:1753
@@ -2727,17 +2661,17 @@ msgstr "file-already-exists"
 #. type: deffn
 #: original_texis/files.texi:1762
 msgid "This command makes a symbolic link to @var{target}, named @var{newname}.  This is like the shell command @samp{ln -s @var{target} @var{newname}}.  The @var{target} argument is treated only as a string; it need not name an existing file.  If @var{ok-if-already-exists} is an integer, indicating interactive use, then leading @samp{~} is expanded and leading @samp{/:} is stripped in the @var{target} string."
-msgstr ""
+msgstr "このコマンドは@var{target}へのシンボリックリンク@var{newname}を作成する。これはシェルコマンド@samp{ln -s @var{target} @var{newname}}と似ている。引数@var{target}は単なる文字列として扱われる(存在するファイル名である必要はない)。@var{ok-if-already-exists}が整数ならインタラクティブな使用を示し、先頭の@samp{~}は展開されて、@var{target}文字列内の先頭の@samp{/:}は取り除かれる。"
 
 #. type: deffn
 #: original_texis/files.texi:1766
 msgid "If @var{target} is a relative file name, the resulting symbolic link is interpreted relative to the directory containing the symbolic link.  @xref{Relative File Names}."
-msgstr ""
+msgstr "@var{target}が相対ファイル名なら結果となるシンボリックリンクはシンボリックリンクを含むディレクトリーにたいして相対的に解釈される。@ref{Relative File Names}を参照のこと。"
 
 #. type: deffn
 #: original_texis/files.texi:1770
 msgid "If both @var{target} and @var{newname} have remote file name syntax, and if both remote identifications are equal, the symbolic link points to the local file name part of @var{target}."
-msgstr ""
+msgstr "@var{target}と@var{newname}の両方がリモートファイル名の構文をもち、それらのリモート識別が等しければ、シンボリックリンクは@var{target}の一部であるローカルファイル名を指す。"
 
 #. type: deffn
 #: original_texis/files.texi:1773
@@ -2770,17 +2704,13 @@ msgstr "rm"
 
 #. type: deffn
 #: original_texis/files.texi:1783
-#, fuzzy
-#| msgid "This command deletes the file @var{filename}.  If the file has multiple names, it continues to exist under the other names.  If @var{filename} is a symbolic link, @code{delete-file} deletes only the symbolic link and not its target (though it does follow symbolic links at all levels of parent directories)."
 msgid "This command deletes the file @var{filename}.  If the file has multiple names, it continues to exist under the other names.  If @var{filename} is a symbolic link, @code{delete-file} deletes only the symbolic link and not its target."
-msgstr "このコマンドは、ファイル@var{filename}を削除する。ファイルが複数の名前をもつ場合は、他の名前で存在し続ける。@var{filename}がシンボリックリンクの場合、@code{delete-file}はシンボリックリンクだけを削除して、(たとえこれが親ディレクトリーの全階層のシンボリックリンクをフォローするとしても)ターゲットは削除しない。"
+msgstr "このコマンドはファイル@var{filename}を削除する。ファイルが複数の名前をもつ場合には他の名前で存在し続ける。@var{filename}がシンボリックリンクなら@code{delete-file}はシンボリックリンクだけを削除してターゲットは削除しない。"
 
 #. type: deffn
 #: original_texis/files.texi:1787
-#, fuzzy
-#| msgid "A suitable kind of @code{file-error} error is signaled if the file does not exist, or is not deletable.  (On Unix and GNU/Linux, a file is deletable if its directory is writable.)"
 msgid "A suitable kind of @code{file-error} error is signaled if the file does not exist, or is not deletable.  (On GNU and other POSIX-like systems, a file is deletable if its directory is writable.)"
-msgstr "ファイルが存在しない、または削除できない場合は、適切な種類の@code{file-error}エラーがシグナルされる(UnixおよびGNU/Linuxでは、ファイルのディレクトリーが書き込み可能ならファイルは削除可能である)。"
+msgstr "ファイルが存在しない、または削除できない場合には適切な種類の@code{file-error}エラーがシグナルされる(GNU/およびその他のPOSIX準拠システムではファイルのディレクトリーが書き込み可能ならファイルは削除可能)。"
 
 #. type: deffn
 #: original_texis/files.texi:1794 original_texis/files.texi:3045
@@ -2812,10 +2742,8 @@ msgstr "Command set-file-modes filename mode"
 
 #. type: deffn
 #: original_texis/files.texi:1804
-#, fuzzy
-#| msgid "This function sets the @dfn{file mode} (or @dfn{permissions}) of @var{filename} to @var{mode}.  It recursively follows symbolic links at all levels for @var{filename}."
 msgid "This function sets the @dfn{file mode} (or @dfn{permissions}) of @var{filename} to @var{mode}.  This function follows symbolic links."
-msgstr "この関数は、@var{filename}の@dfn{ファイルモード}(または@dfn{パーミッション})を@var{mode}にセットする。この関数は、@var{filename}にたいして全階層でシンボリックリンクをフォローする。"
+msgstr "この関数は、@var{filename}の@dfn{ファイルモード} (または@dfn{パーミッション})を@var{mode}にセットする。この関数はシンボリックリンクをフォローする。"
 
 #. type: deffn
 #: original_texis/files.texi:1809
@@ -2857,10 +2785,8 @@ msgstr "umask"
 
 #. type: defun
 #: original_texis/files.texi:1839
-#, fuzzy
-#| msgid "This function sets the default permissions for new files created by Emacs and its subprocesses.  Every file created with Emacs initially has these permissions, or a subset of them (@code{write-region} will not grant execute permissions even if the default file permissions allow execution).  On Unix and GNU/Linux, the default permissions are given by the bitwise complement of the ``umask'' value."
 msgid "This function sets the default permissions for new files created by Emacs and its subprocesses.  Every file created with Emacs initially has these permissions, or a subset of them (@code{write-region} will not grant execute permissions even if the default file permissions allow execution).  On GNU and other POSIX-like systems, the default permissions are given by the bitwise complement of the @samp{umask} value, i.e.@: each bit that is set in the argument @var{mode} will be @emph{reset} in the default permissions with which Emacs creates files."
-msgstr "この関数は、EmacsおよびEmacsのサブプロセスが新たに作成するファイルに、デフォルトのパーミッションをセットする。Emacsにより作成されたすべてのファイルはこれらのパーミッション、およびそれらのサブセットとなるパーミッションをもつ(デフォルトファイルパーミッションが実行を許可しても、@code{write-region}は実行パーミッションを付与しないだろう)。UnixおよびGNU/Linuxでは、デフォルトのパーミッションは``umask''の値のビット単位の補数で与えられる。"
+msgstr "この関数はEmacsおよびEmacsのサブプロセスが新たに作成するファイルにデフォルトのパーミッションをセットする。Emacsにより作成されたすべてのファイルはこれらのパーミッション、およびそれらのサブセットとなるパーミッションをもつ(デフォルトファイルパーミッションが実行を許可しても、code{write-region}は実行パーミッションを付与しないだろう)。GNUやその他のPOSIX準拠システムでは、デフォルトのパーミッションは@samp{umask}の値のビット単位の補数で与えられる。すなわち引数@var{mode}でセットされた各ビットはEmacsが作成するファイルのデフォルトパーミッション内では@emph{リセット}される。"
 
 #. type: defun
 #: original_texis/files.texi:1843
@@ -2934,10 +2860,8 @@ msgstr "set-file-times filename &optional time"
 
 #. type: defun
 #: original_texis/files.texi:1899
-#, fuzzy
-#| msgid "This function sets the access and modification times of @var{filename} to @var{time}.  The return value is @code{t} if the times are successfully set, otherwise it is @code{nil}.  @var{time} defaults to the current time and must be in the format returned by @code{current-time} (@pxref{Time of Day})."
 msgid "This function sets the access and modification times of @var{filename} to @var{time}.  The return value is @code{t} if the times are successfully set, otherwise it is @code{nil}.  @var{time} defaults to the current time and must be a time value (@pxref{Time of Day})."
-msgstr "この関数は、@var{filename}のアクセス時刻と変更時刻を@var{time}にセットする。時刻が正しくセットされれば@code{t}、それ以外は@code{nil}がリターン値となる。@var{time}のデフォルトはカレント時刻であり、@code{current-time}がリターンするフォーマットでなければならない(@ref{Time of Day}を参照)。"
+msgstr "この関数は@var{filename}のアクセス時刻と変更時刻を@var{time}にセットする。時刻が正しくセットされれば@code{t}、それ以外は@code{nil}がリターン値となる。@var{time}のデフォルトはカレント時刻でありtime値でなければならない(@ref{Time of Day}を参照)。"
 
 #. type: defun
 #: original_texis/files.texi:1901
@@ -2986,29 +2910,29 @@ msgstr "この関数は@var{filename}のACLのセットに成功したら@code{t
 #: original_texis/files.texi:1932
 #, no-wrap
 msgid "Files and Secondary Storage"
-msgstr ""
+msgstr "Files and Secondary Storage"
 
 #. type: cindex
 #: original_texis/files.texi:1933
 #, no-wrap
 msgid "secondary storage"
-msgstr ""
+msgstr "secondary storage"
 
 #. type: Plain text
 #: original_texis/files.texi:1943
 msgid "After Emacs changes a file, there are two reasons the changes might not survive later failures of power or media, both having to do with efficiency.  First, the operating system might alias written data with data already stored elsewhere on secondary storage until one file or the other is later modified; this will lose both files if the only copy on secondary storage is lost due to media failure.  Second, the operating system might not write data to secondary storage immediately, which will lose the data if power is lost."
-msgstr ""
+msgstr "Emacsがファイルを変更した後、その後に生じた電源喪失と媒体エラーにより行った変更が保存されないことには2つの理由があります。1つ目は一方または他方のファイルが後で変更されるまで、オペレーティングシステムは書き込まれたデータを2次ストレージのどこかに格納済みのデータにエイリアスすることです。媒体エラーにより2次ストレージ上のコピーだけが失われると、ファイルは両方とも失われるでしょう。2つ目はオペレーティングシステムがデータを2次ストレージに即座に書き込まないかもしれないので、電源喪失時にはデータが失われます。"
 
 #. type: findex
 #: original_texis/files.texi:1944
 #, no-wrap
 msgid "write-region"
-msgstr ""
+msgstr "write-region"
 
 #. type: Plain text
 #: original_texis/files.texi:1952
 msgid "Although both sorts of failures can largely be avoided by a suitably configured file system, such systems are typically more expensive or less efficient.  In more-typical systems, to survive media failure you can copy the file to a different device, and to survive a power failure you can use the @code{write-region} function with the @code{write-region-inhibit-fsync} variable set to @code{nil}.  @xref{Writing to Files}."
-msgstr ""
+msgstr "これらはいずれも適切なファイルシステムの設定により回避され得る類のエラーですが、そのようなシステムは通常はより高価であるか非効率的です。より典型的なシステムでは媒体エラーに備えて異なるデバイスにファイルをコピーでき、電源喪失にたいしては変数@code{write-region-inhibit-fsync}に@code{nil}をセットして@code{write-region}を使用できます。@ref{Writing to Files}を参照してください。"
 
 #. type: cindex
 #: original_texis/files.texi:1955
