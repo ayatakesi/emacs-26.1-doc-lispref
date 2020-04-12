@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:41+0900\n"
-"PO-Revision-Date: 2020-04-07 01:22+0900\n"
+"PO-Revision-Date: 2020-04-12 16:46+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2786,7 +2786,7 @@ msgstr "umask"
 #. type: defun
 #: original_texis/files.texi:1839
 msgid "This function sets the default permissions for new files created by Emacs and its subprocesses.  Every file created with Emacs initially has these permissions, or a subset of them (@code{write-region} will not grant execute permissions even if the default file permissions allow execution).  On GNU and other POSIX-like systems, the default permissions are given by the bitwise complement of the @samp{umask} value, i.e.@: each bit that is set in the argument @var{mode} will be @emph{reset} in the default permissions with which Emacs creates files."
-msgstr "この関数はEmacsおよびEmacsのサブプロセスが新たに作成するファイルにデフォルトのパーミッションをセットする。Emacsにより作成されたすべてのファイルはこれらのパーミッション、およびそれらのサブセットとなるパーミッションをもつ(デフォルトファイルパーミッションが実行を許可しても、code{write-region}は実行パーミッションを付与しないだろう)。GNUやその他のPOSIX準拠システムでは、デフォルトのパーミッションは@samp{umask}の値のビット単位の補数で与えられる。すなわち引数@var{mode}でセットされた各ビットはEmacsが作成するファイルのデフォルトパーミッション内では@emph{リセット}される。"
+msgstr "この関数はEmacsおよびEmacsのサブプロセスが新たに作成するファイルにデフォルトのパーミッションをセットする。Emacsにより作成されたすべてのファイルはこれらのパーミッション、およびそれらのサブセットとなるパーミッションをもつ(デフォルトファイルパーミッションが実行を許可しても、@code{write-region}は実行パーミッションを付与しないだろう)。GNUやその他のPOSIX準拠システムでは、デフォルトのパーミッションは@samp{umask}の値のビット単位の補数で与えられる。すなわち引数@var{mode}でセットされた各ビットはEmacsが作成するファイルのデフォルトパーミッション内では@emph{リセット}される。"
 
 #. type: defun
 #: original_texis/files.texi:1843
@@ -2981,10 +2981,8 @@ msgstr "converting file names from/to MS-Windows syntax"
 
 #. type: Plain text
 #: original_texis/files.texi:1984
-#, fuzzy
-#| msgid "On MS-DOS and MS-Windows, these functions (like the function that actually operate on files) accept MS-DOS or MS-Windows file-name syntax, where backslashes separate the components, as well as Unix syntax; but they always return Unix syntax.  This enables Lisp programs to specify file names in Unix syntax and work properly on all systems without change.@footnote{In MS-Windows versions of Emacs compiled for the Cygwin environment, you can use the functions @code{cygwin-convert-file-name-to-windows} and @code{cygwin-convert-file-name-from-windows} to convert between the two file-name syntaxes.}"
 msgid "On MS-DOS and MS-Windows, these functions (like the function that actually operate on files) accept MS-DOS or MS-Windows file-name syntax, where backslashes separate the components, as well as POSIX syntax; but they always return POSIX syntax.  This enables Lisp programs to specify file names in POSIX syntax and work properly on all systems without change.@footnote{In MS-Windows versions of Emacs compiled for the Cygwin environment, you can use the functions @code{cygwin-convert-file-name-to-windows} and @code{cygwin-convert-file-name-from-windows} to convert between the two file-name syntaxes.}"
-msgstr "MS-DOSおよびMS-Windowsでは、これらの関数は(実際にファイルを操作する関数と同様)、MS-DOSおよびMS-Windowsのファイル名構文を受け入れます。この構文はUnix構文のようにバックスラッシュでコンポーネントを区切りますが、これらの関数は常にUnix構文をリターンします。これにより、Unix構文でファイル名を指定するLispプログラムが、変更なしですべてのシステムで正しく機能することが可能になるのです。@footnote{MS-WindowsバージョンのEmacsはCygwin環境用にコンパイルされており、2つのファイル名構文の変換に、@code{cygwin-convert-file-name-to-windows}と@code{cygwin-convert-file-name-from-windows}を使用できます。}"
+msgstr "MS-DOSやMS-Windowsでは、(実際にファイルを操作する関数と同様)これらの関数はMS-DOSとMS-Windowsのファイル名構文を受け入れます。この構文はPOSIX構文のようにバックスラッシュでコンポーネントを区切りますが、これらの関数は常にPOSIX構文をリターンします。これによりPOSIX構文でファイル名を指定するLispプログラムが変更なしですべてのシステムで正しく機能することが可能になります@footnote{MS-WindowsバージョンのEmacsはCygwin環境用にコンパイルされており、2つのファイル名構文の変換に@code{cygwin-convert-file-name-to-windows}と@code{cygwin-convert-file-name-from-windows}を使用できます。}。"
 
 #. type: subsection
 #: original_texis/files.texi:1995 original_texis/files.texi:1997
@@ -3113,35 +3111,27 @@ msgstr "この関数は@var{filename}のディレクトリーパートをディ�
 
 #. type: defun
 #: original_texis/files.texi:2025
-#, fuzzy
-#| msgid "On GNU and Unix systems, a string returned by this function always ends in a slash.  On MS-DOS it can also end in a colon."
 msgid "On GNU and other POSIX-like systems, a string returned by this function always ends in a slash.  On MS-DOS it can also end in a colon."
-msgstr "GNUおよびUnixシステムでは、この関数がリターンする文字列は常にスラッシュで終わる。MS-DOSでは、コロンで終わることもあり得る。"
+msgstr "GNUや他のPOSIX準拠ixシステムでは、この関数がリターンする文字列は常にスラッシュで終わる。MS-DOSではコロンで終わることもあり得る。"
 
 #. type: group
 #: original_texis/files.texi:2030
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(file-name-directory \"lewis/foo\")  ; @r{Unix example}\n"
-#| "     @result{} \"lewis/\"\n"
+#, no-wrap
 msgid ""
 "(file-name-directory \"lewis/foo\")  ; @r{GNU example}\n"
 "     @result{} \"lewis/\"\n"
 msgstr ""
-"(file-name-directory \"lewis/foo\")  ; @r{Unixの例}\n"
+"(file-name-directory \"lewis/foo\")  ; @r{GNUの例}\n"
 "     @result{} \"lewis/\"\n"
 
 #. type: group
 #: original_texis/files.texi:2034
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(file-name-directory \"foo\")        ; @r{Unix example}\n"
-#| "     @result{} nil\n"
+#, no-wrap
 msgid ""
 "(file-name-directory \"foo\")        ; @r{GNU example}\n"
 "     @result{} nil\n"
 msgstr ""
-"(file-name-directory \"foo\")        ; @r{Unixの例}\n"
+"(file-name-directory \"foo\")        ; @r{GNUの例}\n"
 "     @result{} nil\n"
 
 #. type: defun
@@ -3344,10 +3334,8 @@ msgstr "relative file name"
 
 #. type: Plain text
 #: original_texis/files.texi:2153
-#, fuzzy
-#| msgid "All the directories in the file system form a tree starting at the root directory.  A file name can specify all the directory names starting from the root of the tree; then it is called an @dfn{absolute} file name.  Or it can specify the position of the file in the tree relative to a default directory; then it is called a @dfn{relative} file name.  On Unix and GNU/Linux, an absolute file name starts with a @samp{/} or a @samp{~} (@pxref{abbreviate-file-name}), and a relative one does not.  On MS-DOS and MS-Windows, an absolute file name starts with a slash or a backslash, or with a drive specification @samp{@var{x}:/}, where @var{x} is the @dfn{drive letter}."
 msgid "All the directories in the file system form a tree starting at the root directory.  A file name can specify all the directory names starting from the root of the tree; then it is called an @dfn{absolute} file name.  Or it can specify the position of the file in the tree relative to a default directory; then it is called a @dfn{relative} file name.  On GNU and other POSIX-like systems, after any leading @samp{~} has been expanded, an absolute file name starts with a @samp{/} (@pxref{abbreviate-file-name}), and a relative one does not.  On MS-DOS and MS-Windows, an absolute file name starts with a slash or a backslash, or with a drive specification @samp{@var{x}:/}, where @var{x} is the @dfn{drive letter}."
-msgstr "ファイルシステム内のすべてのディレクトリーは、ルートディレクトリーから開始されるツリーを形成します。このツリーのルートから開始されるすべてのディレクトリー名により、ファイル名を指定でき、それを@dfn{絶対(absolute)}ファイル名と呼びます。デフォルトディレクトリーからの相対的なツリー中の位置でファイルを指定するこでき、それは@dfn{相対(relative)}ファイル名と呼ばれます。UnixおよびGNU/Linuxでは、絶対ファイル名は@samp{/}または@samp{~}で始まり、相対ファイル名は違います(@ref{abbreviate-file-name}を参照)。MS-DOSおよびMS-Windowsでは、絶対ファイル名はスラッシュ、バックスラッシュ、またはドライブ指定@samp{@var{x}:/}で始まります。ここで@var{x}は@dfn{ドライブ文字(drive letter)}です。"
+msgstr "ファイルシステム内のすべてのディレクトリーはルートディレクトリーから開始されるツリーを形成します。このツリーのルートから開始されるすべてのディレクトリー名によりファイル名を指定でき、それを@dfn{絶対(absolute)}ファイル名と呼びます。デフォルトディレクトリーからの相対的なツリー中の位置でファイルを指定することもでき、それらは@dfn{相対(relative)}ファイル名と呼ばれます。GNUや他のPOSIX準拠システムでは@samp{~}で開始されるすべてのファイル名は@samp{/}で始まる絶対ファイル名(@ref{abbreviate-file-name}を参照)に展開されますが、相対ファイル名は展開されません。。MS-DOSとMS-Windowsでは絶対ファイル名はスラッシュ、バックスラッシュ、またはドライブ指定@samp{@var{x}:/}で始まります。ここで@var{x}は@dfn{ドライブ文字(drive letter)}です。"
 
 #. type: defun
 #: original_texis/files.texi:2154
@@ -3357,10 +3345,8 @@ msgstr "file-name-absolute-p filename"
 
 #. type: defun
 #: original_texis/files.texi:2157
-#, fuzzy
-#| msgid "This function returns @code{t} if file @var{filename} is an absolute file name, @code{nil} otherwise."
 msgid "This function returns @code{t} if file @var{filename} is an absolute file name or begins with @samp{~}, @code{nil} otherwise."
-msgstr "この関数は、@var{filename}が絶対ファイル名の場合は@code{t}、それ以外は@code{nil}をリターンする。"
+msgstr "この関数は@var{filename}が絶対ファイル名か先頭が@samp{~}なら@code{t}、それ以外は@code{nil}をリターンする。"
 
 #. type: group
 #: original_texis/files.texi:2162
@@ -3394,10 +3380,8 @@ msgstr ""
 
 #. type: Plain text
 #: original_texis/files.texi:2179
-#, fuzzy
-#| msgid "Given a possibly relative file name, you can convert it to an absolute name using @code{expand-file-name} (@pxref{File Name Expansion}).  This function converts absolute file names to relative names:"
 msgid "Given a possibly relative file name, you can expand any leading @samp{~} and convert the result to an absolute name using @code{expand-file-name} (@pxref{File Name Expansion}).  This function converts absolute file names to relative names:"
-msgstr "相対ファイル名が与えられた場合は、@code{expand-file-name}を使用して、それを絶対ファイル名に変換できます(@ref{File Name Expansion}を参照)。この関数は、絶対ファイル名を相対ファイル名に変換します:"
+msgstr "相対ファイル名が与えられた場合には先頭に@samp{~}があれば展開して、@code{expand-file-name}を使用して絶対ファイル名に変換できます(@ref{File Name Expansion}を参照)。この関数は絶対ファイル名を相対ファイル名に変換します:"
 
 #. type: defun
 #: original_texis/files.texi:2180
@@ -3449,17 +3433,13 @@ msgstr "file name of directory"
 
 #. type: Plain text
 #: original_texis/files.texi:2217
-#, fuzzy
-#| msgid "A @dfn{directory name} is the name of a directory.  A directory is actually a kind of file, so it has a file name, which is related to the directory name but not identical to it.  (This is not quite the same as the usual Unix terminology.)  These two different names for the same entity are related by a syntactic transformation.  On GNU and Unix systems, this is simple: a directory name ends in a slash, whereas the directory's name as a file lacks that slash.  On MS-DOS the relationship is more complicated."
 msgid "A @dfn{directory name} is a string that must name a directory if it names any file at all.  A directory is actually a kind of file, and it has a file name (called the @dfn{directory file name}, which is related to the directory name but is typically not identical.  (This is not quite the same as the usual POSIX terminology.)  These two names for the same entity are related by a syntactic transformation.  On GNU and other POSIX-like systems, this is simple: to obtain a directory name, append a @samp{/} to a directory file name that does not already end in @samp{/}.  On MS-DOS the relationship is more complicated."
-msgstr "@dfn{ディレクトリー名(directory name)}とは、ディレクトリーの名前のことです。ディレクトリーは実際にはファイルの一種なので、ファイル名をもちます。これはディレクトリー名と関連がありますが、同一ではありません(これは、Unixの通常の用語とは異なる)。同じ実体にたいするこれら2つの異なる名前は、構文的な変換により関連付けられます。GNUおよびUnixシステムでは、ことは単純です。ディレクトリー名はスラッシュで終わり、ファイルとしてのディレクトリーの名前には、そのスラッシュがありません。MS-DOSでは、この関連付けはより複雑です。"
+msgstr "@dfn{ディレクトリー名(directory name)}とは、ある文字列が何らかのファイルを命名する場合にはディレクトリーを命名する文字列のことです。ディレクトリーは実際にはファイルの一種なので、ファイル名(@dfn{ディレクトリーファイル名}と呼ばれる)をもち、これはディレクトリー名と関係はあるものの通常は等価ではありません(これはPOSIXの通常の用語と完全に同一ではない)。同じ実体にたいするこれら2つの異なる名前は構文的な変換により関連付けられます。GNUや他のPOSIXシステムではことは単純です。ディレクトリー名の最後が@samp{/}でなければ、ディレクトリーファイル名に@samp{/}を追加してディレクトリー名を取得できます。MS-DOSではこの関連付けはより複雑です。"
 
 #. type: Plain text
 #: original_texis/files.texi:2223
-#, fuzzy
-#| msgid "The difference between a directory name and its name as a file is subtle but crucial.  When an Emacs variable or function argument is described as being a directory name, a file name of a directory is not acceptable.  When @code{file-name-directory} returns a string, that is always a directory name."
 msgid "The difference between a directory name and a directory file name is subtle but crucial.  When an Emacs variable or function argument is described as being a directory name, a directory file name is not acceptable.  When @code{file-name-directory} returns a string, that is always a directory name."
-msgstr "ディレクトリー名と、ファイルとしてのディレクトリーの名前の違いは、些細ですが重要です。Emacsの変数、または関数の引数を記述する際、それがディレクトリー名であるとしており、ディレクトリーのファイル名は許されません。@code{file-name-directory}が文字列をリターンするときは、常にディレクトリー名です。"
+msgstr "ディレクトリー名とディレクトリーファイル名の違いは些細ですが重要です。Emacsの変数や関数の引数を記述する際には、それがディレクトリー名であるとしており、ディレクトリーファイル名は許容されません。@code{file-name-directory}が文字列をリターンするときには常にディレクトリー名をリターンします。"
 
 #. type: Plain text
 #: original_texis/files.texi:2228
@@ -3496,7 +3476,7 @@ msgstr "directory-name-p filename"
 #. type: defun
 #: original_texis/files.texi:2248
 msgid "This function returns non-@code{nil} if @var{filename} ends with a directory separator character.  This is the forward slash @samp{/} on GNU and other POSIX-like systems; MS-Windows and MS-DOS recognize both the forward slash and the backslash @samp{\\} as directory separators."
-msgstr ""
+msgstr "この関数は@var{filename}の終端がディレクトリー区切り文字なら非@code{nil}をリターンする。これはGNUや他のPOSIX準拠システムではスラッシュ@samp{/}、MS-WindowsとMS-DOSではスラッシュとバックスラッシュ@samp{\\}がディレクトリー区切りとして認識される。"
 
 #. type: defun
 #: original_texis/files.texi:2250
@@ -3506,10 +3486,8 @@ msgstr "directory-file-name dirname"
 
 #. type: defun
 #: original_texis/files.texi:2256
-#, fuzzy
-#| msgid "This function returns a string representing @var{dirname} in a form that the operating system will interpret as the name of a file.  On most systems, this means removing the final slash (or backslash) from the string."
 msgid "This function returns a string representing @var{dirname} in a form that the operating system will interpret as the name of a file (a directory file name).  On most systems, this means removing the final directory separators from the string, unless the string consists entirely of directory separators."
-msgstr "この関数は、オペレーティングシステムがファイルの名前と解釈する形式で、@var{dirname}を表す文字列をリターンする。ほとんどのシステムでは、これは文字列から最後のスラッシュ(またはバックスラッシュ)を削除することを意味する。"
+msgstr "この関数はオペレーティングシステムがファイルの名前と解釈する形式(ディレクトリーファイル名)で@var{dirname}を表す文字列をリターンする。ほとんどのシステムではこれは文字列すべてがディレクトリー区切り文字で構成されている場合を除き、文字列から最後のディレクトリー区切り文字を削除することを意味する。"
 
 #. type: group
 #: original_texis/files.texi:2261
@@ -3571,7 +3549,7 @@ msgstr "なぜならこれには可搬性がないからです。常に@code{fil
 #. type: Plain text
 #: original_texis/files.texi:2300
 msgid "To avoid the issues mentioned above, or if the @var{dirname} value might be @code{nil} (for example, from an element of @code{load-path}), use:"
-msgstr ""
+msgstr "上述の問題の回避や@var{dirname}の値が@code{nil}かもしれない場合(たとえば@code{load-path}の要素を使用する際)には以下を使用します:"
 
 #. type: example
 #: original_texis/files.texi:2303
@@ -3582,7 +3560,7 @@ msgstr "(expand-file-name @var{relfile} @var{dirname})\n"
 #. type: Plain text
 #: original_texis/files.texi:2308
 msgid "However, @code{expand-file-name} expands leading @samp{~} in @var{relfile}, which may not be what you want.  @xref{File Name Expansion}."
-msgstr ""
+msgstr "ただし@code{expand-file-name}は@var{relfile}の先頭の@samp{~}を展開しますが、これは望んだ動作ではないかもしれません。@ref{File Name Expansion}を参照してください。"
 
 #. type: Plain text
 #: original_texis/files.texi:2311
@@ -3644,10 +3622,8 @@ msgstr "expansion of file names"
 
 #. type: Plain text
 #: original_texis/files.texi:2339
-#, fuzzy
-#| msgid "@dfn{Expanding} a file name means converting a relative file name to an absolute one.  Since this is done relative to a default directory, you must specify the default directory name as well as the file name to be expanded.  It also involves expanding abbreviations like @file{~/}"
 msgid "@dfn{Expanding} a file name means converting a relative file name to an absolute one.  Since this is done relative to a default directory, you must specify the default directory as well as the file name to be expanded.  It also involves expanding abbreviations like @file{~/}"
-msgstr "ファイル名の@dfn{展開(expanding)}とは、相対ファイル名を絶対ファイル名に変換することを意味します。これはデフォルトディレクトリーから相対的に行われるため、展開されるファイル名と同様、デフォルトディレクトリーも指定しなければなりません。これは@file{~/}のような省略形"
+msgstr "ファイル名の@dfn{展開(expanding)}と、相対ファイル名を絶対ファイル名に変換することを意味します。これはデフォルトディレクトリーから相対的に行われるため、展開されるファイル名と同様にデフォルトディレクトリーも指定しなければなりません。これは@file{~/}のような省略形"
 
 #. type: ifnottex
 #: original_texis/files.texi:2341
@@ -3667,10 +3643,8 @@ msgstr "expand-file-name filename &optional directory"
 
 #. type: defun
 #: original_texis/files.texi:2352
-#, fuzzy
-#| msgid "This function converts @var{filename} to an absolute file name.  If @var{directory} is supplied, it is the default directory to start with if @var{filename} is relative.  (The value of @var{directory} should itself be an absolute directory name or directory file name; it may start with @samp{~}.)  Otherwise, the current buffer's value of @code{default-directory} is used.  For example:"
 msgid "This function converts @var{filename} to an absolute file name.  If @var{directory} is supplied, it is the default directory to start with if @var{filename} is relative and does not start with @samp{~}.  (The value of @var{directory} should itself be an absolute directory name or directory file name; it may start with @samp{~}.)  Otherwise, the current buffer's value of @code{default-directory} is used.  For example:"
-msgstr "この関数は、@var{filename}を絶対ファイル名に変換する。@var{directory}が与えられた場合、@var{filename}が相対的なら、それは開始点となるデフォルトディレクトリーになる(@var{directory}の値は、それ自体が絶対ディレクトリー名、またはディレクトリーファイル名であるべきで、それは@samp{~}で始まるかもしれない)。それ以外では、カレントバッファーの@code{default-directory}の値が使用される。たとえば:"
+msgstr "この関数は@var{filename}を絶対ファイル名に変換する。@var{directory}が与えられた場合には@var{filename}が相対的であり先頭が@samp{~}でなければ、それが開始点となるデフォルトディレクトリーになる(@var{directory}の値はそれ自体が絶対ディレクトリー名かディレクトリーファイル名であるべきで、それは@samp{~}で始まるかもしれない)。それ以外ではカレントバッファーの@code{default-directory}の値が使用される。たとえば:"
 
 #. type: group
 #: original_texis/files.texi:2357
@@ -3704,10 +3678,8 @@ msgstr ""
 
 #. type: defun
 #: original_texis/files.texi:2377
-#, fuzzy
-#| msgid "If the part of the combined file name before the first slash is @samp{~}, it expands to the value of the @env{HOME} environment variable (usually your home directory).  If the part before the first slash is @samp{~@var{user}} and if @var{user} is a valid login name, it expands to @var{user}'s home directory."
 msgid "If the part of @var{filename} before the first slash is @samp{~}, it expands to the value of the @env{HOME} environment variable (usually your home directory).  If the part before the first slash is @samp{~@var{user}} and if @var{user} is a valid login name, it expands to @var{user}'s home directory.  If you do not want this expansion for a relative @var{filename} that might begin with a literal @samp{~}, you can use @code{(concat (file-name-as-directory directory) filename)} instead of @code{(expand-file-name filename directory)}."
-msgstr "結合されたファイル名の最初のスラッシュの前が@samp{~}の場合は、環境変数@env{HOME}(通常はユーザーのホームディレクトリー)の値に展開される。最初のスラッシュの前が@samp{~@var{user}}で、かつ@var{user}が有効なログイン名の場合は、@var{user}のホームディレクトリーに展開される。"
+msgstr "@var{filename}の最初のスラッシュの前が@samp{~}なら環境変数@env{HOME} (通常はユーザーのホームディレクトリー)の値に展開される。最初のスラッシュの前が@samp{~@var{user}}で@var{user}が有効なログイン名なら@var{user}のホームディレクトリーに展開される。リテラル@samp{~}で始まるかもしれない相対的な@var{filename}にたいして展開を望まない場合には@code{(expand-file-name filename directory)}のかわりに@code{(concat (file-name-as-directory directory) filename)}を使用できる。"
 
 #. type: defun
 #: original_texis/files.texi:2380
@@ -3848,10 +3820,8 @@ msgstr "@code{substitute-in-file-name}により生成された出力で@code{sub
 
 #. type: defun
 #: original_texis/files.texi:2478
-#, fuzzy
-#| msgid "Here we assume that the environment variable @env{HOME}, which holds the user's home directory name, has value @samp{/xcssun/users/rms}."
 msgid "Here we assume that the environment variable @env{HOME}, which holds the user's home directory, has value @samp{/xcssun/users/rms}."
-msgstr "以下では、ユーザーのホームディレクトリー名を保持する環境変数@env{HOME}は、値@samp{/xcssun/users/rms}をもつとする。"
+msgstr "以下ではユーザーのホームディレクトリーを保持する環境変数@env{HOME}の値が@samp{/xcssun/users/rms}だと仮定する。"
 
 #. type: group
 #: original_texis/files.texi:2483
@@ -3893,74 +3863,65 @@ msgstr ""
 #. type: Plain text
 #: original_texis/files.texi:2508
 msgid "Sometimes, it is not desired to expand file names.  In such cases, the file name can be quoted to suppress the expansion, and to handle the file name literally.  Quoting happens by prefixing the file name with @samp{/:}."
-msgstr ""
+msgstr "ファイル名の展開が望ましくない場合もあります。そのような場合には展開を抑制するためにファイル名をクォートしてファイル名をそのままリテラルとして処理することができます。ファイル名の前に@samp{/:}を前置することによりクォートが行われます。"
 
 #. type: defmac
 #: original_texis/files.texi:2509
-#, fuzzy, no-wrap
-#| msgid "file-name-directory filename"
+#, no-wrap
 msgid "file-name-quote name"
-msgstr "file-name-directory filename"
+msgstr "file-name-quote name"
 
 #. type: defmac
 #: original_texis/files.texi:2515
 msgid "This macro adds the quotation prefix @samp{/:} to the file @var{name}.  For a local file @var{name}, it prefixes @var{name} with @samp{/:}.  If @var{name} is a remote file name, the local part of @var{name} is quoted.  If @var{name} is already a quoted file name, @var{name} is returned unchanged."
-msgstr ""
+msgstr "このマクロはファイル@var{name}にクォートプレフィクス@samp{/:}を追加する。ローカルファイル@var{name}には@var{name}にプレフィクス@samp{/:}を追加する。@var{name}がリモートファイル名なら@var{name}のローカル部分をクォートする。@var{name}がすでにクォートされたファイル名なら@var{name}を変更せずにリターンする。"
 
 #. type: group
 #: original_texis/files.texi:2520
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(substitute-in-file-name \"bar/~/foo\")\n"
-#| "     @result{} \"~/foo\"\n"
+#, no-wrap
 msgid ""
 "(substitute-in-file-name (file-name-quote \"bar/~/foo\"))\n"
 "     @result{} \"/:bar/~/foo\"\n"
 msgstr ""
-"(substitute-in-file-name \"bar/~/foo\")\n"
-"     @result{} \"~/foo\"\n"
+"(substitute-in-file-name (file-name-quote \"bar/~/foo\"))\n"
+"     @result{} \"/:bar/~/foo\"\n"
 
 #. type: group
 #: original_texis/files.texi:2525
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(substitute-in-file-name \"bar/~/foo\")\n"
-#| "     @result{} \"~/foo\"\n"
+#, no-wrap
 msgid ""
 "(substitute-in-file-name (file-name-quote \"/ssh:host:bar/~/foo\"))\n"
 "     @result{} \"/ssh:host:/:bar/~/foo\"\n"
 msgstr ""
-"(substitute-in-file-name \"bar/~/foo\")\n"
-"     @result{} \"~/foo\"\n"
+"(substitute-in-file-name (file-name-quote \"/ssh:host:bar/~/foo\"))\n"
+"     @result{} \"/ssh:host:/:bar/~/foo\"\n"
 
 #. type: defmac
 #: original_texis/files.texi:2530
 msgid "The macro cannot be used to suppress file name handlers from magic file names (@pxref{Magic File Names})."
-msgstr ""
+msgstr "マジックファイル名によるファイル名ハンドラーを抑制するためにこのマクロは使用できない(@ref{Magic File Names}を参照)。"
 
 #. type: defmac
 #: original_texis/files.texi:2532
-#, fuzzy, no-wrap
-#| msgid "file-name-directory filename"
+#, no-wrap
 msgid "file-name-unquote name"
-msgstr "file-name-directory filename"
+msgstr "file-name-unquote name"
 
 #. type: defmac
 #: original_texis/files.texi:2536
 msgid "This macro removes the quotation prefix @samp{/:} from the file @var{name}, if any. If @var{name} is a remote file name, the local part of @var{name} is unquoted."
-msgstr ""
+msgstr "このマクロはファイル@var{name}にクォーテーションプレフィクス@samp{/:}があれば削除する。@var{name}がリモートファイル名なら@var{name}のローカル部分を非クォート化する。"
 
 #. type: defmac
 #: original_texis/files.texi:2538
-#, fuzzy, no-wrap
-#| msgid "file-name-nondirectory filename"
+#, no-wrap
 msgid "file-name-quoted-p name"
-msgstr "file-name-nondirectory filename"
+msgstr "file-name-quoted-p name"
 
 #. type: defmac
 #: original_texis/files.texi:2542
 msgid "This macro returns non-@code{nil}, when @var{name} is quoted with the prefix @samp{/:}.  If @var{name} is a remote file name, the local part of @var{name} is checked."
-msgstr ""
+msgstr "このマクロは@var{name}がプレフィクス@samp{/:}でクォートされていれば非@code{nil}をリターンする。@var{name}がリモートファイル名なら@var{name}のローカル部分をチェックする。"
 
 #. type: subsection
 #: original_texis/files.texi:2546
@@ -3998,17 +3959,14 @@ msgstr "@code{make-temp-file}の役目は、2人の異なるユーザーやジ�
 
 #. type: defun
 #: original_texis/files.texi:2561
-#, fuzzy, no-wrap
-#| msgid "make-temp-file prefix &optional dir-flag suffix"
+#, no-wrap
 msgid "make-temp-file prefix &optional dir-flag suffix text"
-msgstr "make-temp-file prefix &optional dir-flag suffix"
+msgstr "make-temp-file prefix &optional dir-flag suffix text"
 
 #. type: defun
 #: original_texis/files.texi:2570
-#, fuzzy
-#| msgid "This function creates a temporary file and returns its name.  Emacs creates the temporary file's name by adding to @var{prefix} some random characters that are different in each Emacs job.  The result is guaranteed to be a newly created empty file.  On MS-DOS, this function can truncate the @var{string} prefix to fit into the 8+3 file-name limits.  If @var{prefix} is a relative file name, it is expanded against @code{temporary-file-directory}."
 msgid "This function creates a temporary file and returns its name.  Emacs creates the temporary file's name by adding to @var{prefix} some random characters that are different in each Emacs job.  The result is guaranteed to be a newly created file, containing @var{text} if that's given as a string and empty otherwise. On MS-DOS, this function can truncate the @var{string} prefix to fit into the 8+3 file-name limits.  If @var{prefix} is a relative file name, it is expanded against @code{temporary-file-directory}."
-msgstr "この関数は、一時ファイルを作成して、その名前をリターンする。Emacsは、Emacsの各ジョブごとに異なるランダムないくつかの文字を@var{prefix}に追加することにより、一時ファイルの名前を作成する。結果として新たに空のファイルが作成されることが保障される。MS-DOSでは、8+3のファイル名制限に適合するよう、文字列@var{string}は切り詰められる可能性がある。@var{prefix}が相対ファイル名の場合、それは@code{temporary-file-directory}にたいして展開される。"
+msgstr "この関数は一時ファイルを作成して、その名前をリターンする。EmacsはEmacsの各ジョブごとに異なるランダムないくつかの文字を@var{prefix}に追加することにより一時ファイルの名前を作成する。結果として文字列として@var{text}が与えられていればそれを含むファイル、それ以外なら空のファイルが新たに作成されることが保障される。MS-DOSでは8+3のファイル名制限に適合するように、文字列@var{string}が切り詰められる可能性がある。@var{prefix}が相対ファイル名なら@code{temporary-file-directory}にたいして展開される。"
 
 #. type: group
 #: original_texis/files.texi:2575
@@ -4037,10 +3995,8 @@ msgstr "@var{suffix}が非@code{nil}なら、@code{make-temp-file}はそれを�
 
 #. type: defun
 #: original_texis/files.texi:2590
-#, fuzzy
-#| msgid "If @var{suffix} is non-@code{nil}, @code{make-temp-file} adds it at the end of the file name."
 msgid "If @var{text} is a string, @code{make-temp-file} inserts it in the file."
-msgstr "@var{suffix}が非@code{nil}の場合、@code{make-temp-file}はそれをファイル名の最後に追加する。"
+msgstr "@var{text}が文字列なら@code{make-temp-file}はそれをファイルに挿入する。"
 
 #. type: defun
 #: original_texis/files.texi:2597
@@ -4129,10 +4085,8 @@ msgstr "make-temp-name base-name"
 
 #. type: defun
 #: original_texis/files.texi:2652
-#, fuzzy
-#| msgid "This function generates a string that can be used as a unique file name.  The name starts with @var{base-name}, and has several random characters appended to it, which are different in each Emacs job.  It is like @code{make-temp-file} except that (i) it just constructs a name, and does not create a file, and (ii) @var{base-name} should be an absolute file name (on MS-DOS, this function can truncate @var{base-name} to fit into the 8+3 file-name limits)."
 msgid "This function generates a string that might be a unique file name.  The name starts with @var{base-name}, and has several random characters appended to it, which are different in each Emacs job.  It is like @code{make-temp-file} except that (i) it just constructs a name and does not create a file, (ii) @var{base-name} should be an absolute file name that is not magic, and (iii) if the returned file name is magic, it might name an existing file.  @xref{Magic File Names}."
-msgstr "この関数は、一意なファイル名として使用できる文字列を生成する。この名前は@var{base-name}で始まり、それに各Emacsジョブごとに異なる、複数のランダムな文字を追加したものである。これは@code{make-temp-file}と似ているが、(i)名前だけを作成し、ファイルは作成しない、(ii)@var{base-name}は絶対ファイル名であること、という点が異なる(MS-DOSシステムでは、8+3ファイル名制限に適合するよう、@var{base-name}が切り詰められる)。"
+msgstr "この関数は一意なファイル名として使用できる文字列を生成する。この名前は@var{base-name}で始まり、それに各Emacsジョブごとに異なる複数のランダムな文字を追加したものである。これは@code{make-temp-file}と似ているが、(i)名前だけを作成してファイルは作成せず、(ii)@var{base-name}はマジックファイル名ではない絶対ファイル名であること、(iii)リターンされるファイル名がマジックファイル名なら既存のファイルかもしれない、という点が異なる(MS-DOSシステムでは8+3ファイル名制限に適合するように@var{base-name}が切り詰められる)。"
 
 #. type: defun
 #: original_texis/files.texi:2657
@@ -4142,43 +4096,40 @@ msgstr "@strong{警告:} この関数を使用するべきではない。かわ�
 #. type: Plain text
 #: original_texis/files.texi:2661
 msgid "Sometimes, it is necessary to create a temporary file on a remote host or a mounted directory.  The following two functions support this."
-msgstr ""
+msgstr "リモートホストやマウントされたディレクトリーで一時ファイルの作成を要する場合があります。以下の2つの関数はそれをサポートします。"
 
 #. type: defun
 #: original_texis/files.texi:2662
-#, fuzzy, no-wrap
-#| msgid "make-temp-file prefix &optional dir-flag suffix"
+#, no-wrap
 msgid "make-nearby-temp-file prefix &optional dir-flag suffix"
-msgstr "make-temp-file prefix &optional dir-flag suffix"
+msgstr "make-nearby-temp-file prefix &optional dir-flag suffix"
 
 #. type: defun
 #: original_texis/files.texi:2671
 msgid "This function is similar to @code{make-temp-file}, but it creates a temporary file as close as possible to @code{default-directory}.  If @var{prefix} is a relative file name, and @code{default-directory} is a remote file name or located on a mounted file systems, the temporary file is created in the directory returned by the function @code{temporary-file-directory}.  Otherwise, the function @code{make-temp-file} is used.  @var{prefix}, @var{dir-flag} and @var{suffix} have the same meaning as in @code{make-temp-file}."
-msgstr ""
+msgstr "この関数は@code{make-temp-file}と同様だができ得るかぎり@code{default-directory}に近接した一時ファイルを作成する点が異なる。@var{prefix}が相対ファイル名で@code{default-directory}がリモートファイル名かマウントされたファイルシステムに配置されていれば、一時ファイルは関数@code{temporary-file-directory}がリターンするディレクトリー内に作成される。それ以外なら関数@code{make-temp-file}を使用する。@var{prefix}、@var{dir-flag}、@var{suffix}の意味は@code{make-temp-file}の場合と同様。"
 
 #. type: group
 #: original_texis/files.texi:2677
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(make-temp-file \"foo\")\n"
-#| "     @result{} \"/tmp/foo232J6v\"\n"
+#, no-wrap
 msgid ""
 "(let ((default-directory \"/ssh:remotehost:\"))\n"
 "  (make-nearby-temp-file \"foo\"))\n"
 "     @result{} \"/ssh:remotehost:/tmp/foo232J6v\"\n"
 msgstr ""
-"(make-temp-file \"foo\")\n"
-"     @result{} \"/tmp/foo232J6v\"\n"
+"(let ((default-directory \"/ssh:remotehost:\"))\n"
+"  (make-nearby-temp-file \"foo\"))\n"
+"     @result{} \"/ssh:remotehost:/tmp/foo232J6v\"\n"
 
 #. type: defun
 #: original_texis/files.texi:2691
 msgid "The directory for writing temporary files via @code{make-nearby-temp-file}.  In case of a remote @code{default-directory}, this is a directory for temporary files on that remote host.  If such a directory does not exist, or @code{default-directory} ought to be located on a mounted file system (see @code{mounted-file-systems}), the function returns @code{default-directory}.  For a non-remote and non-mounted @code{default-directory}, the value of the variable @code{temporary-file-directory} is returned."
-msgstr ""
+msgstr "@code{make-nearby-temp-file}を通じて一時ファイルを書き込むディレクトリー。@code{default-directory}がリモートの場合にはリモートホスト上の一時ファイル用のディレクトリー。そのようなディレクトリーが存在しない、または@code{default-directory}がマウントされるファイルシステム上に配置される場合(@code{mounted-file-systems}を参照)には、この関数は@code{default-directory}をリターンする。リモートでもマウントされたファイルシステムでもない@code{default-directory}では@code{temporary-file-directory}の値がリターンされる。"
 
 #. type: Plain text
 #: original_texis/files.texi:2695
 msgid "In order to extract the local part of the path name from a temporary file, @code{file-local-name} could be used."
-msgstr ""
+msgstr "一時ファイルからパス名のローカル部分を抽出するために@code{file-local-name}を使用できます。"
 
 #. type: cindex
 #: original_texis/files.texi:2698
@@ -4387,10 +4338,8 @@ msgstr "この関数は@var{filename}にもとづいたカレントオペレー�
 
 #. type: defun
 #: original_texis/files.texi:2848
-#, fuzzy
-#| msgid "On GNU and Unix systems, this simply returns @var{filename}.  On other operating systems, it may enforce system-specific file name conventions; for example, on MS-DOS this function performs a variety of changes to enforce MS-DOS file name limitations, including converting any leading @samp{.} to @samp{_} and truncating to three characters after the @samp{.}."
 msgid "On GNU and other POSIX-like systems, this simply returns @var{filename}.  On other operating systems, it may enforce system-specific file name conventions; for example, on MS-DOS this function performs a variety of changes to enforce MS-DOS file name limitations, including converting any leading @samp{.} to @samp{_} and truncating to three characters after the @samp{.}."
-msgstr "GNUおよびUnixシステムでは、これは単に@var{filename}をリターンする。その他のオペレーティングシステムでは、システム固有のファイル名規約にしたがうだろう。たとえばMS-DOSでは、この関数はMS-DOSファイル名制限にしたがうよう、先頭の@samp{.}を@samp{_}に変換したり、@samp{.}の後続の文字を3文字に切り詰める等、さまざまな変更を行う。"
+msgstr "GNUや他のPOSIX準拠システムでは単に@var{filename}をリターンする。その他のオペレーティングシステムではシステム固有のファイル名規約にしたがうだろう。たとえばMS-DOSでは、この関数はMS-DOSファイル名制限にしたがうように先頭の@samp{.}を@samp{_}に変換したり、@samp{.}の後続の文字を3文字に切り詰める等、さまざまな変更を行う。"
 
 #. type: defun
 #: original_texis/files.texi:2852
@@ -4520,10 +4469,8 @@ msgstr "この関数は@code{ls}の@var{switches}に対応するフォーマッ�
 
 #. type: defun
 #: original_texis/files.texi:2951
-#, fuzzy
-#| msgid "The argument @var{file} may be either a directory name or a file specification including wildcard characters.  If @var{wildcard} is non-@code{nil}, that means treat @var{file} as a file specification with wildcards."
 msgid "The argument @var{file} may be either a directory or a file specification including wildcard characters.  If @var{wildcard} is non-@code{nil}, that means treat @var{file} as a file specification with wildcards."
-msgstr "引数@var{file}にはディレクトリー名、またはワイルドカード文字を含むファイル名を指定できる。@var{wildcard}が非@code{nil}の場合、@var{file}はワイルドカードを伴うファイル指定として扱われることを意味する。"
+msgstr "引数@var{file}にはディレクトリー、またはワイルドカード文字を含むファイル名を指定できる。@var{wildcard}が非@code{nil}なら@var{file}はワイルドカードを伴うファイル指定として扱われることを意味する。"
 
 #. type: defun
 #: original_texis/files.texi:2958
@@ -4603,10 +4550,8 @@ msgstr "Command copy-directory dirname newname &optional keep-time parents copy-
 
 #. type: deffn
 #: original_texis/files.texi:3006
-#, fuzzy
-#| msgid "This command copies the directory named @var{dirname} to @var{newname}.  If @var{newname} names an existing directory, @var{dirname} will be copied to a subdirectory there."
 msgid "This command copies the directory named @var{dirname} to @var{newname}.  If @var{newname} is a directory name, @var{dirname} will be copied to a subdirectory there.  @xref{Directory Names}."
-msgstr "このコマンドは、@var{dirname}という名前のディレクトリーを、@var{newname}にコピーする。@var{newname}が既存のディレクトリーの場合、@var{dirname}はそれのサブディレクトリーにコピーされるだろう。"
+msgstr "このコマンドは@var{dirname}という名前のディレクトリーを@var{newname}にコピーする。@var{newname}がディレクトリー名なら@var{dirname}はそれのサブディレクトリーにコピーされる。@ref{Directory Names}を参照のこと。"
 
 #. type: deffn
 #: original_texis/files.texi:3009
@@ -4625,10 +4570,8 @@ msgstr "4つ目の引数@var{parents}は、親ディレクトリーが存在し�
 
 #. type: deffn
 #: original_texis/files.texi:3022
-#, fuzzy
-#| msgid "The fifth argument @var{copy-contents}, if non-@code{nil}, means to copy the contents of @var{dirname} directly into @var{newname} if the latter is an existing directory, instead of copying @var{dirname} into it as a subdirectory."
 msgid "The fifth argument @var{copy-contents}, if non-@code{nil}, means to copy the contents of @var{dirname} directly into @var{newname} if the latter is a directory name, instead of copying @var{dirname} into it as a subdirectory."
-msgstr "5つ目の引数@var{copy-contents}が非@code{nil}の場合、それは@var{newname}が既存のディレクトリーならば、そのサブディレクトリーとして@var{dirname}をコピーするかわりに、@var{dirname}のコンテンツを@var{newname}にコピーする。"
+msgstr "5つ目の引数@var{copy-contents}が非@code{nil}の場合には、それは@var{newname}がディレクトリー名ならば、そのサブディレクトリーとして@var{dirname}をコピーするかわりに@var{dirname}のコンテンツを@var{newname}にコピーする。"
 
 #. type: deffn
 #: original_texis/files.texi:3026
@@ -4638,10 +4581,8 @@ msgstr "Command delete-directory dirname &optional recursive trash"
 
 #. type: deffn
 #: original_texis/files.texi:3035
-#, fuzzy
-#| msgid "This command deletes the directory named @var{dirname}.  The function @code{delete-file} does not work for files that are directories; you must use @code{delete-directory} for them.  If @var{recursive} is @code{nil}, and the directory contains any files, @code{delete-directory} signals an error."
 msgid "This command deletes the directory named @var{dirname}.  The function @code{delete-file} does not work for files that are directories; you must use @code{delete-directory} for them.  If @var{recursive} is @code{nil}, and the directory contains any files, @code{delete-directory} signals an error.  If recursive is non-@code{nil}, there is no error merely because the directory or its files are deleted by some other process before @code{delete-directory} gets to them."
-msgstr "このコマンドは、@var{dirname}という名前のディレクトリーを削除する。関数@code{delete-file}はディレクトリーであるようなファイルにたいしては機能しない。それらにたいしては、@code{delete-directory}を使用しなければならない。@var{recursive}が@code{nil}で、ディレクトリー内にファイルが存在する場合、@code{delete-directory}はエラーをシグナルする。"
+msgstr "このコマンドは@var{dirname}という名前のディレクトリーを削除する。関数@code{delete-file}はディレクトリーであるようなファイルにたいしては機能しない。それらにたいしては@code{delete-directory}を使用しなければならない。@var{recursive}が@code{nil}でディレクトリー内にファイルが存在する場合には、@code{delete-directory}はエラーをシグナルする。@var{recursive}が非@code{nil}なら、@code{delete-directory}の処理前にそのディレクトリーやディレクトリーのファイルを他のプロセスが削除したという稀な状況を除いてエラーは発生しない。"
 
 #. type: deffn
 #: original_texis/files.texi:3038
@@ -4759,63 +4700,12 @@ msgstr "以下はmagicファイル名ハンドラーが処理する操作です:
 
 #. type: ifnottex
 #: original_texis/files.texi:3176
-#, fuzzy
-#| msgid "@code{access-file}, @code{add-name-to-file}, @code{byte-compiler-base-file-name},@* @code{copy-directory}, @code{copy-file}, @code{delete-directory}, @code{delete-file}, @code{diff-latest-backup-file}, @code{directory-file-name}, @code{directory-files}, @code{directory-files-and-attributes}, @code{dired-compress-file}, @code{dired-uncache},@* @code{expand-file-name}, @code{file-accessible-directory-p}, @code{file-acl}, @code{file-attributes}, @code{file-directory-p}, @code{file-equal-p}, @code{file-executable-p}, @code{file-exists-p}, @code{file-in-directory-p}, @code{file-local-copy}, @code{file-modes}, @code{file-name-all-completions}, @code{file-name-as-directory}, @code{file-name-completion}, @code{file-name-directory}, @code{file-name-nondirectory}, @code{file-name-sans-versions}, @code{file-newer-than-file-p}, @code{file-notify-add-watch}, @code{file-notify-rm-watch}, @code{file-ownership-preserved-p}, @code{file-readable-p}, @code{file-regular-p}, @code{file-remote-p}, @code{file-selinux-context}, @code{file-symlink-p}, @code{file-truename}, @code{file-writable-p}, @code{find-backup-file-name}, @code{get-file-buffer}, @code{insert-directory}, @code{insert-file-contents},@* @code{load}, @code{make-auto-save-file-name}, @code{make-directory}, @code{make-directory-internal}, @code{make-symbolic-link},@* @code{process-file}, @code{rename-file}, @code{set-file-acl}, @code{set-file-modes}, @code{set-file-selinux-context}, @code{set-file-times}, @code{set-visited-file-modtime}, @code{shell-command}, @code{start-file-process}, @code{substitute-in-file-name},@* @code{unhandled-file-name-directory}, @code{vc-registered}, @code{verify-visited-file-modtime},@* @code{write-region}."
 msgid "@code{access-file}, @code{add-name-to-file}, @code{byte-compiler-base-file-name},@* @code{copy-directory}, @code{copy-file}, @code{delete-directory}, @code{delete-file}, @code{diff-latest-backup-file}, @code{directory-file-name}, @code{directory-files}, @code{directory-files-and-attributes}, @code{dired-compress-file}, @code{dired-uncache},@* @code{expand-file-name}, @code{file-accessible-directory-p}, @code{file-acl}, @code{file-attributes}, @code{file-directory-p}, @code{file-equal-p}, @code{file-executable-p}, @code{file-exists-p}, @code{file-in-directory-p}, @code{file-local-copy}, @code{file-modes}, @code{file-name-all-completions}, @code{file-name-as-directory}, @code{file-name-case-insensitive-p}, @code{file-name-completion}, @code{file-name-directory}, @code{file-name-nondirectory}, @code{file-name-sans-versions}, @code{file-newer-than-file-p}, @code{file-notify-add-watch}, @code{file-notify-rm-watch}, @code{file-notify-valid-p}, @code{file-ownership-preserved-p}, @code{file-readable-p}, @code{file-regular-p}, @code{file-remote-p}, @code{file-selinux-context}, @code{file-symlink-p}, @code{file-truename}, @code{file-writable-p}, @code{find-backup-file-name},@* @code{get-file-buffer}, @code{insert-directory}, @code{insert-file-contents},@* @code{load}, @code{make-auto-save-file-name}, @code{make-directory}, @code{make-directory-internal}, @code{make-nearby-temp-file}, @code{make-symbolic-link},@* @code{process-file}, @code{rename-file}, @code{set-file-acl}, @code{set-file-modes}, @code{set-file-selinux-context}, @code{set-file-times}, @code{set-visited-file-modtime}, @code{shell-command}, @code{start-file-process}, @code{substitute-in-file-name},@* @code{temporary-file-directory}, @code{unhandled-file-name-directory}, @code{vc-registered}, @code{verify-visited-file-modtime},@* @code{write-region}."
-msgstr "@code{access-file}、@code{add-name-to-file}、@code{byte-compiler-base-file-name}、@* @code{copy-directory}、@code{copy-file}、@code{delete-directory}、@code{delete-file}、@code{diff-latest-backup-file}、@code{directory-file-name}、@code{directory-files}、@code{directory-files-and-attributes}、@code{dired-compress-file}、@code{dired-uncache}、@* @code{expand-file-name}、@code{file-accessible-directory-p}、@code{file-acl}、@code{file-attributes}、@code{file-directory-p}、@code{file-equal-p}、@code{file-executable-p}、@code{file-exists-p}、@code{file-in-directory-p}、@code{file-local-copy}、@code{file-modes}、@code{file-name-all-completions}、@code{file-name-as-directory}、@code{file-name-completion}、@code{file-name-directory}、@code{file-name-nondirectory}、@code{file-name-sans-versions}、@code{file-newer-than-file-p}、@code{file-notify-add-watch}、@code{file-notify-rm-watch}、@code{file-ownership-preserved-p}、@code{file-readable-p}、@code{file-regular-p}、@code{file-remote-p}、@code{file-selinux-context}、@code{file-symlink-p}、@code{file-truename}、@code{file-writable-p}、@code{find-backup-file-name}、@code{get-file-buffer}、@code{insert-directory}、@code{insert-file-contents}、@* @code{load}、@code{make-auto-save-file-name}、@code{make-directory}、@code{make-directory-internal}、@code{make-symbolic-link}、@* @code{process-file}、@code{rename-file}、@code{set-file-acl}、@code{set-file-modes}、@code{set-file-selinux-context}、@code{set-file-times}、@code{set-visited-file-modtime}、@code{shell-command}、@code{start-file-process}、@code{substitute-in-file-name}、@* @code{unhandled-file-name-directory}、@code{vc-registered}、@code{verify-visited-file-modtime}、@* @code{write-region}"
+msgstr "@code{access-file}、@code{add-name-to-file}、@code{byte-compiler-base-file-name},@* @code{copy-directory}、@code{copy-file}、@code{delete-directory}、@code{delete-file}、@code{diff-latest-backup-file}、@code{directory-file-name}、@code{directory-files}、@code{directory-files-and-attributes}、@code{dired-compress-file}、@code{dired-uncache},@* @code{expand-file-name}、@code{file-accessible-directory-p}、@code{file-acl}、@code{file-attributes}、@code{file-directory-p}、@code{file-equal-p}、@code{file-executable-p}、@code{file-exists-p}、@code{file-in-directory-p}、@code{file-local-copy}、@code{file-modes}、@code{file-name-all-completions}、@code{file-name-as-directory}、@code{file-name-case-insensitive-p}、@code{file-name-completion}、@code{file-name-directory}、@code{file-name-nondirectory}、@code{file-name-sans-versions}、@code{file-newer-than-file-p}、@code{file-notify-add-watch}、@code{file-notify-rm-watch}、@code{file-notify-valid-p}、@code{file-ownership-preserved-p}、@code{file-readable-p}、@code{file-regular-p}、@code{file-remote-p}、@code{file-selinux-context}、@code{file-symlink-p}、@code{file-truename}、@code{file-writable-p}、@code{find-backup-file-name},@* @code{get-file-buffer}、@code{insert-directory}、@code{insert-file-contents},@* @code{load}、@code{make-auto-save-file-name}、@code{make-directory}、@code{make-directory-internal}、@code{make-nearby-temp-file}、@code{make-symbolic-link},@* @code{process-file}、@code{rename-file}、@code{set-file-acl}、@code{set-file-modes}、@code{set-file-selinux-context}、@code{set-file-times}、@code{set-visited-file-modtime}、@code{shell-command}、@code{start-file-process}、@code{substitute-in-file-name},@* @code{temporary-file-directory}、@code{unhandled-file-name-directory}、@code{vc-registered}、@code{verify-visited-file-modtime}、@* @code{write-region}."
 
 #. type: flushleft
 #: original_texis/files.texi:3230
-#, fuzzy, no-wrap
-#| msgid ""
-#| "@code{access-file}, @code{add-name-to-file},\n"
-#| "@code{byte-com@discretionary{}{}{}piler-base-file-name},\n"
-#| "@code{copy-directory}, @code{copy-file},\n"
-#| "@code{delete-directory}, @code{delete-file},\n"
-#| "@code{diff-latest-backup-file},\n"
-#| "@code{directory-file-name},\n"
-#| "@code{directory-files},\n"
-#| "@code{directory-files-and-at@discretionary{}{}{}tributes},\n"
-#| "@code{dired-compress-file}, @code{dired-uncache},\n"
-#| "@code{expand-file-name},\n"
-#| "@code{file-accessible-direc@discretionary{}{}{}tory-p},\n"
-#| "@code{file-acl},\n"
-#| "@code{file-attributes},\n"
-#| "@code{file-direc@discretionary{}{}{}tory-p},\n"
-#| "@code{file-equal-p},\n"
-#| "@code{file-executable-p}, @code{file-exists-p},\n"
-#| "@code{file-in-directory-p},\n"
-#| "@code{file-local-copy},\n"
-#| "@code{file-modes}, @code{file-name-all-completions},\n"
-#| "@code{file-name-as-directory},\n"
-#| "@code{file-name-completion},\n"
-#| "@code{file-name-directory},\n"
-#| "@code{file-name-nondirec@discretionary{}{}{}tory},\n"
-#| "@code{file-name-sans-versions}, @code{file-newer-than-file-p},\n"
-#| "@code{file-notify-add-watch}, @code{file-notify-rm-watch},\n"
-#| "@code{file-ownership-pre@discretionary{}{}{}served-p},\n"
-#| "@code{file-readable-p}, @code{file-regular-p},\n"
-#| "@code{file-remote-p}, @code{file-selinux-context},\n"
-#| "@code{file-symlink-p}, @code{file-truename}, @code{file-writable-p},\n"
-#| "@code{find-backup-file-name},\n"
-#| "@code{get-file-buffer},\n"
-#| "@code{insert-directory},\n"
-#| "@code{insert-file-contents},\n"
-#| "@code{load},\n"
-#| "@code{make-auto-save-file-name},\n"
-#| "@code{make-direc@discretionary{}{}{}tory},\n"
-#| "@code{make-direc@discretionary{}{}{}tory-internal},\n"
-#| "@code{make-symbolic-link},\n"
-#| "@code{process-file},\n"
-#| "@code{rename-file}, @code{set-file-acl}, @code{set-file-modes},\n"
-#| "@code{set-file-selinux-context}, @code{set-file-times},\n"
-#| "@code{set-visited-file-modtime}, @code{shell-command},\n"
-#| "@code{start-file-process},\n"
-#| "@code{substitute-in-file-name},\n"
-#| "@code{unhandled-file-name-directory},\n"
-#| "@code{vc-regis@discretionary{}{}{}tered},\n"
-#| "@code{verify-visited-file-modtime},\n"
-#| "@code{write-region}.\n"
+#, no-wrap
 msgid ""
 "@code{access-file}, @code{add-name-to-file},\n"
 "@code{byte-com@discretionary{}{}{}piler-base-file-name},\n"
@@ -4868,35 +4758,37 @@ msgid ""
 "@code{verify-visited-file-modtime},\n"
 "@code{write-region}.\n"
 msgstr ""
-"@code{access-file}、@code{add-name-to-file}、\n"
+"@code{access-file}、 @code{add-name-to-file}、\n"
 "@code{byte-com@discretionary{}{}{}piler-base-file-name}、\n"
-"@code{copy-directory}、@code{copy-file}、\n"
-"@code{delete-directory}、@code{delete-file}、\n"
+"@code{copy-directory}、 @code{copy-file}、\n"
+"@code{delete-directory}、 @code{delete-file}、\n"
 "@code{diff-latest-backup-file}、\n"
 "@code{directory-file-name}、\n"
 "@code{directory-files}、\n"
 "@code{directory-files-and-at@discretionary{}{}{}tributes}、\n"
-"@code{dired-compress-file}、@code{dired-uncache}、\n"
+"@code{dired-compress-file}、 @code{dired-uncache}、\n"
 "@code{expand-file-name}、\n"
 "@code{file-accessible-direc@discretionary{}{}{}tory-p}、\n"
 "@code{file-acl}、\n"
 "@code{file-attributes}、\n"
 "@code{file-direc@discretionary{}{}{}tory-p}、\n"
 "@code{file-equal-p}、\n"
-"@code{file-executable-p}、@code{file-exists-p}、\n"
+"@code{file-executable-p}、 @code{file-exists-p}、\n"
 "@code{file-in-directory-p}、\n"
 "@code{file-local-copy}、\n"
-"@code{file-modes}、@code{file-name-all-completions}、\n"
+"@code{file-modes}、 @code{file-name-all-completions}、\n"
 "@code{file-name-as-directory}、\n"
+"@code{file-name-case-insensitive-p}、\n"
 "@code{file-name-completion}、\n"
 "@code{file-name-directory}、\n"
 "@code{file-name-nondirec@discretionary{}{}{}tory}、\n"
-"@code{file-name-sans-versions}、@code{file-newer-than-file-p}、\n"
-"@code{file-notify-add-watch}、@code{file-notify-rm-watch}、\n"
+"@code{file-name-sans-versions}、 @code{file-newer-than-file-p}、\n"
+"@code{file-notify-add-watch}、 @code{file-notify-rm-watch}、\n"
+"@code{file-notify-valid-p}、\n"
 "@code{file-ownership-pre@discretionary{}{}{}served-p}、\n"
-"@code{file-readable-p}、@code{file-regular-p}、\n"
-"@code{file-remote-p}、@code{file-selinux-context}、\n"
-"@code{file-symlink-p}、@code{file-truename}、@code{file-writable-p}、\n"
+"@code{file-readable-p}、 @code{file-regular-p}、\n"
+"@code{file-remote-p}、 @code{file-selinux-context}、\n"
+"@code{file-symlink-p}、 @code{file-truename}、 @code{file-writable-p}、\n"
 "@code{find-backup-file-name}、\n"
 "@code{get-file-buffer}、\n"
 "@code{insert-directory}、\n"
@@ -4907,15 +4799,15 @@ msgstr ""
 "@code{make-direc@discretionary{}{}{}tory-internal}、\n"
 "@code{make-symbolic-link}、\n"
 "@code{process-file}、\n"
-"@code{rename-file}、@code{set-file-acl}、@code{set-file-modes}、\n"
-"@code{set-file-selinux-context}、@code{set-file-times}、\n"
-"@code{set-visited-file-modtime}、@code{shell-command}、\n"
+"@code{rename-file}、 @code{set-file-acl}、 @code{set-file-modes}、\n"
+"@code{set-file-selinux-context}、 @code{set-file-times}、\n"
+"@code{set-visited-file-modtime}、 @code{shell-command}、\n"
 "@code{start-file-process}、\n"
 "@code{substitute-in-file-name}、\n"
 "@code{unhandled-file-name-directory}、\n"
 "@code{vc-regis@discretionary{}{}{}tered}、\n"
 "@code{verify-visited-file-modtime}、\n"
-"@code{write-region}\n"
+"@code{write-region}。\n"
 
 #. type: Plain text
 #: original_texis/files.texi:3237
@@ -4966,10 +4858,9 @@ msgstr "ハンドラー関数が通常のEmacsプリミティブを呼び出す�
 
 #. type: kindex
 #: original_texis/files.texi:3271
-#, fuzzy, no-wrap
-#| msgid "safe-magic (@r{property})"
+#, no-wrap
 msgid "safe-magic @r{(property)}"
-msgstr "safe-magic (@r{property})"
+msgstr "safe-magic @r{(property)}"
 
 #. type: Plain text
 #: original_texis/files.texi:3280
@@ -4978,10 +4869,9 @@ msgstr "ファイルへの実アクセスにたいして実際には特別なこ
 
 #. type: kindex
 #: original_texis/files.texi:3281
-#, fuzzy, no-wrap
-#| msgid "operations (@r{property})"
+#, no-wrap
 msgid "operations @r{(property)}"
-msgstr "operations (@r{property})"
+msgstr "operations @r{(property)}"
 
 #. type: Plain text
 #: original_texis/files.texi:3289
@@ -5091,15 +4981,14 @@ msgstr "これはサブプロセスの実行に有用。すべてのサブプロ
 
 #. type: defun
 #: original_texis/files.texi:3375
-#, fuzzy, no-wrap
-#| msgid "file-local-copy filename"
+#, no-wrap
 msgid "file-local-name filename"
-msgstr "file-local-copy filename"
+msgstr "file-local-name filename"
 
 #. type: defun
 #: original_texis/files.texi:3380
 msgid "This function returns the local part of file @var{filename}.  For a remote @var{filename}, it returns a file name which could be used directly as argument of a remote process.  If @var{filename} is local, this function returns the file name."
-msgstr ""
+msgstr "この関数はファイル@var{filename}のローカル部分をリターンする。@var{filename}がリモートならリモートプロセスの引数として直接使用できるファイル名をリターンする。@var{filename}がリモートならこの関数はそのファイル名をリターンする。"
 
 #. type: defopt
 #: original_texis/files.texi:3382
@@ -5387,10 +5276,8 @@ msgstr "@var{from-fn}が関数なら、それは変換するべきバッファ�
 
 #. type: table
 #: original_texis/files.texi:3510
-#, fuzzy
-#| msgid "One responsibility of @var{from-fn} is to make sure that the beginning of the file no longer matches @var{regexp}.  Otherwise it is likely to get called again."
 msgid "One responsibility of @var{from-fn} is to make sure that the beginning of the file no longer matches @var{regexp}.  Otherwise it is likely to get called again.  Also, @var{from-fn} must not involve buffers or files other than the one being decoded, otherwise the internal buffer used for formatting might be overwritten."
-msgstr "ファイルの先頭が、この変換により@var{regexp}にマッチしないようにするのは、@var{from-fn}の役目の1つである。そうでないと、おそらく再度変換が呼び出される。"
+msgstr "ファイルの先頭が変換により@var{regexp}にマッチしないようにするのは@var{from-fn}の役目の1つである。そうでないとおそらく再度変換が呼び出される。さらに@var{from-fn}はデコードされるバッファーやバッファーではないこと。さもなければフォーマット用の内部バッファーが上書きされるかもしれない。"
 
 #. type: item
 #: original_texis/files.texi:3511
@@ -5431,7 +5318,7 @@ msgstr "@code{write-region}が実際にバッファーからファイルにテ�
 #. type: table
 #: original_texis/files.texi:3543
 msgid "@var{to-fn} must not involve buffers or files other than the one being encoded, otherwise the internal buffer used for formatting might be overwritten."
-msgstr ""
+msgstr "@var{from-fn}はデコードされるバッファーやバッファーではないこと。さもなければフォーマット用の内部バッファーが上書きされるかもしれない。"
 
 #. type: item
 #: original_texis/files.texi:3544
