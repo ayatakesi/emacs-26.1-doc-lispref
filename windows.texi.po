@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-05-01 10:13+0900\n"
+"PO-Revision-Date: 2020-05-01 22:58+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -5034,128 +5034,121 @@ msgstr "atomic windows"
 #. type: Plain text
 #: original_texis/windows.texi:3491
 msgid "Atomic windows are rectangular compositions of at least two live windows.  They have the following distinctive characteristics:"
-msgstr ""
+msgstr "アトミックウィンドウ(atomic window)とは少なくとも2つ以上の生きたウィンドウから組成された矩形領域であり以下のような特性をもちます:"
 
 #. type: itemize
 #: original_texis/windows.texi:3497
 msgid "The function @code{split-window} (@pxref{Splitting Windows}), when applied to a constituent of an atomic window, will try to create the new window outside of the atomic window."
-msgstr ""
+msgstr "アトミックウィンドウの構成にたいして関数@code{split-window} (@ref{Splitting Windows}を参照)を適用するとアトミックウィンドウ外部に新たなウィンドウの作成を試みる。"
 
 #. type: itemize
 #: original_texis/windows.texi:3502
 msgid "The function @code{delete-window} (@pxref{Deleting Windows}), when applied to a constituent of an atomic window, will try to delete the entire atomic window instead."
-msgstr ""
+msgstr "アトミックウィンドウの構成にたいして関数@code{delete-window} (@ref{Deleting Windows}を参照)を適用するとアトミックウィンドウ全体の削除を試みる。"
 
 #. type: itemize
 #: original_texis/windows.texi:3507
 msgid "The function @code{delete-other-windows} (@pxref{Deleting Windows}), when applied to a constituent of an atomic window, will try to make the atomic window fill its frame or main window (@pxref{Side Windows})."
-msgstr ""
+msgstr "アトミックウィンドウの構成にたいして関数@code{delete-other-windows} (@ref{Deleting Windows}を参照)を適用するとアトミックウィンドウによるフレームの充填、またはメインウィンドウ化を試みる(@ref{Side Windows}を参照)。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3512
 msgid "This means that the basic groups of functions that alter the window structure treat an atomic window like a live one, thus preserving the internal structure of the atomic window."
-msgstr ""
+msgstr "これはウィンドウ構造を変更する基本的な関数グループはアトミックウィンドウを生きたウィンドウのように扱い、それゆえアトミックウィンドウ内部の構造を保持することを意味しています。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3519
 msgid "Atomic windows are useful to construct and preserve window layouts that are meaningful only when all involved buffers are shown simultaneously in a specific manner, such as when showing differences between file revisions, or the same text in different languages or markups.  They can also be used to permanently display information pertinent to a specific window in bars on that window's sides."
-msgstr ""
+msgstr "アトミックウィンドウはファイルのリビジョン間の差異、異なる言語やマークアップでの同一テキストの表示のように、関連するバッファーを特定のマナーにしたがって同時に表示する際にのみ有意義なウィンドウレイアウトの構築と保持に有用です。特定のウィンドウの側面上のバーでウィンドウの情報を永続的に表示するためにも使用できます。"
 
 #. type: cindex
 #: original_texis/windows.texi:3520
 #, no-wrap
 msgid "root window of atomic window"
-msgstr ""
+msgstr "root window of atomic window"
 
 #. type: Plain text
 #: original_texis/windows.texi:3527
 msgid "Atomic windows are implemented with the help of the reserved @code{window-atom} window parameter (@pxref{Window Parameters}) and an internal window (@pxref{Basic Windows}) called the root window of the atomic window.  All windows that are part of the same atomic window have this root window as their common ancestor and are assigned a non-@code{nil} @code{window-atom} parameter."
-msgstr ""
+msgstr "アトミックウィンドウは予約済みのウィンドウパラメーター@code{window-atom} (@ref{Window Parameters}を参照)の助けを借りて実装されていて、内部ウィンドウ(@ref{Basic Windows}を参照)はアトミックウィンドウのルートウィンドウと呼ばれます。同じアトミックウィンドウの一部であるようなすべてのウィンドウは共通の祖先としてこのルートウィンドウをもち、@code{window-atom}パラメーターに非@code{nil}が割り当てられます。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3530
-#, fuzzy
-#| msgid "The following functions can be used to relate a set of frame-relative coordinates to a window:"
 msgid "The following function returns the root of the atomic window a specified window is part of:"
-msgstr "以下の関数は、フレーム相対座標(frame-relative coordinates)のセットからウィンドウへの関連付けに使用できます:"
+msgstr "以下の関数は指定したウィンドウを一部とするアトミックウィンドウのルートをリターンします:"
 
 #. type: defun
 #: original_texis/windows.texi:3531
-#, fuzzy, no-wrap
-#| msgid "window-start &optional window"
+#, no-wrap
 msgid "window-atom-root &optional window"
-msgstr "window-start &optional window"
+msgstr "window-atom-root &optional window"
 
 #. type: defun
 #: original_texis/windows.texi:3536
-#, fuzzy
-#| msgid "This function returns the height in pixels of @var{window}'s mode line.  @var{window} must be a live window and defaults to the selected one.  If @var{window} has no mode line, the return value is zero."
 msgid "This functions returns the root of the atomic window @var{window} is a part of.  The specified @var{window} must be a valid window and defaults to the selected one.  It returns @code{nil} if @var{window} is not part of an atomic window."
-msgstr "この関数は、@var{window}モードラインの高さをピクセルでリターンする。@var{window}は生きたウィンドウでなければならず、デフォルトは選択されたウィンドウである。@var{window}にモードラインがない場合、リターン値は0である。"
+msgstr "この関数は@var{window}を一部とするようなアトミックウィンドウのルートウィンドウをリターンする。@var{window}には有効なウィンドウを指定しなければならず、デフォルトは選択されたウィンドウ。@var{window}がアトミックウィンドウの一部でなければ@code{nil}をリターンする。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3540
 msgid "The most simple approach to make a new atomic window is to take an existing internal window and apply the following function:"
-msgstr ""
+msgstr "アトミックウィンドウを新たに作成するには既存の内部ウィンドウを選んで以下の関数を適用するのがもっともシンプルなアプローチです:"
 
 #. type: defun
 #: original_texis/windows.texi:3541
-#, fuzzy, no-wrap
-#| msgid "window-frame &optional window"
+#, no-wrap
 msgid "window-make-atom window"
-msgstr "window-frame &optional window"
+msgstr "window-make-atom window"
 
 #. type: defun
 #: original_texis/windows.texi:3546
 msgid "This function converts @var{window} into an atomic window.  The specified @var{window} must be an internal window.  All this function does is to set the @code{window-atom} parameter of each descendant of @var{window} to @code{t}."
-msgstr ""
+msgstr "この関数は@var{window}をアトミックウィンドウに変換する。@var{window}には内部ウィンドウを指定しなければならない。この関数が行うのは@var{window}の子孫それぞれの@code{window-atom}パラメーターに@code{t}をセットすることだけである。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3551
 msgid "To create a new atomic window from an existing live window or to add a new window to an existing atomic window, the following buffer display action function (@pxref{Display Action Functions}) can be used:"
-msgstr ""
+msgstr "既存の生きたウィンドウからアトミックウィンドウを作成したり、既存のアトミックウィンドウに新たなウィンドウを追加するには、以下のdisplay-bufferアクション関数(@ref{Display Action Functions}を参照)を使用できます:"
 
 #. type: defun
 #: original_texis/windows.texi:3552
-#, fuzzy, no-wrap
-#| msgid "display-buffer-no-window buffer alist"
+#, no-wrap
 msgid "display-buffer-in-atom-window buffer alist"
-msgstr "display-buffer-no-window buffer alist"
+msgstr "display-buffer-in-atom-window buffer alist"
 
 #. type: defun
 #: original_texis/windows.texi:3557
 msgid "This function tries to display @var{buffer} in a new window that will be combined with an existing window to form an atomic window.  If the existing window is already part of an atomic window, it adds the new window to that atomic window."
-msgstr ""
+msgstr "この関数は既存のウィンドウと組み合わせてアトミックウィンドウを形成することになる新たなウィンドウ内で@var{buffer}を表示する。既存のウィンドウがすでにアトミックウィンドウの一部なら、そのアトミックウィンドウに新たなウィンドウを追加する。"
 
 #. type: defun
 #: original_texis/windows.texi:3560
 msgid "The specified @var{alist} is an association list of symbols and values.  The following symbols have a special meaning:"
-msgstr ""
+msgstr "@var{alist}にはシンボルと値からなる連想リストを指定する。以下は特別な意味をもつシンボル:"
 
 #. type: table
 #: original_texis/windows.texi:3570
 msgid "The value of such an element specifies an existing window the new window shall be combined with.  If it specifies an internal window, all children of that window become part of the atomic window too.  If no window is specified, the new window becomes a sibling of the selected window.  The @code{window-atom} parameter of the existing window is set to @code{main} provided that window is live and its @code{window-atom} parameter was not already set."
-msgstr ""
+msgstr "このような要素は新たなウィンドウを組み合わせる既存のウィンドウを指定する。内部ウィンドウを指定すると、そのウィンドウのすべての子ウィンドウもアトミックウィンドウの一部になる。ウィンドウを何も指定しなければ新たなウィンドウは選択されたウィンドウの兄弟ウィンドウになる。既存ウィンドウの@code{window-atom}パラメーターはそれが生きたウィンドウであり、かつ@code{window-atom}がすでにセット済みでなければ@code{main}にセットされる。"
 
 #. type: table
 #: original_texis/windows.texi:3577
 msgid "The value of such an element denotes the side of the existing window where the new window shall be located.  Valid values are @code{below}, @code{right}, @code{above} and @code{left}.  The default is @code{below}.  The @code{window-atom} parameter of the new window is set to this value."
-msgstr ""
+msgstr "このような要素は既存ウィンドウで新たなウィンドウが配置されるサイドを表す。有効な値は@code{below}、@code{right}、@code{above}、@code{left}。デフォルトは@code{below}。この値は新たなウィンドウの@code{window-atom}パラメーターにセットされる。"
 
 #. type: defun
 #: original_texis/windows.texi:3581
 msgid "The return value is the new window, @code{nil} when creating that window failed."
-msgstr ""
+msgstr "リターン値は新たなウィンドウ、ウィンドウ作成に失敗すると@code{nil}。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3591
 msgid "Note that the value of the @code{window-atom} parameter does not really matter as long as it is non-@code{nil}.  The values assigned by @code{display-buffer-in-atom-window} just allow for easy retrieval of the original and the new window after that function has been applied.  Note also that the @code{window-atom} parameter is the only window parameter assigned by @code{display-buffer-in-atom-window}.  Further parameters have to be set by the application explicitly via a @code{window-parameters} entry in @var{alist}."
-msgstr ""
+msgstr "非@code{nil}である限り@code{window-atom}パラメーターの値は問題ではないことに注意してください。@code{display-buffer-in-atom-window}が割り当てる値は、関数の適用後に元のウィンドウと新たなウィンドウを簡単に取得することだけが目的です。@code{display-buffer-in-atom-window}が割り当てるウィンドウパラメーターは@code{window-atom}パラメーターだけであることにも注意してください。それ以外のパラメーターは@var{alist}内の@code{window-parameters}エントリーを介してアプリケーションがセットする必要があります。"
 
 #. type: Plain text
 #: original_texis/windows.texi:3598
 msgid "The following code snippet, when applied to a single-window frame, first splits the selected window and makes the selected and the new window constituents of an atomic window with their parent as root.  It then displays the buffer @file{*Messages*} in a new window at the frame's bottom and makes that new window part of the atomic window just created."
-msgstr ""
+msgstr "以下のスニペットコードを単一ウィンドウのフレームに適用すると、最初に選択されたウィンドウを分割して選択されたウィンドウと新たなウィンドウの親をルートとしてアトミックウィンドウを構成します。それからフレーム下辺にある新たなウィンドウでバッファー@file{*Messages*}を表示して、新たなウィンドウを作成したアトミックウィンドウの一部にします。"
 
 #. type: group
 #: original_texis/windows.texi:3606
@@ -5167,11 +5160,16 @@ msgid ""
 "   (get-buffer-create \"*Messages*\")\n"
 "   `((window . ,(window-parent window)) (window-height . 5))))\n"
 msgstr ""
+"(let ((window (split-window-right)))\n"
+"  (window-make-atom (window-parent window))\n"
+"  (display-buffer-in-atom-window\n"
+"   (get-buffer-create \"*Messages*\")\n"
+"   `((window . ,(window-parent window)) (window-height . 5))))\n"
 
 #. type: Plain text
 #: original_texis/windows.texi:3615
 msgid "At this moment typing @w{@kbd{C-x 2}} in any window of that frame produces a new window at the bottom of the frame.  Typing @w{@kbd{C-x 3}} instead will put the new window at the frame's right.  In either case, typing now @w{@kbd{C-x 1}} in any window of the atomic window will remove the new window only.  Typing @w{@kbd{C-x 0}} in any window of the atomic window will make that new window fill the frame."
-msgstr ""
+msgstr "この時点においてフレーム内の任意のウィンドウで@w{@kbd{C-x 2}}をタイプすると、フレーム下辺に新たなウィンドウが作成されます。かわりに@w{@kbd{C-x 3}}をタイプすれば新たなウィンドウはフレーム右辺に配置されるでしょう。いずれのケースでもここでアトミックウィンドウ内の任意のウィンドウで@w{@kbd{C-x 1}}をタイプすると、新たなウィンドウだけが削除されます。アトミックウィンドウ内の任意のウィンドウで@w{@kbd{C-x 0}}をタイプすればフレームは新たなウィンドウで充填されるでしょう。"
 
 #. type: section
 #: original_texis/windows.texi:3618
