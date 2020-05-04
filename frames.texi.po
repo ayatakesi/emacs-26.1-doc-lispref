@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:41+0900\n"
-"PO-Revision-Date: 2020-05-03 20:34+0900\n"
+"PO-Revision-Date: 2020-05-04 20:56+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -1085,7 +1085,7 @@ msgstr ""
 #. type: Plain text
 #: original_texis/frames.texi:499
 msgid "In practice not all of the areas shown in the drawing will or may be present.  The meaning of these areas is described below."
-msgstr ""
+msgstr "実際のところ上図で示した領域すべてが存在するわけではありません。これらの領域については以下で説明します。"
 
 #. type: item
 #: original_texis/frames.texi:501
@@ -1119,20 +1119,19 @@ msgstr "outer height"
 
 #. type: cindex
 #: original_texis/frames.texi:506
-#, fuzzy, no-wrap
-#| msgid "user-size"
+#, no-wrap
 msgid "outer size"
-msgstr "user-size"
+msgstr "outer size"
 
 #. type: table
 #: original_texis/frames.texi:511
 msgid "The @dfn{outer frame} is a rectangle comprising all areas shown in the drawing.  The edges of that rectangle are called the @dfn{outer edges} of the frame.  Together, the @dfn{outer width} and @dfn{outer height} of the frame specify the @dfn{outer size} of that rectangle."
-msgstr ""
+msgstr "@dfn{アウターフレーム(outer frame)}とは上図で示すすべての領域を網羅する矩形。この矩形の端はそのフレームの@dfn{アウターエッジ(outer edges)}と呼ばれる。フレームの@dfn{アウター幅(outer width)}と@dfn{アウター高さ(outer height)}は併せて矩形の@dfn{アウターサイズ(outer size)}を指定する。"
 
 #. type: table
 #: original_texis/frames.texi:522
 msgid "Knowing the outer size of a frame is useful for fitting a frame into the working area of its display (@pxref{Multiple Terminals}) or for placing two frames adjacent to each other on the screen.  Usually, the outer size of a frame is available only after the frame has been mapped (made visible, @pxref{Visibility of Frames}) at least once.  For the initial frame or a frame that has not been created yet, the outer size can be only estimated or must be calculated from the window-system's or window manager's defaults.  One workaround is to obtain the differences of the outer and native (see below) sizes of a mapped frame and use them for calculating the outer size of the new frame."
-msgstr ""
+msgstr "フレームのアウターサイズを把握することはフレームのディスプレイの作業領域にフレームをフィットさせたり、スクリーンで2つのフレームを隣接して配置するのに有用である(@ref{Multiple Terminals}を参照)。アウターサイズは通常はフレームが少なくとも1回マップ(可視にすること。@ref{Visibility of Frames}を参照)された後でなければ利用できない。初期フレームやまだ作成されていないフレームにたいするアウターサイズは予想するかウィンドウシステムやウィンドウマネージャーのデフォルトから計算しなければならない。回避策としてはマップ済みフレームのアウターサイズとネイティブサイズを取得して、新たなフレームのアウターサイズの計算に使用すればよい。"
 
 #. type: cindex
 #: original_texis/frames.texi:523
@@ -1143,12 +1142,12 @@ msgstr "outer position"
 #. type: table
 #: original_texis/frames.texi:529
 msgid "The position of the upper left corner of the outer frame (indicated by @samp{(0)} in the drawing above) is the @dfn{outer position} of the frame.  The outer position of a graphical frame is also referred to as ``the position'' of the frame because it usually remains unchanged on its display whenever the frame is resized or its layout is changed."
-msgstr ""
+msgstr "(上図@samp{(0)}で示される)アウターフレームの左上隅の位置はフレームの@dfn{アウター位置(outer position)}と呼ばれる。グラフィカルなフレームのアウター位置は、ディスプレイではフレームのリサイズやレイアウト変更では未変更のままなので、そのフレームの``位置''としても参照される。"
 
 #. type: table
 #: original_texis/frames.texi:538
 msgid "The outer position is specified by and can be set via the @code{left} and @code{top} frame parameters (@pxref{Position Parameters}).  For a normal, top-level frame these parameters usually represent its absolute position (see below) with respect to its display's origin.  For a child frame (@pxref{Child Frames}) these parameters represent its position relative to the native position (see below) of its parent frame.  For frames on text terminals the values of these parameters are meaningless and always zero."
-msgstr ""
+msgstr "アウター位置はフレームパラメーター@code{left}と@code{top}を通じて指定とセットができる(@ref{Position Parameters}を参照)。これらのパラメーターは通常のトップレベルのフレームにたいして、通常はフレームのディスプレイの原点からみた絶対位置(以下参照)を表す。子フレーム(@ref{Child Frames}を参照)にたいしては親フレームのネイティブ位置(以下参照)から相対的な位置を表す。これらのパラメーターの値はテキスト端末のフレームでは意味がなく常に0である。"
 
 #. type: item
 #: original_texis/frames.texi:539
@@ -1165,36 +1164,34 @@ msgstr "external border"
 #. type: table
 #: original_texis/frames.texi:546
 msgid "The @dfn{external border} is part of the decorations supplied by the window manager.  It is typically used for resizing the frame with the mouse and is therefore not shown on ``fullboth'' and maximized frames (@pxref{Size Parameters}).  Its width is determined by the window manager and cannot be changed by Emacs' functions."
-msgstr ""
+msgstr "@dfn{エクスターナルボーダー(external border)}はウィンドウマネージャーにより提供される装飾の一部。典型的にはマウスによるフレームのリサイズで典型的に使用される。そのため``全画面化(fullboth)''や最大化されたフレームでは表示されない(@ref{Size Parameters}を参照)。エクスターナルボーダーの幅はウィンドウマネージャーにより決定されて、Emacsの関数では変更できない。"
 
 #. type: table
 #: original_texis/frames.texi:551
 msgid "External borders don't exist on text terminal frames.  For graphical frames, their display can be suppressed by setting the @code{override-redirect} or @code{undecorated} frame parameter (@pxref{Management Parameters})."
-msgstr ""
+msgstr "テキスト端末のフレームではエクスターナルボーダーは存在しない。グラフィカルなフレームではフレームパラメーター@code{override-redirect}と@code{undecorated}をセットすることにより表示を抑制できる(@ref{Management Parameters}を参照)。"
 
 #. type: item
 #: original_texis/frames.texi:552
-#, fuzzy, no-wrap
-#| msgid "internal-border-width"
+#, no-wrap
 msgid "Outer Border"
-msgstr "internal-border-width"
+msgstr "アウターボーダー(Outer Border)"
 
 #. type: cindex
 #: original_texis/frames.texi:553
-#, fuzzy, no-wrap
-#| msgid "internal-border-width"
+#, no-wrap
 msgid "outer border"
-msgstr "internal-border-width"
+msgstr "outer border"
 
 #. type: table
 #: original_texis/frames.texi:562
 msgid "The @dfn{outer border} is a separate border whose width can be specified with the @code{border-width} frame parameter (@pxref{Layout Parameters}).  In practice, either the external or the outer border of a frame are displayed but never both at the same time.  Usually, the outer border is shown only for special frames that are not (fully) controlled by the window manager like tooltip frames (@pxref{Tooltips}), child frames (@pxref{Child Frames}) and @code{undecorated} or @code{override-redirect} frames (@pxref{Management Parameters})."
-msgstr ""
+msgstr "@dfn{アウターボーダー(outer border)}はフレームパラメーター@code{border-width} (@ref{Layout Parameters}を参照)で指定可能な分割線。実際にはエクスターナルボーダーとアウターボーダーのいずれかが表示されるが、両方が同時に表示されることはない。アウターボーダーはツールチップフレーム(@ref{Tooltips}を参照)、子フレーム(@ref{Child Frames}を参照)、および@code{undecorated}や@code{override-redirect}をセットされたフレーム(@ref{Management Parameters}を参照)のようにウィンドウマネージャーにより(完全に)制御される特別なフレームでは通常は表示されない。"
 
 #. type: table
 #: original_texis/frames.texi:568
 msgid "Outer borders are never shown on text terminal frames and on frames generated by GTK+ routines.  On MS-Windows, the outer border is emulated with the help of a one pixel wide external border.  Non-toolkit builds on X allow to change the color of the outer border by setting the @code{border-color} frame parameter (@pxref{Layout Parameters})."
-msgstr ""
+msgstr "アウターボーダーはテキスト端末のフレームとGTK+ルーチンが生成したフレームでは表示されない。MS-Windowsではアウターボーダーはピクセル幅が1のエクスターナルボーダーの助けを借りてエミュレートされる。X上でのツールキットによらないビルドではフレームパラメーター@code{border-color}をセットすることによりアウターボーダーのカラーを変更できる(@ref{Layout Parameters}を参照)。"
 
 #. type: item
 #: original_texis/frames.texi:569
@@ -1212,12 +1209,12 @@ msgstr "title bar"
 #: original_texis/frames.texi:571
 #, no-wrap
 msgid "caption bar"
-msgstr ""
+msgstr "caption bar"
 
 #. type: table
 #: original_texis/frames.texi:582
 msgid "The @dfn{title bar}, a.k.a.@ @dfn{caption bar}, is also part of the window manager's decorations and typically displays the title of the frame (@pxref{Frame Titles}) as well as buttons for minimizing, maximizing and deleting the frame.  It can be also used for dragging the frame with the mouse.  The title bar is usually not displayed for fullboth (@pxref{Size Parameters}), tooltip (@pxref{Tooltips}) and child frames (@pxref{Child Frames}) and doesn't exist for terminal frames.  Display of the title bar can be suppressed by setting the @code{override-redirect} or the @code{undecorated} frame parameters (@pxref{Management Parameters})."
-msgstr ""
+msgstr "@dfn{タイトルバー(title bar)}、いわゆる@dfn{キャプションバー(caption bar)}もウィンドウマネージャーの装飾の一部であり通常はフレームのタイトル(@ref{Frame Titles}を参照)、同様に最小化や最大化、削除のボタンを表示する。これはマウスによるフレームのドラッグにも使用できる。タイトルバーは通常は全画面化(fullboth)されたフレーム(@ref{Size Parameters}を参照)、ツールチップフレーム(@ref{Tooltips}を参照)、子フレーム(@pxref{Child Frames}を参照)では表示されず、端末フレームでは存在しない。タイトルバーの表示はフレームパラメーター@code{override-redirect}や@code{undecorated}をセットすることにより抑制できる(@ref{Management Parameters}を参照)。"
 
 #. type: item
 #: original_texis/frames.texi:583
@@ -1240,12 +1237,12 @@ msgstr "external menu bar"
 #. type: table
 #: original_texis/frames.texi:596
 msgid "The menu bar (@pxref{Menu Bar}) can be either internal (drawn by Emacs itself) or external (drawn by the toolkit).  Most builds (GTK+, Lucid, Motif and MS-Windows) rely on an external menu bar.  NS also uses an external menu bar which, however, is not part of the outer frame.  Non-toolkit builds can provide an internal menu bar.  On text terminal frames, the menu bar is part of the frame's root window (@pxref{Windows and Frames}).  As a rule, menu bars are never shown on child frames (@pxref{Child Frames}).  Display of the menu bar can be suppressed by setting the @code{menu-bar-lines} parameter (@pxref{Layout Parameters})  to zero."
-msgstr ""
+msgstr "メニューバー(@ref{Menu Bar}を参照)にはインターナル(Emacs自身が描画)とエクスターナル(ツールキトが描画)がある。ほとんどのビルド(GTK+、Lucid、Motif、MS-Windows)ではエクスターナルメニューバーを依拠とする。NSもエクスターナルメニューバーを使用するが、これはアウターフレームの一部ではない。非ツールキットのビルドはインターナルメニューバーを提供できる。テキスト端末フレームではメニューバーはフレームのルートウィンドウの一部である(@ref{Windows and Frames}を参照)。ルールとして子フレームでメニューバーが表示されることはない(@ref{Child Frames}を参照)。パラメーター@code{menu-bar-lines} (@ref{Layout Parameters}を参照)をセットすることによりメニューバーの表示は抑制できる。"
 
 #. type: table
 #: original_texis/frames.texi:603
 msgid "Whether the menu bar is wrapped or truncated whenever its width becomes too large to fit on its frame depends on the toolkit .  Usually, only Motif and MS-Windows builds can wrap the menu bar.  When they (un-)wrap the menu bar, they try to keep the outer height of the frame unchanged, so the native height of the frame (see below) will change instead."
-msgstr ""
+msgstr "メニューバーの幅がフレームにフィットするには大きくなりすぎた際に折り返されるか(wrapped)、それとも切り詰められるか(truncated)はツールキットに依存する。通常はMotifとMS-Windowsのビルドだけがニューバーを折り返すことができる。これらはメニューバーの折り返し、またはそれを解除する際にフレームのアウター高さの保持を試みるの、でかわりにフレームのネイティブ高さ(以下参照)が変更される。"
 
 #. type: item
 #: original_texis/frames.texi:604
@@ -1268,12 +1265,12 @@ msgstr "external tool bar"
 #. type: table
 #: original_texis/frames.texi:616
 msgid "Like the menu bar, the tool bar (@pxref{Tool Bar}) can be either internal (drawn by Emacs itself) or external (drawn by a toolkit).  The GTK+ and NS builds have the tool bar drawn by the toolkit.  The remaining builds use internal tool bars.  With GTK+ the tool bar can be located on either side of the frame, immediately outside the internal border, see below.  Tool bars are usually not shown for child frames (@pxref{Child Frames}).  Display of the tool bar can be suppressed by setting the @code{tool-bar-lines} parameter (@pxref{Layout Parameters}) to zero."
-msgstr ""
+msgstr "メニューバーと同じように、ツールバーにはインターナルツールバー(Emacsが描画)とエクスターナルツールバー(ツールキットが描画)がある。GTK+とNSのビルドにはそれらのツールキットが描画するツールバーがある。その他のビルドはインターナルツールバーを使用する。GTK+ではフレームのインタナルボーダー(以下参照)のすぐ外側のいずれかのサイドにツールバーを配置できる。子フレームは通常はツールバーを表示しない(@ref{Child Frames}を参照)。パラメーター@code{tool-bar-lines} (@ref{Layout Parameters}を参照)に0をセットすることでツールバーの表示を抑制できる。"
 
 #. type: table
 #: original_texis/frames.texi:625
 msgid "If the variable @code{auto-resize-tool-bars} is non-@code{nil}, Emacs wraps the internal tool bar when its width becomes too large for its frame.  If and when Emacs (un-)wraps the internal tool bar, it by default keeps the outer height of the frame unchanged, so the native height of the frame (see below) will change instead.  Emacs built with GTK+, on the other hand, never wraps the tool bar but may automatically increase the outer width of a frame in order to accommodate an overlong tool bar."
-msgstr ""
+msgstr "変数@code{auto-resize-tool-bars}が非@code{nil}なら、フレームに収まらないほど幅が大きくなるとEmacsはツールバーを折り返す。Emacsがインターナルツールバーの折り返しや折り返しの解除を行う場合には、デフォルトではフレームのアウター高さを未変更に保つので、かわりにフレームのネイティブ高さ(以下参照)が変更される。一方GTK+とともにビルドされたEmacsではツールバーの折り返しは決して行われないが、長くなりすぎたツールバーが収まるようにフレームのアウター幅が自動的に増加される。"
 
 #. type: item
 #: original_texis/frames.texi:626
@@ -1307,20 +1304,19 @@ msgstr "native height"
 
 #. type: cindex
 #: original_texis/frames.texi:631
-#, fuzzy, no-wrap
-#| msgid "frame position"
+#, no-wrap
 msgid "native size"
-msgstr "frame position"
+msgstr "native size"
 
 #. type: table
 #: original_texis/frames.texi:638
 msgid "The @dfn{native frame} is a rectangle located entirely within the outer frame.  It excludes the areas occupied by an external or outer border, the title bar and any external menu or tool bar.  The edges of the native frame are called the @dfn{native edges} of the frame.  Together, the @dfn{native width} and @dfn{native height} of a frame specify the @dfn{native size} of the frame."
-msgstr ""
+msgstr "@dfn{ネイティブフレーム(native frame)}は全体的にアウターフレーム内に配置される。ネイティブフレームにはエクスターナルボーダーとアウターボーダー、タイトルバーとエクスターナルメニューバーとツールバーが占有する領域は含まれない。ネイティブフレームのエッジ(edge: 端)はフレームの@dfn{ネイティブエッジ(native edges)}と呼ばれる。フレームの@dfn{ネイティブサイズ(native size)}ハ、フレームの@dfn{ネイティブ幅(native width)}と@dfn{ネイティブ高さ(native height)}で指定される。"
 
 #. type: table
 #: original_texis/frames.texi:646
 msgid "The native size of a frame is the size Emacs passes to the window-system or window manager when creating or resizing the frame from within Emacs.  It is also the size Emacs receives from the window-system or window manager whenever these resize the frame's window-system window, for example, after maximizing the frame by clicking on the corresponding button in the title bar or when dragging its external border with the mouse."
-msgstr ""
+msgstr "フレームのネイティブサイズはEmacs内のフレームの作成やリサイズをEmacsが行う際にウィンドウシステムやウィンドウマネージャーに渡すサイズである。これはたとえばタイトルバーの対応するボタンのクリックによりフレームを最大化した後やマウスでエクスターナルボーダーをドラッグした際等、フレームの(ウィンドウシステムの)ウィンドウをリサイズする際にウィンドウシステムやウィンドウマネージャーに渡すサイズでもある。"
 
 #. type: cindex
 #: original_texis/frames.texi:647
@@ -1331,7 +1327,7 @@ msgstr "native position"
 #. type: table
 #: original_texis/frames.texi:651
 msgid "The position of the top left corner of the native frame specifies the @dfn{native position} of the frame.  (1)--(3) in the drawing above indicate that position for the various builds:"
-msgstr ""
+msgstr "ネイティブフレームの左上隅の位置はフレームの@dfn{ネイティブ位置(native position)}を指定する。上図の(1)から(3)は種々のビルドにたいするネイティブ位置を示す。"
 
 #. type: item
 #: original_texis/frames.texi:653
@@ -1343,7 +1339,7 @@ msgstr "(1) 非ツールキットと端末フレーム"
 #: original_texis/frames.texi:655
 #, no-wrap
 msgid "(2) Lucid, Motif and MS-Windows frames"
-msgstr ""
+msgstr "(2) Lucid、Motif、MS-Windowsのフレーム"
 
 #. type: item
 #: original_texis/frames.texi:657
@@ -1354,17 +1350,17 @@ msgstr "(3) GTK+とNSのフレーム"
 #. type: table
 #: original_texis/frames.texi:664
 msgid "Accordingly, the native height of a frame may include the height of the tool bar but not that of the menu bar (Lucid, Motif, MS-Windows) or those of the menu bar and the tool bar (non-toolkit and text terminal frames)."
-msgstr ""
+msgstr "したがってLucid、Motif、MS-Windowsではネイティブ高さにツールバーの高さは含まれるがメニューバーの高さは含まれず、非ツールキットおよび端末のフレームではメニューバーとツールバーの高さは含まれない。"
 
 #. type: table
 #: original_texis/frames.texi:672
 msgid "The native position of a frame is the reference position for functions that set or return the current position of the mouse (@pxref{Mouse Position}) and for functions dealing with the position of windows like @code{window-edges}, @code{window-at} or @code{coordinates-in-window-p} (@pxref{Coordinates and Windows}).  It also specifies the (0, 0) origin for locating and positioning child frames within this frame (@pxref{Child Frames})."
-msgstr ""
+msgstr "フレームのネイティブ位置はマウスのカレント位置(@ref{Mouse Position}を参照)のセットやリターンを行う関数や@code{window-edges}、@code{window-at}、@code{coordinates-in-window-p}のようにウィンドウ位置(@ref{Coordinates and Windows}を参照)を扱う関数にたいして参照位置となる。これはフレームの子フレームの配置や位置にたいする原点(0, 0)も指定する。"
 
 #. type: table
 #: original_texis/frames.texi:677
 msgid "Note also that the native position of a frame usually remains unaltered on its display when removing or adding the window manager decorations by changing the frame's @code{override-redirect} or @code{undecorated} parameter (@pxref{Management Parameters})."
-msgstr ""
+msgstr "フレームパラメーター@code{override-redirect}や@code{undecorated} (@ref{Management Parameters}を参照)を変更してウィンドウマネージャーの装飾の削除や追加を行う際にも、フレームのネイティブ位置は未変更のままであることにも注意。"
 
 #. type: item
 #: original_texis/frames.texi:678
@@ -1375,7 +1371,7 @@ msgstr "インターナルボーダー(Internal Border)"
 #. type: table
 #: original_texis/frames.texi:683
 msgid "The internal border is a border drawn by Emacs around the inner frame (see below).  Its width is specified by the @code{internal-border-width} frame parameter (@pxref{Layout Parameters}).  Its color is specified by the background of the @code{internal-border} face."
-msgstr ""
+msgstr "インターナルボーダーはインナーフレーム(以下参照)の周辺にEmacsが描画するボーダーである。インターナルボーダーの幅はフレームパラメーター@code{internal-border-width}により指定される(@ref{Layout Parameters}を参照)。インターナルボーダーのカラーは@code{internal-border}フェイスのバックグラウンドで指定される。"
 
 #. type: item
 #: original_texis/frames.texi:684
@@ -1409,10 +1405,9 @@ msgstr "inner height"
 
 #. type: cindex
 #: original_texis/frames.texi:689
-#, fuzzy, no-wrap
-#| msgid "height"
+#, no-wrap
 msgid "inner size"
-msgstr "height"
+msgstr "inner size"
 
 #. type: cindex
 #: original_texis/frames.texi:690
@@ -1423,7 +1418,7 @@ msgstr "display area"
 #. type: table
 #: original_texis/frames.texi:697
 msgid "The @dfn{inner frame} is the rectangle reserved for the frame's windows.  It's enclosed by the internal border which, however, is not part of the inner frame.  Its edges are called the @dfn{inner edges} of the frame.  The @dfn{inner width} and @dfn{inner height} specify the @dfn{inner size} of the rectangle.  The inner frame is sometimes also referred to as the @dfn{display area} of the frame."
-msgstr ""
+msgstr "@dfn{インナーフレーム(inner frame)}はフレームのウィンドウにたいして予約された矩形のこと。インナーフレームはインターナルボーダー(これはインナーフレームの一部ではない)に囲われている。インナーフレームのエッジはフレームの@dfn{インナーエッジ(inner edges)}と呼ばれる。この矩形の@dfn{インナーサイズ(inner size)}は@dfn{インアー幅(inner width)}と@dfn{インナー高さ(inner height)}により指定される。このインナーフレームはフレームの@dfn{ディスプレイエリア(display area)}として参照されることもある。"
 
 #. type: cindex
 #: original_texis/frames.texi:698
@@ -1457,7 +1452,7 @@ msgstr "text area"
 #. type: table
 #: original_texis/frames.texi:720
 msgid "The @dfn{text area} of a frame is a somewhat fictitious area that can be embedded in the native frame.  Its position is unspecified.  Its width can be obtained by removing from that of the native width the widths of the internal border, one vertical scroll bar, and one left and one right fringe if they are specified for this frame, see @ref{Layout Parameters}.  Its height can be obtained by removing from that of the native height the widths of the internal border and the heights of the frame's internal menu and tool bars and one horizontal scroll bar if specified for this frame."
-msgstr ""
+msgstr "フレームの@dfn{テキストエリア(text area)}はネイティブフレームに埋め込み可能な一種の架空領域である。テキストエリアの位置は指定されない。テキストエリアの幅はネイティブ幅からインターナルボーダーの幅、そのフレームに指定されていれば(@ref{Layout Parameters}を参照)1つの垂直スクロールバーの幅、左右のフリンジ各1の幅を取り除くことにより取得できる。テキストエリアの高さはネイティブ高さからインターナルボーダーの幅、そのフレームに指定されていればフレームのインターナルメニューバーとインターナルツールバーの高さ、1つの水平スロールバーの高さを取り除くことにより取得できる。"
 
 #. type: cindex
 #: original_texis/frames.texi:722
@@ -1467,51 +1462,48 @@ msgstr "absolute position"
 
 #. type: cindex
 #: original_texis/frames.texi:723
-#, fuzzy, no-wrap
-#| msgid "mouse position"
+#, no-wrap
 msgid "absolute frame position"
-msgstr "mouse position"
+msgstr "absolute frame position"
 
 #. type: cindex
 #: original_texis/frames.texi:724
-#, fuzzy, no-wrap
-#| msgid "mouse position"
+#, no-wrap
 msgid "absolute edges"
-msgstr "mouse position"
+msgstr "absolute edges"
 
 #. type: cindex
 #: original_texis/frames.texi:725
 #, no-wrap
 msgid "absolute frame edges"
-msgstr ""
+msgstr "absolute frame edges"
 
 #. type: cindex
 #: original_texis/frames.texi:726
-#, fuzzy, no-wrap
-#| msgid "X display names"
+#, no-wrap
 msgid "display origin"
-msgstr "X display names"
+msgstr "display origin"
 
 #. type: cindex
 #: original_texis/frames.texi:727
 #, no-wrap
 msgid "origin of display"
-msgstr ""
+msgstr "origin of display"
 
 #. type: Plain text
 #: original_texis/frames.texi:732
 msgid "The @dfn{absolute position} of a frame is given as a pair (X, Y) of horizontal and vertical pixel offsets relative to an origin (0, 0) of the frame's display.  Correspondingly, the @dfn{absolute edges} of a frame are given as pixel offsets from that origin."
-msgstr ""
+msgstr "フレームの@dfn{絶対位置(absolute position)}は(X, Y)というペア、またはフレームのディスプレイの原点(0, 0)から相対的な水平および垂直のピクセル単位のオフセットにより与えられる。これに対応してフレームの@dfn{絶対エッジ(absolute edges)}はこの原点からのピクセル単位のオフセットにより与えられる。"
 
 #. type: Plain text
 #: original_texis/frames.texi:738
 msgid "Note that with multiple monitors, the origin of the display does not necessarily coincide with the top-left corner of the entire usable display area of the terminal.  Hence the absolute position of a frame can be negative in such an environment even when that frame is completely visible."
-msgstr ""
+msgstr "マルチモニターではディスプレイの原点が端末の利用可能な表示エリア全体の左上隅と一致する必要はない。したがってそのような環境では、たとえそのフレームが完全に可視であってもフレームの絶対位置は負の値になり得る。"
 
 #. type: Plain text
 #: original_texis/frames.texi:744
 msgid "By convention, vertical offsets increase ``downwards''.  This means that the height of a frame is obtained by subtracting the offset of its top edge from that of its bottom edge.  Horizontal offsets increase ``rightwards'', as expected, so a frame's width is calculated by subtracting the offset of its left edge from that of its right edge."
-msgstr ""
+msgstr "慣例により垂直方向のオフセットは``下方向''にたいして増加する。これはフレームの下エッジから上エッジのオフセットを減ずることによりフレームの高さが得られることを意味する。期待されるように水平方向のオフセットは``右方向''にたいして増加するので、フレームの右エッジから左エッジのオフセットを減ずることによりフレームの幅を計算できる。"
 
 #. type: Plain text
 #: original_texis/frames.texi:747
@@ -1527,7 +1519,7 @@ msgstr "frame-geometry &optional frame"
 #. type: defun
 #: original_texis/frames.texi:756
 msgid "This function returns geometric attributes of @var{frame}.  The return value is an association list of the attributes listed below.  All coordinate, height and width values are integers counting pixels.  Note that if @var{frame} has not been mapped yet, (@pxref{Visibility of Frames}) some of the return values may only represent approximations of the actual values---those that can be seen after the frame has been mapped."
-msgstr ""
+msgstr "この関数は@var{frame}の幾何学的な属性をリターンする。リタ^ン値は以下のような属性のリストの連想リスト。すべての座標、高さや幅の値はピクセル単位の整数。まだ@var{frame}がマップされていなければ(@ref{Visibility of Frames}を参照)、いくつかのリターン値は実際の値の近似値しか表していないかもしれない(それらの値はフレームのマップ後に確認可能になる)。"
 
 #. type: item
 #: original_texis/frames.texi:758
@@ -1537,10 +1529,8 @@ msgstr "outer-position"
 
 #. type: table
 #: original_texis/frames.texi:761
-#, fuzzy
-#| msgid "This function sets the position of the top left corner of @var{frame} to @var{left} and @var{top}.  These arguments are measured in pixels, and normally count from the top left corner of the screen."
 msgid "A cons representing the absolute position of the outer @var{frame}, relative to the origin at position (0, 0) of @var{frame}'s display."
-msgstr "この関数は、@var{frame}の左上隅を@var{left}、@var{top}にセットする。これらの引数はピクセル単位で、通常はスクリーンの左上隅から測られる。"
+msgstr "@var{frame}のアウターフレームの絶対位置を表すコンスであり、@var{frame}のディスプレイの原点(0, 0)から相対的な位置。"
 
 #. type: item
 #: original_texis/frames.texi:762
@@ -1566,15 +1556,14 @@ msgstr "ウィンドウマネージャーにより与えられる、@var{frame}�
 
 #. type: item
 #: original_texis/frames.texi:771
-#, fuzzy, no-wrap
-#| msgid "internal-border-width"
+#, no-wrap
 msgid "outer-border-width"
-msgstr "internal-border-width"
+msgstr "outer-border-width"
 
 #. type: table
 #: original_texis/frames.texi:774
 msgid "The width of the outer border of @var{frame}.  The value is meaningful for non-GTK+ X builds only."
-msgstr ""
+msgstr "@var{frame}のアウターボーダーの幅。この値は非GTK+のXビルドでのみ意味がある。"
 
 #. type: item
 #: original_texis/frames.texi:775
@@ -1667,17 +1656,17 @@ msgstr "frame-edges &optional frame type"
 #. type: defun
 #: original_texis/frames.texi:815
 msgid "This function returns the absolute edges of the outer, native or inner frame of @var{frame}.  @var{frame} must be a live frame and defaults to the selected one.  The returned list has the form @w{@code{(@var{left} @var{top} @var{right} @var{bottom})}} where all values are in pixels relative to the origin of @var{frame}'s display.  For terminal frames the values returned for @var{left} and @var{top} are always zero."
-msgstr ""
+msgstr "この関数は@var{frame}のアウター、ネイティブ、インナーフレームの絶対エッジをリターンする。@var{frame}は生きたフレームでなければならずデフォルトは選択されたフレーム。リターンされるリストは@w{@code{(@var{left} @var{top} @var{right} @var{bottom})}}という形式をもつ。すべて@var{frame}のディスプレイの原点から相対的なピクセル単位の値。端末フレームでは@var{left}と@var{top}にたいしてリターンされる値は常に0。"
 
 #. type: defun
 #: original_texis/frames.texi:820
 msgid "Optional argument @var{type} specifies the type of the edges to return: @code{outer-edges} means to return the outer edges of @var{frame}, @code{native-edges} (or @code{nil}) means to return its native edges and @code{inner-edges} means to return its inner edges."
-msgstr ""
+msgstr "オプション引数@var{type}はリターンするエッジのタイプを指定する。@code{outer-edges}は@var{frame}のアウターエッジ、@code{native-edges} (か@code{nil})はネイティブエッジ、@code{inner-edges}はインナーエッジをリターンすることを意味する。"
 
 #. type: defun
 #: original_texis/frames.texi:831
 msgid "By convention, the pixels of the display at the values returned for @var{left} and @var{top} are considered to be inside (part of)  @var{frame}.  Hence, if @var{left} and @var{top} are both zero, the pixel at the display's origin is part of @var{frame}.  The pixels at @var{bottom} and @var{right}, on the other hand, are considered to lie immediately outside @var{frame}.  This means that if you have, for example, two side-by-side frames positioned such that the right outer edge of the frame on the left equals the left outer edge of the frame on the right, the pixels at that edge show a part of the frame on the right."
-msgstr ""
+msgstr "慣例により@var{left}と@var{top}にたいしてリターンされたディスプレイのピクセル位置は@var{frame}の内部(一部)とみなされる。したがって@var{left}と@var{top}がいずれも0なら、ディスプレイの原点のピクセル位置は@var{frame}の一部となる。その一方で@var{bottom}と@var{right}のピクセル位置は@var{frame}のすぐ外側にあるとみなされる。これはたとえば2つの横並びのフレームがあり、左フレームの右アウトーエッジが右フレームの左エッジと等しければ、そのエッジ上のピセルは右フレームの一部として表されることを意味する。"
 
 #. type: cindex
 #: original_texis/frames.texi:836
