@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:41+0900\n"
-"PO-Revision-Date: 2020-05-10 22:13+0900\n"
+"PO-Revision-Date: 2020-05-14 21:02+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -5250,14 +5250,12 @@ msgstr "unmapped frame"
 #. type: Plain text
 #: original_texis/frames.texi:2897
 msgid "The concept of visibility is strongly related to that of (un-)mapped frames.  A frame (or, more precisely, its window-system window) is and becomes @dfn{mapped} when it is displayed for the first time and whenever it changes its state of visibility from @code{iconified} or @code{invisible} to @code{visible}.  Conversely, a frame is and becomes @dfn{unmapped} whenever it changes its status from @code{visible} to @code{iconified} or @code{invisible}."
-msgstr ""
+msgstr "可視性の概念はマップ(または非マップ)されたフレームと強い関連性があります。フレーム(より正確にはウィンドウシステムのウィンドウ)は最初に表示されるときに@dfn{マップ済み(mapped)}となり、状態が@code{iconified}や@code{invisible}から@code{visible}に変化します。それとは逆に状態が@code{visible}から@code{iconified}や@code{invisible}に変化したときは、フレームは常に@dfn{非マップ済み(unmapped)}になります。"
 
 #. type: Plain text
 #: original_texis/frames.texi:2900
-#, fuzzy
-#| msgid "Visibility is meaningless on text terminals, since only the selected one is actually displayed in any case."
 msgid "Visibility is meaningless on text terminals, since only the selected frame is actually displayed in any case."
-msgstr "テキスト端末では、いつでも実際に表示されるのはただ1つの選択されたフレームだけなので、可視性に意味はありません。"
+msgstr "\nテキスト端末では実際に表示されるのは常に選択されたフレームだけなので可視性に意味はありません。"
 
 #. type: defun
 #: original_texis/frames.texi:2901
