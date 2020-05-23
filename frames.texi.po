@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:41+0900\n"
-"PO-Revision-Date: 2020-05-14 21:02+0900\n"
+"PO-Revision-Date: 2020-05-24 05:15+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -315,10 +315,8 @@ msgstr "Raising and Lowering"
 
 #. type: menuentry
 #: original_texis/frames.texi:113
-#, fuzzy
-#| msgid "Raising and Lowering Frames"
 msgid "Raising, Lowering and Restacking Frames."
-msgstr "Raising and Lowering Frames"
+msgstr "フレームの前面や背面への移動。"
 
 #. type: section
 #: original_texis/frames.texi:113 original_texis/frames.texi:3046
@@ -5255,7 +5253,7 @@ msgstr "可視性の概念はマップ(または非マップ)されたフレー�
 #. type: Plain text
 #: original_texis/frames.texi:2900
 msgid "Visibility is meaningless on text terminals, since only the selected frame is actually displayed in any case."
-msgstr "\nテキスト端末では実際に表示されるのは常に選択されたフレームだけなので可視性に意味はありません。"
+msgstr "テキスト端末では実際に表示されるのは常に選択されたフレームだけなので可視性に意味はありません。"
 
 #. type: defun
 #: original_texis/frames.texi:2901
@@ -5281,10 +5279,8 @@ msgstr "Command iconify-frame &optional frame"
 
 #. type: deffn
 #: original_texis/frames.texi:2915
-#, fuzzy
-#| msgid "This function iconifies frame @var{frame}.  If you omit @var{frame}, it iconifies the selected frame."
 msgid "This function iconifies frame @var{frame}.  If you omit @var{frame}, it iconifies the selected frame.  This usually makes all child frames of @var{frame} (and their descendants) invisible (@pxref{Child Frames})."
-msgstr "この関数は、フレーム@var{frame}をアイコン化する。@var{frame}を省略した場合は、選択されたフレームをアイコン化する。"
+msgstr "この関数はフレーム@var{frame}をアイコン化する。@var{frame}を省略すると選択されたフレームをアイコン化する。これにより通常は@var{frame}のすべての子フレーム(と子孫)は不可視になる(@ref{Child Frames}を参照)。"
 
 #. type: deffn
 #: original_texis/frames.texi:2917
@@ -5300,7 +5296,7 @@ msgstr "この関数はフレーム@var{frame}を可視にする。@var{frame}�
 #. type: deffn
 #: original_texis/frames.texi:2925
 msgid "Making a frame visible usually makes all its child frames (and their descendants) visible as well (@pxref{Child Frames})."
-msgstr ""
+msgstr "通常はフレームを可視とすることにより、すべての子フレーム(と子孫)も同様に可視になる(@ref{Child Frames}を参照)。"
 
 #. type: deffn
 #: original_texis/frames.texi:2927
@@ -5310,17 +5306,13 @@ msgstr "Command make-frame-invisible &optional frame force"
 
 #. type: deffn
 #: original_texis/frames.texi:2932
-#, fuzzy
-#| msgid "This function makes frame @var{frame} visible.  If you omit @var{frame}, it makes the selected frame visible.  This does not raise the frame, but you can do that with @code{raise-frame} if you wish (@pxref{Raising and Lowering})."
 msgid "This function makes frame @var{frame} invisible.  If you omit @var{frame}, it makes the selected frame invisible.  Usually, this makes all child frames of @var{frame} (and their descendants) invisible too (@pxref{Child Frames})."
-msgstr "この関数は、フレーム@var{frame}を可視にする。@var{frame}を省略した場合は、選択されたフレームを可視にする。これはフレームを前面に移動しないが、望むなら@code{raise-frame}でそれを行うことができる(@ref{Raising and Lowering}を参照)。"
+msgstr "この関数はフレーム@var{frame}を不可視にする。@var{frame}を省略すると選択されたフレームを不可視にする。これにより通常は@var{frame}のすべての子フレーム(と子孫)も不可視になる(@ref{Child Frames}を参照)。"
 
 #. type: deffn
 #: original_texis/frames.texi:2935
-#, fuzzy
-#| msgid "Unless @var{force} is non-@code{nil}, this function refuses to make @var{frame} invisible if all other frames are invisible.."
 msgid "Unless @var{force} is non-@code{nil}, this function refuses to make @var{frame} invisible if all other frames are invisible."
-msgstr "@var{force}が@code{nil}なら、この関数は他のすべてのフレームが不可視の場合は、@var{frame}を不可視にするのを拒絶する。"
+msgstr "この関数は@var{force}が@code{nil}の場合には、他のすべてのフレームが不可視なら@var{frame}を不可視にすることを拒絶する。"
 
 #. type: Plain text
 #: original_texis/frames.texi:2943
@@ -5329,24 +5321,20 @@ msgstr "フレームの可視性の状態はフレームパラメーターとし
 
 #. type: defun
 #: original_texis/frames.texi:2944
-#, fuzzy, no-wrap
-#| msgid "defined-colors &optional frame"
+#, no-wrap
 msgid "x-double-buffered-p &optional frame"
-msgstr "defined-colors &optional frame"
+msgstr "x-double-buffered-p &optional frame"
 
 #. type: defun
 #: original_texis/frames.texi:2948
-#, fuzzy
-#| msgid "This function returns the terminal object that displays @var{frame}.  If @var{frame} is @code{nil} or unspecified, it defaults to the selected frame."
 msgid "This function returns non-@code{nil} if @var{frame} is currently being rendered with double buffering.  @var{frame} defaults to the selected frame."
-msgstr "この関数は、@var{frame}を表示する端末オブジェクトをリターンする。@var{frame}が@code{nil}または未指定の場合のデフォルトは、選択されたフレームである。"
+msgstr "この関数は@var{frame}がカレントでダブルバッファリングで描画されていれば非@code{nil}をリターンする。@var{frame}のデフォルトは選択されたフレーム。"
 
 #. type: section
 #: original_texis/frames.texi:2952
-#, fuzzy, no-wrap
-#| msgid "Raising and Lowering Frames"
+#, no-wrap
 msgid "Raising, Lowering and Restacking Frames"
-msgstr "Raising and Lowering Frames"
+msgstr "Raising, Lowering and Restacking Frames"
 
 #. type: cindex
 #: original_texis/frames.texi:2954
@@ -5362,45 +5350,42 @@ msgstr "lowering a frame"
 
 #. type: cindex
 #: original_texis/frames.texi:2956
-#, fuzzy, no-wrap
-#| msgid "raising a frame"
+#, no-wrap
 msgid "restacking a frame"
-msgstr "raising a frame"
+msgstr "restacking a frame"
 
 #. type: cindex
 #: original_texis/frames.texi:2957
 #, no-wrap
 msgid "frame stacking order"
-msgstr ""
+msgstr "frame stacking order"
 
 #. type: cindex
 #: original_texis/frames.texi:2958
 #, no-wrap
 msgid "frame Z-order"
-msgstr ""
+msgstr "frame Z-order"
 
 #. type: cindex
 #: original_texis/frames.texi:2959
 #, no-wrap
 msgid "Z-order"
-msgstr ""
+msgstr "Z-order"
 
 #. type: Plain text
 #: original_texis/frames.texi:2966
-#, fuzzy
-#| msgid "Most window systems use a desktop metaphor.  Part of this metaphor is the idea that system-level windows (e.g., Emacs frames) are stacked in a notional third dimension perpendicular to the screen surface.  Where two overlap, the one higher up covers the one underneath.  You can @dfn{raise} or @dfn{lower} a frame using the functions @code{raise-frame} and @code{lower-frame}."
 msgid "Most window systems use a desktop metaphor.  Part of this metaphor is the idea that system-level windows (representing, e.g., Emacs frames)  are stacked in a notional third dimension perpendicular to the screen surface.  The order induced by stacking is total and usually referred to as stacking (or Z-) order.  Where the areas of two windows overlap, the one higher up in that order will (partially) cover the one underneath."
-msgstr "ほとんどのウィンドウシステムは、デスクトップというメタファー(metaphor: 比喩的概念)を使用します。このメタファーの一部は、システムレベルのウィンドウ(Emacsではフレーム)が、スクリーン表面に向かって、概念的3次元の垂直方向に積まれていくというアイデアです。2つが重なる箇所では、より高い一方が、より低い一方を覆い隠します。関数@code{raise-frame}および@code{lower-frame}を使用して、フレームを@dfn{前面に移動(raise: より高い位置へ上げる)}したり@dfn{背面に移動(lower: より低い位置へ移動)}したりすることができます。"
+msgstr "ほとんどのウィンドウシステムではデスクトップというメタファー(metaphor: 比喩的概念)が使用されています。このメタファーの一部はシステムレベルのウィンドウ(Emacsではフレーム)がスクリーン表面に向かって、概念的3次元の垂直方向にスタッキングされる(重ねて表示される)というアイデアにもとづいています。スタッキングによる順序は合計であり、通常はスタッキングの順序(またはZオーダー)として参照されます。2つのゥィンドウがオーバーラップする領域では、このオーダーにおいて高位のウィンドウが、下位のウィンドウ(の一部)をカバーします。"
 
 #. type: Plain text
 #: original_texis/frames.texi:2971
 msgid "You can @dfn{raise} a frame to the top of that order or @dfn{lower} a frame to its bottom by using the functions @code{raise-frame} and @code{lower-frame}.  You can @dfn{restack} a frame directly above or below another frame using the function @code{frame-restack}."
-msgstr ""
+msgstr "関数@code{raise-frame}と@code{lower-frame}を使用してフレームのZオーダーの一番上に@dfn{raise}したり一番下に@dfn{lower}することができます。関数@code{frame-restack}を使用すれば別のフレームの上や下にフレームを直接@dfn{restack}できます。"
 
 #. type: Plain text
 #: original_texis/frames.texi:2978
 msgid "Note that all functions described below will respect the adherence of frames (and all other window-system windows) to their respective z-group (@pxref{Position Parameters}).  For example, you usually cannot lower a frame below that of the desktop window and you cannot raise a frame whose @code{z-group} parameter is @code{nil} above the window-system's taskbar or tooltip window."
-msgstr ""
+msgstr "以下で説明するすべての関数はフレーム(および他のウィンドウシステムのウィンドウすべて)の対応するZグループを尊重することに注意してください(@ref{Position Parameters}を参照)。たとえば通常はフレームをデスクトップウィンドウよりlower(下位)にすることや、@code{z-group}パラメータ0が非@code{nil}のフレームをウィンドウシステムのタスクバーやツールチップウィンドウよりraise(上位)にすることはできません。"
 
 #. type: deffn
 #: original_texis/frames.texi:2979
@@ -5411,7 +5396,7 @@ msgstr "Command raise-frame &optional frame"
 #. type: deffn
 #: original_texis/frames.texi:2985
 msgid "This function raises frame @var{frame} (default, the selected frame)  above all other frames belonging to the same or a lower z-group as @var{frame}.  If @var{frame} is invisible or iconified, this makes it visible.  If @var{frame} is a child frame (@pxref{Child Frames}), this raises @var{frame} above all other child frames of its parent."
-msgstr ""
+msgstr "この関数はを@var{frame}のz-groupと同じかlower(下位)にある他のすべのフレームの上位にフレーム@var{frame} (デフォルトは選択されたフレーム)をraiseする。@var{frame}が不可視やアイコン化されていたら可視になる。@var{frame}が子フレーム(@ref{Child Frames}を参照)なら、親フレームの他のすべての子フレームの上位に@var{frame}をraiseする。"
 
 #. type: deffn
 #: original_texis/frames.texi:2987
@@ -5422,34 +5407,33 @@ msgstr "Command lower-frame &optional frame"
 #. type: deffn
 #: original_texis/frames.texi:2992
 msgid "This function lowers frame @var{frame} (default, the selected frame)  below all other frames belonging to the same or a higher z-group as @var{frame}.  If @var{frame} is a child frame (@pxref{Child Frames}), this lowers @var{frame} below all other child frames of its parent."
-msgstr ""
+msgstr "この関数はを@var{frame}のz-groupと同じか上位にある他のすべのフレームの下位へフレーム@var{frame} (デフォルトは選択されたフレーム)をlowerにする。@var{frame}が子フレーム(@ref{Child Frames}を参照)なら、親フレームの他のすべての子フレームの下位に@var{frame}をlowerする。"
 
 #. type: defun
 #: original_texis/frames.texi:2994
-#, fuzzy, no-wrap
-#| msgid "frame-parameters &optional frame"
+#, no-wrap
 msgid "frame-restack frame1 frame2 &optional above"
-msgstr "frame-parameters &optional frame"
+msgstr "frame-restack frame1 frame2 &optional above"
 
 #. type: defun
 #: original_texis/frames.texi:3002
 msgid "This function restacks @var{frame1} below @var{frame2}.  This implies that if both frames are visible and their display areas overlap, @var{frame2} will (partially) obscure @var{frame1}.  If the optional third argument @var{above} is non-@code{nil}, this function restacks @var{frame1} above @var{frame2}.  This means that if both frames are visible and their display areas overlap, @var{frame1} will (partially)  obscure @var{frame2}."
-msgstr ""
+msgstr "この関数は@var{frame2}の下に@var{frame1}を再スタックする(restack: 再び重ねる)。いずれのフレームも可視で表示エリアがオーバーラップしていたら、@var{frame2}が@var{frame1}を(部分的に)隠すことを暗に示している。オプションの3つ目の引数@var{above}が非@code{nil}なら、この関数は@var{frame2}の上に@var{frame1}を再スタックする。これはいずれのフレームも可視で表示エリアがオーバーラップしていたら、@var{frame1}が@var{frame2}を(部分的に)隠すことを意味している。"
 
 #. type: defun
 #: original_texis/frames.texi:3010
 msgid "Technically, this function may be thought of as an atomic action performed in two steps: The first step removes @var{frame1}'s window-system window from the display.  The second step reinserts @var{frame1}'s window into the display below (above if @var{above} is true) that of @var{frame2}.  Hence the position of @var{frame2} in its display's Z (stacking) order relative to all other frames excluding @var{frame1} remains unaltered."
-msgstr ""
+msgstr "この関数は最初のステップではディスプレイから@var{frame1}のウィンドウシステムのウィンドウを削除して、2つ目のステップで( @var{above}が真なら)@var{frame2}のウィンドウの下に@var{frame1}のウィンドウを再挿入を行う、2つのステップによりアトミックなアクションを処理すると技術的に考えることができる。したがって@var{frame1}を除く他のすべてのフレームに相対的な@var{frame2}のディスプレイ内でのZオーダー(スタッキングオーダー)は変更されない。"
 
 #. type: defun
 #: original_texis/frames.texi:3012
 msgid "Some window managers may refuse to restack windows."
-msgstr ""
+msgstr "いくつかのウィンドウマネージャーはウィンドウの再スタックを拒絶する。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3023
 msgid "Note that the effect of restacking will only hold as long as neither of the involved frames is iconified or made invisible.  You can use the @code{z-group} (@pxref{Position Parameters}) frame parameter to add a frame to a group of frames permanently shown above or below other frames.  As long as a frame belongs to one of these groups, restacking it will only affect its relative stacking position within that group.  The effect of restacking frames belonging to different z-groups is undefined.  You can list frames in their current stacking order with the function @code{frame-list-z-order} (@pxref{Finding All Frames})."
-msgstr ""
+msgstr "再スタックの効果は関連するフレームがアイコン化されたり不可視になったりしないかぎり継続することに注意してください。フレームを他のフレームの上位(や下位)に永続的に表示されるフレームグループに追加するためにフレームパラメーター@code{z-group} (@ref{Position Parameters}を参照)を使用できます。これらのグループのいずれかにフレームが所属するかぎり、再スタックはそのグループ内での相対的なスタッキング位置にのみ効果があります。異なるZグループに所属するフレームにたいする再スタックの効果は未定義です。関数@code{frame-list-z-order}でカレントのフレームスタッキングオーダーをリストできます(@ref{Finding All Frames}を参照)。"
 
 #. type: defopt
 #: original_texis/frames.texi:3024
@@ -5529,227 +5513,220 @@ msgstr "この関数は通常は@var{configuration}内にリストされない�
 
 #. type: cindex
 #: original_texis/frames.texi:3072
-#, fuzzy, no-wrap
-#| msgid "minimized frame"
+#, no-wrap
 msgid "child frames"
-msgstr "minimized frame"
+msgstr "child frames"
 
 #. type: cindex
 #: original_texis/frames.texi:3073
-#, fuzzy, no-wrap
-#| msgid "transparency, frame"
+#, no-wrap
 msgid "parent frames"
-msgstr "transparency, frame"
+msgstr "parent frames"
 
 #. type: Plain text
 #: original_texis/frames.texi:3080
 msgid "Child frames are objects halfway between windows (@pxref{Windows}) and ``normal'' frames.  Like windows, they are attached to an owning frame.  Unlike windows, they may overlap each other---changing the size or position of one child frame does not change the size or position of any of its sibling child frames."
-msgstr ""
+msgstr "子フレームはウィンドウ(@ref{Windows}を参照)と``通常''のフレームとの中間にあるオブジェクトです。ウィンドウのよように所属するフレームにアタッチされますが、ウィンドウとは異なり互いにオーバーラップすることができます。子フレームの1つのサイズや位置を変更しても兄弟となる他の子フレームのサイズや位置は変化しません。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3085
 msgid "By design, operations to make or modify child frames are implemented with the help of frame parameters (@pxref{Frame Parameters}) without any specialized functions or customizable variables.  Note that child frames are meaningful on graphical terminals only."
-msgstr ""
+msgstr "仕様により子フレームの作成や変更を行う操作は特別な関数やカスタマイズ可能な変数ではなくフレームパラメーター(@ref{Frame Parameters}を参照)の助けを借りて実装されています。子フレームはグラフィカル端末でのみ意味があることに注意してください。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3093
 msgid "To create a new child frame or to convert a normal frame into a child frame, set that frame's @code{parent-frame} parameter (@pxref{Frame Interaction Parameters}) to that of an already existing frame.  The frame specified by that parameter will then be the frame's parent frame as long as the parameter is not changed or reset.  Technically, this makes the child frame's window-system window a child window of the parent frame's window-system window."
-msgstr ""
+msgstr "子フレームを新たに作成したり通常のフレームを子フレームに変換するためには、そのフレームの@code{parent-frame}パラメーター(@ref{Frame Interaction Parameters}を参照)にすでに存在するフレームをセットします。このパラメーターで指定されたフレームは、パラメーターが変更やリセットされるまでフレームの親フレームになります。これにより技術的には子フレームのウィンドウシステムのウィンドウは、親フレームのウィンドウシステムのウィンドウの子ウィンドウになります。"
 
 #. type: cindex
 #: original_texis/frames.texi:3094
-#, fuzzy, no-wrap
-#| msgid "transparency, frame"
+#, no-wrap
 msgid "reparent frame"
-msgstr "transparency, frame"
+msgstr "reparent frame"
 
 #. type: cindex
 #: original_texis/frames.texi:3095
 #, no-wrap
 msgid "nest frame"
-msgstr ""
+msgstr "nest frame"
 
 #. type: Plain text
 #: original_texis/frames.texi:3102
 msgid "The @code{parent-frame} parameter can be changed at any time.  Setting it to another frame @dfn{reparents} the child frame.  Setting it to another child frame makes the frame a @dfn{nested} child frame.  Setting it to @code{nil} restores the frame's status as a top-level frame---a frame whose window-system window is a child of its display's root window."
-msgstr ""
+msgstr "@code{parent-frame}パラメーターはいつでも変更できます。これを他のフレームにセットすれば子フレームが@dfn{reparent(親を変更)}されます。別の子フレームにセットすればフレームを@dfn{ネストされた(nested)}子フレームにします。にセットすればフレームの状態をトップレベルのフレーム(ウィンドウシステムのウィンドウがディスプレイーのルートウィンドウの子であるようなフレーム)にリストアします。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3109
 msgid "Since child frames can be arbitrarily nested, a frame can be both a child and a parent frame.  Also, the relative roles of child and parent frame may be reversed at any time (though it's usually a good idea to keep the size of a child frame sufficiently smaller than that of its parent).  An error will be signaled for the attempt to make a frame an ancestor of itself."
-msgstr ""
+msgstr "子フレームは任意にネスト(入れ子)させることができるので、フレームは子フレームと親フレームの両方になることができます。また子フレームと親フレームの相対的な役割はいつでも逆転させることができます(たとえ子フレームを親フレームより十分小さいサイズに保つことが通常はよいアイデアであるとしても)。フレームをそのフレームの祖先にしようと試みるとエラーがシグナルされます。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3116
 msgid "Most window-systems clip a child frame at the native edges (@pxref{Frame Geometry}) of its parent frame---everything outside these edges is usually invisible.  A child frame's @code{left} and @code{top} parameters specify a position relative to the top-left corner of its parent's native frame.  When the parent frame is resized, this position remains conceptually unaltered."
-msgstr ""
+msgstr "ほとんどのウィンドウシステムは親フレームのネイティブエッジ(@ref{Frame Geometry}を参照)で子フレームをクリップします(これらのエッジの外側は通常は不可視になる)。子フレームのパラメーター@code{left}と@code{top}は親のネイティブフレームの左上隅から相対的な位置を指定します。親フレームがリサイズされたとき、この位置は概念的には変更されません。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3120
 msgid "NS builds do not clip child frames at the parent frame's edges, allowing them to be positioned so they do not obscure the parent frame while still being visible themselves."
-msgstr ""
+msgstr "NSビルドは親フレームのエッジで子フレームをクリップしないので、子フレーム自身が可視であっても親フレームを隠さないように配置することができます。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3126
 msgid "Usually, moving a parent frame moves along all its child frames and their descendants as well, keeping their relative positions unaltered.  Note that the hook @code{move-frame-functions} (@pxref{Frame Position})  is run for a child frame only when the position of the child frame relative to its parent frame changes."
-msgstr ""
+msgstr "通常は親フレームを移動することにより、すべての子フレームとその子孫も相対的な位置が変化しないように一緒に移動されます。フック@code{move-frame-functions} (@ref{Frame Position}を参照)は子フレームの親フレームにたいする相対的な位置が変化したときだけ実行されます。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3135
 msgid "When a parent frame is resized, its child frames conceptually retain their previous sizes and their positions relative to the left upper corner of the parent.  This means that a child frame may become (partially) invisible when its parent frame shrinks.  The parameter @code{keep-ratio} (@pxref{Frame Interaction Parameters}) can be used to resize and reposition a child frame proportionally whenever its parent frame is resized.  This may avoid obscuring parts of a frame when its parent frame is shrunk."
-msgstr ""
+msgstr "親フレームがリサイズされた際には、子フレームは概念的には以前のサイズと親フレームの左上隅からの相対的な位置を保ちます。これは親フレームが縮小されると子フレームが(部分的に)不可視になるかもしれないことを意味しています。親フレームのリサイズ時に常に子フレームを比例してリサイズおよび再配置するためにパラメーター@code{keep-ratio}を使用できます(@ref{Frame Interaction Parameters}を参照)。これにより親フレームが縮小された際にフレームの一部が隠されることを防ぐことができます。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3146
 msgid "A visible child frame always appears on top of its parent frame thus obscuring parts of it, except on NS builds where it may be positioned beneath the parent.  This is comparable to the window-system window of a top-level frame which also always appears on top of its parent window---the desktop's root window.  When a parent frame is iconified or made invisible (@pxref{Visibility of Frames}), its child frames are made invisible.  When a parent frame is deiconified or made visible, its child frames are made visible.  When a parent frame is about to be deleted (@pxref{Deleting Frames}), its child frames are recursively deleted before it."
-msgstr ""
+msgstr "可視な子フレームは常に親フレームの最上位に表示されるので、親フレームの下位に表示可能なNSビルド以外では親フレームの一部を隠すことになります。これは常に親ウィンドウであるデスクトップのルートウィンドウの最上位に表示されるトップレベルフレームのウィンドウシステムのウィンドウに相当します。親フレームがアイコン化されたり不可視(@ref{Visibility of Frames}を参照)になったときには子フレームは不可視になります。親フレームが非アイコン化されたり可視になると子フレームは可視になります。親フレームが削除(@ref{Deleting Frames}を参照)される際には、それに先立って子フレームは再帰的に削除されます。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3151
 msgid "Whether a child frame can have a menu or tool bar is window-system or window manager dependent.  Most window-systems explicitly disallow menus bars for child frames.  It seems advisable to disable both, menu and tool bars, via the frame's initial parameters settings."
-msgstr ""
+msgstr "子フレームがメニューバーやツールバーをもてるかどうかはウィンドウシステムやウィンドウマネージャーに依存します。ほとんどのウィンドウシステムは子フレームのメニューバーを明示的に許可していません。フレームの初期パラメーターのセッティングでメニューバーとツールバーの両方を無効にすることを推奨します。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3156
 msgid "Usually, child frames do not exhibit window manager decorations like a title bar or external borders (@pxref{Frame Geometry}).  When the child frame does not show a menu or tool bar, any other of the frame's borders (@pxref{Layout Parameters}) can be used instead of the external borders."
-msgstr ""
+msgstr "子フレームは通常はタイトルバーやエクスターナルボーダー(@ref{Frame Geometry}を参照)のようなウィンドウマネージャーの装飾を表示しません。子フレームがメニューバーやツールバーを表示しないときには他の種類のフレームのボーダーをエクスターナルボーダーのかわりに使用できます(@ref{Layout Parameters}を参照)。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3163
 msgid "In particular, under X (but not when building with GTK+), the frame's outer border can be used.  On MS-Windows, specifying a non-zero outer border width will show a one-pixel wide external border.  Under all window-systems, the internal border can be used.  In either case, it's advisable to disable a child frame's window manager decorations with the @code{undecorated} frame parameter (@pxref{Management Parameters})."
-msgstr ""
+msgstr "特にX(ただしGTK+ビルド以外)ではフレームのアウターボーダーを使用できます。MS-Windowsでは非0のアウターボ^ダーを指定することにより、幅が1ピクセルのエクスターナルボーダーが表示されます。すべてのウィンドウシステムにおいてインターナルボーダーを使用できます。いずれのケースでもフレームパラメーター@code{undecorated} (@ref{Management Parameters}を参照)で子フレームにたいするウィンドウマネージャーの装飾を無効にすることを推奨します。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3171
 msgid "To resize or move an undecorated child frame with the mouse, special frame parameters (@pxref{Mouse Dragging Parameters}) have to be used.  The internal border of a child frame, if present, can be used to resize the frame with the mouse, provided that frame has a non-@code{nil} @code{drag-internal-border} parameter.  If set, the @code{snap-width} parameter indicates the number of pixels where the frame @dfn{snaps} at the respective edge or corner of its parent frame."
-msgstr ""
+msgstr "マウスで装飾されていない子フレームのリサイズや移動を行うためには、特別なフレームパラメーターを使う必要があります(@ref{Mouse Dragging Parameters}を参照)。子フレームのインターナルボーダーが存在する場合には、そのフレームが非@code{nil}の@code{drag-internal-border}パラメーターをもっていればマウスによるフレームのリサイズに使用できます。@code{snap-width}がセットされていれば、それは親フレームのエッジやコーナーそれぞれでフレームを@dfn{スナップ(snaps)}するピクセル数を表します。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3178
 msgid "There are two ways to drag an entire child frame with the mouse: The @code{drag-with-mode-line} parameter, if non-@code{nil}, allows to drag a frame without minibuffer window (@pxref{Minibuffer Windows}) via the mode line area of its bottommost window.  The @code{drag-with-header-line} parameter, if non-@code{nil}, allows to drag the frame via the header line area of its topmost window."
-msgstr ""
+msgstr "マウスで子フレーム全体をドラッグするためには2つの方法があります。@code{drag-with-mode-line}パラメーターが非@code{nil}なら、ミニバッファーウィンドウのないフレーム(@ref{Minibuffer Windows}を参照)の最下ウィンドウのモードラインエリアを通じてドラッグできます。@code{drag-with-header-line}パラメーターが非@code{nil}なら、フレームの最上ウィンドウのヘッダーラインを通じたドラッグが可能です。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3184
 msgid "In order to give a child frame a draggable header or mode line, the window parameters @code{mode-line-format} and @code{header-line-format} are handy (@pxref{Window Parameters}).  These allow to remove an unwanted mode line (when @code{drag-with-header-line} is chosen) and to remove mouse-sensitive areas which might interfere with frame dragging."
-msgstr ""
+msgstr "子フレームにドラッグ可能なヘッダーラインやモードラインを与えるためには、ウィンドウパラメーター@code{mode-line-format}と@code{header-line-format} (@ref{Window Parameters}を参照)を使用するのが手軽です。これらにより(@code{drag-with-header-line}の選択時に)不要なモードラインを削除したり、フレームのドラッグと干渉するマウス感応エリアを削除できます。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3190
 msgid "To avoid that dragging moves a frame completely out of its parent's native frame, something which might happen when the mouse cursor overshoots and makes the frame difficult to retrieve once the mouse button has been released, it is advisable to set the frame's @code{top-visible} or @code{bottom-visible} parameter correspondingly."
-msgstr ""
+msgstr "親のネイティブフレームの完全に外部にフレームがドラッグで移動(マウスカーソルが行き過ぎてしまいマウスボタンのリリース時にフレームの取得が困難になる際に発生し得る)されないようにするためには、それに応じてフレームのパラメーター@code{top-visible}と@code{bottom-visible}をセットすることを推奨します。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3199
 msgid "The @code{top-visible} parameter specifies the number of pixels at the top of the frame that always remain visible within the parent's native frame during dragging and should be set when specifying a non-@code{nil} @code{drag-with-header-line} parameter.  The @code{bottom-visible} parameter specifies the number of pixels at the bottom of the frame that always remain visible within the parent's native frame during dragging and should be preferred when specifying a non-@code{nil} @code{drag-with-mode-line} parameter."
-msgstr ""
+msgstr "@code{top-visible}パラメーターは親のネイティブフレーム内でドラッグ中にフレームの上部で常に可視に留まるピクセル数を指定するもので、これは@code{drag-with-header-line}パラメーターに非@code{nil}を指定する際にセットする必要があります。@code{bottom-visible}パラメーターは親のネイティブフレーム内でドラッグ中にフレームの下部で常に可視に留まるピクセル数を指定するもので、これは@code{drag-with-mode-line}パラメーターに非@code{nil}を指定する際にセットする必要があります。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3206
 msgid "When a child frame is used for displaying a buffer via @code{display-buffer-in-child-frame} (@pxref{Display Action Functions}), the frame's @code{auto-hide-function} parameter (@pxref{Frame Interaction Parameters}) can be set to a function, in order to appropriately deal with the frame when the window displaying the buffer shall be quit."
-msgstr ""
+msgstr "@code{display-buffer-in-child-frame} (@ref{Display Action Functions}を参照)を通じてバッファーの表示に子フレームが使用されている際には、バッファーを表示するウィンドウのquit時にフレームを適切に処理するために、フレームの@code{auto-hide-function}パラメーター(@ref{Frame Interaction Parameters}を参照)に関数をセットできます。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3211
 msgid "When a child frame is used during minibuffer interaction, for example, to display completions in a separate window, the @code{minibuffer-exit} parameter (@pxref{Frame Interaction Parameters}) is useful in order to deal with the frame when the minibuffer is exited."
-msgstr ""
+msgstr "たとえば別のウィンドウに補完を表示する等でミニバッファーとの相互作用中子フレームを使用する際には、ミニバッファーのexit時にフレームを適切に処理するために@code{minibuffer-exit}パラメーター(@ref{Frame Interaction Parameters}を参照)が便利です。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3214
 msgid "The behavior of child frames deviates from that of top-level frames in a number of other ways as well.  Here we sketch a few of them:"
-msgstr ""
+msgstr "子フレームの振る舞いは他のいくつかの点においても、トップレベルのフレームから逸脱しています。それらのいくつかを以下に挙げます:"
 
 #. type: itemize
 #: original_texis/frames.texi:3224
 msgid "The semantics of maximizing and iconifying child frames is highly window-system dependent.  As a rule, applications should never invoke these operations on child frames.  By default, invoking @code{iconify-frame} on a child frame will try to iconify the top-level frame corresponding to that child frame instead.  To obtain a different behavior, users may customize the option @code{iconify-child-frame} described below."
-msgstr ""
+msgstr "子フレームにたいする最大化とアイコン化の意味はウィンドウシステムに大きく依存する。原則としてアプリケーションは子フレームでこれらのオプションを決して呼び出すべきではない。デフォルトでは子フレームで@code{iconify-frame}を呼び出すと子フレームにに対応するトップレベルのフレームにたいしてアイコン化を試みる。異なる挙動を得るためには、以下で説明するオプション@code{iconify-child-frame}をカスタマイズできる。"
 
 #. type: itemize
 #: original_texis/frames.texi:3230
 msgid "Raising, lowering and restacking child frames (@pxref{Raising and Lowering}) or changing the @code{z-group} (@pxref{Position Parameters})  of a child frame changes only the stacking order of child frames with the same parent."
-msgstr ""
+msgstr "子フレームのraise、lower、restack (@ref{Raising and Lowering}を参照)や@code{z-group} (@ref{Position Parameters}を参照)の変更では、同じ親をもつ子フレームのstack順だけが変更される。"
 
 #. type: itemize
 #: original_texis/frames.texi:3234
 msgid "Many window-systems are not able to change the opacity (@pxref{Font and Color Parameters}) of child frames."
-msgstr ""
+msgstr "ウィンドウシステムの多くは子フレームの透明度(@ref{Font and Color Parameters}を参照)を変更できない。"
 
 #. type: itemize
 #: original_texis/frames.texi:3240
 msgid "Transferring focus from a child frame to an ancestor that is not its parent by clicking with the mouse in a visible part of that ancestor's window may fail with some window-systems.  You may have to click into the direct parent's window-system window first."
-msgstr ""
+msgstr "いくつかのウィンドウシステムでは、祖先のウィンドウの可視部分のマウスクリックによる、子フレームから親以外の祖先へのフォーカスの移動は失敗する。最初に直接的な親のウィンドウシステムのウィンドウを直接クリックする必要があるだろう。"
 
 #. type: itemize
 #: original_texis/frames.texi:3245
 msgid "Window managers might not bother to extend their focus follows mouse policy to child frames.  Customizing @code{mouse-autoselect-window} can help in this regard (@pxref{Mouse Window Auto-selection})."
-msgstr ""
+msgstr "ウィンドウマネージャーマウスポリシーにしたがってフォーカスを子フレームに拡大しないかもしれない。この問題にたいして@code{mouse-autoselect-window}のカスタマイズが助けになるかもしれない(@ref{Mouse Window Auto-selection}を参照)。"
 
 #. type: itemize
 #: original_texis/frames.texi:3250
 msgid "Dropping (@pxref{Drag and Drop}) on child frames is not guaranteed to work on all window-systems.  Some will drop the object on the parent frame or on some ancestor instead."
-msgstr ""
+msgstr "子フレームへのドロップ(@ref{Drag and Drop}を参照)はすべてのウィンドウシステムで動作を保証されない。親フレームにオブジェクトをドロップしたり、他の祖先にドロップするものもある。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3254
 msgid "The following two functions can be useful when working with child and parent frames:"
-msgstr ""
+msgstr "以下の2つの関数は子フレームと親フレームで処理を行う際に役に立つかもしれません:"
 
 #. type: defun
 #: original_texis/frames.texi:3255
-#, fuzzy, no-wrap
-#| msgid "frame-parameters &optional frame"
+#, no-wrap
 msgid "frame-parent &optional frame"
-msgstr "frame-parameters &optional frame"
+msgstr "frame-parent &optional frame"
 
 #. type: defun
 #: original_texis/frames.texi:3260
 msgid "This function returns the parent frame of @var{frame}.  The parent frame of @var{frame} is the Emacs frame whose window-system window is the parent window of @var{frame}'s window-system window.  If such a frame exists, @var{frame} is considered a child frame of that frame."
-msgstr ""
+msgstr "この関数は@var{frame}の親フレームをリターンする。@var{frame}の親フレームはウィンドウシステムのウィンドウが@var{frame}のウィンドウシステムのウィンドウの親ウィンドウであるようなEmacsフレーウである。そのようなフレームが存在すれば、@var{frame}はそのフレームの子フレームとみなされる。"
 
 #. type: defun
 #: original_texis/frames.texi:3262
-#, fuzzy
-#| msgid "This function returns @var{frame}, or @code{nil} if @var{frame} has been deleted."
 msgid "This function returns @code{nil} if @var{frame} has no parent frame."
-msgstr "この関数は@var{frame}、または@var{frame}が削除されていれば@code{nil}をリターンする。"
+msgstr "この関数は@var{frame}に親フレームがなければ@code{nil}をリターンする。"
 
 #. type: defun
 #: original_texis/frames.texi:3264
 #, no-wrap
 msgid "frame-ancestor-p ancestor descendant"
-msgstr ""
+msgstr "frame-ancestor-p ancestor descendant"
 
 #. type: defun
 #: original_texis/frames.texi:3270
 msgid "This functions returns non-@code{nil} if @var{ancestor} is an ancestor of @var{descendant}.  @var{ancestor} is an ancestor of @var{descendant} when it is either @var{descendant}'s parent frame or it is an ancestor of @var{descendant}'s parent frame.  Both, @var{ancestor} and @var{descendant} must specify live frames."
-msgstr ""
+msgstr "この関数は@var{ancestor}が@var{descendant}の祖先なら非@code{nil}をリターンする。@var{ancestor}が@var{descendant}の親フレームか@var{descendant}の親フレームの祖先なら、@var{ancestor}は@var{descendant}の祖先である。@var{ancestor}と@var{descendant}にはいずれも生きたフレームを指定しなければならない。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3277
 msgid "Note also the function @code{window-largest-empty-rectangle} (@pxref{Coordinates and Windows}) which can be used to inscribe a child frame in the largest empty area of an existing window.  This can be useful to avoid that a child frame obscures any text shown in that window."
-msgstr ""
+msgstr "既存ウィンドウの最大の空エリア内への子フレームの描画に使用できる関数@code{window-largest-empty-rectangle}にも注意してください(@ref{Coordinates and Windows}を参照)。これは子フレームがウィンドウ内に表示されているテキストを隠さないようにするために有用です。"
 
 #. type: Plain text
 #: original_texis/frames.texi:3280
 msgid "Customizing the following option can be useful to tweak the behavior of @code{iconify-frame} for child frames."
-msgstr ""
+msgstr "子フレームにたいする@code{iconify-frame}の挙動の調整に以下のオプションのカスタマイズが役に立つかもしれません。"
 
 #. type: defopt
 #: original_texis/frames.texi:3281
-#, fuzzy, no-wrap
-#| msgid "iconified frame"
+#, no-wrap
 msgid "iconify-child-frame"
-msgstr "iconified frame"
+msgstr "iconify-child-frame"
 
 #. type: defopt
 #: original_texis/frames.texi:3288
 msgid "This option tells Emacs how to proceed when it is asked to iconify a child frame.  If it is @code{nil}, @code{iconify-frame} will do nothing when invoked on a child frame.  If it is @code{iconify-top-level}, Emacs will try to iconify the top-level frame that is the ancestor of this child frame instead.  If it is @code{make-invisible}, Emacs will try to make this child frame invisible instead of iconifying it."
-msgstr ""
+msgstr "このオプションはEmacsにたいして子フレームのアイコン化を要求された際に処理を行う方法を指定する。@code{nil}なら@code{iconify-frame}が子フレームに呼び出された際には何も行わない。@code{iconify-top-level}なら子フレームの祖先であるトップレベルのフレームをアイコン化する。@code{make-invisible}ならアイコン化せずに子フレームを不可視にしようと試みる。"
 
 #. type: defopt
 #: original_texis/frames.texi:3293
 msgid "Any other value means to try iconifying the child frame.  Since such an attempt may not be honored by all window managers and can even lead to making the child frame unresponsive to user actions, the default is to iconify the top level frame instead."
-msgstr ""
+msgstr "その他の値は子フレームのアイコン化を試みることを意味する。そのような試みはすべてのウィンドウマネージャーで許容されるとはかぎらず、子フレームがユーザーのアクションに無応答になることさえあり得るので、デフォルトではトップレベルのフレームをアイコン化する。"
 
 #. type: cindex
 #: original_texis/frames.texi:3298
