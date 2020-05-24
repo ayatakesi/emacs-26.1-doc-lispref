@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Emacs-lispref 25.1\n"
+"Project-Id-Version: Emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-01-13 14:05+0900\n"
+"PO-Revision-Date: 2020-05-24 21:05+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -401,10 +401,8 @@ msgstr "この関数は@var{count}の単語数分ポイントを前方に移動�
 
 #. type: deffn
 #: original_texis/positions.texi:218
-#, fuzzy
-#| msgid "``Moving one word'' means moving until point crosses a word-constituent character and then encounters a word-separator character.  However, this function cannot move point past the boundary of the accessible portion of the buffer, or across a field boundary (@pxref{Fields}).  The most common case of a field boundary is the end of the prompt in the minibuffer."
 msgid "``Moving one word'' means moving until point crosses a word-constituent character, which indicates the beginning of a word, and then continue moving until the word ends.  By default, characters that begin and end words, known as @dfn{word boundaries}, are defined by the current buffer's syntax table (@pxref{Syntax Class Table}), but modes can override that by setting up a suitable @code{find-word-boundary-function-table}, described below.  Characters that belong to different scripts (as defined by @code{char-script-table}), also define a word boundary (@pxref{Character Properties}).  In any case, this function cannot move point past the boundary of the accessible portion of the buffer, or across a field boundary (@pxref{Fields}).  The most common case of a field boundary is the end of the prompt in the minibuffer."
-msgstr "``単語1つ移動''とは、単語構成文字を横断して、単語区切り文字に遭遇するまでポイントを移動することを意味する。しかし、この関数はバッファーのアクセス可能範囲の境界およびフィールド境界(@ref{Fields}を参照)を超えてポイントを移動できない。フィールド境界のもっとも一般的な例は、ミニバッファー内のプロンプト終端である。"
+msgstr "``単語1つ移動''とは単語構成文字を横断(これは単語の先頭を示す)して単語の終わりまで移動を継続することを意味する。デフォルトでは単語を開始や終了させる文字は@dfn{単語境界(word boundaries)}として知られており、これはカレントバッファーの構文テーブル(@ref{Syntax Class Table}を参照)で定義されるが、後述の@code{find-word-boundary-function-table}を適切にセットすることによりモードはこれをオーバーライドできる。(@code{char-script-table}により定義される)異なるスクリプトに属する文字も単語境界を定義できる(@ref{Character Properties}を参照)。いずれにせよ、この関数はバッファーのアクセス可能範囲の境界やフィールド境界(@ref{Fields}を参照)を超えてポイントを移動できない。フィールド境界のもっとも一般的な例はミニバッファー内のプロンプト終端である。"
 
 #. type: deffn
 #: original_texis/positions.texi:223
@@ -707,10 +705,9 @@ msgstr "この関数はインタラクティブに呼び出すこともできる
 
 #. type: defun
 #: original_texis/positions.texi:435
-#, fuzzy, no-wrap
-#| msgid "line-number-at-pos &optional pos"
+#, no-wrap
 msgid "line-number-at-pos &optional pos absolute"
-msgstr "line-number-at-pos &optional pos"
+msgstr "line-number-at-pos &optional pos absolute"
 
 #. type: cindex
 #: original_texis/positions.texi:436
@@ -721,7 +718,7 @@ msgstr "line number"
 #. type: defun
 #: original_texis/positions.texi:445
 msgid "This function returns the line number in the current buffer corresponding to the buffer position @var{pos}.  If @var{pos} is @code{nil} or omitted, the current buffer position is used. If @var{absolute} is @code{nil}, the default, counting starts at @code{(point-min)}, so the value refers to the contents of the accessible portion of the (potentially narrowed) buffer.  If @var{absolute} is non-@code{nil}, ignore any narrowing and return the absolute line number."
-msgstr ""
+msgstr "この関数はカレントバッファーのバッファー位置@var{pos}に対応する行番号をリターンする。@var{pos}が@code{nil}か省略ならカレントのバッファー位置を使用する。@var{absolute}が@code{nil} (デフォルト)なら@code{(point-min)}から数え始めるので、値は(ナローイングされているかもしれない)バッファーのアクセス可能範囲を参照する。@var{absolute}が非@code{nil}ならすべてのナローイングを無視して行の絶対番号をリターンする。"
 
 #. type: deffn
 #: original_texis/positions.texi:453
@@ -937,7 +934,7 @@ msgstr "ウィンドウ@var{window}は幅、水平スクロール、ディスプ
 #. type: defun
 #: original_texis/positions.texi:575
 msgid "The optional argument @var{cur-col} specifies the current column when the function is called.  This is the window-relative horizontal coordinate of point, measured in units of font width of the frame's default face.  Providing it speeds up the function, especially in very long lines, because the function doesn't have to go back in the buffer in order to determine the current column.  Note that @var{cur-col} is also counted from the visual start of the line."
-msgstr ""
+msgstr "オプション引数@var{cur-col}は関数呼び出し時のカレント列を指定する。これはフレームのデフォルトフェイスのフォント幅の単位で計測したウィンドウに相対的なポイントの水平座標である。これを提供することにより関数はカレント列を判断するためにバッファーを戻る必要がなくなるので、特に長い行において関数が高速化される。@var{cur-col}は行のビジュアル的な開始からも計測されることに注意。"
 
 #. type: defun
 #: original_texis/positions.texi:577
@@ -973,10 +970,8 @@ msgstr "Command move-to-window-line count"
 
 #. type: deffn
 #: original_texis/positions.texi:607
-#, fuzzy
-#| msgid "This function moves point with respect to the text currently displayed in the selected window.  It moves point to the beginning of the screen line @var{count} screen lines from the top of the window.  If @var{count} is negative, that specifies a position @w{@minus{}@var{count}} lines from the bottom (or the last line of the buffer, if the buffer ends above the specified screen position)."
 msgid "This function moves point with respect to the text currently displayed in the selected window.  It moves point to the beginning of the screen line @var{count} screen lines from the top of the window; zero means the topmost line.  If @var{count} is negative, that specifies a position @w{@minus{}@var{count}} lines from the bottom (or the last line of the buffer, if the buffer ends above the specified screen position); thus, @var{count} of @minus{}1 specifies the last fully visible screen line of the window."
-msgstr "この関数は、選択されたウィンドウ内にカレントで表示されているテキストに応じてポイントを移動する。これは、ウィンドウ上端からスクリーン行で@var{count}行目の先頭にポイントを移動する。@var{count}が負なら、それはバッファー下端(バッファーが指定されたスクリーン位置の上で終わる場合はバッファーの最終行)から、@w{@minus{}@var{count}}行目の位置を指定する。"
+msgstr "この関数は選択されたウィンドウ内にカレントで表示されているテキストに応じてポイントを移動する。これはウィンドウ上端からスクリーン行で@var{count}行目(0は最上行を意味する)の先頭にポイントを移動する。@var{count}が負ならバッファー下端(バッファーが指定されたスクリーン位置の上で終わる場合にはバッファーの最終行)から@w{@minus{}@var{count}}行目の位置を指定する。したがって@var{count}が@minus{}1ならウィンドウの最後の完全に可視なスクリーン行を指定する。"
 
 #. type: deffn
 #: original_texis/positions.texi:614
@@ -985,10 +980,8 @@ msgstr "@var{count}が@code{nil}ならポイントはウィンドウ中央の行
 
 #. type: deffn
 #: original_texis/positions.texi:619
-#, fuzzy
-#| msgid "The value returned is the window line number point has moved to, with the top line in the window numbered 0."
 msgid "The value returned is the screen line number point has moved to, relative to the top line of the window."
-msgstr "リターン値は、ウィンドウ上端行を0とする、ポイントが移動した先の行番号である。"
+msgstr "リターン値はポイントが移動した先の、ウィンドウ上端行から相対的なスクリーン行番号。"
 
 #. type: vindex
 #: original_texis/positions.texi:621
