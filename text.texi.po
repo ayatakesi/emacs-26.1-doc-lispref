@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: emacs-lispref 25.1\n"
+"Project-Id-Version: emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-03-07 17:06+0900\n"
+"PO-Revision-Date: 2020-05-26 21:31+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -301,15 +301,14 @@ msgstr "バッファーの2つの部分を交換する。"
 
 #. type: node
 #: original_texis/text.texi:66 original_texis/text.texi:4317
-#, fuzzy, no-wrap
-#| msgid "line-spacing"
+#, no-wrap
 msgid "Replacing"
-msgstr "line-spacing"
+msgstr "Replacing"
 
 #. type: menuentry
 #: original_texis/text.texi:66
 msgid "Replacing the text of one buffer with the text of another buffer."
-msgstr ""
+msgstr "他のバッファーのテキストによるバッファーテキストの置換。"
 
 #. type: node
 #: original_texis/text.texi:66 original_texis/text.texi:4339
@@ -350,12 +349,12 @@ msgstr "暗号ハッシュの計算。"
 #: original_texis/text.texi:4513
 #, no-wrap
 msgid "GnuTLS Cryptography"
-msgstr ""
+msgstr "GnuTLS Cryptography"
 
 #. type: menuentry
 #: original_texis/text.texi:66
 msgid "Cryptographic algorithms imported from GnuTLS."
-msgstr ""
+msgstr "GnuTLSからインポートされた暗号化アルゴリズム。"
 
 #. type: node
 #: original_texis/text.texi:66 original_texis/text.texi:4706
@@ -1113,15 +1112,14 @@ msgstr "post-self-insert-hook"
 
 #. type: vindex
 #: original_texis/text.texi:528
-#, fuzzy, no-wrap
-#| msgid "indent-region-function"
+#, no-wrap
 msgid "self-insert-uses-region-functions"
-msgstr "indent-region-function"
+msgstr "self-insert-uses-region-functions"
 
 #. type: deffn
 #: original_texis/text.texi:539
 msgid "The final thing this command does is to run the hook @code{post-self-insert-hook}.  You could use this to automatically reindent text as it is typed, for example.  If any function on this hook needs to act on the region (@pxref{The Region}), it should make sure Delete Selection mode (@pxref{Using Region, Delete Selection, , emacs, The GNU Emacs Manual}) doesn't delete the region before @code{post-self-insert-hook} functions are invoked.  The way to do so is to add a function that returns @code{nil} to @code{self-insert-uses-region-functions}, a special hook that tells Delete Selection mode it should not delete the region."
-msgstr ""
+msgstr "このコマンドは最後にフック@code{post-self-insert-hook}を実行する。たとえばテキストがタイプされたときのように自動的に再インデントするためにこれを使用できる。このフックのいずれかの関数がリージョン(@ref{The Region}を参照)にたいして作用する必要があるなら、@code{post-self-insert-hook}の関数が呼び出される前にDelete Selectionモード(@ref{Using Region, Delete Selection, , emacs, The GNU Emacs Manual}を参照)がリージョンを削除しないようにする必要がある。これを行うにはDelete Selectionモードにリージョンを削除しないように告げる特別なフック@code{self-insert-uses-region-functions}に@code{nil}をリターンする関数を追加すること。"
 
 #. type: deffn
 #: original_texis/text.texi:543
@@ -2015,10 +2013,8 @@ msgstr "オプションの第2引数@var{do-not-move}が非@code{nil}なら、@c
 
 #. type: defun
 #: original_texis/text.texi:1153
-#, fuzzy
-#| msgid "If @var{n} is zero, indicating a request for the latest kill, @code{current-kill} calls the value of @code{interprogram-paste-function} (documented below) before consulting the kill ring.  If that value is a function and calling it returns a string or a list of several string, @code{current-kill} pushes the strings onto the kill ring and returns the first string.  It also sets the yanking pointer to point to the kill-ring entry of the first string returned by @code{interprogram-paste-function}, regardless of the value of @var{do-not-move}.  Otherwise, @code{current-kill} does not treat a zero value for @var{n} specially: it returns the entry pointed at by the yanking pointer and does not move the yanking pointer."
 msgid "If @var{n} is zero, indicating a request for the latest kill, @code{current-kill} calls the value of @code{interprogram-paste-function} (documented below) before consulting the kill ring.  If that value is a function and calling it returns a string or a list of several strings, @code{current-kill} pushes the strings onto the kill ring and returns the first string.  It also sets the yanking pointer to point to the kill-ring entry of the first string returned by @code{interprogram-paste-function}, regardless of the value of @var{do-not-move}.  Otherwise, @code{current-kill} does not treat a zero value for @var{n} specially: it returns the entry pointed at by the yanking pointer and does not move the yanking pointer."
-msgstr "@var{n}が0の場合、それは最新のkillの要求を意味しており、@code{current-kill}はkillリング照会前に@code{interprogram-paste-function}(以下参照)の値を呼び出す。その値が関数で、かつそれが文字列または複数の文字列からなるリストをリターンした場合、@code{current-kill}はその文字列をkillリング上にpushして、最初の文字列をリターンする。これは@var{do-not-move}の値に関わらず、@code{interprogram-paste-function}がリターンする最初の文字列のkillリングエントリーを指すように、yankポインターのセットも行う。それ以外では、@code{current-kill}は@var{n}にたいする0値を特別に扱うことはなく、yankポインターが指すエントリーをリターンし、yankポインターの移動は行わない。"
+msgstr "@var{n}が0ならそれは最新のkillの要求を意味しており、@code{current-kill}はkillリング照会前に@code{interprogram-paste-function}(以下参照)の値を呼び出す。その値が関数で、かつそれが文字列か複数の文字列からなるリストをリターンすると、@code{current-kill}はその文字列をkillリング上にpushして最初の文字列をリターンする。これは@var{do-not-move}の値に関わらず、@code{interprogram-paste-function}がリターンする最初の文字列のkillリングエントリーを指すようにyankポインターのセットも行う。それ以外では@code{current-kill}は@var{n}にたいする0値を特別に扱うことはなく、yankポインターが指すエントリーをリターンしてyankポインターの移動は行わない。"
 
 #. type: defun
 #: original_texis/text.texi:1155
@@ -2028,10 +2024,8 @@ msgstr "kill-new string &optional replace"
 
 #. type: defun
 #: original_texis/text.texi:1162
-#, fuzzy
-#| msgid "This function pushes the text @var{string} onto the kill ring and makes the yanking pointer point to it.  It discards the oldest entry if appropriate.  It also invokes the value of @code{interprogram-cut-function} (see below)."
 msgid "This function pushes the text @var{string} onto the kill ring and makes the yanking pointer point to it.  It discards the oldest entry if appropriate.  It also invokes the values of @code{interprogram-paste-function} (subject to the user option @code{save-interprogram-paste-before-kill})  and @code{interprogram-cut-function} (see below)."
-msgstr "この関数は、テキスト@var{string}をkillリング上にpushして、yankポインターがそれを指すようにセットする。それが適切なら、もっとも古いエントリーを破棄する。@code{interprogram-cut-function}(以下参照)の呼び出しも行う。"
+msgstr "この関数はテキスト@var{string}をkillリング上にpushしてyankポインターがそれを指すようにセットする。それが適切なら、もっとも古いエントリーを破棄する。 @code{interprogram-paste-function}@code{interprogram-paste-function} (ユーザーオプション@code{save-interprogram-paste-before-kill}にしたがう)と@code{interprogram-cut-function} (以下参照)の値の呼び出しも行う。"
 
 #. type: defun
 #: original_texis/text.texi:1166
@@ -2046,10 +2040,8 @@ msgstr "kill-append string before-p"
 
 #. type: defun
 #: original_texis/text.texi:1177
-#, fuzzy
-#| msgid "This function appends the text @var{string} to the first entry in the kill ring and makes the yanking pointer point to the combined entry.  Normally @var{string} goes at the end of the entry, but if @var{before-p} is non-@code{nil}, it goes at the beginning.  This function also invokes the value of @code{interprogram-cut-function} (see below)."
 msgid "This function appends the text @var{string} to the first entry in the kill ring and makes the yanking pointer point to the combined entry.  Normally @var{string} goes at the end of the entry, but if @var{before-p} is non-@code{nil}, it goes at the beginning.  This function calls @code{kill-new} as a subroutine, thus causing the values of @code{interprogram-cut-function} and possibly @code{interprogram-paste-function} (see below) to be invoked by extension."
-msgstr "この関数は、killリング内の最初のエントリーにテキスト@var{string}を追加して、その結合されたエントリーを指すようにyankポインターをセットする。通常はそのエントリーの終端に@var{string}が追加されるが、@var{before-p}が非@code{nil}ならエントリーの先頭に追加される。この関数は、@code{interprogram-cut-function}(以下参照)の呼び出しも行う。"
+msgstr "この関数はkillリング内の最初のエントリーにテキスト@var{string}を追加して、その結合されたエントリーを指すようにyankポインターをセットする。通常はそのエントリーの終端に@var{string}が追加されるが、@var{before-p}が非@code{nil}ならエントリーの先頭に追加される。この関数はサブルーチンとして@code{kill-new}も呼び出すので@code{interprogram-cut-function}とおそらく@code{interprogram-paste-function}の値(以下参照)が拡張により呼び出される。"
 
 #. type: defvar
 #: original_texis/text.texi:1179
@@ -2659,10 +2651,8 @@ msgstr "このコマンドはその行が正確に@code{fill-column}で終わる
 
 #. type: deffn
 #: original_texis/text.texi:1622
-#, fuzzy
-#| msgid "The argument @var{how}, if non-@code{nil} specifies explicitly the style of justification.  It can be @code{left}, @code{right}, @code{full}, @code{center}, or @code{none}.  If it is @code{t}, that means to do follow specified justification style (see @code{current-justification}, below).  @code{nil} means to do full justification."
 msgid "The argument @var{how}, if non-@code{nil} specifies explicitly the style of justification.  It can be @code{left}, @code{right}, @code{full}, @code{center}, or @code{none}.  If it is @code{t}, that means to follow specified justification style (see @code{current-justification}, below).  @code{nil} means to do full justification."
-msgstr "引数@var{how}が非@code{nil}なら、それは位置揃えスタイルを明示的に指定する。指定できる値は@code{left}、@code{right}、@code{full}、@code{center}、または@code{none}。値が@code{t}の場合、それは指定済みの位置揃えスタイル(以下の@code{current-justification}を参照)にしたがうことを意味する。@code{nil}は位置揃え@code{full}と同じ。"
+msgstr "引数@var{how}が非@code{nil}なら、それは位置揃えスタイルを明示的に指定する。指定できる値は@code{left}、@code{right}、@code{full}、@code{center}、または@code{none}。値が@code{t}なら指定済みの位置揃えスタイル(以下の@code{current-justification}を参照)にしたがうことを意味する。@code{nil}は位置揃え@code{full}と同じ。"
 
 #. type: deffn
 #: original_texis/text.texi:1627
@@ -2698,10 +2688,8 @@ msgstr "この関数はポイント周辺のフィルに使用するための適
 
 #. type: defun
 #: original_texis/text.texi:1647
-#, fuzzy
-#| msgid "This returns the value of the @code{justification} text property at point, or the variable @var{default-justification} if there is no such text property.  However, it returns @code{nil} rather than @code{none} to mean ``don't justify''."
 msgid "This returns the value of the @code{justification} text property at point, or the variable @code{default-justification} if there is no such text property.  However, it returns @code{nil} rather than @code{none} to mean ``don't justify''."
-msgstr "これは、ポイント位置のテキストプロパティ@code{justification}の値、そのようなテキストプロパティが存在しなければ変数@var{default-justification}の値をリターンする。しかし、``位置揃えなし''の場合は、@code{none}ではなく@code{nil}をリターンする。"
+msgstr "これはポイント位置のテキストプロパティ@code{justification}の値、そのようなテキストプロパティが存在しなければ変数@code{default-justification}の値をリターンする。しかし``位置揃えなし''なら、@code{none}ではなく@code{nil}をリターンする。"
 
 #. type: defopt
 #: original_texis/text.texi:1649
@@ -2745,12 +2733,12 @@ msgstr "この変数が非@code{nil}なら、それは後にスペースをと�
 #: original_texis/text.texi:1667
 #, no-wrap
 msgid "fill-separate-heterogeneous-words-with-space"
-msgstr ""
+msgstr "fill-separate-heterogeneous-words-with-space"
 
 #. type: defopt
 #: original_texis/text.texi:1672
 msgid "If this variable is non-@code{nil}, two words of different kind (e.g., English and CJK) will be separated with a space when concatenating one that is in the end of a line and the other that is in the beginning of the next line for filling."
-msgstr ""
+msgstr "この変数が非@code{nil}なら異種(たとえば英語のCJK)の2つの単語は一方が行末にあり、もう一方が次行の先頭にある場合にはフィルでの結合時にスペースで分割される。"
 
 #. type: defvar
 #: original_texis/text.texi:1674
@@ -3073,10 +3061,8 @@ msgstr "Auto Fill mode"
 
 #. type: Plain text
 #: original_texis/text.texi:1906
-#, fuzzy
-#| msgid "Auto Fill mode is a minor mode that fills lines automatically as text is inserted.  This section describes the hook used by Auto Fill mode.  For a description of functions that you can call explicitly to fill and justify existing text, see @ref{Filling}."
 msgid "Auto Fill mode is a minor mode that fills lines automatically as text is inserted.  @xref{Auto Fill,,, emacs, The GNU Emacs Manual}.  This section describes some variables used by Auto Fill mode.  For a description of functions that you can call explicitly to fill and justify existing text, see @ref{Filling}."
-msgstr "Auto Fillモードは、テキスト挿入とともに自動的に行をフィルするマイナーモードです。このセクションでは、Auto Fillモードにより使用されるフックを説明します。既存テキストを明示的にフィルしたり位置揃えすることができる関数の説明は、@ref{Filling}を参照してください。"
+msgstr "Auto Fillモードはテキスト挿入とともに自動的に行をフィルするマイナーモードです。@ref{Auto Fill,,, emacs, The GNU Emacs Manual}を参照してください。このセクションではAuto Fillモードにより使用される変数をいくつか説明します。既存テキストを明示的にフィルしたり位置揃えすることができる関数の説明は@ref{Filling}を参照してください。"
 
 #. type: Plain text
 #: original_texis/text.texi:1909
@@ -3091,17 +3077,13 @@ msgstr "auto-fill-function"
 
 #. type: defvar
 #: original_texis/text.texi:1915
-#, fuzzy
-#| msgid "The value of this buffer-local variable should be a function (of no arguments) to be called after self-inserting a character from the table @code{auto-fill-chars}.  It may be @code{nil}, in which case nothing special is done in that case."
 msgid "The value of this buffer-local variable should be a function (of no arguments) to be called after self-inserting a character from the table @code{auto-fill-chars}, see below.  It may be @code{nil}, in which case nothing special is done in that case."
-msgstr "このバッファーローカル変数の値は、テーブル@code{auto-fill-chars}からの文字の自己挿入後に呼び出される関数(引数なし)であること。@code{nil}も可で、その場合は特に何もしない。"
+msgstr "このバッファーローカル変数の値はテーブル@code{auto-fill-chars} (以下参照)からの文字の自己挿入後に呼び出される関数(引数なし)であること。@code{nil}でもよく、その場合は特に何もしない。"
 
 #. type: defvar
 #: original_texis/text.texi:1919
-#, fuzzy
-#| msgid "The value of @code{auto-fill-function} is @code{do-auto-fill} when Auto-Fill mode is enabled.  That is a function whose sole purpose is to implement the usual strategy for breaking a line."
 msgid "The value of @code{auto-fill-function} is @code{do-auto-fill} when Auto Fill mode is enabled.  That is a function whose sole purpose is to implement the usual strategy for breaking a line."
-msgstr "Auto-Fillモードが有効なら、@code{auto-fill-function}の値は@code{do-auto-fill}である。これは、行ブレークにたいする通常の戦略を実装することを唯一の目的とする関数である。"
+msgstr "Auto Fillモードが有効なら@code{auto-fill-function}の値は@code{do-auto-fill}。これは行ブレークにたいする通常のストラテジーを実装することを唯一の目的とする関数である。"
 
 #. type: defvar
 #: original_texis/text.texi:1921
@@ -3127,15 +3109,14 @@ msgstr "文字が自己挿入された際に@code{auto-fill-function}を呼び�
 
 #. type: defopt
 #: original_texis/text.texi:1934
-#, fuzzy, no-wrap
-#| msgid "normal-auto-fill-function"
+#, no-wrap
 msgid "comment-auto-fill-only-comments"
-msgstr "normal-auto-fill-function"
+msgstr "comment-auto-fill-only-comments"
 
 #. type: defopt
 #: original_texis/text.texi:1939
 msgid "This variable, if non-@code{nil}, means to fill lines automatically within comments only.  More precisely, this means that if a comment syntax was defined for the current buffer, then self-inserting a character outside of a comment will not call @code{auto-fill-function}."
-msgstr ""
+msgstr "この変数が非@code{nil}なら行のフィルは自動的にコメントだけになる。より正確にはカレントバッファーにたいしてコメント構文が定義されていれば、コメントの外側の自己挿入文字が@code{auto-fill-function}を呼び出さないことを意味する。"
 
 #. type: section
 #: original_texis/text.texi:1943
@@ -3821,71 +3802,67 @@ msgstr "この変数は@key{TAB} (@code{indent-for-tab-command})コマンドの�
 #: original_texis/text.texi:2397
 #, no-wrap
 msgid "literate programming"
-msgstr ""
+msgstr "literate programming"
 
 #. type: cindex
 #: original_texis/text.texi:2398
-#, fuzzy, no-wrap
-#| msgid "current-indentation"
+#, no-wrap
 msgid "multi-mode indentation"
-msgstr "current-indentation"
+msgstr "multi-mode indentation"
 
 #. type: Plain text
 #: original_texis/text.texi:2410
 msgid "Some major modes need to support embedded regions of text whose syntax belongs to a different major mode.  Examples include @dfn{literate programming} source files that combine documentation and snippets of source code, Yacc/Bison programs that include snippets of Python or JS code, etc.  To correctly indent the embedded chunks, the primary mode needs to delegate the indentation to another mode's indentation engine (e.g., call @code{js-indent-line} for JS code or @code{python-indent-line} for Python), while providing it with some context to guide the indentation.  Major modes, for their part, should avoid calling @code{widen} in their indentation code and obey @code{prog-first-column}."
-msgstr ""
+msgstr "いくつかのメジャーモードでは、異なるメジャーモードに所属する構文をもつ埋め込みのテキストリージョンをサポートする必要があります。これらの例にはドキュメントとソースコード断片の組み合わせである@dfn{文芸的プログラミング(literate programming)}のソースファイル、PythonやJSのコード断片を含んだYacc/Bisonプログラムが含まれます。埋め込みチャンクをを正しくインデントするためには、主モードがインデントをガイドする何らかのコンテキストを提供しつつ、他のモードのインデントエンジン(JSでは@code{js-indent-line}、Pythonでは@code{python-indent-line}の呼び出し)にインデントを委譲する必要があります。メジャーモードはインデントコードで@code{widen}の呼び出しを避けて@code{prog-first-column}にしたがうべきです。"
 
 #. type: defvar
 #: original_texis/text.texi:2411
-#, fuzzy, no-wrap
-#| msgid "indentation"
+#, no-wrap
 msgid "prog-indentation-context"
-msgstr "indentation"
+msgstr "prog-indentation-context"
 
 #. type: defvar
 #: original_texis/text.texi:2416
 msgid "This variable, when non-@code{nil}, holds the indentation context for the sub-mode's indentation engine provided by the superior major mode.  The value should be a list of the form @code{(@var{first-column} . @var{rest}}.  The members of the list have the following meaning:"
-msgstr ""
+msgstr "この変数が非@code{nil}なら副モードのインデントエンジンにたいして上位モードが提供するインデントのコンテキストを保持する。値は@code{(@var{first-column} . @var{rest})}という形式のリストであること。リストのメンバーは以下の意味をもつ:"
 
 #. type: item
 #: original_texis/text.texi:2418
-#, fuzzy, no-wrap
-#| msgid "fill-column"
+#, no-wrap
 msgid "first-column"
-msgstr "fill-column"
+msgstr "first-column"
 
 #. type: table
 #: original_texis/text.texi:2422
 msgid "The column to be used for top-level constructs.  This replaces the default value of the top-level column used by the sub-mode, usually zero."
-msgstr ""
+msgstr "トップレベルの構文にたいして使用する列。これは副モードが使用するトップレベルの列のデフォルト値(通常は0)を置き換える。"
 
 #. type: item
 #: original_texis/text.texi:2422
 #, no-wrap
 msgid "rest"
-msgstr ""
+msgstr "rest"
 
 #. type: table
 #: original_texis/text.texi:2424
 msgid "This value is currently unused."
-msgstr ""
+msgstr "現在のところ使用しない。"
 
 #. type: Plain text
 #: original_texis/text.texi:2430
 msgid "The following convenience function should be used by major mode's indentation engine in support of invocations as sub-modes of another major mode."
-msgstr ""
+msgstr "以下は他のメジャーモードの副モードとしての呼び出しをサポートする際に、そのメジャーモードのインデントエンジンが使用するべき便宜用の関数です。"
 
 #. type: defun
 #: original_texis/text.texi:2431
-#, fuzzy, no-wrap
-#| msgid "current-column"
+#, no-wrap
 msgid "prog-first-column"
-msgstr "current-column"
+msgstr "prog-first-column"
 
 #. type: defun
 #: original_texis/text.texi:2436
 msgid "Call this function instead of using a literal value (usually, zero) of the column number for indenting top-level program constructs.  The function's value is the column number to use for top-level constructs.  When no superior mode is in effect, this function returns zero."
-msgstr ""
+msgstr "トップレベルのプログラム上のコンテキストの列値にたいしてリテラル値(通常は0)を使用するかわりにこの関数を呼び出す。関数の値はトップレベルに使用する列数。上位モードの影響下になければ関数は0をリターンする。"
 
 #. type: subsection
 #: original_texis/text.texi:2440
@@ -4787,20 +4764,13 @@ msgstr "この関数は@var{start}と@var{end}の間のテキストのテキス�
 
 #. type: defun
 #: original_texis/text.texi:2986
-#, fuzzy
-#| msgid "If any text in the region already has a non-@code{nil} @code{face} property, those face(s) are retained.  This function sets the @code{face} property to a list of faces, with @var{face} as the first element (by default) and the pre-existing faces as the remaining elements.  If the optional argument @var{append} is non-@code{nil}, @var{face} is appended to the end of the list instead.  Note that in a face list, the first occurring value for each attribute takes precedence."
 msgid "If any text in the region already has a non-@code{nil} @code{face} property, those face(s) are retained.  This function sets the @code{face} property to a list of faces, with @var{face} as the first element (by default) and the pre-existing faces as the remaining elements.  If the optional argument @var{appendp} is non-@code{nil}, @var{face} is appended to the end of the list instead.  Note that in a face list, the first occurring value for each attribute takes precedence."
-msgstr ""
-"リージョン内の任意のテキストがすでに非@code{nil}の@code{face}プロパティをもつ場合、それらのフェイスは保たれる。\n"
-"If any text in the region already has a non-  property, those face(s) are retained.\n"
-"この関数は@code{face}プロパティに、最初の要素(デフォルト)が@var{face}、以前に存在していたフェイスが残りの要素であるような、フェイスのリストをセットする。オプション引数@var{append}が非@code{nil}なら、@var{face}はかわりにリストの最後に追加される。フェイスリスト内では、各属性にたいして最初に出現する値が優先されることに注意。"
+msgstr "リージョン内の任意のテキストがすでに非@code{nil}の@code{face}プロパティをもつ場合には、それらのフェイスは保たれる。この関数は@code{face}プロパティに最初の要素(デフォルト)が@var{face}、以前に存在していたフェイスが残りの要素であるようなフェイスのリストをセットする。オプション引数@var{appendp}が非@code{nil}なら、@var{face}はかわりにリストの最後に追加される。フェイスリスト内では、各属性にたいして最初に出現する値が優先されることに注意。"
 
 #. type: defun
 #: original_texis/text.texi:2989
-#, fuzzy
-#| msgid "For example, the following code would assign a italicized green face to the text between @var{start} and @var{end}:"
 msgid "For example, the following code would assign an italicized green face to the text between @var{start} and @var{end}:"
-msgstr "たとえば以下のコードでは、@var{start}と@var{end}の間のテキストに、グリーン斜体のフェイスを割り当てるだろう:"
+msgstr "たとえば以下のコードでは@var{start}と@var{end}の間のテキストにグリーン斜体のフェイスを割り当てるだろう:"
 
 #. type: example
 #: original_texis/text.texi:2994
@@ -6208,10 +6178,9 @@ msgstr "リンク上でのクリックにたいするEmacsの基本コマンド�
 
 #. type: kindex
 #: original_texis/text.texi:3868
-#, fuzzy, no-wrap
-#| msgid "follow-link (text or overlay property)"
+#, no-wrap
 msgid "follow-link @r{(text or overlay property)}"
-msgstr "follow-link (text or overlay property)"
+msgstr "follow-link @r{(text or overlay property)}"
 
 #. type: Plain text
 #: original_texis/text.texi:3881
@@ -6740,7 +6709,7 @@ msgstr "矩形(rectangle)"
 #: original_texis/text.texi:4225
 #, no-wrap
 msgid "rectangle, as contents of a register"
-msgstr ""
+msgstr "rectangle, as contents of a register"
 
 #. type: table
 #: original_texis/text.texi:4227
@@ -6896,10 +6865,8 @@ msgstr "transpose-regions start1 end1 start2 end2 &optional leave-markers"
 
 #. type: defun
 #: original_texis/text.texi:4308
-#, fuzzy
-#| msgid "This function exchanges two nonoverlapping portions of the buffer.  Arguments @var{start1} and @var{end1} specify the bounds of one portion and arguments @var{start2} and @var{end2} specify the bounds of the other portion."
 msgid "This function exchanges two nonoverlapping portions of the buffer (if they overlap, the function signals an error).  Arguments @var{start1} and @var{end1} specify the bounds of one portion and arguments @var{start2} and @var{end2} specify the bounds of the other portion."
-msgstr "この関数は、バッファーの重複しない2つの部分を交換する。引数@var{start1}と@var{end1}は一方の部分の両端、引数@var{start2}と@var{end2}はもう一方の部分の両端を指定する。"
+msgstr "この関数はバッファーの重複しない2つの部分を交換する(重複する場合にはエラーをシグナルする)。引数@var{start1}と@var{end1}は一方の部分の両端、引数@var{start2}と@var{end2}はもう一方の部分の両端を指定する。"
 
 #. type: defun
 #: original_texis/text.texi:4315
@@ -6908,10 +6875,9 @@ msgstr "@code{transpose-regions}は通常は置き換えたテキストにとも
 
 #. type: section
 #: original_texis/text.texi:4318
-#, fuzzy, no-wrap
-#| msgid "comparing buffer text"
+#, no-wrap
 msgid "Replacing Buffer Text"
-msgstr "comparing buffer text"
+msgstr "Replacing Buffer Text"
 
 #. type: Plain text
 #: original_texis/text.texi:4322
