@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-03-07 19:16+0900\n"
+"PO-Revision-Date: 2020-05-31 21:27+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -728,15 +728,14 @@ msgstr ""
 
 #. type: defun
 #: original_texis/nonascii.texi:423
-#, fuzzy, no-wrap
-#| msgid "find-charset-string string &optional translation"
+#, no-wrap
 msgid "char-from-name string &optional ignore-case"
-msgstr "find-charset-string string &optional translation"
+msgstr "char-from-name string &optional ignore-case"
 
 #. type: defun
 #: original_texis/nonascii.texi:427
 msgid "This function returns the character whose Unicode name is @var{string}.  If @var{ignore-case} is non-@code{nil}, case is ignored in @var{string}.  This function returns @code{nil} if @var{string} does not name a character."
-msgstr ""
+msgstr "この関数はUnicode名が@var{string}であるような文字をリターンする。@var{ignore-case}が非@code{nil}なら@var{string}のcase(大文字小文字)は無視する。@var{string}が文字の名前でなければ、この関数は@code{nil}をリターンする。"
 
 #. type: example
 #: original_texis/nonascii.texi:432
@@ -746,6 +745,9 @@ msgid ""
 "(= (char-from-name \"GREEK CAPITAL LETTER SIGMA\") #x03A3)\n"
 "     @result{} t\n"
 msgstr ""
+";; U+03A3\n"
+"(= (char-from-name \"GREEK CAPITAL LETTER SIGMA\") #x03A3)\n"
+"     @result{} t\n"
 
 #. type: defun
 #: original_texis/nonascii.texi:435
@@ -1007,39 +1009,36 @@ msgstr "Unicodeプロパティ@code{Simple_Titlecase_Mapping}に対応する。@
 
 #. type: item
 #: original_texis/nonascii.texi:623
-#, fuzzy, no-wrap
-#| msgid "uppercase"
+#, no-wrap
 msgid "special-uppercase"
-msgstr "uppercase"
+msgstr "special-uppercase"
 
 #. type: table
 #: original_texis/nonascii.texi:629
 msgid "Corresponds to Unicode language- and context-independent special upper-casing rules.  The value of this property is a string (which may be empty).  For example mapping for @code{U+00DF} (@sc{latin small letter sharp s}) is @code{\"SS\"}.  For characters with no special mapping, the value is @code{nil} which means @code{uppercase} property needs to be consulted instead."
-msgstr ""
+msgstr "Unicodeの言語やコンテキストに依存しない特別な大文字ルール。このプロパティの値は文字列(空でもよい)。たとえば@code{U+00DF} (@sc{latin small letter sharp s})にたいするマッピングは@code{\"SS\"}。特別なマッピングをもたない文字にたいする値は@code{nil}であり、これは@code{uppercase}プロパティをかわりに調べる必要があることを意味する。"
 
 #. type: item
 #: original_texis/nonascii.texi:630
-#, fuzzy, no-wrap
-#| msgid "lowercase"
+#, no-wrap
 msgid "special-lowercase"
-msgstr "lowercase"
+msgstr "special-lowercase"
 
 #. type: table
 #: original_texis/nonascii.texi:638
 msgid "Corresponds to Unicode language- and context-independent special lower-casing rules.  The value of this property is a string (which may be empty).  For example mapping for @code{U+0130} (@sc{latin capital letter i with dot above})  the value is @code{\"i\\u0307\"} (i.e. 2-character string consisting of @sc{latin small letter i} followed by @sc{combining dot above}).  For characters with no special mapping, the value is @code{nil} which means @code{lowercase} property needs to be consulted instead."
-msgstr ""
+msgstr "Unicodeの言語やコンテキストに依存しない特別な小文字ルール。このプロパティの値は文字列(空でもよい)。たとえば@code{U+0130} (@sc{latin capital letter i with dot above})にたいするマッピングは@code{\"i\\u0307\"} (@sc{latin small letter i}と@sc{combining dot above}で構成される2文字の文字列)。特別なマッピングをもたない文字にたいする値は@code{nil}であり、これは@code{lowercase}プロパティをかわりに調べる必要があることを意味する。"
 
 #. type: item
 #: original_texis/nonascii.texi:639
-#, fuzzy, no-wrap
-#| msgid "titlecase"
+#, no-wrap
 msgid "special-titlecase"
-msgstr "titlecase"
+msgstr "special-titlecase"
 
 #. type: table
 #: original_texis/nonascii.texi:645
 msgid "Corresponds to Unicode unconditional special title-casing rules.  The value of this property is a string (which may be empty).  For example mapping for @code{U+FB01} (@sc{latin small ligature fi}) the value is @code{\"Fi\"}.  For characters with no special mapping, the value is @code{nil} which means @code{titlecase} property needs to be consulted instead."
-msgstr ""
+msgstr "Unicodeの無条件なtitlecase(タイトルの大文字小文字)のルール。このプロパティの値は文字列(空でもよい)。たとえば@code{U+FB01} (@sc{latin small ligature fi})にたいするマッピングは@code{\"Fi\"}。特別なマッピングをもたない文字にたいする値は@code{nil}であり、これは@code{titlecase}プロパティをかわりに調べる必要があることを意味する。"
 
 #. type: defun
 #: original_texis/nonascii.texi:647
@@ -1074,53 +1073,44 @@ msgstr ""
 
 #. type: group
 #: original_texis/nonascii.texi:664
-#, fuzzy, no-wrap
-#| msgid ""
-#| ";; subscript 4\n"
-#| "(get-char-code-property ?\\u2084 'digit-value)\n"
-#| "     @result{} 4\n"
+#, no-wrap
 msgid ""
 ";; U+2084\n"
 "(get-char-code-property ?\\N@{SUBSCRIPT FOUR@}\n"
 "                        'digit-value)\n"
 "     @result{} 4\n"
 msgstr ""
-";; subscript 4\n"
-"(get-char-code-property ?\\u2084 'digit-value)\n"
+";; U+2084\n"
+"(get-char-code-property ?\\N@{SUBSCRIPT FOUR@}\n"
+"                        'digit-value)\n"
 "     @result{} 4\n"
 
 #. type: group
 #: original_texis/nonascii.texi:670
-#, fuzzy, no-wrap
-#| msgid ""
-#| ";; one fifth\n"
-#| "(get-char-code-property ?\\u2155 'numeric-value)\n"
-#| "     @result{} 0.2\n"
+#, no-wrap
 msgid ""
 ";; U+2155\n"
 "(get-char-code-property ?\\N@{VULGAR FRACTION ONE FIFTH@}\n"
 "                        'numeric-value)\n"
 "     @result{} 0.2\n"
 msgstr ""
-";; one fifth\n"
-"(get-char-code-property ?\\u2155 'numeric-value)\n"
+";; U+2155\n"
+"(get-char-code-property ?\\N@{VULGAR FRACTION ONE FIFTH@}\n"
+"                        'numeric-value)\n"
 "     @result{} 0.2\n"
 
 #. type: group
 #: original_texis/nonascii.texi:676
-#, fuzzy, no-wrap
-#| msgid ""
-#| ";; Roman IV\n"
-#| "(get-char-code-property ?\\u2163 'numeric-value)\n"
-#| "     @result{} 4\n"
+#, no-wrap
 msgid ""
 ";; U+2163\n"
 "(get-char-code-property ?\\N@{ROMAN NUMERAL FOUR@}\n"
 "                        'numeric-value)\n"
 "     @result{} 4\n"
 msgstr ""
-";; Roman IV\n"
-"(get-char-code-property ?\\u2163 'numeric-value)\n"
+";; U+2163\n"
+"(get-char-code-property ?\\N@{ROMAN NUMERAL FOUR@}\n"
+"                        'numeric-value)\n"
 "     @result{} 4\n"
 
 #. type: group
@@ -1794,10 +1784,8 @@ msgstr "line end conversion"
 
 #. type: Plain text
 #: original_texis/nonascii.texi:1080
-#, fuzzy
-#| msgid "@dfn{End of line conversion} handles three different conventions used on various systems for representing end of line in files.  The Unix convention, used on GNU and Unix systems, is to use the linefeed character (also called newline).  The DOS convention, used on MS-Windows and MS-DOS systems, is to use a carriage-return and a linefeed at the end of a line.  The Mac convention is to use just carriage-return.  (This was the convention used on the Macintosh system prior to OS X.)"
 msgid "@dfn{End of line conversion} handles three different conventions used on various systems for representing end of line in files.  The Unix convention, used on GNU and Unix systems, is to use the linefeed character (also called newline).  The DOS convention, used on MS-Windows and MS-DOS systems, is to use a carriage return and a linefeed at the end of a line.  The Mac convention is to use just carriage return.  (This was the convention used in Classic Mac OS.)"
-msgstr "@dfn{行末変換(end of line conversion: 改行変換)}は、ファイル内の行末を表すために、さまざまなシステム上で使用される3つの異なる慣例を扱います。GNUやUnixシステムで使用されるUnixの慣例では、LF文字(linefeed文字、改行とも呼ばれる)が使用されます。MS-WindowsやMS-DOSシステムで使用されるDOSの慣例では、行末にCR文字(carriage-return文字、復帰文字とも呼ばれる)とLF文字が使用されますMacの慣例ではCR文字だけが使用されます(これはOS X以前のMacintoshシステムで使用されていた慣例である)。"
+msgstr "@dfn{行末変換(end of line conversion: 改行変換)}はファイル内の行末を表すために、さまざまなシステム上で使用される3つの異なる慣例を扱います。GNUやUnixシステムで使用されるUnixの慣例ではLF文字(linefeed文字、改行とも呼ばれる)が使用されます。MS-WindowsやMS-DOSシステムで使用されるDOSの慣例では行末にCR文字(carriage-return文字、復帰文字とも呼ばれる)とLF文字が使用されます。Macの慣例ではCR文字だけが使用されます(これはクラシックなMac OSで使用されていた慣例)。"
 
 #. type: cindex
 #: original_texis/nonascii.texi:1081
@@ -1858,10 +1846,8 @@ msgstr "utf-8-emacs@r{ coding system}"
 
 #. type: Plain text
 #: original_texis/nonascii.texi:1118
-#, fuzzy
-#| msgid "The coding system @code{utf-8-emacs} specifies that the data is represented in the internal Emacs encoding (@pxref{Text Representations}).  This is like @code{raw-text} in that no code conversion happens, but different in that the result is multibyte data.  The name @code{emacs-internal} is an alias for @code{utf-8-emacs}."
 msgid "The coding system @code{utf-8-emacs} specifies that the data is represented in the internal Emacs encoding (@pxref{Text Representations}).  This is like @code{raw-text} in that no code conversion happens, but different in that the result is multibyte data.  The name @code{emacs-internal} is an alias for @code{utf-8-emacs-unix} (so it forces no conversion of end-of-line, unlike @code{utf-8-emacs}, which can decode all 3 kinds of end-of-line conventions)."
-msgstr "@code{utf-8-emacs}は、データがEmacsの内部エンコーディング(@ref{Text Representations}を参照)で表されることを指定するコーディングシステムです。コード変換が何も発生しない点で、これは@code{raw-text}と似ていますが、結果がマルチバイトデータである点が異なります。The name  @code{emacs-internal}という名前は、@code{utf-8-emacs}にたいするエイリアスです。"
+msgstr "@code{utf-8-emacs}はデータがEmacsの内部エンコーディング(@ref{Text Representations}を参照)で表されることを指定するコーディングシステムです。コード変換が何も発生しない点で@code{raw-text}と似ていますが、結果がマルチバイトデータである点が異なります。 @code{emacs-internal}という名前は@code{utf-8-emacs-unix}にたいするエイリアスです(そのため3種類すべての行末変換をデコードする@code{utf-8-emacs}と異なり行末変換を強制しない)。"
 
 #. type: defun
 #: original_texis/nonascii.texi:1119
@@ -2766,7 +2752,7 @@ msgstr "coding-system-require-warning"
 #. type: defvar
 #: original_texis/nonascii.texi:1790
 msgid "Binding @code{coding-system-for-write} to a non-@code{nil} value prevents output primitives from calling the function specified by @code{select-safe-coding-system-function} (@pxref{User-Chosen Coding Systems}).  This is because @kbd{C-x @key{RET} c} (@code{universal-coding-system-argument}) works by binding @code{coding-system-for-write}, and Emacs should obey user selection.  If a Lisp program binds @code{coding-system-for-write} to a value that might not be safe for encoding the text to be written, it can also bind @code{coding-system-require-warning} to a non-@code{nil} value, which will force the output primitives to check the encoding by calling the value of @code{select-safe-coding-system-function} even though @code{coding-system-for-write} is non-@code{nil}.  Alternatively, call @code{select-safe-coding-system} explicitly before using the specified encoding."
-msgstr ""
+msgstr "@code{coding-system-for-write}に非@code{nil}値をバインドすることにより、@code{select-safe-coding-system-function}が指定する関数の呼び出しによる出力プリミティブを抑制する(@ref{User-Chosen Coding Systems}を参照)。これは@kbd{C-x @key{RET} c} (@code{universal-coding-system-argument})が@code{coding-system-for-write}をバインドすることにより機能して、かつEmacsはユーザーの選択にしたがう必要があるからである。Lispプログラムが書き込むテキストのエンコーディングに安全ではないかもしれない値を@code{coding-system-for-write}にバインドする場合には、@code{coding-system-require-warning}にも非@code{nil}値をバインドできる。これはたとえ@code{coding-system-for-write}が非@code{nil}でも@code{select-safe-coding-system-function}の値の呼び出しによる出力プリミティブにエンコードのチェックを強制する。または指定されたエンコーディングを使用する前に、明示的に@code{select-safe-coding-system}を呼び出すこと。"
 
 #. type: defopt
 #: original_texis/nonascii.texi:1792
