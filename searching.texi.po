@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-03-07 19:45+0900\n"
+"PO-Revision-Date: 2020-05-31 22:27+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -609,10 +609,8 @@ msgstr "backtracking and regular expressions"
 
 #. type: table
 #: original_texis/searching.texi:337
-#, fuzzy
-#| msgid "The matcher processes a @samp{*} construct by matching, immediately, as many repetitions as can be found.  Then it continues with the rest of the pattern.  If that fails, backtracking occurs, discarding some of the matches of the @samp{*}-modified construct in the hope that that will make it possible to match the rest of the pattern.  For example, in matching @samp{ca*ar} against the string @samp{caaar}, the @samp{a*} first tries to match all three @samp{a}s; but the rest of the pattern is @samp{ar} and there is only @samp{r} left to match, so this try fails.  The next alternative is for @samp{a*} to match only two @samp{a}s.  With this choice, the rest of the regexp matches successfully."
 msgid "The matcher processes a @samp{*} construct by matching, immediately, as many repetitions as can be found.  Then it continues with the rest of the pattern.  If that fails, backtracking occurs, discarding some of the matches of the @samp{*}-modified construct in the hope that this will make it possible to match the rest of the pattern.  For example, in matching @samp{ca*ar} against the string @samp{caaar}, the @samp{a*} first tries to match all three @samp{a}s; but the rest of the pattern is @samp{ar} and there is only @samp{r} left to match, so this try fails.  The next alternative is for @samp{a*} to match only two @samp{a}s.  With this choice, the rest of the regexp matches successfully."
-msgstr "マッチを行う処理は構成要素@samp{*}を、マッチングにより即座に、見つけ得る回数分処理して、その後にパターンの残りを継続する。これが失敗したら、残りのパターンのマッチが可能になるかもしれないという期待のもと、@samp{*}の変更された構成のうちいくつかのマッチを破棄することによる、バックトラッキングが発生する。たとえば文字列@samp{caaar}にたいして@samp{ca*ar}をマッチングすると、@samp{a*}はまず3つすべての@samp{a}へのマッチを試みる。しかし残りのパターンは@samp{ar}であり、マッチ対象に残されているのは@samp{r}だけなので、この試みは失敗する。@samp{a*}にたいする次の代替策は、2つの@samp{a}だけへのマッチである。この選択では、残りのregexpのマッチは成功する。"
+msgstr "マッチを行う処理は構成要素@samp{*}をマッチングにより即座に見つけ得る回数分処理して、その後にパターンの残りを継続する。これが失敗したら残りのパターンのマッチが可能になるかもしれないという期待のもとに、@samp{*}の変更された構成のうちいくつかのマッチを破棄することでバックトラッキングが発生する。たとえば文字列@samp{caaar}にたいして@samp{ca*ar}をマッチングすると、@samp{a*}はまず3つすべての@samp{a}へのマッチを試みる。しかし残りのパターンは@samp{ar}であり、マッチ対象に残されているのは@samp{r}だけなので試みは失敗する。@samp{a*}にたいする次の代替策は、2つの@samp{a}だけへのマッチである。この選択では残りのregexpのマッチは成功する。"
 
 #. type: table
 #: original_texis/searching.texi:348
@@ -942,7 +940,7 @@ msgstr "[:blank:]"
 #. type: table
 #: original_texis/searching.texi:561
 msgid "This matches horizontal whitespace, as defined by Annex C of the Unicode Technical Standard #18.  In particular, it matches spaces, tabs, and other characters whose Unicode @samp{general-category} property (@pxref{Character Properties}) indicates they are spacing separators."
-msgstr ""
+msgstr "これは Unicode Technical Standard #18のAnnex Cで定義される水平の空白文字(horizontal whitespace)にマッチする。特にスペース、タブ、およびスペース区切りであることをUnicodeの@samp{general-category}プロパティ(@ref{Character Properties}を参照)が示す他の文字にマッチする。"
 
 #. type: item
 #: original_texis/searching.texi:561
@@ -1161,26 +1159,24 @@ msgstr "\\@{@var{m},@var{n}\\@}"
 
 #. type: table
 #: original_texis/searching.texi:644
-#, fuzzy
-#| msgid "is a more general postfix operator that specifies repetition with a minimum of @var{m} repeats and a maximum of @var{n} repeats.  If @var{m} is omitted, the minimum is 0; if @var{n} is omitted, there is no maximum."
 msgid "is a more general postfix operator that specifies repetition with a minimum of @var{m} repeats and a maximum of @var{n} repeats.  If @var{m} is omitted, the minimum is 0; if @var{n} is omitted, there is no maximum.  For both forms, @var{m} and @var{n}, if specified, may be no larger than"
-msgstr "これは最小で@var{m}回、最大で@var{n}回繰り返す、より一般的な後置演算子である。@var{m}省略時の最小は0、@var{n}省略時の最大は存在しない。"
+msgstr "これは最小で@var{m}回、最大で@var{n}回繰り返すより一般的な後置演算子。@var{m}省略時の最小は0、@var{n}省略時の最大は存在しない。いずれの形式でも@var{m}や@var{n}が指定された場合には、"
 
 #. type: ifnottex
 #: original_texis/searching.texi:646
 msgid "2**15 @minus{} 1"
-msgstr ""
+msgstr "2**15 @minus{} 1"
 
 #. type: tex
 #: original_texis/searching.texi:649
 #, no-wrap
 msgid "@math{2^{15}-1}\n"
-msgstr ""
+msgstr "@math{2^{15}-1}\n"
 
 #. type: table
 #: original_texis/searching.texi:651
 msgid "."
-msgstr ""
+msgstr "より大きくなることはない。"
 
 #. type: table
 #: original_texis/searching.texi:658
@@ -2005,7 +2001,7 @@ msgstr ""
 #. type: anchor{#1}
 #: original_texis/searching.texi:1107
 msgid "re-search-backward"
-msgstr ""
+msgstr "re-search-backward"
 
 #. type: deffn
 #: original_texis/searching.texi:1107
@@ -3007,17 +3003,14 @@ msgstr "@code{query-replace}の行に関するコマンドを記述したい場�
 
 #. type: defun
 #: original_texis/searching.texi:1756
-#, fuzzy, no-wrap
-#| msgid "perform-replace from-string replacements query-flag regexp-flag delimited-flag &optional repeat-count map start end"
+#, no-wrap
 msgid "perform-replace from-string replacements query-flag regexp-flag delimited-flag &optional repeat-count map start end backward region-noncontiguous-p"
-msgstr "perform-replace from-string replacements query-flag regexp-flag delimited-flag &optional repeat-count map start end"
+msgstr "perform-replace from-string replacements query-flag regexp-flag delimited-flag &optional repeat-count map start end backward region-noncontiguous-p"
 
 #. type: defun
 #: original_texis/searching.texi:1764
-#, fuzzy
-#| msgid "This function is the guts of @code{query-replace} and related commands.  It searches for occurrences of @var{from-string} in the text between positions @var{start} and @var{end} and replaces some or all of them.  If @var{start} is @code{nil} (or omitted), point is used instead, and the end of the buffer's accessible portion is used for @var{end}."
 msgid "This function is the guts of @code{query-replace} and related commands.  It searches for occurrences of @var{from-string} in the text between positions @var{start} and @var{end} and replaces some or all of them.  If @var{start} is @code{nil} (or omitted), point is used instead, and the end of the buffer's accessible portion is used for @var{end}.  (If the optional argument @var{backward} is non-@code{nil}, the search starts at @var{end} and goes backward.)"
-msgstr "これは@code{query-replace}および関連するコマンドの根幹となる関数である。これは位置@var{start}と@var{end}の間にあるテキスト内に出現する@var{from-string}の一部またはすべてを置換する。@var{start}が@code{nil}(または省略された)ならかわりにポイントガ使用され、@var{end}にはそのバッファーのアクセス可能範囲の終端が使用される。"
+msgstr "これは@code{query-replace}および関連するコマンドの根幹となる関数である。これは位置@var{start}と@var{end}の間にあるテキスト内に出現する@var{from-string}の一部またはすべてを置換する。@var{start}が@code{nil} (または省略)ならかわりにポイントを、@var{end}にはそのバッファーのアクセス可能範囲の終端が使用される(オピション引数@var{backward}が非@code{nil}なら検索は@var{end}から後方に開始される)。"
 
 #. type: defun
 #: original_texis/searching.texi:1767
@@ -3057,7 +3050,7 @@ msgstr "キーマップ@code{query-replace-map}は通常は問い合わせにた
 #. type: defun
 #: original_texis/searching.texi:1799
 msgid "Non-@code{nil} @var{region-noncontiguous-p} means that the region between @var{start} and @var{end} is composed of noncontiguous pieces.  The most common example of this is a rectangular region, where the pieces are separated by newline characters."
-msgstr ""
+msgstr "@var{region-noncontiguous-p}が非@code{nil}なら、@var{start}と@var{end}の間のリージョンは非連続部分から構成されることを意味する。これのもっとも一般的な例は部分が開業文字で区切られた矩形リージョンである。"
 
 #. type: defun
 #: original_texis/searching.texi:1806
@@ -3182,23 +3175,23 @@ msgstr "前に問い合わせた以前の場所に戻る。"
 #: original_texis/searching.texi:1861
 #, no-wrap
 msgid "undo"
-msgstr ""
+msgstr "undo"
 
 #. type: table
 #: original_texis/searching.texi:1864
 msgid "Undo last replacement and move back to the place where that replacement was performed."
-msgstr ""
+msgstr "最後の置換をアンドゥして置換が行われた位置に戻る。"
 
 #. type: item
 #: original_texis/searching.texi:1865
 #, no-wrap
 msgid "undo-all"
-msgstr ""
+msgstr "undo-all"
 
 #. type: table
 #: original_texis/searching.texi:1868
 msgid "Undo all replacements and move back to the place where the first replacement was performed."
-msgstr ""
+msgstr "すべての置換をアンドゥして最初に置換が行われた位置に戻る。"
 
 #. type: item
 #: original_texis/searching.texi:1869
