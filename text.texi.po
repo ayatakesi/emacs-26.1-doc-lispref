@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: emacs-lispref 26.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-05-26 21:31+0900\n"
+"PO-Revision-Date: 2020-05-31 15:40+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -6882,19 +6882,18 @@ msgstr "Replacing Buffer Text"
 #. type: Plain text
 #: original_texis/text.texi:4322
 msgid "You can use the following function to replace the text of one buffer with the text of another buffer:"
-msgstr ""
+msgstr "以下の関数を使用して、あるバッファーのテキストを他のバッファーのテキストで置き換えることができます:"
 
 #. type: deffn
 #: original_texis/text.texi:4323
-#, fuzzy, no-wrap
-#| msgid "Command erase-buffer"
+#, no-wrap
 msgid "Command replace-buffer-contents source"
-msgstr "Command erase-buffer"
+msgstr "Command replace-buffer-contents source"
 
 #. type: deffn
 #: original_texis/text.texi:4337
 msgid "This function replaces the accessible portion of the current buffer with the accessible portion of the buffer @var{source}.  @var{source} may either be a buffer object or the name of a buffer.  When @code{replace-buffer-contents} succeeds, the text of the accessible portion of the current buffer will be equal to the text of the accessible portion of the @var{source} buffer.  This function attempts to keep point, markers, text properties, and overlays in the current buffer intact.  One potential case where this behavior is useful is external code formatting programs: they typically write the reformatted text into a temporary buffer or file, and using @code{delete-region} and @code{insert-buffer-substring} would destroy these properties.  However, the latter combination is typically faster.  @xref{Deletion}, and @ref{Insertion}."
-msgstr ""
+msgstr "この関数はバファー@var{source}のアクセス可能範囲でカレントバッファーのアクセス可能範囲を置き換える。@var{source}はバッファーオブジェクトかバッファー名のいずれか。@code{replace-buffer-contents}が成功するとカレントバッファーのアクセス可能範囲のテキストは、バッファー@var{source}のアクセス可能範囲のテキストと等しくなる。この関数はカレントバッファーのポイント、マーカー、テキストプロパティ、オーバーレイをそのまま維持しようと試みる。この挙動が好都合であるような潜在的なケースは外部コードをフォーマットするプログラムだろう。これらは通常は再フォーマットしたテキストを一時的なバッファーかファイルに書き込んで、@code{delete-region}や@code{insert-buffer-substring}を使用することによりそれらのプロパティを削除する。しかし後者の組み合わせのほうが通常は高速である。@ref{Deletion}を@ref{Insertion}を参照のこと。"
 
 #. type: section
 #: original_texis/text.texi:4340
@@ -7054,12 +7053,12 @@ msgstr "EmacsはMD5、SHA-1、SHA-2、SHA-224、SHA-256、SHA-384、SHA-512の�
 #: original_texis/text.texi:4449
 #, no-wrap
 msgid "secure-hash-algorithms"
-msgstr ""
+msgstr "secure-hash-algorithms"
 
 #. type: defun
 #: original_texis/text.texi:4452
 msgid "This function returns a list of symbols representing algorithms that @code{secure-hash} can use."
-msgstr ""
+msgstr "この関数は@code{secure-hash}が使用可能なアルゴリズムを表すシンボルのリストをリターンする。"
 
 #. type: defun
 #: original_texis/text.texi:4454
@@ -7110,305 +7109,292 @@ msgstr "@code{md5}は通常は指定や選択されたコーディングシス�
 
 #. type: defun
 #: original_texis/text.texi:4498
-#, fuzzy, no-wrap
-#| msgid "Command buffer-enable-undo &optional buffer-or-name"
+#, no-wrap
 msgid "buffer-hash &optional buffer-or-name"
-msgstr "Command buffer-enable-undo &optional buffer-or-name"
+msgstr "buffer-hash &optional buffer-or-name"
 
 #. type: defun
 #: original_texis/text.texi:4510
 msgid "Return a hash of @var{buffer-or-name}.  If @code{nil}, this defaults to the current buffer.  As opposed to @code{secure-hash}, this function computes the hash based on the internal representation of the buffer, disregarding any coding systems.  It's therefore only useful when comparing two buffers running in the same Emacs, and is not guaranteed to return the same hash between different Emacs versions.  It should be somewhat more efficient on larger buffers than @code{secure-hash} is, and should not allocate more memory."
-msgstr ""
+msgstr "@var{buffer-or-name}のハッシュをリターンする。@code{nil}の場合のデフォルトはカレントバッファー。この関数は@code{secure-hash}とは対照的にコーディングシステムとは無関係にバッファーの内部表現にもとづいてハッシュを計算する。したがって同一のEmacs上で実行中の2つのバッファーを比較する際にのみ有用であり、異なるバージョンのEmacs間で同じハッシュをリターンする保証はない。これは巨大なバッファーにたいして@code{secure-hash}より幾分効果的であり、@code{secure-hash}ほど多くのメモリーを割り当てないはずである。"
 
 #. type: cindex
 #: original_texis/text.texi:4518
 #, no-wrap
 msgid "AEAD cipher"
-msgstr ""
+msgstr "AEAD cipher"
 
 #. type: cindex
 #: original_texis/text.texi:4519
 #, no-wrap
 msgid "cipher, AEAD"
-msgstr ""
+msgstr "cipher, AEAD"
 
 #. type: cindex
 #: original_texis/text.texi:4520
 #, no-wrap
 msgid "symmetric cipher"
-msgstr ""
+msgstr "symmetric cipher"
 
 #. type: cindex
 #: original_texis/text.texi:4521
 #, no-wrap
 msgid "cipher, symmetric"
-msgstr ""
+msgstr "cipher, symmetric"
 
 #. type: Plain text
 #: original_texis/text.texi:4526
 msgid "If compiled with GnuTLS, Emacs offers built-in cryptographic support.  Following the GnuTLS API terminology, the available tools are digests, MACs, symmetric ciphers, and AEAD ciphers."
-msgstr ""
+msgstr "GnuTLSとともにコンパイルされていれば、Emacsはビルトインの暗号化サポートを提供します。GnuTLSのAPI用語にしたがいダイジェスト(digests)、MAC(メッセージ認証符号)、共通鍵暗号(symmetric ciphers)、認証付き暗号(AEAD ciphers)のツールが利用できます。"
 
 #. type: Plain text
 #: original_texis/text.texi:4532
 msgid "The terms used herein, such as IV (Initialization Vector), require some familiarity with cryptography and will not be defined in detail.  Please consult @uref{https://www.gnutls.org/} for specific documentation which may help you understand the terminology and structure of the GnuTLS library."
-msgstr ""
+msgstr "ここで使用するIV(Initialization Vector: 初期化ベクトル)のような暗号化にある程度親しんでいる必要のある用語は詳細には定義しません。GnuTLSライブラリーの用語や構造を理解する助けとなる特定のドキュメントについては@uref{https://www.gnutls.org/}を参照してください。"
 
 #. type: menuentry
 #: original_texis/text.texi:4536
 msgid "Format of GnuTLS Cryptography Inputs::"
-msgstr ""
+msgstr "Format of GnuTLS Cryptography Inputs:: GnuTLS暗号入力のフォーマット。"
 
 #. type: subsection
 #: original_texis/text.texi:4536 original_texis/text.texi:4578
 #: original_texis/text.texi:4579
 #, no-wrap
 msgid "GnuTLS Cryptographic Functions"
-msgstr ""
+msgstr "GnuTLS Cryptographic Functions"
 
 #. type: subsection
 #: original_texis/text.texi:4538 original_texis/text.texi:4539
 #, no-wrap
 msgid "Format of GnuTLS Cryptography Inputs"
-msgstr ""
+msgstr "Format of GnuTLS Cryptography Inputs"
 
 #. type: cindex
 #: original_texis/text.texi:4540
 #, no-wrap
 msgid "format of gnutls cryptography inputs"
-msgstr ""
+msgstr "format of gnutls cryptography inputs"
 
 #. type: cindex
 #: original_texis/text.texi:4541
 #, no-wrap
 msgid "gnutls cryptography inputs format"
-msgstr ""
+msgstr "gnutls cryptography inputs format"
 
 #. type: Plain text
 #: original_texis/text.texi:4545
 msgid "The inputs to GnuTLS cryptographic functions can be specified in several ways, both as primitive Emacs Lisp types or as lists."
-msgstr ""
+msgstr "GnuTLS暗号化関数への入力はEmacs Lispのプリミティブかリストのいずれかにより、複数の方法で指定できます。"
 
 #. type: Plain text
 #: original_texis/text.texi:4548
 msgid "The list form is currently similar to how @code{md5} and @code{secure-hash} operate."
-msgstr ""
+msgstr "現在のところリストの形式は@code{md5}と@code{secure-hash}が動作する方法に似ています。"
 
 #. type: var{#1}
 #: original_texis/text.texi:4550
-#, fuzzy, no-wrap
-#| msgid "buffer-string"
+#, no-wrap
 msgid "buffer"
-msgstr "buffer-string"
+msgstr "バッファー"
 
 #. type: table
 #: original_texis/text.texi:4552
 msgid "Simply passing a buffer as input means the whole buffer should be used."
-msgstr ""
+msgstr "入力として単にバッファーを渡すとバッファー全体が使用されることを意味する。"
 
 #. type: var{#1}
 #: original_texis/text.texi:4553
-#, fuzzy, no-wrap
-#| msgid "buffer-string"
+#, no-wrap
 msgid "string"
-msgstr "buffer-string"
+msgstr "文字列"
 
 #. type: table
 #: original_texis/text.texi:4557
 msgid "A string as input will be used directly.  It may be modified by the function (unlike most other Emacs Lisp functions) to reduce the chance of exposing sensitive data after the function does its work."
-msgstr ""
+msgstr "文字列は入力として直接使用される。(他のほとんどのEmacs Lisp関数とは異なり)関数の処理後に機密データ漏洩の機会を減少させるために関数が文字列を変更するかもしれない。"
 
 #. type: item
 #: original_texis/text.texi:4558
-#, fuzzy, no-wrap
-#| msgid "(apply @var{delta} @var{beg} @var{end} @var{funname} . @var{args})"
+#, no-wrap
 msgid "(@var{buffer-or-string} @var{start} @var{end} @var{coding-system} @var{noerror})"
-msgstr "(apply @var{delta} @var{beg} @var{end} @var{funname} . @var{args})"
+msgstr "(@var{buffer-or-string} @var{start} @var{end} @var{coding-system} @var{noerror})"
 
 #. type: table
 #: original_texis/text.texi:4561
 msgid "This specifies a buffer or a string as described above, but an optional range can be specified with @var{start} and @var{end}."
-msgstr ""
+msgstr "これは上述のようにバッファーか文字列を指定するが、オプションで@var{start}と@var{end}で範囲を指定できる。"
 
 #. type: table
 #: original_texis/text.texi:4563
 msgid "In addition an optional @var{coding-system} can be specified if needed."
-msgstr ""
+msgstr "加えて必要ならオプションで@var{coding-system}を指定できる。"
 
 #. type: table
 #: original_texis/text.texi:4568
-#, fuzzy
-#| msgid "Normally, @code{md5} signals an error if the text can't be encoded using the specified or chosen coding system.  However, if @var{noerror} is non-@code{nil}, it silently uses @code{raw-text} coding instead."
 msgid "The last optional item, @var{noerror}, overrides the normal error when the text can't be encoded using the specified or chosen coding system.  When @var{noerror} is non-@code{nil}, this function silently uses @code{raw-text} coding instead."
-msgstr "@code{md5}は通常、指定もしくは選択されたコーディングシステムを使用してテキストをエンコードできなければ、エラーをシグナルする。しかし@var{noerror}が非@code{nil}なら、かわりに黙って@code{raw-text}コーディングシステムを使用する。"
+msgstr "最後のオプションのアイテム@var{noerror}は指定もしくは選択されたコーディングシステムを使用してテキストをエンコードできない際の通常のエラーをオーバーライドする。@var{noerror}が非@code{nil}なら関数は暗黙に@code{raw-text}コーディングシステムをかわりに使用する。"
 
 #. type: item
 #: original_texis/text.texi:4569
 #, no-wrap
 msgid "(@code{iv-auto} @var{length})"
-msgstr ""
+msgstr "(@code{iv-auto} @var{length})"
 
 #. type: table
 #: original_texis/text.texi:4575
 msgid "This will generate an IV (Initialization Vector) of the specified length using the GnuTLS @code{GNUTLS_RND_NONCE} generator and pass it to the function.  This ensures that the IV is unpredictable and unlikely to be reused in the same session.  The actual value of the IV is returned by the function as described below."
-msgstr ""
+msgstr "これはGnuTLSの@code{GNUTLS_RND_NONCE}ジェネレーターを使用して指定された長さのIV(Initialization Vector: 初期化ベクトル)を生成する。これによりIVが予測不可能になり同一セッション内での再利用の可能性が低くなる。IVの実際の値は後述の関数がリターンする。"
 
 #. type: cindex
 #: original_texis/text.texi:4580
-#, fuzzy, no-wrap
-#| msgid "cryptographic hash"
+#, no-wrap
 msgid "gnutls cryptographic functions"
-msgstr "cryptographic hash"
+msgstr "gnutls cryptographic functions"
 
 #. type: defun
 #: original_texis/text.texi:4582
 #, no-wrap
 msgid "gnutls-digests"
-msgstr ""
+msgstr "gnutls-digests"
 
 #. type: defun
 #: original_texis/text.texi:4584
-#, fuzzy
-#| msgid "This function returns the end of the field specified by @var{pos}."
 msgid "This function returns the alist of the GnuTLS digest algorithms."
-msgstr "この関数は、@var{pos}で指定されるフィールドの終端をリターンする。"
+msgstr "この関数はGnuTLSダイジェストアルゴリズムのalistをリターンする。"
 
 #. type: defun
 #: original_texis/text.texi:4590
 msgid "Each entry has a key which represents the algorithm, followed by a plist with internal details about the algorithm.  The plist will have @code{:type gnutls-digest-algorithm} and also will have the key @code{:digest-algorithm-length 64} to indicate the size, in bytes, of the resulting digest."
-msgstr ""
+msgstr "各エントリーはアルゴリズムを表すキーとアルゴリズムの内部的な詳細を表すplistをもつ。plistは結果となるダイジェストのバイトサイズを示す@code{:type gnutls-digest-algorithm}、および@code{:digest-algorithm-length 64}のキーももつだろう。"
 
 #. type: defun
 #: original_texis/text.texi:4593 original_texis/text.texi:4622
 msgid "There is a name parallel between GnuTLS MAC and digest algorithms but they are separate things internally and should not be mixed."
-msgstr ""
+msgstr "GnuTLS MACとダイジェストアルゴリズムの間には類似した名前が存在するが、これらは内部的には別物であり混在させるべきではない。"
 
 #. type: defun
 #: original_texis/text.texi:4595
 #, no-wrap
 msgid "gnutls-hash-digest digest-method input"
-msgstr ""
+msgstr "gnutls-hash-digest digest-method input"
 
 #. type: defun
 #: original_texis/text.texi:4599
 msgid "The @var{digest-method} can be the whole plist from @code{gnutls-digests}, or just the symbol key, or a string with the name of that symbol."
-msgstr ""
+msgstr "@var{digest-method}は@code{gnutls-digests}由来の完全なplist、単なるシンボルキー、またはシンボル名の文字列でもよい。"
 
 #. type: defun
 #: original_texis/text.texi:4602 original_texis/text.texi:4635
 msgid "The @var{input} can be specified as a buffer or string or in other ways (@pxref{Format of GnuTLS Cryptography Inputs})."
-msgstr ""
+msgstr "@var{input}はバッファー、文字列、もしくは他の方法(@ref{Format of GnuTLS Cryptography Inputs}を参照)でも指定できる。"
 
 #. type: defun
 #: original_texis/text.texi:4606
 msgid "This function returns @code{nil} on error, and signals a Lisp error if the @var{digest-method} or @var{input} are invalid.  On success, it returns a list of a binary string (the output) and the IV used."
-msgstr ""
+msgstr "この関数はエラー時には@code{nil}、@var{digest-method}か@var{input}が無効ならLispエラーをシグナルする。成功時にはバイナリー文字列(出力)と使用されるIVのリストをリターンする。"
 
 #. type: defun
 #: original_texis/text.texi:4608
 #, no-wrap
 msgid "gnutls-macs"
-msgstr ""
+msgstr "gnutls-macs"
 
 #. type: defun
 #: original_texis/text.texi:4610
-#, fuzzy
-#| msgid "This function returns the end of the field specified by @var{pos}."
 msgid "This function returns the alist of the GnuTLS MAC algorithms."
-msgstr "この関数は、@var{pos}で指定されるフィールドの終端をリターンする。"
+msgstr "この関数はGnuTLS MACアルゴリズムのalistをリターンする。"
 
 #. type: defun
 #: original_texis/text.texi:4617
 msgid "Each entry has a key which represents the algorithm, followed by a plist with internal details about the algorithm.  The plist will have @code{:type gnutls-mac-algorithm} and also will have the keys @code{:mac-algorithm-length} @code{:mac-algorithm-keysize} @code{:mac-algorithm-noncesize} to indicate the size, in bytes, of the resulting hash, the key, and the nonce respectively."
-msgstr ""
+msgstr "各エントリーはアルゴリズムを表すキーとアルゴリズムの内部的な詳細を表すplistをもつ。このplistは結果となるハッシュ、キー、ナンスのバイトサイズを示すキー@code{:type gnutls-mac-algorithm}、@code{:mac-algorithm-length}、@code{:mac-algorithm-keysize}、@code{:mac-algorithm-noncesize}"
 
 #. type: defun
 #: original_texis/text.texi:4619
 msgid "The nonce is currently unused and only some MACs support it."
-msgstr ""
+msgstr "現在のところナンスは使用されておらず、いくつかのMACでのみサポートされる。"
 
 #. type: defun
 #: original_texis/text.texi:4624
 #, no-wrap
 msgid "gnutls-hash-mac hash-method key input"
-msgstr ""
+msgstr "gnutls-hash-mac hash-method key input"
 
 #. type: defun
 #: original_texis/text.texi:4628
 msgid "The @var{hash-method} can be the whole plist from @code{gnutls-macs}, or just the symbol key, or a string with the name of that symbol."
-msgstr ""
+msgstr "@var{hash-method}は@code{gnutls-macs}由来の完全なplist、単なるシンボルキー、またはシンボル名の文字列でもよい。"
 
 #. type: defun
 #: original_texis/text.texi:4632 original_texis/text.texi:4664
 #: original_texis/text.texi:4689
 msgid "The @var{key} can be specified as a buffer or string or in other ways (@pxref{Format of GnuTLS Cryptography Inputs}).  The @var{key} will be wiped after use if it's a string."
-msgstr ""
+msgstr "@var{key}はバッファー、文字列、あるいは他の方法(@ref{Format of GnuTLS Cryptography Inputs}を参照)でも指定できる。@var{key}が文字列なら使用後に消去される。"
 
 #. type: defun
 #: original_texis/text.texi:4638
 msgid "This function returns @code{nil} on error, and signals a Lisp error if the @var{hash-method} or @var{key} or @var{input} are invalid."
-msgstr ""
+msgstr "この関数はエラー時には@code{nil}、@var{hash-method}や@var{key}、@var{input}が無効ならLispエラーをシグナルする。"
 
 #. type: defun
 #: original_texis/text.texi:4641 original_texis/text.texi:4679
 #: original_texis/text.texi:4704
 msgid "On success, it returns a list of a binary string (the output) and the IV used."
-msgstr ""
+msgstr "成功時にはバイナリー文字列(出力)と使用されるIVをリターンする。"
 
 #. type: defun
 #: original_texis/text.texi:4643
 #, no-wrap
 msgid "gnutls-ciphers"
-msgstr ""
+msgstr "gnutls-ciphers"
 
 #. type: defun
 #: original_texis/text.texi:4645
-#, fuzzy
-#| msgid "This function returns the end of the field specified by @var{pos}."
 msgid "This function returns the alist of the GnuTLS ciphers."
-msgstr "この関数は、@var{pos}で指定されるフィールドの終端をリターンする。"
+msgstr "この関数はGnuTLS暗号のリストをリターンする。"
 
 #. type: defun
 #: original_texis/text.texi:4654
 msgid "Each entry has a key which represents the cipher, followed by a plist with internal details about the algorithm.  The plist will have @code{:type gnutls-symmetric-cipher} and also will have the keys @code{:cipher-aead-capable} set to @code{nil} or @code{t} to indicate AEAD capability; and @code{:cipher-tagsize} @code{:cipher-blocksize} @code{:cipher-keysize} @code{:cipher-ivsize} to indicate the size, in bytes, of the tag, block size of the resulting data, the key, and the IV respectively."
-msgstr ""
+msgstr "各エントリーは暗号を表すキーとそのアルゴリズムに関する内部的な詳細を表すplistをもつ。このplistは@code{:type gnutls-symmetric-cipher}、およびAEAD機能を示すために@code{nil}か@code{t}にセットされたキー@code{:cipher-aead-capable}、さらにタグ、結果データのブロックサイズ、キー、IVのバイトサイズを示すキー@code{:cipher-tagsize}、@code{:cipher-blocksize}、@code{:cipher-keysize} @code{:cipher-ivsize}ももつ。"
 
 #. type: defun
 #: original_texis/text.texi:4656
 #, no-wrap
 msgid "gnutls-symmetric-encrypt cipher key iv input &optional aead_auth"
-msgstr ""
+msgstr "gnutls-symmetric-encrypt cipher key iv input &optional aead_auth"
 
 #. type: defun
 #: original_texis/text.texi:4660 original_texis/text.texi:4685
 msgid "The @var{cipher} can be the whole plist from @code{gnutls-ciphers}, or just the symbol key, or a string with the name of that symbol."
-msgstr ""
+msgstr "@var{cipher}は@code{gnutls-ciphers}由来の完全なplist、単なるシンボルキー、またはシンボル名の文字列でもよい。"
 
 #. type: defun
 #: original_texis/text.texi:4668 original_texis/text.texi:4693
 msgid "The @var{iv} and @var{input} and the optional @var{aead_auth} can be specified as a buffer or string or in other ways (@pxref{Format of GnuTLS Cryptography Inputs})."
-msgstr ""
+msgstr "@var{iv}、@var{input}、およびオプションの@var{aead_auth}はバッファー、文字列、または他の方法(@ref{Format of GnuTLS Cryptography Inputs}を参照)でも指定できる。"
 
 #. type: defun
 #: original_texis/text.texi:4671 original_texis/text.texi:4696
 msgid "@var{aead_auth} is only checked with AEAD ciphers, that is, ciphers whose plist has @code{:cipher-aead-capable t}.  Otherwise it's ignored."
-msgstr ""
+msgstr "@var{aead_auth}はAEAD暗号、すなわちplistが@code{:cipher-aead-capable t}をもつ暗号でのみチェックされて、他では無視される。"
 
 #. type: defun
 #: original_texis/text.texi:4676
 msgid "This function returns @code{nil} on error, and signals a Lisp error if the @var{cipher} or @var{key}, @var{iv}, or @var{input} are invalid, or if @var{aead_auth} was specified with an AEAD cipher and was invalid."
-msgstr ""
+msgstr "この関数エラー時には@code{nil}、@var{cipher}や@var{key}、@var{iv}や@var{input}が無効だったり、AEAD暗号で@var{aead_auth}が指定されてそれが無効な場合にはLispエラーをシグナルする。"
 
 #. type: defun
 #: original_texis/text.texi:4681
 #, no-wrap
 msgid "gnutls-symmetric-decrypt cipher key iv input &optional aead_auth"
-msgstr ""
+msgstr "gnutls-symmetric-decrypt cipher key iv input &optional aead_auth"
 
 #. type: defun
 #: original_texis/text.texi:4701
 msgid "This function returns @code{nil} on decryption error, and signals a Lisp error if the @var{cipher} or @var{key}, @var{iv}, or @var{input} are invalid, or if @var{aead_auth} was specified with an AEAD cipher and was invalid."
-msgstr ""
+msgstr "この関数は解読エラー時には@code{nil}、@var{cipher}や@var{key}、@var{iv}や@var{input}が無効だったり、AEAD暗号で指定された@var{aead_auth}が無効な場合にはLispエラーをシグナルする。"
 
 #. type: section
 #: original_texis/text.texi:4707
@@ -7624,6 +7610,8 @@ msgid ""
 "(dom-attr img 'href)\n"
 "=> \"https://fsf.org/logo.png\"\n"
 msgstr ""
+"(dom-attr img 'href)\n"
+"=> \"https://fsf.org/logo.png\"\n"
 
 #. type: item
 #: original_texis/text.texi:4817
@@ -7693,15 +7681,14 @@ msgstr "@var{dom}内での@var{node}の親をリターンする。"
 
 #. type: item
 #: original_texis/text.texi:4838
-#, fuzzy, no-wrap
-#| msgid "attributes of text"
+#, no-wrap
 msgid "dom-remove @var{dom} @var{node}"
-msgstr "attributes of text"
+msgstr "dom-remove @var{dom} @var{node}"
 
 #. type: table
 #: original_texis/text.texi:4840
 msgid "Remove @var{node} from @var{dom}."
-msgstr ""
+msgstr "@var{dom}から@var{node}を削除する。"
 
 #. type: Plain text
 #: original_texis/text.texi:4843
@@ -8023,7 +8010,7 @@ msgstr "これらの関数は@file{*Messages*}バッファーへのメッセー�
 #. type: Plain text
 #: original_texis/text.texi:5045
 msgid "The vast majority of buffer changing primitives will call @code{before-change-functions} and @code{after-change-functions} in balanced pairs, once for each change, where the arguments to these hooks exactly delimit the change being made.  Yet, hook functions should not rely on this always being the case, because some complex primitives call @code{before-change-functions} once before making changes, and then call @code{after-change-functions} zero or more times, depending on how many individual changes the primitive is making.  When that happens, the arguments to @code{before-change-functions} will enclose a region in which the individual changes are made, but won't necessarily be the minimal such region, and the arguments to each successive call of @code{after-change-functions} will then delimit the part of text being changed exactly.  In general, we advise to use either before- or the after-change hooks, but not both."
-msgstr ""
+msgstr "バッファーを変更するプリミティブのほとんどは、バランスされたカッコ内でのそれぞれの変更にたいして@code{before-change-functions}と@code{after-change-functions}を1回呼び出し、これらのフックにたいする引数は行われた変更を正確に区切ります。しかしフック関数は常にこのように行われると信頼すべきではありません。なぜなら複雑なプリミティブのいくつかは変更を行う前に@code{before-change-functions}を呼び出してから、プリミティブが行なった個別の変更の数にもとづいて@code{after-change-functions}を0回以上呼び出すからです。これが発生した場合には、@code{before-change-functions}の引数は個別の変更が行われたリージョンを囲むでしょうが、そのようなリージョンが最小である必要はなく、連続した@code{after-change-functions}呼び出しそれぞれにたいする引数は変更されたテキスト部分を正確に区切るでしょう。一般的には、before-changeかafter-changeのいずれかのフックを使用して、両方は使用しないことを推奨します。"
 
 #. type: defmac
 #: original_texis/text.texi:5046
