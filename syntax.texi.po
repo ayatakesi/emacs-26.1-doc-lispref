@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-02-02 13:51+0900\n"
+"PO-Revision-Date: 2020-06-01 21:04+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -571,10 +571,8 @@ msgstr "@samp{c}は@var{c}が代替えのコメントスタイル``c''に属す�
 
 #. type: itemize
 #: original_texis/syntax.texi:338
-#, fuzzy
-#| msgid "@samp{n} on a comment delimiter character specifies that this kind of comment can be nested.  For a two-character comment delimiter, @samp{n} on either character makes it nestable."
 msgid "@samp{n} on a comment delimiter character specifies that this kind of comment can be nested.  Inside such a comment, only comments of the same style will be recognized.  For a two-character comment delimiter, @samp{n} on either character makes it nestable."
-msgstr "コメント区切り文字での@samp{n}は、この種のコメントがネスト可能であることを指定する。2文字からなるコメント区切りにたいしては、そのいずれかが@samp{n}であればネスト可能となる。"
+msgstr "コメント区切り文字での@samp{n}は、この種のコメントがネスト可能であることを指定する。このようなコメント内では、同じスタイルのコメントだけが認識される。2文字からなるコメント区切りにたいしては、そのいずれかが@samp{n}であればネスト可能となる。"
 
 #. type: cindex
 #: original_texis/syntax.texi:339
@@ -1266,10 +1264,8 @@ msgstr "syntax-ppss &optional pos"
 
 #. type: defun
 #: original_texis/syntax.texi:756
-#, fuzzy
-#| msgid "This function returns the parser state that the parser would reach at position @var{pos} starting from the beginning of the buffer."
 msgid "This function returns the parser state that the parser would reach at position @var{pos} starting from the beginning of the visible portion of the buffer."
-msgstr "この関数は、パーサーがバッファー先頭から開始して位置@var{pos}で停止するだろうという、パーサー状態をリターンする。"
+msgstr "この関数はパーサーがバッファーの可視範囲の先頭から開始して位置@var{pos}で停止するだろうというパーサー状態をリターンする。"
 
 #. type: iftex
 #: original_texis/syntax.texi:758
@@ -1288,10 +1284,8 @@ msgstr "。"
 
 #. type: defun
 #: original_texis/syntax.texi:771
-#, fuzzy
-#| msgid "The return value is the same as if you call the low-level parsing function @code{parse-partial-sexp} to parse from the beginning of the buffer to @var{pos} (@pxref{Low-Level Parsing}).  However, @code{syntax-ppss} uses a cache to speed up the computation.  Due to this optimization, the second value (previous complete subexpression)  and sixth value (minimum parenthesis depth) in the returned parser state are not meaningful."
 msgid "The return value is the same as if you call the low-level parsing function @code{parse-partial-sexp} to parse from the beginning of the visible portion of the buffer to @var{pos} (@pxref{Low-Level Parsing}).  However, @code{syntax-ppss} uses caches to speed up the computation.  Due to this optimization, the second value (previous complete subexpression) and sixth value (minimum parenthesis depth) in the returned parser state are not meaningful."
-msgstr "リターン値は、バッファー先頭から@var{pos}までパースするために低レベル関数@code{parse-partial-sexp}(@ref{Low-Level Parsing}を参照)を呼び出した場合と同じようになる。しかし@code{syntax-ppss}は、計算速度向上のために、キャッシュを使用する。この最適化のため、リターンされるパーサー状態のうち2つ目の値(前の完全な部分式)と6つ目の値(最小のカッコ深さ)は意味をもたない。"
+msgstr "リターン値はバッファーの可視範囲の先頭から@var{pos}までパースするために低レベル関数@code{parse-partial-sexp} (@ref{Low-Level Parsing}を参照)を呼び出した場合と同じようになる。しかし@code{syntax-ppss}は計算速度向上のためにキャッシュを使用する。この最適化のために、リターンされるパーサー状態のうち2つ目の値(前の完全な部分式)と6つ目の値(最小のカッコ深さ)は意味をもたない。"
 
 #. type: defun
 #: original_texis/syntax.texi:781
@@ -1317,10 +1311,8 @@ msgstr "parser state"
 
 #. type: Plain text
 #: original_texis/syntax.texi:799
-#, fuzzy
-#| msgid "A @dfn{parser state} is a list of ten elements describing the state of the syntactic parser, after it parses the text between a specified starting point and a specified end point in the buffer.  Parsing functions such as @code{syntax-ppss}"
 msgid "A @dfn{parser state} is a list of (currently) eleven elements describing the state of the syntactic parser, after it parses the text between a specified starting point and a specified end point in the buffer.  Parsing functions such as @code{syntax-ppss}"
-msgstr "@dfn{パーサー状態(parser state)}とは、バッファー内の指定された開始位置と終了位置の間のテキストをパースした後の、構文パーサーの状態を記述する10要素のリストです。@code{syntax-ppss}のようなパース関数"
+msgstr "@dfn{パーサー状態(parser state)}とはバッファー内の指定された開始位置と終了位置の間のテキストをパースした後の構文パーサーの状態を記述する(現在のところは)11要素のリストです。@code{syntax-ppss}のようなパース関数"
 
 #. type: ifnottex
 #: original_texis/syntax.texi:801
@@ -1415,19 +1407,17 @@ msgstr "文字列やコメントの開始位置。コメント内部ならコメ
 #. type: enumerate
 #: original_texis/syntax.texi:857
 msgid "The list of the positions of the currently open parentheses, starting with the outermost."
-msgstr ""
+msgstr "もっとも外側のカッコから始まる開きカッコのカレント位置のリスト。"
 
 #. type: enumerate
 #: original_texis/syntax.texi:864
 msgid "When the last buffer position scanned was the (potential) first character of a two character construct (comment delimiter or escaped/char-quoted character pair), the @var{syntax-code} (@pxref{Syntax Table Internals}) of that position.  Otherwise @code{nil}."
-msgstr ""
+msgstr "スキャンされた最後のバッファー位置が(潜在的に)2文字構文(コメント区切りやエスケープされた文字とクォートされた文字のペア)の最初の文字ならその位置の@var{syntax-code} (@ref{Syntax Table Internals}を参照)、それ以外なら@code{nil}。"
 
 #. type: Plain text
 #: original_texis/syntax.texi:869
-#, fuzzy
-#| msgid "Elements 1, 2, and 6 are ignored in a state which you pass as an argument to continue parsing, and elements 8 and 9 are used only in trivial cases.  Those elements are mainly used internally by the parser code."
 msgid "Elements 1, 2, and 6 are ignored in a state which you pass as an argument to continue parsing.  Elements 9 and 10 are mainly used internally by the parser code."
-msgstr "パース継続のために渡す場合、要素1、2、6は無視され、要素8と9は特に重要ではない場面でのみ使用されます。これらの要素は主に、パーサーコードにより内部的に使用されます。"
+msgstr "パース継続のために渡す場合には要素1、2、6は無視されます。要素9と10は主にパーサーコードにより内部的に使用されます。"
 
 #. type: Plain text
 #: original_texis/syntax.texi:872
@@ -1489,10 +1479,8 @@ msgstr "3つ目の引数@var{target-depth}が非@code{nil}の場合には、カ�
 
 #. type: defun
 #: original_texis/syntax.texi:912
-#, fuzzy
-#| msgid "If the fourth argument @var{stop-before} is non-@code{nil}, parsing stops when it comes to any character that starts a sexp.  If @var{stop-comment} is non-@code{nil}, parsing stops when it comes to the start of a comment.  If @var{stop-comment} is the symbol @code{syntax-table}, parsing stops after the start of a comment or a string, or the end of a comment or a string, whichever comes first."
 msgid "If the fourth argument @var{stop-before} is non-@code{nil}, parsing stops when it comes to any character that starts a sexp.  If @var{stop-comment} is non-@code{nil}, parsing stops after the start of an unnested comment.  If @var{stop-comment} is the symbol @code{syntax-table}, parsing stops after the start of an unnested comment or a string, or after the end of an unnested comment or a string, whichever comes first."
-msgstr "4つ目の引数@var{stop-before}が非@code{nil}の場合、sexp開始となる任意の文字に到達したらパースは停止する。@var{stop-comment}が非@code{nil}なら、コメントの開始でパースは停止する。@var{stop-comment}がシンボル@code{syntax-table}なら、コメントか文字列の開始の後、またはコメントか文字列の終了のいずれか先に到達した方でパースは停止する。"
+msgstr "4つ目の引数@var{stop-before}が非@code{nil}の場合には、sexp開始となる任意の文字に到達したときにパースは停止する。@var{stop-comment}が非@code{nil}ならネストされていないコメントの開始の後にパースは停止する。@var{stop-comment}がシンボル@code{syntax-table}ならネストされていないコメントか文字列の開始の後、またはネストされていないコメントか文字列の終了のいずれか先に到達した方でパースは停止する。"
 
 #. type: defun
 #: original_texis/syntax.texi:920
@@ -1592,12 +1580,12 @@ msgstr "構文テーブル内の各要素は@dfn{raw構文記述子(raw syntax d
 #: original_texis/syntax.texi:975
 #, no-wrap
 msgid "syntax tables (accessing elements of)"
-msgstr ""
+msgstr "syntax tables (accessing elements of)"
 
 #. type: Plain text
 #: original_texis/syntax.texi:978
 msgid "Use @code{aref} (@pxref{Array Functions}) to get the raw syntax descriptor of a character, e.g. @w{@code{(aref (syntax-table) ch)}}."
-msgstr ""
+msgstr "raw構文記述子の文字を取得するには@w{@code{(aref (syntax-table) ch)}}のように@code{aref} (@ref{Array Functions}を参照)を使用してください。"
 
 #. type: Plain text
 #: original_texis/syntax.texi:981
@@ -1851,22 +1839,18 @@ msgstr "@code{(lsh 1 22)}"
 
 #. type: code{#1}
 #: original_texis/syntax.texi:1022
-#, fuzzy
-#| msgid "(lsh 1 16)"
 msgid "(lsh 1 19)"
-msgstr "(lsh 1 16)"
+msgstr "(lsh 1 19)"
 
 #. type: samp{#1}
 #: original_texis/syntax.texi:1022
 msgid "c"
-msgstr ""
+msgstr "c"
 
 #. type: multitable
 #: original_texis/syntax.texi:1022
-#, fuzzy
-#| msgid "@code{(lsh 1 20)}"
 msgid "@code{(lsh 1 23)}"
-msgstr "@code{(lsh 1 20)}"
+msgstr "@code{(lsh 1 23)}"
 
 #. type: defun
 #: original_texis/syntax.texi:1024
@@ -1984,19 +1968,7 @@ msgstr "以下ではR2L(right-to-left: 右から左)への強い方向性(direct
 
 #. type: example
 #: original_texis/syntax.texi:1119
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(defvar special-category-table-for-bidi\n"
-#| "  (let ((category-table (make-category-table))\n"
-#| "\t(uniprop-table (unicode-property-table-internal 'bidi-class)))\n"
-#| "    (define-category ?R \"Characters of bidi-class R, AL, or RLO\"\n"
-#| "                     category-table)\n"
-#| "    (map-char-table\n"
-#| "     #'(lambda (key val)\n"
-#| "\t (if (memq val '(R AL RLO))\n"
-#| "\t     (modify-category-entry key ?R category-table)))\n"
-#| "     uniprop-table)\n"
-#| "    category-table))\n"
+#, no-wrap
 msgid ""
 "(defvar special-category-table-for-bidi\n"
 "  ;;     Make an empty category-table.\n"
@@ -2018,14 +1990,21 @@ msgid ""
 "    category-table))\n"
 msgstr ""
 "(defvar special-category-table-for-bidi\n"
+"  ;;     空のcategory-tableを作成\n"
 "  (let ((category-table (make-category-table))\n"
-"\t(uniprop-table (unicode-property-table-internal 'bidi-class)))\n"
+"        ;; Create a char-table which gives the 'bidi-class' Unicode\n"
+"        ;; 各文字のプロパティ\n"
+"        (uniprop-table\n"
+"         (unicode-property-table-internal 'bidi-class)))\n"
 "    (define-category ?R \"Characters of bidi-class R, AL, or RLO\"\n"
 "                     category-table)\n"
+"    ;; Unicodeの'bidi-class'プロパティが\n"
+"    ;; R、AL、RLOであるような(R2Lの方向性をもつ)文字の\n"
+"    ;; カテゴリーエントリーを変更する\n"
 "    (map-char-table\n"
 "     #'(lambda (key val)\n"
-"\t (if (memq val '(R AL RLO))\n"
-"\t     (modify-category-entry key ?R category-table)))\n"
+"         (if (memq val '(R AL RLO))\n"
+"             (modify-category-entry key ?R category-table)))\n"
 "     uniprop-table)\n"
 "    category-table))\n"
 
