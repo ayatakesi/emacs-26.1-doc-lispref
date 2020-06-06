@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-03-07 20:13+0900\n"
+"PO-Revision-Date: 2020-06-06 23:39+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -964,22 +964,12 @@ msgstr ""
 
 #. type: defun
 #: original_texis/processes.texi:519
-#, fuzzy
-#| msgid "For example, the @code{shell-command-on-region} command uses @code{call-process-region} in a manner similar to this:"
 msgid "For example, the @code{shell-command-on-region} command uses @code{call-shell-region} in a manner similar to this:"
-msgstr "たとえば@code{shell-command-on-region}コマンドは、以下のような方法で@code{call-process-region}を使用する:"
+msgstr "たとえば@code{shell-command-on-region}コマンドは、以下のような方法で@code{call-shell-region}を使用する:"
 
 #. type: group
 #: original_texis/processes.texi:527
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(call-process-region\n"
-#| " start end\n"
-#| " shell-file-name      ; @r{name of program}\n"
-#| " nil                  ; @r{do not delete region}\n"
-#| " buffer               ; @r{send output to @code{buffer}}\n"
-#| " nil                  ; @r{no redisplay during output}\n"
-#| " \"-c\" command)        ; @r{arguments for the shell}\n"
+#, no-wrap
 msgid ""
 "(call-shell-region\n"
 " start end\n"
@@ -987,13 +977,11 @@ msgid ""
 " nil                  ; @r{do not delete region}\n"
 " buffer)              ; @r{send output to @code{buffer}}\n"
 msgstr ""
-"(call-process-region\n"
+"(call-shell-region\n"
 " start end\n"
-" shell-file-name      ; @r{プログラム名}\n"
-" nil                  ; @r{リージョンを削除しない}\n"
-" buffer               ; @r{出力を@code{buffer}に送信}\n"
-" nil                  ; @r{出力中に再表示を行わない}\n"
-" \"-c\" command)        ; @r{shellへの引数}\n"
+" command              ; @r{shellコマンド}\n"
+" nil                  ; @r{regionを削除しない}\n"
+" buffer)              ; @r{出力を@code{buffer}に出力}\n"
 
 #. type: defun
 #: original_texis/processes.texi:531
@@ -1019,15 +1007,14 @@ msgstr "この関数は@code{call-process-shell-command}と同様だが内部的
 
 #. type: defun
 #: original_texis/processes.texi:548
-#, fuzzy, no-wrap
-#| msgid "call-process-region start end program &optional delete destination display &rest args"
+#, no-wrap
 msgid "call-shell-region start end command &optional delete destination"
-msgstr "call-process-region start end program &optional delete destination display &rest args"
+msgstr "call-shell-region start end command &optional delete destination"
 
 #. type: defun
 #: original_texis/processes.texi:555
 msgid "This function sends the text from @var{start} to @var{end} as standard input to an inferior shell running @var{command}.  This function is similar than @code{call-process-region}, with process being a shell.  The arguments @code{delete}, @code{destination} and the return value are like in @code{call-process-region}.  Note that this function doesn't accept additional arguments."
-msgstr ""
+msgstr "この関数は@var{start}と@var{end}の間のテキストを、@var{command}を実行するシェルの標準入力として送信する。これはプロセスがシェルであるような@code{call-process-region}と類似している。引数@code{delete}、@code{destination}、およびリターン値は@code{call-process-region}と同様。この関数は追加の引数を受け付けないことに注意。"
 
 #. type: defun
 #: original_texis/processes.texi:557
@@ -1245,7 +1232,7 @@ msgstr "実際の接続情報で修正されたオリジナルの引数リスト
 #. type: defun
 #: original_texis/processes.texi:695
 msgid "The current working directory of the subprocess is set to the current buffer's value of @code{default-directory} if that is local (as determined by `unhandled-file-name-directory'), or \"~\" otherwise.  If you want to run a process in a remote directory use @code{start-file-process}."
-msgstr ""
+msgstr "サブプロセスのカレントワーキングディレクトリーは@code{default-directory}がローカル(`unhandled-file-name-directory'により判定)ならカレントバッファーでの値、それ以外なら\"~\"にセットされる。リモートディレクトリーでプロセスを実行したければ@code{start-file-process}を使用すること。"
 
 #. type: defun
 #: original_texis/processes.texi:697
@@ -1285,10 +1272,8 @@ msgstr "@var{coding}がシンボルなら、それはその接続にたいする
 
 #. type: table
 #: original_texis/processes.texi:736
-#, fuzzy
-#| msgid "Start process in the ``stopped'' state if @var{bool} is non-@code{nil}.  In the stopped state, a serial process does not accept incoming data, but you can send outgoing data.  The stopped state is cleared by @code{continue-process} and set by @code{stop-process}."
 msgid "If @var{stopped} is non-@code{nil}, start the process in the stopped state.  In the stopped state, a pipe process does not accept incoming data, but you can send outgoing data.  The stopped state is set by @code{stop-process} and cleared by @code{continue-process} (@pxref{Signals to Processes})."
-msgstr "@var{bool}が非@code{nil}なら、``stopped''の状態でプロセスを開始する。stopped状態では、シリアルプロセスは入力データを受け付けないが、出力データの送信は可能。stopped状態のクリアーは@code{continue-process}、セットは@code{stop-process}で行う。"
+msgstr "@var{stopped}が非@code{nil}なら停止状態でプロセスを開始する。停止状態ではpipeプロセスは入力データを受け取らないが出力データは送信できる。停止状態は@code{stop-process}でセットして@code{continue-process}でクリアーされる(@ref{Signals to Processes}を参照)。"
 
 #. type: table
 #: original_texis/processes.texi:741
@@ -2253,23 +2238,23 @@ msgstr "@var{process}引数にはシステムプロセス@acronym{ID} (整数)�
 #. type: Plain text
 #: original_texis/processes.texi:1361
 msgid "Sometimes, it is necessary to send a signal to a non-local asynchronous process.  This is possible by writing an own @code{interrupt-process} implementation.  This function must be added then to @code{interrupt-process-functions}."
-msgstr ""
+msgstr "非ローカルな非同期プロセスへのシグナル送信が必要になることがあります。これは独自の@code{interrupt-process}実装を記述することにより可能です。それからその関数を@code{interrupt-process-functions}に追加する必要があります。"
 
 #. type: defvar
 #: original_texis/processes.texi:1362
 #, no-wrap
 msgid "interrupt-process-functions"
-msgstr ""
+msgstr "interrupt-process-functions"
 
 #. type: defvar
 #: original_texis/processes.texi:1369
 msgid "This variable is a list of functions to be called for @code{interrupt-process}.  The arguments of the functions are the same as for @code{interrupt-process}.  These functions are called in the order of the list, until one of them returns non-@code{nil}.  The default function, which shall always be the last in this list, is @code{internal-default-interrupt-process}."
-msgstr ""
+msgstr "この変数は@code{interrupt-process}用に呼び出される関数のリスト。関数の引数は@code{interrupt-process}にたいする引数と同じ。これらの関数はいずれかが非@code{nil}をリターンするまでリスト順に呼び出される。このリスト上で常に最後になるデフォルトの関数は@code{internal-default-interrupt-process}。"
 
 #. type: defvar
 #: original_texis/processes.texi:1371
 msgid "This is the mechanism, how Tramp implements @code{interrupt-process}."
-msgstr ""
+msgstr "これはTrampが@code{interrupt-process}を実装するメカニズムである。"
 
 #. type: section
 #: original_texis/processes.texi:1374
@@ -2377,12 +2362,12 @@ msgstr "プロセスの出力到着まで待機する方法。"
 #: original_texis/processes.texi:1824
 #, no-wrap
 msgid "Processes and Threads"
-msgstr ""
+msgstr "Processes and Threads"
 
 #. type: menuentry
 #: original_texis/processes.texi:1432
 msgid "How processes and threads interact."
-msgstr ""
+msgstr "プロセスとスレッドが相互作用する方法。"
 
 #. type: Plain text
 #: original_texis/processes.texi:1444
@@ -2898,46 +2883,44 @@ msgstr "関数@code{accept-process-output}は@var{process}、@var{process}が@co
 #: original_texis/processes.texi:1825
 #, no-wrap
 msgid "processes, threads"
-msgstr ""
+msgstr "processes, threads"
 
 #. type: Plain text
 #: original_texis/processes.texi:1832
 msgid "Because threads were a relatively late addition to Emacs Lisp, and due to the way dynamic binding was sometimes used in conjunction with @code{accept-process-output}, by default a process is locked to the thread that created it.  When a process is locked to a thread, output from the process can only be accepted by that thread."
-msgstr ""
+msgstr "スレッドは比較的に新しくEmacs Lispに追加されたものであり、ダイナミックバインドが@code{accept-process-output}と組み合わせて使用される方法のために、デフォルトではプロセスはそれを作成したスレッドにロックされます。プロセスがスレッドにロックされた場合には、プロセスの出力はそのスレッドだけが受け取ることができます。"
 
 #. type: Plain text
 #: original_texis/processes.texi:1839
 msgid "A Lisp program can specify to which thread a process is to be locked, or instruct Emacs to unlock a process, in which case its output can be processed by any thread.  Only a single thread will wait for output from a given process at one time---once one thread begins waiting for output, the process is temporarily locked until @code{accept-process-output} or @code{sit-for} returns."
-msgstr ""
+msgstr "Lispプログラムはプロセスがロックされたスレッドがどれかを指定したり、あるいはEmacsにプロセスのアンロックを指示することができ、この場合にはプロセスの出力を任意のスレッドが受け取ることができます。与えられたプロセスから出力を待機できるのは一度に1つのスレッドだけです。1つのスレッドが一度出力を待機すると、プロセスは@code{accept-process-output}か@code{sit-for}がリターンするまで一時的にロックされます。"
 
 #. type: Plain text
 #: original_texis/processes.texi:1841
 msgid "If the thread exits, all the processes locked to it are unlocked."
-msgstr ""
+msgstr "スレッドがexitすると、それにロックされたすべてのプロセスがアンロックされます。"
 
 #. type: defun
 #: original_texis/processes.texi:1842
-#, fuzzy, no-wrap
-#| msgid "process-type process"
+#, no-wrap
 msgid "process-thread process"
-msgstr "process-type process"
+msgstr "process-thread process"
 
 #. type: defun
 #: original_texis/processes.texi:1845
 msgid "Return the thread to which @var{process} is locked.  If @var{process} is unlocked, return @code{nil}."
-msgstr ""
+msgstr "@var{process}がロックされているスレッドをリターンする。@var{process}がロックされていなければ@code{nil}をリターンする。"
 
 #. type: defun
 #: original_texis/processes.texi:1847
-#, fuzzy, no-wrap
-#| msgid "set-process-filter process filter"
+#, no-wrap
 msgid "set-process-thread process thread"
-msgstr "set-process-filter process filter"
+msgstr "set-process-thread process thread"
 
 #. type: defun
 #: original_texis/processes.texi:1850
 msgid "Set the locking thread of @var{process} to @var{thread}.  @var{thread} may be @code{nil}, in which case the process is unlocked."
-msgstr ""
+msgstr "@var{process}をロックするスレッドを@var{thread}にセットする。@var{thread}は@code{nil}でもよく、この場合にはプロセスはアンロックされる。"
 
 #. type: section
 #: original_texis/processes.texi:1853
@@ -3181,12 +3164,12 @@ msgstr ""
 #: original_texis/processes.texi:2031
 #, no-wrap
 msgid "confirm-kill-processes"
-msgstr ""
+msgstr "confirm-kill-processes"
 
 #. type: defopt
 #: original_texis/processes.texi:2036
 msgid "If this user option is set to @code{t} (the default), then Emacs asks for confirmation before killing processes on exit.  If it is @code{nil}, Emacs kills processes without confirmation, i.e., the query flag of all processes is ignored."
-msgstr ""
+msgstr "このユーザーオプションが@code{t} (デフォルト)にセットされていると、Emacsはexitに際してプロセスをkillする前に確認を求める。@code{nil}ならEmacsは確認なしでプロセスをkillする(すべてのプロセスの問い合わせフラグを無視する)。"
 
 #. type: section
 #: original_texis/processes.texi:2039
@@ -3762,10 +3745,8 @@ msgstr "@acronym{STARTTLS} network connections"
 
 #. type: Plain text
 #: original_texis/processes.texi:2346
-#, fuzzy
-#| msgid "Emacs can create encrypted network connections, using either built-in or external support.  The built-in support uses the GnuTLS (``Transport Layer Security'') library; see @uref{http://www.gnu.org/software/gnutls/, the GnuTLS project page}.  If your Emacs was compiled with GnuTLS support, the function @code{gnutls-available-p} is defined and returns non-@code{nil}.  For more details, @pxref{Top,, Overview, emacs-gnutls, The Emacs-GnuTLS manual}.  The external support uses the @file{starttls.el} library, which requires a helper utility such as @command{gnutls-cli} to be installed on the system.  The @code{open-network-stream} function can transparently handle the details of creating encrypted connections for you, using whatever support is available."
 msgid "Emacs can create encrypted network connections, using either built-in or external support.  The built-in support uses the GnuTLS Transport Layer Security Library; see @uref{https://www.gnu.org/software/gnutls/, the GnuTLS project page}.  If your Emacs was compiled with GnuTLS support, the function @code{gnutls-available-p} is defined and returns non-@code{nil}.  For more details, @pxref{Top,, Overview, emacs-gnutls, The Emacs-GnuTLS manual}.  The external support uses the @file{starttls.el} library, which requires a helper utility such as @command{gnutls-cli} to be installed on the system.  The @code{open-network-stream} function can transparently handle the details of creating encrypted connections for you, using whatever support is available."
-msgstr "ビルトインまたは外部のサポートを使用することにより、Emacsは暗号化されたネットワーク接続を作成できます。ビルトインのサポートはGnuTLSライブラリー(``TLS: Transport Layer Security'')を使用します。@uref{http://www.gnu.org/software/gnutls/, the GnuTLS project page}を参照してください。GnuTLSサポートつきでEmacsをコンパイルした場合は、関数@code{gnutls-available-p}が定義され、非@code{nil}をリターンします。詳細は@pxref{Top,, Overview, emacs-gnutls, The Emacs-GnuTLS manual}を参照してください。外部のサポートの場合は、@file{starttls.el}ライブラリーを使用します。これはシステム上に@command{gnutls-cli}のようなヘルパーユーティリティーのインストールを必要とします。@code{open-network-stream}関数は、何であれ利用可能なサポートを使用して、暗号化接続作成の詳細を透過的に処理できます。"
+msgstr "ビルトインや外部のサポートを使用することにより、Emacsは暗号化されたネットワーク接続を作成できます。ビルトインのサポートはGnuTLSトランスポート層セキュリティーライブラリーを使用します。@uref{https://www.gnu.org/software/gnutls/, the GnuTLS project page}を参照してください。GnuTLSサポートつきでEmacsをコンパイルした場合には関数@code{gnutls-available-p}が定義されて非@code{nil}をリターンします。詳細は@ref{Top,, Overview, emacs-gnutls, The Emacs-GnuTLS manual}を参照してください。外部のサポートの場合には@file{starttls.el}ライブラリーを使用します。これはシステム上に@command{gnutls-cli}のようなヘルパーユーティリティーのインストールを要します。@code{open-network-stream}関数は何であれ利用可能なサポートを使用して、暗号化接続作成の詳細を透過的に処理できます。"
 
 #. type: defun
 #: original_texis/processes.texi:2347
@@ -3790,10 +3771,8 @@ msgstr "@var{buffer}引数はその接続に関連付けるバッファー。そ
 
 #. type: defun
 #: original_texis/processes.texi:2364
-#, fuzzy
-#| msgid "The arguments @var{host} and @var{service} specify where to connect to; @var{host} is the host name (a string), and @var{service} is the name of a defined network service (a string) or a port number (an integer)."
 msgid "The arguments @var{host} and @var{service} specify where to connect to; @var{host} is the host name (a string), and @var{service} is the name of a defined network service (a string) or a port number (an integer like @code{80} or an integer string like @code{\"80\"})."
-msgstr "引数@var{host}と@var{service}は、どこに接続するかを指定する。@var{host}はホスト名(文字列)、@var{service}は定義済みのネットワークサービス名(文字列)、またはポート番号(数字)である。"
+msgstr "引数@var{host}と@var{service}は接続先を指定する。@var{host}はホスト名(文字列)、@var{service}は定義済みのネットワークサービス名(文字列)、またはポート番号(@code{80}のような整数か@code{\\\"80\\\"}のような整数文字列)。"
 
 #. type: defun
 #: original_texis/processes.texi:2367
@@ -4023,15 +4002,14 @@ msgstr "接続タイプであり、@samp{plain}か@samp{tls}のいずれか。"
 
 #. type: item
 #: original_texis/processes.texi:2445
-#, fuzzy, no-wrap
-#| msgid ":greeting @var{string-or-nil}"
+#, no-wrap
 msgid ":shell-command @var{string-or-nil}"
-msgstr ":greeting @var{string-or-nil}"
+msgstr ":shell-command @var{string-or-nil}"
 
 #. type: table
 #: original_texis/processes.texi:2452
 msgid "If the connection @code{type} is @code{shell}, this parameter will be interpreted as a format-spec string that will be executed to make the connection.  The specs available are @samp{%s} for the host name and @samp{%p} for the port number.  For instance, if you want to first ssh to @samp{gateway} before making a plain connection, then this parameter could be something like @samp{ssh gateway nc %s %p}."
-msgstr ""
+msgstr "接続@code{type}が@code{shell}なら、このパラメーターは接続の作成のために実行されるフォーマット仕様文字列として解釈される。利用可能な仕様はホスト名の@samp{%s}とポート番号の@samp{%p}。たとえばプレーン接続を作成する前にまず@samp{gateway}にsshで接続したければ、このパラメーターは@samp{ssh gateway nc %s %p}のようになるかもしれない。"
 
 #. type: cindex
 #: original_texis/processes.texi:2460
@@ -4226,10 +4204,8 @@ msgstr ":service @var{service}"
 
 #. type: table
 #: original_texis/processes.texi:2600
-#, fuzzy
-#| msgid "@var{service} specifies a port number to connect to; or, for a server, the port number to listen on.  It should be a service name that translates to a port number, or an integer specifying the port number directly.  For a server, it can also be @code{t}, which means to let the system select an unused port number."
 msgid "@var{service} specifies a port number to connect to; or, for a server, the port number to listen on.  It should be a service name like @samp{\"http\"} that translates to a port number, or an integer like @samp{80} or an integer string like @samp{\"80\"} that specifies the port number directly.  For a server, it can also be @code{t}, which means to let the system select an unused port number."
-msgstr "@var{service}は接続先のポート番号、またはサーバーにたいしてはlistenするポート番号である。これはポート番号に変換されるようなサービス名、または直接ポート番号を指定する整数であること。サーバーにたいしては@code{t}も指定でき、これは未使用のポート番号をシステムに選択させることを意味する。"
+msgstr "@var{service}は接続先のポート番号、またはサーバーにたいしてはlistenするポート番号である。これは@samp{\"http\"}のようにポート番号に変換されるようなサービス名、または直接ポート番号を指定する@samp{80}のような整数か@samp{\\\"80\\\"}@samp{\\\"80\\\"}のような整数文字列であること。サーバーにたいしては@code{t}も指定でき、これは未使用のポート番号をシステムに選択させることを意味する。"
 
 #. type: item
 #: original_texis/processes.texi:2601
@@ -4246,12 +4222,12 @@ msgstr "@var{family}は接続のアドレス(またはプロトコル)のファ�
 #: original_texis/processes.texi:2609
 #, no-wrap
 msgid ":use-external-socket @var{use-external-socket}"
-msgstr ""
+msgstr ":use-external-socket @var{use-external-socket}"
 
 #. type: table
 #: original_texis/processes.texi:2614
 msgid "If @var{use-external-socket} is non-@code{nil} use any sockets passed to Emacs on invocation instead of allocating one.  This is used by the Emacs server code to allow on-demand socket activation.  If Emacs wasn't passed a socket, this option is silently ignored."
-msgstr ""
+msgstr "@var{use-external-socket}が非@code{nil}なら割り当てられたsocketのかわりに呼び出し時にEmacsに渡されたsocketを使用する。これはEmacsサーバーのコードにおいてオンデマンドのsocketアクティベージョンを可能にするために使用される。Emacsがsocketを渡されていなければ、このオプションは暗黙に無視される。"
 
 #. type: item
 #: original_texis/processes.texi:2615
@@ -4319,28 +4295,28 @@ msgstr "ストリーム接続にたいして@var{bool}が非@code{nil}なら、�
 #. type: table
 #: original_texis/processes.texi:2670
 msgid "If you're setting up an asynchronous TLS connection, you have to also provide the @code{:tls-parameters} parameter (see below)."
-msgstr ""
+msgstr "非同期TLS接続をセットアップする場合には@code{:tls-parameters}パラメーター(下記参照)も提供する必要があるだろう。"
 
 #. type: table
 #: original_texis/processes.texi:2675
 msgid "Depending on the capabilities of Emacs, how asynchronous @code{:nowait} is may vary.  The three elements that may (or may not)  be done asynchronously are domain name resolution, socket setup, and (for TLS connections) TLS negotiation."
-msgstr ""
+msgstr "Emacsの機能に応じて@code{:nowait}が非同期になる方法は異なる。非同期で実行可能(または不可能)な3つの要素はドメイン名解決、socketのセットアップ、および(TLS接続にいする)TLSネゴシエーション。"
 
 #. type: table
 #: original_texis/processes.texi:2683
 msgid "Many functions that interact with process objects, (for instance, @code{process-datagram-address}) rely on them at least having a socket before they can return a useful value.  These functions will block until the socket has achieved the desired status.  The recommended way of interacting with asynchronous sockets is to place a sentinel on the process, and not try to interact with it before it has changed status to @samp{\"run\"}.  That way, none of these functions will block."
-msgstr ""
+msgstr "プロセスオブジェクトと相互作用する多くの関数(たとえば@code{process-datagram-address} )は有用な値をリターンする以前に、少なくともsocketを所有することに依存する。これらの関数はsocketが望ましい状態に達するまでブロックされる。非同期socketと相互作用するための推奨方法はプロセスにセンチネルを配置して、その状態が@samp{\"run\"}になるまで相互作用を試みないことである。この方法ではこれらの関数はブロックされない。"
 
 #. type: item
 #: original_texis/processes.texi:2684
 #, no-wrap
 msgid ":tls-parameters"
-msgstr ""
+msgstr ":tls-parameters"
 
 #. type: table
 #: original_texis/processes.texi:2692
 msgid "When opening a TLS connection, this should be where the first element is the TLS type (which should either be @code{gnutls-x509pki} or @code{gnutls-anon}, and the remaining elements should form a keyword list acceptable for @code{gnutls-boot}.  (This keyword list can be obtained from the @code{gnutls-boot-parameters} function.)  The TLS connection will then be negotiated after completing the connection to the host."
-msgstr ""
+msgstr "TLS接続をオープンする際には最初の要素はTLSタイプ(@code{gnutls-x509pki}か@code{gnutls-anon}のいずれか)であり、残りの要素は@code{gnutls-boot}が受容するキーワードリスト形式であること(このキーワードリストは@code{gnutls-boot-parameters}関数で取得できる)。それからホストへの接続が完了後にTLS接続は確立される。"
 
 #. type: table
 #: original_texis/processes.texi:2696
@@ -5598,7 +5574,7 @@ msgstr "Examples of Byte Unpacking and Packing"
 #. type: Plain text
 #: original_texis/processes.texi:3375
 msgid "Here are two complete examples that use bindat.el.  The first shows simple byte packing:"
-msgstr ""
+msgstr "以下の2つはbindat.elを使用した完全な例です。1つ目は単純なバイトパッキングを示します:"
 
 #. type: lisp
 #: original_texis/processes.texi:3378
@@ -5626,6 +5602,17 @@ msgid ""
 "       (now-lo . ,(cadr now))))))\n"
 "\n"
 msgstr ""
+"(defun rfc868-payload ()\n"
+"  (bindat-pack\n"
+"   '((now-hi u16)\n"
+"     (now-lo u16))\n"
+"   ;; EmacsはUnixエポックを使用する\n"
+"   ;; RFC868エポックは1900-01-01 00:00:00なので\n"
+"   ;; Unixエポックより2208988800秒(#x83aa7e80秒)大きい\n"
+"   (let ((now (time-add nil '(#x83aa #x7e80))))\n"
+"     `((now-hi . ,(car now))\n"
+"       (now-lo . ,(cadr now))))))\n"
+"\n"
 
 #. type: lisp
 #: original_texis/processes.texi:3397
@@ -5639,6 +5626,13 @@ msgid ""
 "        (current-time-string)))\n"
 "     @result{} (nil \"dc 6d 17 01\" \"Fri Mar 10 13:13:53 2017\")\n"
 msgstr ""
+"(let ((s (rfc868-payload)))\n"
+"  (list (multibyte-string-p s)\n"
+"        (mapconcat (lambda (byte)\n"
+"                     (format \"%02x\" byte))\n"
+"                   s \" \")\n"
+"        (current-time-string)))\n"
+"     @result{} (nil \"dc 6d 17 01\" \"Fri Mar 10 13:13:53 2017\")\n"
 
 #. type: Plain text
 #: original_texis/processes.texi:3401
