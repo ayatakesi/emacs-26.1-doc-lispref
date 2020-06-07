@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-03-08 09:40+0900\n"
-"PO-Revision-Date: 2020-03-08 00:26+0900\n"
+"PO-Revision-Date: 2020-06-07 22:19+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -370,10 +370,8 @@ msgstr "redraw-frame &optional frame"
 
 #. type: defun
 #: original_texis/display.texi:54
-#, fuzzy
-#| msgid "This function returns a font entity that best matches the font spec @var{font-spec} on frame @var{frame}.  If @var{frame} is @code{nil}, it defaults to the selected frame."
 msgid "This function clears and redisplays frame @var{frame}.  If @var{frame} is omitted or @code{nil}, it redraws the selected frame."
-msgstr "この関数は、フレーム@var{frame}上のフォントspec @var{font-spec}にもっともマッチするフォントエンティティーをリターンする。@var{frame}が@code{nil}の場合のデフォルトは、選択されたフレームである。"
+msgstr "この関数はフレーム@var{frame}のクリアーと再表示を行う。@var{frame}が省略か@code{nil}なら選択されたフレームを再描画する。"
 
 #. type: Plain text
 #: original_texis/display.texi:57
@@ -738,7 +736,7 @@ msgstr "この関数はエコーエリア内にメッセージを表示する。
 #. type: defun
 #: original_texis/display.texi:272
 msgid "Typically grave accent and apostrophe in the format translate to matching curved quotes, e.g., @t{\"Missing `%s'\"} might result in @t{\"Missing ‘foo’\"}.  @xref{Text Quoting Style}, for how to influence or inhibit this translation."
-msgstr ""
+msgstr "フォーマット内のグレイヴアクセントとアポストロフィーは@t{\"Missing `%s'\"}から@t{\"Missing ‘foo’\"}のように、通常は対応するcurved quoteとして結果内に変換される。この変換に影響を与えたり抑制する方法については@ref{Text Quoting Style}を参照のこと。"
 
 #. type: defun
 #: original_texis/display.texi:275
@@ -1182,10 +1180,8 @@ msgstr "長いメッセージの表示により、そのメッセージ全体を
 
 #. type: Plain text
 #: original_texis/display.texi:585
-#, fuzzy
-#| msgid "The variable @code{max-mini-window-height}, which specifies the maximum height for resizing minibuffer windows, also applies to the echo area (which is really a special use of the minibuffer window; @pxref{Minibuffer Misc})."
 msgid "The variable @code{max-mini-window-height}, which specifies the maximum height for resizing minibuffer windows, also applies to the echo area (which is really a special use of the minibuffer window; @pxref{Minibuffer Windows})."
-msgstr "ミニバッファーウィンドウのリサイズの最大高さを指定する変数@code{max-mini-window-height}は、エコーエリアにも適用される(エコーエリアは真にミニバッファーウィンドウの特殊な使い方である。@ref{Minibuffer Misc}を参照されたい)。"
+msgstr "ミニバッファーウィンドウのリサイズの最大高さを指定する変数@code{max-mini-window-height}はエコーエリアにも適用される(エコーエリアは真にミニバッファーウィンドウの特殊な使い方である。@ref{Minibuffer Windows}を参照)。"
 
 #. type: section
 #: original_texis/display.texi:587
@@ -1568,10 +1564,8 @@ msgstr "delayed-warnings-hook"
 
 #. type: defvar
 #: original_texis/display.texi:812
-#, fuzzy
-#| msgid "This is a normal hook which is run by the Emacs command loop, after @code{post-command-hook}, in order to to process and display delayed warnings."
 msgid "This is a normal hook which is run by the Emacs command loop, after @code{post-command-hook}, in order to process and display delayed warnings."
-msgstr "これは遅延警告を処理して表示するために、@code{post-command-hook}の後にEmacsコマンドループが実行する、ノーマルフックである。"
+msgstr "これは遅延警告を処理して表示するために、@code{post-command-hook}の後にEmacsコマンドループが実行するノーマルフック。"
 
 #. type: defvar
 #: original_texis/display.texi:814
@@ -1770,10 +1764,8 @@ msgstr "invisible-p pos-or-prop"
 
 #. type: defun
 #: original_texis/display.texi:934
-#, fuzzy
-#| msgid "If @var{pos-or-prop} is a marker or number, this function returns a non-@code{nil} value if the text at that position is invisible."
 msgid "If @var{pos-or-prop} is a marker or number, this function returns a non-@code{nil} value if the text at that position is currently invisible."
-msgstr "@var{pos-or-prop}がマーカーか数字の場合、その位置のテキストが不可視なら、この関数は非@code{nil}をリターンする。"
+msgstr "この関数は@var{pos-or-prop}がマーカーか数字の場合には、その位置のテキストがカレントで不可視なら非@code{nil}をリターンする。"
 
 #. type: defun
 #: original_texis/display.texi:940
@@ -1783,7 +1775,7 @@ msgstr "@var{pos-or-prop}が別の類のLispオブジェクトなら、テキス
 #. type: defun
 #: original_texis/display.texi:944
 msgid "The return value of this function is @code{t} if the text would be completely hidden on display, or a non-@code{nil}, non-@code{t} value if the text would be replaced by an ellipsis."
-msgstr ""
+msgstr "この関数のリターン値はテキストがディスプレー上で完全に非表示なら@code{t}、省略記号(ellipsis)で置き換えられていれば@code{nil}でも@code{t}でもない値となる。"
 
 #. type: vindex
 #: original_texis/display.texi:946
@@ -2226,7 +2218,7 @@ msgstr "このマクロは@code{with-temp-buffer-window}と同様だが、@var{b
 #. type: Plain text
 #: original_texis/display.texi:1246
 msgid "A window showing a temporary buffer can be fitted to the size of that buffer using the following mode:"
-msgstr ""
+msgstr "一時バッファーを表示しているウィンドウは以下のモードを使用してそのバッファーにサイズを適合できます:"
 
 #. type: defopt
 #: original_texis/display.texi:1247
@@ -2269,7 +2261,7 @@ msgstr "このオプションは@code{temp-buffer-resize-mode}が有効な際に
 #. type: Plain text
 #: original_texis/display.texi:1278
 msgid "The following function uses the current buffer for temporary display:"
-msgstr ""
+msgstr "以下の関数は一時的な表示にカレントバッファーを使用します:"
 
 #. type: defun
 #: original_texis/display.texi:1279
@@ -3451,49 +3443,48 @@ msgstr "オプション引数@var{mode-and-header-line}が@code{nil}または省
 #. type: Plain text
 #: original_texis/display.texi:1982
 msgid "@code{window-text-pixel-size} treats the text displayed in a window as a whole and does not care about the size of individual lines.  The following function does."
-msgstr ""
+msgstr "@code{window-text-pixel-size}はウィンドウ内に表示されているテキスト全体を扱い、個々の行サイズには留意しません。それは以下の関数が行います。"
 
 #. type: defun
 #: original_texis/display.texi:1983
-#, fuzzy, no-wrap
-#| msgid "window-text-pixel-size &optional window from to x-limit y-limit mode-and-header-line"
+#, no-wrap
 msgid "window-lines-pixel-dimensions &optional window first last body inverse left"
-msgstr "window-text-pixel-size &optional window from to x-limit y-limit mode-and-header-line"
+msgstr "window-lines-pixel-dimensions &optional window first last body inverse left"
 
 #. type: defun
 #: original_texis/display.texi:1993
 msgid "This function calculates the pixel dimensions of each line displayed in the specified @var{window}.  It does so by walking @var{window}'s current glyph matrix---a matrix storing the glyph (@pxref{Glyphs}) of each buffer character currently displayed in @var{window}.  If successful, it returns a list of cons pairs representing the x- and y-coordinates of the lower right corner of the last character of each line.  Coordinates are measured in pixels from an origin (0, 0) at the top-left corner of @var{window}.  @var{window} must be a live window and defaults to the selected one."
-msgstr ""
+msgstr "この関数は指定した@var{window}に表示された各行のピクセルサイズを計算する。これは@var{window}のカレントグリフマトリクス( @var{window}にカレントで表示されている各バッファー文字のグリフを格納するマトリクス。@ref{Glyphs}を参照)を調べることにより機能する。成功したら各行末文字の右下隅のX座標とY座標を表すコンスペアのリストをリターンする。これらの座標は@var{window}の左上隅にある原点(0, 0)からピクセル単位で計測される。@var{window}は生きたウィンドウでなければならずデフォルトは選択されたウィンドウ。"
 
 #. type: defun
 #: original_texis/display.texi:2003
 msgid "If the optional argument @var{first} is an integer, it denotes the index (starting with 0) of the first line of @var{window}'s glyph matrix to be returned.  Note that if @var{window} has a header line, the line with index 0 is that header line.  If @var{first} is @code{nil}, the first line to be considered is determined by the value of the optional argument @var{body}: If @var{body} is non-@code{nil}, this means to start with the first line of @var{window}'s body, skipping any header line, if present.  Otherwise, this function will start with the first line of @var{window}'s glyph matrix, possibly the header line."
-msgstr ""
+msgstr "オプション引数@var{first}が整数なら、リターンする@var{window}のグリフマトリクスの最初の行のインデックス(0から開始)を示す。@var{window}にヘッダーラインがあればインデックス0の行はヘッダーラインになることに注意。@var{first}が@code{nil}なら考慮する最初の行はオプション引数@var{body}の値で判断される。@var{body}が非@code{nil}なら、(もしあれば)ヘッダーラインをすべてスキップして@var{window}のbodyの最初の行から開始することを意味する。それ以外なら@var{window}のグリフマトリクスの最初の行(ヘッダーラインかもしれない)から開始することを意味する。"
 
 #. type: defun
 #: original_texis/display.texi:2011
 msgid "If the optional argument @var{last} is an integer, it denotes the index of the last line of @var{window}'s glyph matrix that shall be returned.  If @var{last} is @code{nil}, the last line to be considered is determined by the value of @var{body}: If @var{body} is non-@code{nil}, this means to use the last line of @var{window}'s body, omitting @var{window}'s mode line, if present.  Otherwise, this means to use the last line of @var{window} which may be the mode line."
-msgstr ""
+msgstr "オプション引数@var{last}が整数なら、リターンする@var{window}のグリフマトリクスの最後の行のインデックスを示す。@var{last}が@code{nil}なら考慮する最初の行はオプション引数@var{body}の値で判断される。@var{body}が非@code{nil}なら、@var{window}のモードラインを省略して@var{window}のbodyの最後の行を使用することを意味する。それ以外なら@var{window}のグリフマトリクスの最後の行(モードラインかもしれない)を使用することを意味する。"
 
 #. type: defun
 #: original_texis/display.texi:2021
 msgid "The optional argument @var{inverse}, if @code{nil}, means that the y-pixel value returned for any line specifies the distance in pixels from the left edge (body edge if @var{body} is non-@code{nil}) of @var{window} to the right edge of the last glyph of that line.  @var{inverse} non-@code{nil} means that the y-pixel value returned for any line specifies the distance in pixels from the right edge of the last glyph of that line to the right edge (body edge if @var{body} is non-@code{nil}) of @var{window}.  This is useful for determining the amount of slack space at the end of each line."
-msgstr ""
+msgstr "オプション引数@var{inverse}が@code{nil}なら、リターンされる任意の行にたいするYピクセル値が@var{window}の左エッジ(@var{body}が非@code{nil}なら左bodyエッジ)から、その行の最後のグリフの右エッジまでのピクセル単位の距離を指定することを意味する。非@code{nil}の@var{inverse}は、リターンされる任意の行にたいするYピクセル値がその行の最後のグリフの右エッジから右エッジ(@var{body}が非@code{nil}なら右bodyエッジ)までのピクセル単位の距離を指定することを意味する。これは各行末の未使用スペースの量を判断するために有用。"
 
 #. type: defun
 #: original_texis/display.texi:2026
 msgid "The optional argument @var{left}, if non-@code{nil} means to return the x- and y-coordinates of the lower left corner of the leftmost character on each line.  This is the value that should be used for windows that mostly display text from right to left."
-msgstr ""
+msgstr "オプション引数@var{left}が非@code{nil}なら各行左端文字の左下隅のX座標とY座標をリターンすることを意味する。これは主に右から左にテキストを表示にたいして使用されるべき値である。"
 
 #. type: defun
 #: original_texis/display.texi:2036
 msgid "If @var{left} is non-@code{nil} and @var{inverse} is @code{nil}, this means that the y-pixel value returned for any line specifies the distance in pixels from the left edge of the last (leftmost) glyph of that line to the right edge (body edge if @var{body} is non-@code{nil})  of @var{window}.  If @var{left} and @var{inverse} are both non-@code{nil}, the y-pixel value returned for any line specifies the distance in pixels from the left edge (body edge if @var{body} is non-@code{nil}) of @var{window} to the left edge of the last (leftmost)  glyph of that line."
-msgstr ""
+msgstr "@var{left}が非@code{nil}で@var{inverse}が@code{nil}なら、リターンされる任意の行にたいするYピクセル値がその行の最後(左端)のグリフの左エッジから、@var{window}の右エッジ( @var{body}が非@code{nil}なら右bodyエッジ)までのピクセル単位の距離を指定することを意味する。@var{left}と@var{inverse}がいずれも非@code{nil}なら、リターンされる任意の行にたいするYピクセル値が@var{window}の左エッジ( @var{body}が非@code{nil}なら左bodyエッジ)から、その行の最後(左端)のグリフの左エッジまでのピクセル単位の距離を指定することを意味する。"
 
 #. type: defun
 #: original_texis/display.texi:2042
 msgid "This function returns @code{nil} if the current glyph matrix of @var{window} is not up-to-date which usually happens when Emacs is busy, for example, when processing a command.  The value should be retrievable though when this function is run from an idle timer with a delay of zero seconds."
-msgstr ""
+msgstr "この関数は@var{window}のカレントグリフマトリクスが最新でなければ@code{nil}をリターンする。これはたとえばコマンドの処理中のようにEmacsがbusyな際に通常は発生する。これは遅延が0秒であるようなアイドルタイマーからこの関数が実行された際に取得され得る値である。"
 
 #. type: defun
 #: original_texis/display.texi:2044
@@ -3509,19 +3500,18 @@ msgstr "この関数は選択されたウィンドウのポイント位置にあ
 #. type: Plain text
 #: original_texis/display.texi:2055
 msgid "When a buffer is displayed with line numbers (@pxref{Display Custom,,, emacs, The GNU Emacs Manual}), it is sometimes useful to know the width taken for displaying the line numbers.  The following function is for Lisp programs which need this information for layout calculations."
-msgstr ""
+msgstr "行番号(@ref{Display Custom,,, emacs, The GNU Emacs Manual}を参照)とともにバッファーを表示している際には、行番号の表示に必要な幅が解ると便利なときがあります。以下はレイアウト計算用にこの情報を必要とするLispプログラムのための関数です。"
 
 #. type: defun
 #: original_texis/display.texi:2056
-#, fuzzy, no-wrap
-#| msgid "window-display-table &optional window"
+#, no-wrap
 msgid "line-number-display-width &optional pixelwise"
-msgstr "window-display-table &optional window"
+msgstr "line-number-display-width &optional pixelwise"
 
 #. type: defun
 #: original_texis/display.texi:2069
 msgid "This function returns the width used for displaying the line numbers in the selected window.  If the optional argument @var{pixelwise} is the symbol @code{columns}, the return value is a float number of the frame's canonical columns; if @var{pixelwise} is @code{t} or any other non-@code{nil} value, the value is an integer and is measured in pixels.  If @var{pixelwise} is omitted or @code{nil}, the value is the integer number of columns of the font defined for the @code{line-number} face, and doesn't include the 2 columns used to pad the numbers on display.  If line numbers are not displayed in the selected window, the value is zero regardless of the value of @var{pixelwise}.  Use @code{with-selected-window} (@pxref{Selecting Windows}) if you need this information about another window."
-msgstr ""
+msgstr "この関数は選択されたウィンドウで行番号の表示に使用される幅をリターンする。オプション引数@var{pixelwise}がシンボル@code{columns}なら、リターン値はフレームの正準列(清純文字幅)にたいする浮動小数点数となる。@var{pixelwise}が@code{t}やそれ以外の非@code{nil}値なら、値はピクセルで計測した整数となる。@var{pixelwise}が省略か@code{nil}なら、値は@code{line-number}フェイスにたいして定義されたフォントによる列数を表す整数となる。この場合には値には番号の表示の間隙を埋めるために使用する2列分は含まれない。選択されたウィンドウに行番号が表示されていなければ、@var{pixelwise}の値にかかわらず値は0になる。別のウィンドウにたいしてこの情報が必要なら@code{with-selected-window}を使用すること(@ref{Selecting Windows}を参照)。"
 
 #. type: cindex
 #: original_texis/display.texi:2074
@@ -3708,10 +3698,8 @@ msgstr "より一般的にはフェイスは@dfn{フェイス名(face name)}を�
 
 #. type: Plain text
 #: original_texis/display.texi:2203
-#, fuzzy
-#| msgid "Many parts of Emacs required named faces, and do not accept anonymous faces.  These include the functions documented in @ref{Attribute Functions}, and the variable @code{font-lock-keywords} (@pxref{Search-based Fontification}).  Unless otherwise stated, we will use the term @dfn{face} to refer only to named faces."
 msgid "Many parts of Emacs require named faces, and do not accept anonymous faces.  These include the functions documented in @ref{Attribute Functions}, and the variable @code{font-lock-keywords} (@pxref{Search-based Fontification}).  Unless otherwise stated, we will use the term @dfn{face} to refer only to named faces."
-msgstr "Emacsの多くの箇所で名前つきフェイスが要求され、anonymousフェイスは受け入れられません。これらには@ref{Attribute Functions}に記述される関数、および変数@code{font-lock-keywords}(@ref{Search-based Fontification}を参照)が含まれます。特に明記しないかぎり、名前つきフェイスの参照だけに用語@dfn{フェイス}を使用することとします。"
+msgstr "Emacsの多くの箇所で名前つきフェイスが要求されており、anonymousフェイスは受け入れられません。これらには@ref{Attribute Functions}に記述される関数、および変数@code{font-lock-keywords} (@ref{Search-based Fontification}を参照)が含まれます。特に明記しないかぎり名前つきフェイスの参照だけに用語@dfn{フェイス}を使用することにします。"
 
 #. type: defun
 #: original_texis/display.texi:2204
@@ -3892,10 +3880,8 @@ msgstr ":family"
 
 #. type: table
 #: original_texis/display.texi:2253
-#, fuzzy
-#| msgid "Font family or fontset (a string).  @xref{Fonts,,, emacs, The GNU Emacs Manual}, for more information about font families.  The function @code{font-family-list} (see below) returns a list of available family names.  @xref{Fontsets}, for information about fontsets."
 msgid "Font family name (a string).  @xref{Fonts,,, emacs, The GNU Emacs Manual}, for more information about font families.  The function @code{font-family-list} (see below) returns a list of available family names."
-msgstr "フォントファミリーまたはフォントセット(文字列)。フォントファミリーに関する詳細は、@xref{Fonts,,, emacs, The GNU Emacs Manual}を参照のこと。関数@code{font-family-list}(以下参照)は、利用可能なファミリー名のリストをリターンする。フォントセットに関する情報は、@ref{Fontsets}を参照されたい。"
+msgstr "フォントファミリー名(文字列)。フォントファミリーに関する詳細は@ref{Fonts,,, emacs, The GNU Emacs Manual}を参照のこと。関数@code{font-family-list} (以下参照)は利用可能なファミリー名のリストをリターンする。"
 
 #. type: itemx
 #: original_texis/display.texi:2254 original_texis/display.texi:3557
@@ -4138,10 +4124,8 @@ msgstr "(:line-width @var{width} :color @var{color} :style @var{style})"
 
 #. type: table
 #: original_texis/display.texi:2375
-#, fuzzy
-#| msgid "This way you can explicitly specify all aspects of the box.  The value @var{width} specifies the width of the lines to draw; it defaults to 1.  A negative width @var{-n} means to draw a line of width @var{n} that occupies the space of the underlying text, thus avoiding any increase in the character height or width."
 msgid "This way you can explicitly specify all aspects of the box.  The value @var{width} specifies the width of the lines to draw; it defaults to 1.  A negative width @var{-n} means to draw a line of width @var{n} whose top and bottom parts occupy the space of the underlying text, thus avoiding any increase in the character height."
-msgstr "この方法では、枠のすべての形相を明示的に指定できる。値@var{width}は描画する線の幅を指定し、デフォルトは1。負の幅@var{-n}は、基礎テキストのスペースを占有する線幅@var{n}を意味し、文字の高さまたは幅を避けることができる。"
+msgstr "この方法では枠のすべての形相を明示的に指定できる。値@var{width}は描画する線の幅を指定し、デフォルトは1。負の幅@var{-n}は上端と下端の部分が基礎テキストのスペースを占有する線幅@var{n}を意味し、文字高さの増加を避けることができる。"
 
 #. type: table
 #: original_texis/display.texi:2379
@@ -4203,10 +4187,8 @@ msgstr ":font"
 
 #. type: table
 #: original_texis/display.texi:2416
-#, fuzzy
-#| msgid "The font used to display the face.  Its value should be a font object.  @xref{Low-Level Font}, for information about font objects, font specs, and font entities."
 msgid "The font used to display the face.  Its value should be a font object or a fontset.  @xref{Low-Level Font}, for information about font objects, font specs, and font entities.  @xref{Fontsets}, for information about fontsets."
-msgstr "そのフェイスの表示に使用されるフォント。値はフォントオブジェクトであること。フォントオブジェクト、フォントスペース、フォントエンティティーに関する情報は、@ref{Low-Level Font}を参照のこと。"
+msgstr "そのフェイスの表示に使用されるフォント。値はフォントオブジェクトかフォントセットであること。フォントオブジェクト、フォントスペース、フォントエンティティーに関する情報は@ref{Low-Level Font}、フォントセットに関する情報は@ref{Fontsets}を参照のこと。"
 
 #. type: table
 #: original_texis/display.texi:2427
@@ -4227,10 +4209,8 @@ msgstr ":inherit"
 
 #. type: table
 #: original_texis/display.texi:2438
-#, fuzzy
-#| msgid "The name of a face from which to inherit attributes, or a list of face names.  Attributes from inherited faces are merged into the face like an underlying face would be, with higher priority than underlying faces (@pxref{Displaying Faces}).  If a list of faces is used, attributes from faces earlier in the list override those from later faces."
 msgid "The name of a face from which to inherit attributes, or a list of face names.  Attributes from inherited faces are merged into the face like an underlying face would be, with higher priority than underlying faces (@pxref{Displaying Faces}).  If the face to inherit from is @code{unspecified}, it is treated the same as @code{nil}, since Emacs never merges @code{:inherit} attributes.  If a list of faces is used, attributes from faces earlier in the list override those from later faces."
-msgstr "属性を継承するフェイス名、またはフェイス名のリスト。継承フェイス由来の属性は、基礎フェイスより高い優先度で、基礎フェイスの場合と同じような方法でマージされる(@ref{Displaying Faces}を参照)。フェイスのリストが使用された場合、リスト内先頭側フェイスの属性が末尾側フェイスの属性をオーバーライドする。"
+msgstr "属性を継承するフェイス名、またはフェイス名のリスト。継承フェイス由来の属性は基礎フェイスより高い優先度で、基礎フェイスの場合と同じような方法でマージされる(@ref{Displaying Faces}を参照)。継承元のフェイスが@code{unspecified}ならEmacsは@code{:inherit}属性を決してマージしないので@code{nil}と同様に扱われる。フェイスのリストが使用された場合には、リスト内先頭側フェイスの属性が末尾側フェイスの属性をオーバーライドする。"
 
 #. type: defun
 #: original_texis/display.texi:2440
