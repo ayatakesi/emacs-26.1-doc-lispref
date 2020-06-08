@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-03-08 09:40+0900\n"
-"PO-Revision-Date: 2020-06-07 22:19+0900\n"
+"PO-Revision-Date: 2020-06-09 00:16+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -4479,10 +4479,8 @@ msgstr "override spec @r{(for a face)}"
 
 #. type: defun
 #: original_texis/display.texi:2639
-#, fuzzy
-#| msgid "The argument @var{spec-type} determines which spec to set.  If it is @code{nil} or @code{face-override-spec}, this function sets the @dfn{override spec}, which overrides over all other face specs on @var{face}.  If it is @code{customized-face} or @code{saved-face}, this function sets the customized spec or the saved custom spec.  If it is @code{face-defface-spec}, this function sets the default face spec (the same one set by @code{defface}).  If it is @code{reset}, this function clears out all customization specs and override specs from @var{face} (in this case, the value of @var{spec} is ignored).  Any other value of @var{spec-type} is reserved for internal use."
 msgid "The optional argument @var{spec-type} determines which spec to set.  If it is omitted or @code{nil} or @code{face-override-spec}, this function sets the @dfn{override spec}, which overrides face specs on @var{face} of all the other types mentioned below.  This is useful when calling this function outside of Custom code.  If @var{spec-type} is @code{customized-face} or @code{saved-face}, this function sets the customized spec or the saved custom spec, respectively.  If it is @code{face-defface-spec}, this function sets the default face spec (the same one set by @code{defface}).  If it is @code{reset}, this function clears out all customization specs and override specs from @var{face} (in this case, the value of @var{spec} is ignored).  The effect of any other value of @var{spec-type} on the face specs is reserved for internal use, but the function will still define @var{face} itself and recalculate its attributes, as described above."
-msgstr "引数@var{spec-type}は、どのspecをセットするべきかを決定する。これが@code{nil}または@code{face-override-spec}なら、この関数は@dfn{オーバーライドspec(override spec)}をセットする。これは@var{face}上の他のすべてのフェイスspecをオーバーライドする。@code{customized-face}または@code{saved-face}なら、この関数はカスタマイズされたspec、または保存されたカスタムspecをセットする。@code{face-defface-spec}なら、この関数はデフォルトフェイスspec(@code{defface}によりセットされるものと同一)をセットする。@code{reset}なら、この関数は@var{face}からすべてのカスタマイゼーションspecとオーバーライドspecをクリアーする(この場合、@var{spec}の値は無視される)。@var{spec-type}にたいする他のすべての値は、内部的な使用のために予約済みである。"
+msgstr "オプション引数@var{spec-type}はどのspecをセットするかを決定する。これが省略か@code{nil}、または@code{face-override-spec}なら、この関数は@dfn{オーバーライドspec(override spec)}をセットする。これは後述する@var{face}上の他のすべてのフェイスspecをオーバーライドする。これはCustomのコード外部からこの関数を呼び出す際に有用。@var{spec-type}が@code{customized-face}か@code{saved-face}なら、この関数はカスタマイズされたspec、または保存されたカスタムspecをセットする。@code{face-defface-spec}なら、この関数はデフォルトフェイスspec(@code{defface}によりセットされるものと同一)をセットする。@code{reset}なら、この関数は@var{face}からすべてのカスタマイゼーションspecとオーバーライドspecをクリアーする(この場合には@var{spec}の値は無視される)。@var{spec-type}の他の任意の値がフェイスspecに及ぼす効果は内部的な使用のために予約済みだが、それでも後述するようにこの関数は@var{face}自体の定義を行い属性を再計算する。"
 
 #. type: subsection
 #: original_texis/display.texi:2642
@@ -4700,10 +4698,9 @@ msgstr "これは@var{face}の@code{:slant}属性にたいして@var{italic-p}�
 
 #. type: deffn
 #: original_texis/display.texi:2778
-#, fuzzy, no-wrap
-#| msgid "set-face-underline face underline &optional frame"
+#, no-wrap
 msgid "Command set-face-underline face underline &optional frame"
-msgstr "set-face-underline face underline &optional frame"
+msgstr "Command set-face-underline face underline &optional frame"
 
 #. type: deffn
 #: original_texis/display.texi:2781
@@ -4712,10 +4709,9 @@ msgstr "これは@var{face}の@code{:underline}属性に@var{underline}をセッ
 
 #. type: deffn
 #: original_texis/display.texi:2783
-#, fuzzy, no-wrap
-#| msgid "set-face-inverse-video face inverse-video-p &optional frame"
+#, no-wrap
 msgid "Command set-face-inverse-video face inverse-video-p &optional frame"
-msgstr "set-face-inverse-video face inverse-video-p &optional frame"
+msgstr "Command set-face-inverse-video face inverse-video-p &optional frame"
 
 #. type: deffn
 #: original_texis/display.texi:2786
@@ -4876,7 +4872,7 @@ msgstr "そのテキストが選択されたウィンドウのモードライン
 #. type: itemize
 #: original_texis/display.texi:2904
 msgid "If the text comes from an overlay string via @code{before-string} or @code{after-string} properties (@pxref{Overlay Properties}), or from a display string (@pxref{Other Display Specs}), and the string doesn't contain a @code{face} or @code{mouse-face} property, but the buffer text affected by the overlay/display property does define a face, Emacs applies the face attributes of the ``underlying'' buffer text.  Note that this is so even if the overlay or display string is displayed in the display margins (@pxref{Display Margins})."
-msgstr ""
+msgstr "@code{before-string}や@code{after-string}プロパティを介したオーバーレイ文字列(@ref{Overlay Properties}を参照)、あるいはディスプレイ文字列(@ref{Other Display Specs}を参照)に由来するテキストであり、かつ文字列に@code{face}や@code{mouse-face}プロパティが含まれないが、バッファーのテキストがフェイスを定義するディスプレイプロパティやオーバーレイプロパティの影響を受ける場合には、Emacsは``基礎''にあるバッファーテキストのフェイス属性を適用する。これはたとえオーバーレイ文字列やディスプレイ文字列がマージン内に表示されている場合も同様であることに注意(@ref{Display Margins}を参照)。"
 
 #. type: itemize
 #: original_texis/display.texi:2908
@@ -5522,10 +5518,8 @@ msgstr "x-list-fonts name &optional reference-face frame maximum width"
 
 #. type: defun
 #: original_texis/display.texi:3300
-#, fuzzy
-#| msgid "This function returns a list of available font names that match @var{name}.  @var{name} should be a string containing a font name in either the Fontconfig, GTK, or XLFD format (@pxref{Fonts,,, emacs, The GNU Emacs Manual}).  Within an XLFD string, wildcard characters may be used: the @samp{*} character matches any substring, and the @samp{?} character matches any single character.  Case is ignored when matching font names."
 msgid "This function returns a list of available font names that match @var{name}.  @var{name} should be a string containing a font name in either the Fontconfig, GTK+, or XLFD format (@pxref{Fonts,,, emacs, The GNU Emacs Manual}).  Within an XLFD string, wildcard characters may be used: the @samp{*} character matches any substring, and the @samp{?} character matches any single character.  Case is ignored when matching font names."
-msgstr "この関数は、@var{name}にマッチする利用可能なフォント名のリストをリターンする。@var{name}はFontconfig、GTK、またはXLFDのいずれかのフォーマットによるフォント名を含む文字列であること(@ref{Fonts,,, emacs, The GNU Emacs Manual}を参照)。XLFD文字列では、ワイルドカード文字が使用できる。@samp{*}文字は任意の部分文字列、@samp{?}は任意の単一文字にマッチする。フォント名のマッチングでは、大文字小文字の違いは無視される。"
+msgstr "この関数は@var{name}にマッチする利用可能なフォント名のリストをリターンする。@var{name}はFontconfig、GTK+、またはXLFDのいずれかのフォーマットによるフォント名を含む文字列であること(@ref{Fonts,,, emacs, The GNU Emacs Manual}を参照)。XLFD文字列ではワイルドカード文字が使用できる。@samp{*}文字は任意の部分文字列、@samp{?}は任意の単一文字にマッチする。フォント名のマッチングではcase(大文字小文字)の違いは無視される。"
 
 #. type: defun
 #: original_texis/display.texi:3305
@@ -5886,10 +5880,8 @@ msgstr ":name"
 
 #. type: table
 #: original_texis/display.texi:3555
-#, fuzzy
-#| msgid "The font name (a string), in either XLFD, Fontconfig, or GTK format.  @xref{Fonts,,, emacs, The GNU Emacs Manual}."
 msgid "The font name (a string), in either XLFD, Fontconfig, or GTK+ format.  @xref{Fonts,,, emacs, The GNU Emacs Manual}."
-msgstr "XLFD、Fontconfig、GTKいずれかのフォーマットによるフォント名(文字列)。@ref{Fonts,,, emacs, The GNU Emacs Manual}を参照のこと。"
+msgstr "XLFD、Fontconfig、GTK+いずれかのフォーマットによるフォント名(文字列)。@ref{Fonts,,, emacs, The GNU Emacs Manual}を参照のこと。"
 
 #. type: table
 #: original_texis/display.texi:3563
@@ -6519,7 +6511,7 @@ msgstr "引数@var{left}は左フリンジ、同様に@var{right}は右フリン
 #: original_texis/display.texi:3910 original_texis/display.texi:4331
 #: original_texis/display.texi:4910
 msgid "The values specified here may be later overridden by invoking @code{set-window-buffer} (@pxref{Buffers and Windows}) on @var{window} with its @var{keep-margins} argument @code{nil} or omitted."
-msgstr ""
+msgstr "ここで指定した値は@var{window}にたいする引数@var{keep-margins}が@code{nil}か省略した@code{set-window-buffer} (@ref{Buffers and Windows}を参照)の呼び出しにより後からオーバーライドされるかもしれない。"
 
 #. type: defun
 #: original_texis/display.texi:3912
@@ -7163,10 +7155,8 @@ msgstr "set-window-scroll-bars window &optional width vertical-type height horiz
 
 #. type: defun
 #: original_texis/display.texi:4314
-#, fuzzy
-#| msgid "This function sets the fringe widths of window @var{window}.  If @var{window} is @code{nil}, the selected window is used."
 msgid "This function sets the width and/or height and the types of scroll bars for window @var{window}.  If @var{window} is @code{nil}, the selected window is used."
-msgstr "この関数は、ウィンドウ@var{window}のフリンジ幅をセットする。@var{window}が@code{nil}なら、選択されたウィンドウが使用される。"
+msgstr "この関数はウィンドウ@var{window}のスクロールバーの幅および/または高さ、およびタイプをセットする。@var{window}が@code{nil}なら選択されたウィンドウが使用される。"
 
 #. type: defun
 #: original_texis/display.texi:4321
@@ -7443,19 +7433,18 @@ msgstr "複数のソース(オーバーレイおよび/またはテキストプ�
 #: original_texis/display.texi:4506
 #, no-wrap
 msgid "display property, unsafe evaluation"
-msgstr ""
+msgstr "display property, unsafe evaluation"
 
 #. type: cindex
 #: original_texis/display.texi:4507
-#, fuzzy, no-wrap
-#| msgid "display specification"
+#, no-wrap
 msgid "security, and display specifications"
-msgstr "display specification"
+msgstr "security, and display specifications"
 
 #. type: Plain text
 #: original_texis/display.texi:4516
 msgid "Some of the display specifications allow inclusion of Lisp forms, which are evaluated at display time.  This could be unsafe in certain situations, e.g., when the display specification was generated by some external program/agent.  Wrapping a display specification in a list that begins with the special symbol @code{disable-eval}, as in @w{@code{('disable-eval @var{spec})}}, will disable evaluation of any Lisp in @var{spec}, while still supporting all the other display property features."
-msgstr ""
+msgstr "いくつかのディスプレイ仕様には、表示時に評価されるLispフォームを含めることができます。これは特定の状況では安全ではないかもしれません(ディスプレイ仕様が何らかの外部のプログラムやエージェントにより生成されたとき等)。@w{@code{('disable-eval @var{spec})}}のように特別なシンボル@code{disable-eval}で始まるリスト内にディスプレイ仕様をラップすることにより、他のすべてのディスプレイプロパティ機能をサポートしつつ、@var{spec}内の任意のLisp評価が無効になります。"
 
 #. type: Plain text
 #: original_texis/display.texi:4519
@@ -7705,17 +7694,13 @@ msgstr "以下の式がサポートされています:"
 
 #. type: group
 #: original_texis/display.texi:4661
-#, fuzzy, no-wrap
-#| msgid ""
-#| "  @var{expr} ::= @var{num} | (@var{num}) | @var{unit} | @var{elem} | @var{pos} | @var{image} | @var{form}\n"
-#| "  @var{num}  ::= @var{integer} | @var{float} | @var{symbol}\n"
-#| "  @var{unit} ::= in | mm | cm | width | height\n"
+#, no-wrap
 msgid ""
 "  @var{expr} ::= @var{num} | (@var{num}) | @var{unit} | @var{elem} | @var{pos} | @var{image} | @var{xwidget} | @var{form}\n"
 "  @var{num}  ::= @var{integer} | @var{float} | @var{symbol}\n"
 "  @var{unit} ::= in | mm | cm | width | height\n"
 msgstr ""
-"  @var{expr} ::= @var{num} | (@var{num}) | @var{unit} | @var{elem} | @var{pos} | @var{image} | @var{form}\n"
+"  @var{expr} ::= @var{num} | (@var{num}) | @var{unit} | @var{elem} | @var{pos} | @var{image} | @var{xwidget} | @var{form}\n"
 "  @var{num}  ::= @var{integer} | @var{float} | @var{symbol}\n"
 "  @var{unit} ::= in | mm | cm | width | height\n"
 
@@ -7737,31 +7722,23 @@ msgstr ""
 
 #. type: Plain text
 #: original_texis/display.texi:4678
-#, fuzzy
-#| msgid "The form @var{num} specifies a fraction of the default frame font height or width.  The form @code{(@var{num})} specifies an absolute number of pixels.  If @var{num} is a symbol, @var{symbol}, its buffer-local variable binding is used."
 msgid "The form @var{num} specifies a fraction of the default frame font height or width.  The form @code{(@var{num})} specifies an absolute number of pixels.  If @var{num} is a symbol, @var{symbol}, its buffer-local variable binding is used; that binding can be either a number or a cons cell of the forms shown above (including yet another cons cell whose @code{car} is a symbol that has a buffer-local binding)."
-msgstr "フォーム@var{num}は、デフォルトフレームフォントの高さか幅を、フォーム@code{(@var{num})}は絶対ピクセル数を指定します。@var{num}がシンボル@var{symbol}なら、それのバッファーローカルな変数バインディングが使用されます。"
+msgstr "フォーム@var{num}はデフォルトフレームフォントの高さか幅、フォーム@code{(@var{num})}は絶対ピクセル数を指定します。@var{num}がシンボル@var{symbol}なら、それのバッファーローカルな変数バインディングが使用されます。このバインディングには数字か上述の形式のコンスセル(他にもバッファーローカルなバインディングをもつシンボルが@code{car}であるような他のコンスセルも含む)が可能です。"
 
 #. type: Plain text
 #: original_texis/display.texi:4688
-#, fuzzy
-#| msgid "The @code{in}, @code{mm}, and @code{cm} units specify the number of pixels per inch, millimeter, and centimeter, respectively.  The @code{width} and @code{height} units correspond to the default width and height of the current face.  An image specification @code{image} corresponds to the width or height of the image."
 msgid "The @code{in}, @code{mm}, and @code{cm} units specify the number of pixels per inch, millimeter, and centimeter, respectively.  The @code{width} and @code{height} units correspond to the default width and height of the current face.  An image specification of the form @w{@code{(image . @var{props})}} (@pxref{Image Descriptors})  corresponds to the width or height of the specified image.  Similarly, an xwidget specification of the form @w{@code{(xwidget . @var{props})}} stands for the width or height of the specified xwidget.  @xref{Xwidgets}."
-msgstr "単位@code{in}、@code{mm}、@code{cm}はそれぞれインチ、ミリメートル、センチメートルごとのピクセル数を指定します。単位@code{width}と@code{height}はそれぞれ、カレントフェイスのデフォルトの幅と高さに対応します。イメージ仕様@code{image}は、そのイメージの幅、または高さに対応します。"
+msgstr "単位@code{in}、@code{mm}、@code{cm}はそれぞれインチ、ミリメートル、センチメートルごとのピクセル数を指定します。単位@code{width}と@code{height}はそれぞれカレントフェイスのデフォルトの幅と高さに対応します。@w{@code{(image . @var{props})}}という形式のイメージ仕様は、指定されたイメージの幅や高さに対応します(@ref{Image Descriptors}を参照)。同様に@w{@code{(xwidget . @var{props})}}という形式のxwidget仕様は指定されたxwidgetび幅や高さを意味します。@ref{Xwidgets}を参照してください。"
 
 #. type: Plain text
 #: original_texis/display.texi:4695
-#, fuzzy
-#| msgid "The elements @code{left-fringe}, @code{right-fringe}, @code{left-margin}, @code{right-margin}, @code{scroll-bar}, and @code{text} specify to the width of the corresponding area of the window."
 msgid "The elements @code{left-fringe}, @code{right-fringe}, @code{left-margin}, @code{right-margin}, @code{scroll-bar}, and @code{text} specify the width of the corresponding area of the window.  When the window displays line numbers (@pxref{Size of Displayed Text}), the width of the @code{text} area is decreased by the screen space taken by the line-number display."
-msgstr "要素@code{left-fringe}、@code{right-fringe}、@code{left-margin}、@code{right-margin}、@code{scroll-bar}、@code{text}は、そのウィンドウの対応する領域の幅を指定します。"
+msgstr "要素@code{left-fringe}、@code{right-fringe}、@code{left-margin}、@code{right-margin}、@code{scroll-bar}、@code{text}はそのウィンドウの対応する領域の幅を指定します。そのウィンドウで行番号(@ref{Size of Displayed Text}を参照)を表示している際にはテキストエリアの幅は行番号の表示に要するスクリーンスペースで減じられます。"
 
 #. type: Plain text
 #: original_texis/display.texi:4702
-#, fuzzy
-#| msgid "The @code{left}, @code{center}, and @code{right} positions can be used with @code{:align-to} to specify a position relative to the left edge, center, or right edge of the text area."
 msgid "The @code{left}, @code{center}, and @code{right} positions can be used with @code{:align-to} to specify a position relative to the left edge, center, or right edge of the text area.  When the window displays line numbers, the @code{left} and the @code{center} positions are offset to account for the screen space taken by the line-number display."
-msgstr "位置@code{left}、@code{center}、@code{right}はテキストエリアの左端、中央、右端から相対的に位置を指定するために、@code{:align-to}とともに使用できます。"
+msgstr "位置@code{left}、@code{center}、@code{right}はテキストエリアの左端、中央、右端から相対的に位置を指定するために@code{:align-to}とともに使用できます。ウィンドウで行番号を表示している際の@code{left}と@code{center}の位置は、行番号の表示に要するスクリーンスペースを考慮したオフセットになります。"
 
 #. type: Plain text
 #: original_texis/display.texi:4710
@@ -7776,17 +7753,13 @@ msgstr ":align-to (+ left-margin (0.5 . left-margin))\n"
 
 #. type: Plain text
 #: original_texis/display.texi:4720
-#, fuzzy
-#| msgid "If no specific base offset is set for alignment, it is always relative to the left edge of the text area.  For example, @samp{:align-to 0} in a header-line aligns with the first text column in the text area."
 msgid "If no specific base offset is set for alignment, it is always relative to the left edge of the text area.  For example, @samp{:align-to 0} in a header-line aligns with the first text column in the text area.  When the window displays line numbers, the text is considered to start where the space used for line-number display ends."
-msgstr "位置揃えにたいしてベースオフセットが何も指定されなければ、テキストエリア左端にたいして常に相対的になります。たとえばヘッダーライン内の@samp{:align-to 0}は、テキストエリアの最初のテキスト行に位置揃えします。"
+msgstr "位置揃えにたいしてベースオフセットが何も指定されなければ、テキストエリア左端にたいして常に相対的になります。たとえばヘッダーライン内の@samp{:align-to 0}はテキストエリアの最初のテキスト行に位置揃えします。ウィンドウで行番号を表示している際には、テキストは行番号表示の終了に使用されるスペースから開始するとみなされます。"
 
 #. type: Plain text
 #: original_texis/display.texi:4726
-#, fuzzy
-#| msgid "A value of the form @code{(@var{num} . @var{expr})} stands for the product of the values of @var{num} and @var{expr}.  For example, @code{(2 . in)} specifies a width of 2 inches, while @code{(0.5 .  @var{image})} specifies half the width (or height) of the specified image."
 msgid "A value of the form @code{(@var{num} . @var{expr})} stands for the product of the values of @var{num} and @var{expr}.  For example, @code{(2 . in)} specifies a width of 2 inches, while @code{(0.5 .  @var{image})} specifies half the width (or height) of the specified @var{image} (which should be given by its image spec)."
-msgstr "@code{(@var{num} . @var{expr})}という形式の値は、@var{num}と@var{expr}により生成される値を意味します。たとえば@code{(2 . in)}は2インチの幅、@code{(0.5 .  @var{image})}は指定されたイメージの幅(または高さ)の半分を指定します。"
+msgstr "@code{(@var{num} . @var{expr})}という形式の値は、@var{num}と@var{expr}により生成される値を意味します。たとえば@code{(2 . in)}は2インチの幅、@code{(0.5 .  @var{image})}は指定された@var{image} (それのイメージspecにより与えられる必要がある)の幅(または高さ)の半分を指定します。"
 
 #. type: Plain text
 #: original_texis/display.texi:4730
@@ -8014,7 +7987,7 @@ msgstr "特定のバッファーテキストに@emph{割り当てられた}マ�
 #. type: Plain text
 #: original_texis/display.texi:4878
 msgid "Note that if the string to be displayed in the margin doesn't specify a face, its face is determined using the same rules and priorities as it is for strings displayed in the text area (@pxref{Displaying Faces}).  If this results in undesirable ``leaking'' of faces into the margin, make sure the string has an explicit face specified for it."
-msgstr ""
+msgstr "マージン内に表示する文字列がフェイスを指定しなければ、テキストエリア内に表示される文字列に準じたいくつかの規則と優先度によりフェイスが決定されることに注意してください(@ref{Displaying Faces}を参照)。これが望ましくないマージンへのフェイスの``漏洩''をもたらすようなら、文字列が文字列用に明示的なフェイスを確実にもつようにしてください。"
 
 #. type: Plain text
 #: original_texis/display.texi:4882
@@ -8154,17 +8127,14 @@ msgstr "ImageMagickを通じて利用できる特別な機能。"
 #. type: subsection
 #: original_texis/display.texi:4948 original_texis/display.texi:5393
 #: original_texis/display.texi:5394
-#, fuzzy, no-wrap
-#| msgid "Images"
+#, no-wrap
 msgid "SVG Images"
-msgstr "Images"
+msgstr "SVG Images"
 
 #. type: menuentry
 #: original_texis/display.texi:4948
-#, fuzzy
-#| msgid "Creating and moving overlays."
 msgid "Creating and manipulating SVG images."
-msgstr "オーバーレイの作成と変更。"
+msgstr "SVGイメージの作成と操作。"
 
 #. type: subsection
 #: original_texis/display.texi:4948 original_texis/display.texi:5551
@@ -8245,17 +8215,13 @@ msgstr "Emacsはいくつかの異なるフォーマットのイメージを表�
 
 #. type: Plain text
 #: original_texis/display.texi:4967
-#, fuzzy
-#| msgid "Supported image formats (and the required support libraries) include PBM and XBM (which do not depend on support libraries and are always available), XPM (@code{libXpm}), GIF (@code{libgif} or @code{libungif}), PostScript (@code{gs}), JPEG (@code{libjpeg}), TIFF (@code{libtiff}), PNG (@code{libpng}), and SVG (@code{librsvg})."
 msgid "Supported image formats (and the required support libraries) include PBM and XBM (which do not depend on support libraries and are always available), XPM (@code{libXpm}), GIF (@code{libgif} or @code{libungif}), JPEG (@code{libjpeg}), TIFF (@code{libtiff}), PNG (@code{libpng}), and SVG (@code{librsvg})."
-msgstr "サポートされるイメージフォーマット(と要求されるサポートライブラリー)にはPBMとXBM(サポートライブラリーに依存せず常に利用可能)、XPM(@code{libXpm})、GIF (@code{libgif}または@code{libungif})、PostScript(@code{gs})、JPEG(@code{libjpeg})、TIFF(@code{libtiff})、PNG(@code{libpng})、SVG (@code{librsvg})が含まれます。"
+msgstr "サポートされるイメージフォーマット(と要求されるサポートライブラリー)にはPBMとXBM(サポートライブラリーに依存せず常に利用可能)、XPM (@code{libXpm})、GIF (@code{libgif}か@code{libungif})、JPEG (@code{libjpeg})、TIFF (@code{libtiff})、PNG (@code{libpng})、SVG (@code{librsvg})が含まれます。"
 
 #. type: Plain text
 #: original_texis/display.texi:4972
-#, fuzzy
-#| msgid "Each of these image formats is associated with an @dfn{image type symbol}.  The symbols for the above formats are, respectively, @code{pbm}, @code{xbm}, @code{xpm}, @code{gif}, @code{postscript}, @code{jpeg}, @code{tiff}, @code{png}, and @code{svg}."
 msgid "Each of these image formats is associated with an @dfn{image type symbol}.  The symbols for the above formats are, respectively, @code{pbm}, @code{xbm}, @code{xpm}, @code{gif}, @code{jpeg}, @code{tiff}, @code{png}, and @code{svg}."
-msgstr "これらのイメージフォーマットはそれぞれ、@dfn{イメージタイプシンボル(image type symbol)}に関連付けられます。上記のフォーマットにたいするシンボルは順に@code{pbm}、@code{xbm}、@code{xpm}、@code{gif}、@code{postscript}、@code{jpeg}、@code{tiff}、@code{png}、@code{svg}になります。"
+msgstr "これらのイメージフォーマットはそれぞれ@dfn{イメージタイプシンボル(image type symbol)}に関連付けられます。上記のフォーマットにたいするシンボルは順に@code{pbm}、@code{xbm}、@code{xpm}、@code{gif}、@code{jpeg}、@code{tiff}、@code{png}、@code{svg}になります。"
 
 #. type: Plain text
 #: original_texis/display.texi:4977
@@ -8743,10 +8709,8 @@ msgstr "images, support for more formats"
 
 #. type: Plain text
 #: original_texis/display.texi:5293
-#, fuzzy
-#| msgid "If you build Emacs with ImageMagick support, you can use the ImageMagick library to load many image formats (@pxref{File Conveniences,,, emacs, The GNU Emacs Manual}).  The image type symbol for images loaded via ImageMagick is @code{imagemagick}, regardless of the actual underlying image format."
 msgid "If your Emacs build has ImageMagick support, you can use the ImageMagick library to load many image formats (@pxref{File Conveniences,,, emacs, The GNU Emacs Manual}).  The image type symbol for images loaded via ImageMagick is @code{imagemagick}, regardless of the actual underlying image format."
-msgstr "ImageMagickのサポートつきでEmacsをビルドした場合には、多くくのイメージフォーマットをロードするために、ImageMagickライブラリーを使用できます(@ref{File Conveniences,,, emacs, The GNU Emacs Manual}を参照)。ImageMagickを通じてロードしたイメージのイメージタイプシンボルは、基礎となる実際のイメージフォーマットとは無関係に、@code{imagemagick}になります。"
+msgstr "ImageMagickのサポートつきのEmacsビルドでは、多くくのイメージフォーマットをロードするためにImageMagickライブラリーを使用できます(@ref{File Conveniences,,, emacs, The GNU Emacs Manual}を参照)。ImageMagickを通じてロードしたイメージのイメージタイプシンボルは、基礎となる実際のイメージフォーマットとは無関係に@code{imagemagick}になります。"
 
 #. type: Plain text
 #: original_texis/display.texi:5295
@@ -8838,19 +8802,18 @@ msgstr "キーワード@code{:max-width}と@code{:max-height}は、イメージ�
 #. type: table
 #: original_texis/display.texi:5369
 msgid "If both @code{:width} and @code{:max-height} has been set (but @code{:height} has not been set), then @code{:max-height} will have precedence.  The same is the case for the opposite combination: The ``max'' keyword has precedence.  That is, if you have a 200x100 image and specify that @code{:width} should be 400 and @code{:max-height} should be 150, you'll end up with an image that is 300x150: Preserving the aspect ratio and not exceeding the ``max'' setting.  This combination of parameters is a useful way of saying ``display this image as large as possible, but no larger than the available display area''."
-msgstr ""
+msgstr "@code{:width}と@code{:max-height}がいずれもセットされている(が@code{:height}がセットされていない)場合には@code{:max-height}が優先される。逆の組み合わせの場合も同様で、キーワード``max''が優先される。つまり200x100のイメージがあり@code{:width}を400、@code{:max-height}を150に指定すると、アスペクト比を保持しつつ``max''のセッティングを超過しないようにイメージは最終的には300x150になる。このパラメーターの組み合わせは、``可能なかぎり大きく、ただし利用可能なディスプレイエリア以下でこのイメージを表示せよ''のように指示する簡便な手段である。"
 
 #. type: item
 #: original_texis/display.texi:5370
-#, fuzzy, no-wrap
-#| msgid ":file @var{file}"
+#, no-wrap
 msgid ":scale @var{scale}"
-msgstr ":file @var{file}"
+msgstr ":scale @var{scale}"
 
 #. type: table
 #: original_texis/display.texi:5379
 msgid "This should be a number, where values higher than 1 means to increase the size, and lower means to decrease the size.  For instance, a value of 0.25 will make the image a quarter size of what it originally was.  If the scaling makes the image larger than specified by @code{:max-width} or @code{:max-height}, the resulting size will not exceed those two values.  If both @code{:scale} and @code{:height}/@code{:width} are specified, the height/width will be adjusted by the specified scaling factor."
-msgstr ""
+msgstr "これは数字であること。1より大きい値はサイズの増加、小さい値はサイズの減少を意味する。たとえば値0.25はイメージをオリジナルの1/4のサイズにするだろう。このスケーリングにより@code{:max-width}や@code{:max-height}で指定されたイメージの元のサイズより大きくなる場合でも、結果サイズがこれら2つの値を超過することはない。@code{:scale}および@code{:height}/@code{:width}の両方が指定されたら、高さ/幅は指定されたスケーリング倍率に調整される。"
 
 #. type: item
 #: original_texis/display.texi:5380
@@ -8889,67 +8852,66 @@ msgstr "@ref{Multi-Frame Images}を参照のこと。"
 #: original_texis/display.texi:5395
 #, no-wrap
 msgid "SVG images"
-msgstr ""
+msgstr "SVG images"
 
 #. type: Plain text
 #: original_texis/display.texi:5400
 msgid "SVG (Scalable Vector Graphics) is an XML format for specifying images.  If your Emacs build has SVG support, you can create and manipulate these images with the following functions."
-msgstr ""
+msgstr "SVG (Scalable Vector Graphics)はイメージ指定用のXMLフォーマットです。EmacsビルドにSVGサポートがあれば以下の関数でこれらのイメージの作成と操作が可能です。"
 
 #. type: defun
 #: original_texis/display.texi:5401
 #, no-wrap
 msgid "svg-create width height &rest args"
-msgstr ""
+msgstr "svg-create width height &rest args"
 
 #. type: defun
 #: original_texis/display.texi:5404
 msgid "Create a new, empty SVG image with the specified dimensions.  @var{args} is an argument plist with you can specify following:"
-msgstr ""
+msgstr "指定したサイズで新たにSVGイメージを作成する。@var{args}はplist引数であり、以下を指定できる:"
 
 #. type: item
 #: original_texis/display.texi:5406 original_texis/display.texi:5439
-#, fuzzy, no-wrap
-#| msgid "zero-width"
+#, no-wrap
 msgid ":stroke-width"
-msgstr "zero-width"
+msgstr ":stroke-width"
 
 #. type: table
 #: original_texis/display.texi:5408
 msgid "The default width (in pixels) of any lines created."
-msgstr ""
+msgstr "作成するすべてのラインのデフォルト幅(ピクセル単位)。"
 
 #. type: item
 #: original_texis/display.texi:5409
 #, no-wrap
 msgid ":stroke"
-msgstr ""
+msgstr ":stroke"
 
 #. type: table
 #: original_texis/display.texi:5411
 msgid "The default stroke color on any lines created."
-msgstr ""
+msgstr "作成するすべてのラインのデフォルトのストロークカラー。"
 
 #. type: defun
 #: original_texis/display.texi:5415
 msgid "This function returns an SVG structure, and all the following functions work on that structure."
-msgstr ""
+msgstr "この関数はSVG構造(SVG structure)をリターンする。以下のすべての関数はこの構造にたいして機能する。"
 
 #. type: defun
 #: original_texis/display.texi:5417
 #, no-wrap
 msgid "svg-gradient svg id type stops"
-msgstr ""
+msgstr "svg-gradient svg id type stops"
 
 #. type: defun
 #: original_texis/display.texi:5421
 msgid "Create a gradient in @var{svg} with identifier @var{id}.  @var{type} specifies the gradient type, and can be either @code{linear} or @code{radial}.  @var{stops} is a list of percentage/color pairs."
-msgstr ""
+msgstr "@var{svg}に識別子@var{id}でグラデーションを作成する。@var{type}はグラデーションタイプで@code{linear}か@code{radial}のいずれかを指定する。@var{stops}はパーセント割合/カラーのペアからなるリスト。"
 
 #. type: defun
 #: original_texis/display.texi:5424
 msgid "The following will create a linear gradient that goes from red at the start, to green 25% of the way, to blue at the end:"
-msgstr ""
+msgstr "以下は最初の赤から25%の緑、最後は青に至る線形グラデーションを作成する:"
 
 #. type: lisp
 #: original_texis/display.texi:5428
@@ -8958,128 +8920,128 @@ msgid ""
 "(svg-gradient svg \"gradient1\" 'linear\n"
 "              '((0 . \"red\") (25 . \"green\") (100 . \"blue\")))\n"
 msgstr ""
+"(svg-gradient svg \"gradient1\" 'linear\n"
+"              '((0 . \"red\") (25 . \"green\") (100 . \"blue\")))\n"
 
 #. type: defun
 #: original_texis/display.texi:5432
 msgid "The gradient created (and inserted into the SVG object) can later be used by all functions that create shapes."
-msgstr ""
+msgstr "作成(およびSVGオブジェクトに挿入)されたグラデーションは、後でシェイプを作成するすべての関数で使用できる。"
 
 #. type: Plain text
 #: original_texis/display.texi:5437
 msgid "All the following functions take an optional list of keyword parameters that alter the various attributes from their default values.  Valid attributes include:"
-msgstr ""
+msgstr "以下の関数はすべてさまざまな属性のデフォルト値を変更するオプションのキーワードパラメーターを受け取ります。有効な属性には以下が含まれます:"
 
 #. type: table
 #: original_texis/display.texi:5442
 msgid "The width (in pixels) of lines drawn, and outlines around solid shapes."
-msgstr ""
+msgstr "ラインとソリッドシェイプ枠線の描画幅(ピクセル単位)。"
 
 #. type: item
 #: original_texis/display.texi:5443
 #, no-wrap
 msgid ":stroke-color"
-msgstr ""
+msgstr ":stroke-color"
 
 #. type: table
 #: original_texis/display.texi:5445
 msgid "The color of lines drawn, and outlines around solid shapes."
-msgstr ""
+msgstr "ラインとソリッドシェイプ枠線の描画カラー。"
 
 #. type: item
 #: original_texis/display.texi:5446
-#, fuzzy, no-wrap
-#| msgid "min-colors"
+#, no-wrap
 msgid ":fill-color"
-msgstr "min-colors"
+msgstr ":fill-color"
 
 #. type: table
 #: original_texis/display.texi:5448
 msgid "The color used for solid shapes."
-msgstr ""
+msgstr "ラインとソリッドシェイプに使用するカラー。"
 
 #. type: item
 #: original_texis/display.texi:5449
-#, fuzzy, no-wrap
-#| msgid ":width"
+#, no-wrap
 msgid ":id"
-msgstr ":width"
+msgstr ":id"
 
 #. type: table
 #: original_texis/display.texi:5451
 msgid "The identified of the shape."
-msgstr ""
+msgstr "シェイプの識別子。"
 
 #. type: item
 #: original_texis/display.texi:5452
 #, no-wrap
 msgid ":gradient"
-msgstr ""
+msgstr ":gradient"
 
 #. type: table
 #: original_texis/display.texi:5455
 msgid "If given, this should be the identifier of a previously defined gradient object."
-msgstr ""
+msgstr "与えられた場合には以前に定義されたグラデーションオブジェクトの識別子であること。"
 
 #. type: defun
 #: original_texis/display.texi:5457
 #, no-wrap
 msgid "svg-rectangle svg x y width height &rest args"
-msgstr ""
+msgstr "svg-rectangle svg x y width height &rest args"
 
 #. type: defun
 #: original_texis/display.texi:5460
 msgid "Add a rectangle to @var{svg} where the upper left corner is at position @var{x}/@var{y} and is of size @var{width}/@var{height}."
-msgstr ""
+msgstr "左上隅の位置が@var{x}/@var{y}でサイズが@var{width}/@var{height}の矩形を@var{svg}に追加する。"
 
 #. type: lisp
 #: original_texis/display.texi:5463
 #, no-wrap
 msgid "(svg-rectangle svg 100 100 500 500 :gradient \"gradient1\")\n"
-msgstr ""
+msgstr "(svg-rectangle svg 100 100 500 500 :gradient \"gradient1\")\n"
 
 #. type: defun
 #: original_texis/display.texi:5466
 #, no-wrap
 msgid "svg-circle svg x y radius &rest args"
-msgstr ""
+msgstr "svg-circle svg x y radius &rest args"
 
 #. type: defun
 #: original_texis/display.texi:5469
 msgid "Add a circle to @var{svg} where the center is at @var{x}/@var{y} and the radius is @var{radius}."
-msgstr ""
+msgstr "中心が@var{x}/@var{y}で半径が@var{radius}の円を@var{svg}に追加する。"
 
 #. type: defun
 #: original_texis/display.texi:5471
 #, no-wrap
 msgid "svg-ellipse svg x y x-radius y-radius &rest args"
-msgstr ""
+msgstr "svg-ellipse svg x y x-radius y-radius &rest args"
 
 #. type: defun
 #: original_texis/display.texi:5475
 msgid "Add a circle to @var{svg} where the center is at @var{x}/@var{y} and the horizontal radius is @var{x-radius} and the vertical radius is @var{y-radius}."
-msgstr ""
+msgstr "中心が@var{x}/@var{y}で水平半径@var{x-radius}、垂直半径@var{y-radius}の円を@var{svg}に追加する。"
 
 #. type: defun
 #: original_texis/display.texi:5477
 #, no-wrap
 msgid "svg-line svg x1 y1 x2 y2 &rest args"
-msgstr ""
+msgstr "svg-line svg x1 y1 x2 y2 &rest args"
 
 #. type: defun
 #: original_texis/display.texi:5480
 msgid "Add a line to @var{svg} that starts at @var{x1}/@var{y1} and extends to @var{x2}/@var{y2}."
-msgstr ""
+msgstr "@var{x1}/@var{y1}から@var{x2}/@var{y2}までの線を@var{svg}に追加する。"
 
 #. type: defun
 #: original_texis/display.texi:5482
 #, no-wrap
 msgid "svg-polyline svg points &rest args"
-msgstr ""
+msgstr "svg-polyline svg points &rest args"
 
 #. type: defun
 #: original_texis/display.texi:5485
 msgid "Add a multiple segment line to @var{svg} that goes through @var{points}, which is a list of X/Y position pairs."
-msgstr ""
+msgstr "位置XとYのペアからなるリストであるような@var{points}を通過する複数セグメントの線を@var{svg}に追加する。"
 
 #. type: lisp
 #: original_texis/display.texi:5489
@@ -9088,17 +9050,19 @@ msgid ""
 "(svg-polyline svg '((200 . 100) (500 . 450) (80 . 100))\n"
 "              :stroke-color \"green\")\n"
 msgstr ""
+"(svg-polyline svg '((200 . 100) (500 . 450) (80 . 100))\n"
+"              :stroke-color \"green\")\n"
 
 #. type: defun
 #: original_texis/display.texi:5492
 #, no-wrap
 msgid "svg-polygon svg points &rest args"
-msgstr ""
+msgstr "svg-polygon svg points &rest args"
 
 #. type: defun
 #: original_texis/display.texi:5495
 msgid "Add a polygon to @var{svg} where @var{points} is a list of X/Y pairs that describe the outer circumference of the polygon."
-msgstr ""
+msgstr "ポリゴン外周の位置XとYのペアからなるリストであるような@var{points}により記述されるポリゴンを@var{svg}に追加する。"
 
 #. type: lisp
 #: original_texis/display.texi:5499
@@ -9107,17 +9071,19 @@ msgid ""
 "(svg-polygon svg '((100 . 100) (200 . 150) (150 . 90))\n"
 "             :stroke-color \"blue\" :fill-color \"red\"\")\n"
 msgstr ""
+"(svg-polygon svg '((100 . 100) (200 . 150) (150 . 90))\n"
+"             :stroke-color \"blue\" :fill-color \"red\"\")\n"
 
 #. type: defun
 #: original_texis/display.texi:5502
 #, no-wrap
 msgid "svg-text svg text &rest args"
-msgstr ""
+msgstr "svg-text svg text &rest args"
 
 #. type: defun
 #: original_texis/display.texi:5504
 msgid "Add a text to @var{svg}."
-msgstr ""
+msgstr "@var{svg}.<にテキストを追加する。"
 
 #. type: lisp
 #: original_texis/display.texi:5517
@@ -9135,17 +9101,28 @@ msgid ""
 " :y 400\n"
 " :stroke-width 1)\n"
 msgstr ""
+"(svg-text\n"
+" svg \"This is a text\"\n"
+" :font-size \"40\"\n"
+" :font-weight \"bold\"\n"
+" :stroke \"black\"\n"
+" :fill \"white\"\n"
+" :font-family \"impact\"\n"
+" :letter-spacing \"4pt\"\n"
+" :x 300\n"
+" :y 400\n"
+" :stroke-width 1)\n"
 
 #. type: defun
 #: original_texis/display.texi:5520
 #, no-wrap
 msgid "svg-embed svg image image-type datap &rest args"
-msgstr ""
+msgstr "svg-embed svg image image-type datap &rest args"
 
 #. type: defun
 #: original_texis/display.texi:5525
 msgid "Add an embedded (raster) image to @var{svg}.  If @var{datap} is @code{nil}, @var{IMAGE} should be a file name; if not, it should be a binary string containing the image data.  @var{image-type} should be a @acronym{MIME} image type, for instance @samp{\"image/jpeg\"}."
-msgstr ""
+msgstr "@var{svg}に埋め込みイメージ(ラスターイメージ)を追加する。@var{datap}が@code{nil}なら@var{IMAGE}はファイル名、それ以外ならイメージデータを含むバイナリ文字列であること。@var{image-type}はたとえば@samp{\"image/jpeg\"}のような@acronym{MIME}イメージタイプであること。"
 
 #. type: lisp
 #: original_texis/display.texi:5530
@@ -9155,22 +9132,25 @@ msgid ""
 "           :width \"100px\" :height \"100px\"\n"
 "           :x \"50px\" :y \"75px\")\n"
 msgstr ""
+"(svg-embed svg \"~/rms.jpg\" \"image/jpeg\" nil\n"
+"           :width \"100px\" :height \"100px\"\n"
+"           :x \"50px\" :y \"75px\")\n"
 
 #. type: defun
 #: original_texis/display.texi:5533
 #, no-wrap
 msgid "svg-remove svg id"
-msgstr ""
+msgstr "svg-remove svg id"
 
 #. type: defun
 #: original_texis/display.texi:5535
 msgid "Remove the element with identifier @code{id} from the @code{svg}."
-msgstr ""
+msgstr "@code{svg}から識別子@code{id}の要素を取り除く。"
 
 #. type: Plain text
 #: original_texis/display.texi:5541
 msgid "Finally, the @code{svg-image} takes an SVG object as its parameter and returns an image object suitable for use in functions like @code{insert-image}.  Here's a complete example that creates and inserts an image with a circle:"
-msgstr ""
+msgstr "最後に@code{svg-image}はパラメーターとしてSVGオブジェクトを受け取り、@code{insert-image}のような関数での使用に適したイメージオブジェクトをリターンします。以下は円のイメージを作成して挿入する完全な例です:"
 
 #. type: lisp
 #: original_texis/display.texi:5548
@@ -9182,6 +9162,11 @@ msgid ""
 "                  :stroke-color \"green\")\n"
 "  (insert-image (svg-image svg)))\n"
 msgstr ""
+"(let ((svg (svg-create 400 400 :stroke-width 10)))\n"
+"  (svg-gradient svg \"gradient1\" 'linear '((0 . \"red\") (100 . \"blue\")))\n"
+"  (svg-circle svg 200 200 100 :gradient \"gradient1\"\n"
+"                  :stroke-color \"green\")\n"
+"  (insert-image (svg-image svg)))\n"
 
 #. type: cindex
 #: original_texis/display.texi:5553
@@ -9338,12 +9323,12 @@ msgstr "機能する候補がなければ@var{symbol}は@code{nil}として定�
 #: original_texis/display.texi:5650
 #, no-wrap
 msgid "image-property image property"
-msgstr ""
+msgstr "image-property image property"
 
 #. type: defun
 #: original_texis/display.texi:5654
 msgid "Return the value of @var{property} in @var{image}.  Properties can be set by using @code{setf}.  Setting a property to @code{nil} will remove the property from the image."
-msgstr ""
+msgstr "@var{image}の@var{property}の値をリターンする。プロパティは@code{setf}を使用してセットできる。プロパティに@code{nil}をセットすることによりイメージからプロパティを削除できる。"
 
 #. type: defun
 #: original_texis/display.texi:5656
@@ -9374,17 +9359,13 @@ msgstr "image-load-path"
 
 #. type: defopt
 #: original_texis/display.texi:5679
-#, fuzzy
-#| msgid "This variable's value is a list of locations in which to search for image files.  If an element is a string or a variable symbol whose value is a string, the string is taken to be the name of a directory to search.  If an element is a variable symbol whose value is a list, that is taken to be a list of directory names to search."
 msgid "This variable's value is a list of locations in which to search for image files.  If an element is a string or a variable symbol whose value is a string, the string is taken to be the name of a directory to search.  If an element is a variable symbol whose value is a list, that is taken to be a list of directories to search."
-msgstr "この変数の値は、イメージファイルを検索する場所のリストである。要素が文字列、または値が文字列であるような変数シンボルなら、その文字列は検索を行うディレクトリーとされる。値がリストであるような変数シンボルの場合、それは検索を行うディレクトリーのリストとされる。"
+msgstr "この変数の値はイメージファイルを検索する場所のリスト。要素が文字列か値が文字列であるような変数シンボルなら、その文字列が検索を行うディレクトリーの名前になる。値がリストであるような変数シンボルの場合、それは検索を行うディレクトリーのリストとなる。"
 
 #. type: defopt
 #: original_texis/display.texi:5688
-#, fuzzy
-#| msgid "The default is to search in the @file{images} subdirectory of the directory specified by @code{data-directory}, then the directory specified by @code{data-directory}, and finally in the directories in @code{load-path}.  Subdirectories are not automatically included in the search, so if you put an image file in a subdirectory, you have to supply the subdirectory name explicitly.  For example, to find the image @file{images/foo/bar.xpm} within @code{data-directory}, you should specify the image as follows:"
 msgid "The default is to search in the @file{images} subdirectory of the directory specified by @code{data-directory}, then the directory specified by @code{data-directory}, and finally in the directories in @code{load-path}.  Subdirectories are not automatically included in the search, so if you put an image file in a subdirectory, you have to supply the subdirectory explicitly.  For example, to find the image @file{images/foo/bar.xpm} within @code{data-directory}, you should specify the image as follows:"
-msgstr "デフォルトでは@code{data-directory}で指定されたディレクトリーのサブディレクトリー@file{images}、次に@code{data-directory}で指定されたディレクトリー、最後に@code{load-path}で指定されたディレクトリー内を検索する。サブディレクトリーは自動的には検索に含まれないので、イメージファイルをサブディレクトリー内に配置した場合は、サブディレクトリー名を明示的に与える必要がある。たとえば@code{data-directory}内でイメージ@file{images/foo/bar.xpm}を見つけるには、以下のようにそのイメージを指定すること:"
+msgstr "デフォルトでは@code{data-directory}で指定されたディレクトリーのサブディレクトリー@file{images}、次に@code{data-directory}で指定されたディレクトリー、最後に@code{load-path}で指定されたディレクトリー内を検索する。サブディレクトリーは自動的には検索に含まれないので、イメージファイルをサブディレクトリー内に配置した場合には、サブディレクトリーを明示的に与える必要がある。たとえば@code{data-directory}内でイメージ@file{images/foo/bar.xpm}を見つけるには以下のようにそのイメージを指定すること:"
 
 #. type: example
 #: original_texis/display.texi:5691
@@ -9445,12 +9426,12 @@ msgstr ""
 #: original_texis/display.texi:5726
 #, no-wrap
 msgid "image-scaling-factor"
-msgstr ""
+msgstr "image-scaling-factor"
 
 #. type: Plain text
 #: original_texis/display.texi:5732
 msgid "Images are automatically scaled when created based on the @code{image-scaling-factor} variable.  The value is either a floating point number (where numbers higher than 1 means to increase the size and lower means to shrink the size), or the symbol @code{auto}, which will compute a scaling factor based on the font pixel size."
-msgstr ""
+msgstr "イメージは@code{image-scaling-factor}変数にもとづいて作成時に自動的にスケーリングされます。この値は浮動小数点数(1より大きい値はサイズの拡大、小さい値はサイズの縮小を意味する)、またはフォントのピクセルサイズにもとづいたスケーリング倍率で計算を行うシンボル@code{auto}のいずれかです。"
 
 #. type: cindex
 #: original_texis/display.texi:5735
@@ -9595,53 +9576,51 @@ msgstr "この変数の目的は意図せずEmacsに不当に大きなイメー�
 #. type: Plain text
 #: original_texis/display.texi:5845
 msgid "Images inserted with the insertion functions above also get a local keymap installed in the text properties (or overlays) that span the displayed image.  This keymap defines the following commands:"
-msgstr ""
+msgstr "上記の挿入関数で挿入されたイメージは、表示されたイメージを横断するテキスト(またはオーバーレイ)のプロパティ内にインストールされたローカルキーマップも取得します。このキーマップは以下のコマンドを定義します。"
 
 #. type: item
 #: original_texis/display.texi:5847
 #, no-wrap
 msgid "+"
-msgstr ""
+msgstr "+"
 
 #. type: table
 #: original_texis/display.texi:5850
 msgid "Increase the image size (@code{image-increase-size}).  A prefix value of @samp{4} means to increase the size by 40%.  The default is 20%."
-msgstr ""
+msgstr "イメージサイズを拡大する(@code{image-increase-size})。@samp{4}というプレフィクス値は40%のサイズ拡大を意味する。デフォルトは20%。"
 
 #. type: item
 #: original_texis/display.texi:5851
 #, no-wrap
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #. type: table
 #: original_texis/display.texi:5854
 msgid "Decrease the image size (@code{image-increase-size}).  A prefix value of @samp{4} means to decrease the size by 40%.  The default is 20%."
-msgstr ""
+msgstr "イメージサイズを縮小する(@code{image-increase-size})。@samp{4}というプレフィクス値は40%のサイズ縮小を意味する。デフォルトは20%。"
 
 #. type: item
 #: original_texis/display.texi:5855
 #, no-wrap
 msgid "r"
-msgstr ""
+msgstr "r"
 
 #. type: table
 #: original_texis/display.texi:5857
 msgid "Rotate the image by 90 degrees (@code{image-rotate})."
-msgstr ""
+msgstr "イメージを90度で回転する(@code{image-rotate})。"
 
 #. type: item
 #: original_texis/display.texi:5858
 #, no-wrap
 msgid "o"
-msgstr ""
+msgstr "o"
 
 #. type: table
 #: original_texis/display.texi:5860
-#, fuzzy
-#| msgid "The image is looked for in @code{image-load-path}."
 msgid "Save the image to a file (@code{image-save})."
-msgstr "イメージは、@code{image-load-path}内で検索される。"
+msgstr "イメージをファイルに保存する(@code{image-save})。"
 
 #. type: cindex
 #: original_texis/display.texi:5864
@@ -9856,7 +9835,7 @@ msgstr "webkit browser widget"
 #. type: Plain text
 #: original_texis/display.texi:6000
 msgid "Emacs is able to display native widgets, such as GTK+ WebKit widgets, in Emacs buffers when it was built with the necessary support libraries and is running on a graphical terminal.  To test whether Emacs supports display of embedded widgets, check that the @code{xwidget-internal} feature is available (@pxref{Named Features})."
-msgstr ""
+msgstr "必要なサポートライブラリーつきでEmacsがビルドされていて、かつグラフィカル端末上で実行されていれば、Emacsバッファー内にGTK+ WebKitウィジェットのようなネイティブウィジェットを表示することができます。Emacsが埋め込みウィジェットを表示可能かテストするには、@code{xwidget-internal}機能が利用可能かどうかをチェックします(@ref{Named Features}を参照)。"
 
 #. type: Plain text
 #: original_texis/display.texi:6005
@@ -11593,10 +11572,8 @@ msgstr "0"
 
 #. type: table
 #: original_texis/display.texi:6972
-#, fuzzy
-#| msgid "The glyph for the end of a truncated screen line (the default for this is @samp{$}).  @xref{Glyphs}.  On graphical terminals, Emacs uses arrows in the fringes to indicate truncation, so the display table has no effect."
 msgid "The glyph for the end of a truncated screen line (the default for this is @samp{$}).  @xref{Glyphs}.  On graphical terminals, Emacs by default uses arrows in the fringes to indicate truncation, so the display table has no effect, unless you disable the fringes (@pxref{Fringes,, Window Fringes, emacs, the GNU Emacs Manual})."
-msgstr "切り詰められたスクリーン行終端のグリフ(デフォルトでは@samp{$})。@ref{Glyphs}を参照のこと。グラフィカルな端末では、Emacsは切り詰められたことをフリンジ内の矢印で示し、ディスプレイテーブルは使用しない。"
+msgstr "切り詰められたスクリーン行終端のグリフ(デフォルトでは@samp{$})。@ref{Glyphs}を参照のこと。グラフィカルな端末ではフリンジを無効にしていなれば(@ref{Fringes,, Window Fringes, emacs, the GNU Emacs Manual}を参照)、Emacsはデフォルトでは切り詰められたことをフリンジ内の矢印で示し、ディスプレイテーブルは使用しない。"
 
 #. type: item
 #: original_texis/display.texi:6973
@@ -11606,10 +11583,8 @@ msgstr "1"
 
 #. type: table
 #: original_texis/display.texi:6978
-#, fuzzy
-#| msgid "The glyph for the end of a continued line (the default is @samp{\\}).  On graphical terminals, Emacs uses curved arrows in the fringes to indicate continuation, so the display table has no effect."
 msgid "The glyph for the end of a continued line (the default is @samp{\\}).  On graphical terminals, Emacs by default uses curved arrows in the fringes to indicate continuation, so the display table has no effect, unless you disable the fringes."
-msgstr "継続行終端のグリフ(デフォルトは@samp{\\})。グラフィカルな端末では、Emacsは継続ををフリンジ内の曲矢印で示し、ディスプレイテーブルは使用しない。"
+msgstr "継続行終端のグリフ(デフォルトは@samp{\\})。グラフィカルな端末ではフリンジを無効にしていなれば、デフォルトではEmacsは継続ををフリンジ内の曲矢印で示し、ディスプレイテーブルは使用しない。"
 
 #. type: item
 #: original_texis/display.texi:6979
@@ -11652,10 +11627,8 @@ msgstr "5"
 
 #. type: table
 #: original_texis/display.texi:6998
-#, fuzzy
-#| msgid "The glyph used to draw the border between side-by-side windows (the default is @samp{|}).  @xref{Splitting Windows}.  This takes effect only when there are no scroll bars; if scroll bars are supported and in use, a scroll bar separates the two windows."
 msgid "The glyph used to draw the border between side-by-side windows (the default is @samp{|}).  @xref{Splitting Windows}.  This currently has effect only on text terminals; on graphical terminals, if vertical scroll bars are supported and in use, a scroll bar separates the two windows, and if there are no vertical scroll bars and no dividers (@pxref{Window Dividers}), Emacs uses a thin line to indicate the border."
-msgstr "横並びのウィンドウ間のボーダー描画に使用されるグリフ(デフォルトは@samp{|})。@ref{Splitting Windows}を参照のこと。これは、スクロールバーが存在するときだけ効果をもつ。スクロールバーがサポートされていて使用中なら、スクロールバーが2つのウィンドウを分割する。"
+msgstr "横並びのウィンドウ間のボーダー描画に使用されるグリフ(デフォルトは@samp{|})。@ref{Splitting Windows}を参照のこと。これは現在のところテキスト端末でのみ効果がある。グラフィカル端末では垂直スクロールバーがサポートされていて使用中ならスクロールバーが2つのウィンドウを分割する。垂直スクロールバーとディバイダー(@ref{Window Dividers}を参照)がなければ、Emacsは境界を示すために細いラインを使用する。"
 
 #. type: Plain text
 #: original_texis/display.texi:7003
@@ -11789,10 +11762,8 @@ msgstr "standard-display-table"
 
 #. type: defvar
 #: original_texis/display.texi:7082
-#, fuzzy
-#| msgid "The value of this variable is the standard display table, which is used when Emacs is displaying a buffer in a window with neither a window display table nor a buffer display table defined.  Its default is @code{nil}."
 msgid "The value of this variable is the standard display table, which is used when Emacs is displaying a buffer in a window with neither a window display table nor a buffer display table defined, or when Emacs is outputting text to the standard output or error streams.  Although its default is typically @code{nil}, in an interactive session if the terminal cannot display curved quotes, its default maps curved quotes to ASCII approximations.  @xref{Text Quoting Style}."
-msgstr "この変数の値は、ウィンドウ内にバッファーを表示する際、ウィンドウディスプレイテーブルとバッファーディスプレイテーブルのいずれも定義されていないときに、Emacsが使用する標準ディスプレイテーブル(standard display table)である。デフォルトは@code{nil}。"
+msgstr "この変数の値はウィンドウ内にバッファーを表示する際、ウィンドウディスプレイテーブルとバッファーディスプレイテーブルのいずれも定義されていないとき、またはEmacsがテキストを標準出力やエラーストリームに出力しているときににEmacsが使用する標準ディスプレイテーブル(standard display table)。デフォルトが通常は@code{nil}だとしても、curved quotesを表示できない端末でのインタラクティブなセッションでは、デフォルトでcurved quotesをASCII近似文字にマップする。@ref{Text Quoting Style}を参照のこと。"
 
 #. type: Plain text
 #: original_texis/display.texi:7086
@@ -12073,10 +12044,8 @@ msgstr "no-font"
 
 #. type: table
 #: original_texis/display.texi:7240
-#, fuzzy
-#| msgid "Characters for there is no suitable font, or which cannot be encoded by the terminal's coding system."
 msgid "Characters for which there is no suitable font, or which cannot be encoded by the terminal's coding system."
-msgstr "適切なフォントが存在しないか、その端末のコーディングシステムではエンコードできない文字。"
+msgstr "適切なフォントが存在しない、あるいはその端末のコーディングシステムではエンコードできない文字。"
 
 #. type: defopt
 #: original_texis/display.texi:7248
@@ -12223,10 +12192,8 @@ msgstr "initial-window-system"
 
 #. type: defvar
 #: original_texis/display.texi:7321
-#, fuzzy
-#| msgid "This variable holds the value of @code{window-system} used for the first frame created by Emacs during startup.  (When Emacs is invoked with the @option{--daemon} option, it does not create any initial frames, so @code{initial-window-system} is @code{nil}.  @xref{Initial Options, daemon,, emacs, The GNU Emacs Manual}.)"
 msgid "This variable holds the value of @code{window-system} used for the first frame created by Emacs during startup.  (When Emacs is invoked as a daemon, it does not create any initial frames, so @code{initial-window-system} is @code{nil}, except on MS-Windows, where it is still @code{w32}.  @xref{Initial Options, daemon,, emacs, The GNU Emacs Manual}.)"
-msgstr "この変数は、スタートアップの間にEmacsが作成する最初のフレームにたいして使用される、@code{window-system}の値を保持する。(Emacsを@option{--daemon}オプションで呼び出し時には初期フレームを作成しないので、@code{initial-window-system}は@code{nil}である。@ref{Initial Options, daemon,, emacs, The GNU Emacs Manual}を参照されたい。)"
+msgstr "この変数はスタートアップの間にEmacsが作成する最初のフレームにたいして使用される@code{window-system}の値を保持する(デーモンとしてEmacsを呼び出し時には初期フレームを作成しないので、@code{w32}のMS-Windowsを除き@code{initial-window-system}は@code{nil}。@ref{Initial Options, daemon,, emacs, The GNU Emacs Manual}を参照)。"
 
 #. type: defun
 #: original_texis/display.texi:7323
@@ -12279,15 +12246,14 @@ msgstr "GTK+サポート付きでEmacsがビルドされた際にはデフォル
 
 #. type: cindex
 #: original_texis/display.texi:7363
-#, fuzzy, no-wrap
-#| msgid "image frames"
+#, no-wrap
 msgid "tooltip frames"
-msgstr "image frames"
+msgstr "tooltip frames"
 
 #. type: Plain text
 #: original_texis/display.texi:7368
 msgid "Tooltips are displayed in special frames called tooltip frames, which have their own frame parameters (@pxref{Frame Parameters}).  Unlike other frames, the default parameters for tooltip frames are stored in a special variable."
-msgstr ""
+msgstr "ツールチップは独自のパラメーターをもつツールチップフレームと呼ばれる特別なフレームに表示されます(@ref{Frame Parameters}を参照)。他のフレームとは異なり、ツールチップフレームのデフォルトパラメターは特別な変数に格納されています。"
 
 #. type: defopt
 #: original_texis/display.texi:7369
@@ -12298,7 +12264,7 @@ msgstr "tooltip-frame-parameters"
 #. type: defopt
 #: original_texis/display.texi:7379
 msgid "This customizable option holds the default frame parameters used for displaying tooltips.  Any font and color parameters are ignored, and the corresponding attributes of the @code{tooltip} face are used instead.  If @code{left} or @code{top} parameters are included, they are used as absolute frame-relative coordinates where the tooltip should be shown.  (Mouse-relative position of the tooltip can be customized using the variables described in @ref{Tooltips,,, emacs, The GNU Emacs Manual}.)  Note that the @code{left} and @code{top} parameters, if present, override the values of mouse-relative offsets."
-msgstr ""
+msgstr "このカスタマイズ可能なオプションはツールチップ表示に使用するデフォルトのフレームパラメーターを保持する。フォントとカラーに関するパラメーターは無視して、@code{tooltip}フェイスの対応する属性をかわりに使用する。@code{left}や@code{top}のパラメーターが含まれていれば、ツールチップを表示すべきフレームに相対的な絶対座標として使用する(@ref{Tooltips,,, emacs, The GNU Emacs Manual}に記された変数を使用すればマウスに相対的なツールチップをカスタマイズできる)。@code{left}と@code{top}のパラメーターが与えられた場合にはマウスに相対的なオフセットをオーバーラードすることに注意。"
 
 #. type: vindex
 #: original_texis/display.texi:7381
@@ -12410,10 +12376,8 @@ msgstr "reordering, of bidirectional text"
 
 #. type: Plain text
 #: original_texis/display.texi:7454
-#, fuzzy
-#| msgid "Text is stored in Emacs buffers and strings in @dfn{logical} (or @dfn{reading}) order, i.e., the order in which a human would read each character.  In right-to-left and bidirectional text, the order in which characters are displayed on the screen (called @dfn{visual order}) is not the same as logical order; the characters' screen positions do not increase monotonically with string or buffer position.  In performing this @dfn{bidirectional reordering}, Emacs follows the Unicode Bidirectional Algorithm (a.k.a.@: @acronym{UBA}), which is described in Annex #9 of the Unicode standard (@url{http://www.unicode.org/reports/tr9/}).  Emacs currently provides a ``Non-isolate Bidirectionality'' class implementation of the @acronym{UBA}: it does not yet support the isolate directional formatting characters introduced with Unicode Standard v6.3.0."
 msgid "Text is stored in Emacs buffers and strings in @dfn{logical} (or @dfn{reading}) order, i.e., the order in which a human would read each character.  In right-to-left and bidirectional text, the order in which characters are displayed on the screen (called @dfn{visual order}) is not the same as logical order; the characters' screen positions do not increase monotonically with string or buffer position.  In performing this @dfn{bidirectional reordering}, Emacs follows the Unicode Bidirectional Algorithm (a.k.a.@: @acronym{UBA}), which is described in Annex #9 of the Unicode standard (@url{http://www.unicode.org/reports/tr9/}).  Emacs provides a ``Full Bidirectionality'' class implementation of the @acronym{UBA}, consistent with the requirements of the Unicode Standard v9.0.  Note, however, that the way Emacs displays continuation lines when text direction is opposite to the base paragraph direction deviates from the UBA, which requires to perform line wrapping before reordering text for display."
-msgstr "テキストは@dfn{ロジカル}な順序(または@dfn{読込順})、すなわち人間が各文字を読み込むであろう順序で、テキストをEmacsバッファーおよび文字列に格納します。R2Lおよび双方向テキストでは、スクリーン上で文字が表示される順序(@dfn{ビジュアル順}と呼ばれる)はロジカル順と同一ではありません。それら各文字のスクリーン位置は、文字列またはバッファー位置により単調に増加しません。この@dfn{双方向の並べ替え(bidirectional reordering)}を処理を行うに際、EmacsはUnicode双方向アルゴリズム(@acronym{UBA}： Unicode Bidirectional Algorithm)にしたがいます(@url{http://www.unicode.org/reports/tr9/})。現在のところEmacsは、@acronym{UBA}の``Non-isolate Bidirectionality(双方向非分離)''なクラスの実装を提供します。これはまだ、Unicode Standard v6.3.0で提唱された方向分離フォーマットをサポートしていません。"
+msgstr "テキストは@dfn{ロジカル}な順序(または@dfn{読込順})、すなわち人間が各文字を読み込むであろう順序でテキストをEmacsバッファーや文字列に格納します。R2Lおよび双方向テキストでは、スクリーン上で文字が表示される順序(@dfn{ビジュアル順}と呼ばれる)はロジカル順と同一ではありません。それら各文字のスクリーン位置は文字列やバッファー位置により単調に増加しません。この@dfn{双方向の並べ替え(bidirectional reordering)}を処理を行う際に、EmacsはUnicode双方向アルゴリズム(@acronym{UBA}： Unicode Bidirectional Algorithm)にしたがいます(@url{http://www.unicode.org/reports/tr9/})。EmacsはUnicode Standard v9.0の要件に合致する@acronym{UBA}の``Full Bidirectionality(完全な双方向性)''を提供します。とはいえテキストがパラグラフの基本方向と逆方向なときにEmacsが継続行を表示する方法は、表示するテキストの再並び換えの前に行の折り返しを要求するUBAからは逸脱していることに注意してください。"
 
 #. type: defvar
 #: original_texis/display.texi:7455
@@ -12485,51 +12449,47 @@ msgstr "双方向テキストのパラグラフはそれぞれ、R2LかL2Rいず
 
 #. type: cindex
 #: original_texis/display.texi:7515
-#, fuzzy, no-wrap
-#| msgid "bidirectional display"
+#, no-wrap
 msgid "paragraph-start, and bidirectional display"
-msgstr "bidirectional display"
+msgstr "paragraph-start, and bidirectional display"
 
 #. type: cindex
 #: original_texis/display.texi:7516
-#, fuzzy, no-wrap
-#| msgid "bidirectional display"
+#, no-wrap
 msgid "paragraph-separate, and bidirectional display"
-msgstr "bidirectional display"
+msgstr "paragraph-separate, and bidirectional display"
 
 #. type: Plain text
 #: original_texis/display.texi:7524
 msgid "Where exactly paragraphs start and end, for the purpose of the Emacs @acronym{UBA} implementation, is determined by the following two buffer-local variables (note that @code{paragraph-start} and @code{paragraph-separate} have no influence on this).  By default both of these variables are @code{nil}, and paragraphs are bounded by empty lines, i.e., lines that consist entirely of zero or more whitespace characters followed by a newline."
-msgstr ""
+msgstr "Emacsの@acronym{UBA}実装の目的におけるパラグラフの開始および終了の正確な位置は、以下の2つのローカル変数により決定されます(@code{paragraph-start}と@code{paragraph-separate}に効果はないことに注意)。デフォルトではこれらの変数は@code{nil}であり、パラグラフは空行(改行を後に併なう0個以上の空白文字)で囲まれます。"
 
 #. type: defvar
 #: original_texis/display.texi:7525
-#, fuzzy, no-wrap
-#| msgid "bidi-paragraph-direction"
+#, no-wrap
 msgid "bidi-paragraph-start-re"
-msgstr "bidi-paragraph-direction"
+msgstr "bidi-paragraph-start-re"
 
 #. type: defvar
 #: original_texis/display.texi:7530
 msgid "If non-@code{nil}, this variable's value should be a regular expression matching a line that starts or separates two paragraphs.  The regular expression is always matched after a newline, so it is best to anchor it, i.e., begin it with a @code{\"^\"}."
-msgstr ""
+msgstr "この変数の値が非@code{nil}ならパラグラフの開始か2つのパラグラフを分割する行にマッチする正規表現であること。この正規表現は常に改行の後にマッチするので、それをアンカーにする(@code{\"^\"}で開始する)のが最善である。"
 
 #. type: defvar
 #: original_texis/display.texi:7532
-#, fuzzy, no-wrap
-#| msgid "bidi-paragraph-direction"
+#, no-wrap
 msgid "bidi-paragraph-separate-re"
-msgstr "bidi-paragraph-direction"
+msgstr "bidi-paragraph-separate-re"
 
 #. type: defvar
 #: original_texis/display.texi:7537
 msgid "If non-@code{nil}, this variable's value should be a regular expression matching a line separates two paragraphs.  The regular expression is always matched after a newline, so it is best to anchor it, i.e., begin it with a @code{\"^\"}."
-msgstr ""
+msgstr "この変数の値が非@code{nil}なら2つのパラグラフを分割する行にマッチする正規表現であること。この正規表現は常に改行の後にマッチするので、それをアンカーにする(@code{\"^\"}で開始する)のが最善である。"
 
 #. type: Plain text
 #: original_texis/display.texi:7543
 msgid "If you modify any of these two variables, you should normally modify both, to make sure they describe paragraphs consistently.  For example, to have each new line start a new paragraph for bidi-reordering purposes, set both variables to @code{\"^\"}."
-msgstr ""
+msgstr "これら2つの変数 のいずれかを変更する場合には、整合性のあるパラグラフの記述を保証するために、通常は両方を変更するべきです。たとえば双方向の並べ替え目的のために各改行を新たなパラグラフの開始とするには両方の変数に@code{\"^\"}をセットしてください。"
 
 #. type: Plain text
 #: original_texis/display.texi:7553
