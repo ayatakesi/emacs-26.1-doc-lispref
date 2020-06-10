@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-06-10 22:02+0900\n"
+"PO-Revision-Date: 2020-06-10 23:33+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -3064,7 +3064,7 @@ msgstr "%z"
 #. type: table
 #: original_texis/os.texi:1575
 msgid "This stands for the time zone numerical offset.  The @samp{z} can be preceded by one, two, or three colons; if plain @samp{%z} stands for @samp{-0500}, then @samp{%:z} stands for @samp{-05:00}, @samp{%::z} stands for @samp{-05:00:00}, and @samp{%:::z} is like @samp{%::z} except it suppresses trailing instances of @samp{:00} so it stands for @samp{-05} in the same example."
-msgstr "これはタイムゾーンの数値イフレセットを意味する。@samp{z}の前に1つ、2つ、または3つのコロンを前置できる。単なる@samp{%z}が@samp{-0500}を意味する場合には@samp{%:z}は@samp{-05:00}、@samp{%::z}は@samp{-05:00:00}を意味する。@samp{%:::z}は@samp{%::z}と同様だが末尾の@samp{:00}を無するので、この例では@samp{-05}を意味する。"
+msgstr "これはタイムゾーンの数値オフセットを意味する。@samp{z}の前に1つ、2つ、または3つのコロンを前置できる。単なる@samp{%z}が@samp{-0500}を意味する場合には@samp{%:z}は@samp{-05:00}、@samp{%::z}は@samp{-05:00:00}を意味する。@samp{%:::z}は@samp{%::z}と同様だが末尾の@samp{:00}を無するので、この例では@samp{-05}を意味する。"
 
 #. type: item
 #: original_texis/os.texi:1575 original_texis/os.texi:1652
