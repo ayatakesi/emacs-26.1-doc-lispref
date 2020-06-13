@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-03-08 09:00+0900\n"
+"PO-Revision-Date: 2020-06-14 06:06+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -70,10 +70,8 @@ msgstr "checkdoc-file"
 
 #. type: Plain text
 #: original_texis/tips.texi:29
-#, fuzzy
-#| msgid "You can automatically check some of the conventions described below by running the command @kbd{M-x checkdoc RET} when visiting a Lisp file.  It cannot check all of the conventions, and not all the warnings it gives necessarily correspond to problems, but it is worth examining them all."
 msgid "You can automatically check some of the conventions described below by running the command @kbd{M-x checkdoc @key{RET}} when visiting a Lisp file.  It cannot check all of the conventions, and not all the warnings it gives necessarily correspond to problems, but it is worth examining them all.  Alternatively, use the command @kbd{M-x checkdoc-current-buffer @key{RET}} to check the conventions in the current buffer, or @code{checkdoc-file} when you want to check a file in batch mode, e.g., with a command run by @kbd{@w{M-x compile @key{RET}}}."
-msgstr "以降で説明する慣習のいくつかは、Lispファイルのvisit時にコマンド@kbd{M-x checkdoc RET}を実行することにより、自動的にチェックできます。これはすべての監修はチェックできませんし、与えられた警告すべてが必ずしも問題に対応する訳ではありませんが、それらすべてを検証することには価値があります。"
+msgstr "以降で説明する慣習のいくつかはLispファイルのvisit時にコマンド@kbd{M-x checkdoc @key{RET}}を実行することにより自動的にチェックできます。これはすべての慣習はチェックできませんし、与えられた警告すべてが必ずしも問題に対応する訳ではありませんが、それらすべてを検証することには価値があります。カレントバッファーの慣習をチェックするにはコマンド@kbd{M-x checkdoc-current-buffer @key{RET}}、(たとえば@kbd{@w{M-x compile @key{RET}}}で実行するコマンドとともに)batchモードでファイルをチェックしたければ@code{checkdoc-file}をかわりに使用してください。"
 
 #. type: node
 #: original_texis/tips.texi:39 original_texis/tips.texi:41
@@ -198,10 +196,8 @@ msgstr "他のLispプログラムと区別するための短い単語を選択�
 
 #. type: itemize
 #: original_texis/tips.texi:79
-#, fuzzy
-#| msgid "Occasionally, for a command name intended for users to use, it is more convenient if some words come before the package's name prefix.  And constructs that define functions, variables, etc., work better if they start with @samp{defun} or @samp{defvar}, so put the name prefix later on in the name."
 msgid "Occasionally, for a command name intended for users to use, it is more convenient if some words come before the package's name prefix.  For example, it is our convention to have commands that list objects named as @samp{list-@var{something}}, e.g., a package called @samp{frob} could have a command @samp{list-frobs}, when its other global symbols begin with @samp{frob-}.  Also, constructs that define functions, variables, etc., work better if they start with @samp{defun} or @samp{defvar}, so put the name prefix later on in the name."
-msgstr "ユーザーの使用を意図したコマンド名では、何らかの単語がそのパッケージ名のプレフィクスの前にあると便利なことがある。関数や変数等を定義する構成は、それらが@samp{defun}や@samp{defvar}で始まればより良く機能するので、名前内でそれらの後に名前プレフィクスを置くこと。"
+msgstr "ユーザーの使用を意図したコマンド名では、何らかの単語がそのパッケージ名のプレフィクスの前にあると便利なことがある。たとえばわたしちの慣習ではオブジェクトをリストするコマンドの名前なら@samp{list-@var{something}}、すなわち@samp{frob}と呼ばれるパッケージのグローバルシンボルが@samp{frob-}で始まれば@samp{list-frobs}というコマンドをもつかもしれない。さらに関数や変数等を定義する構文が@samp{defun}や@samp{defvar}で始まればより良く機能するので、名前内でそれらの後に名前プレフィクスを置くこと。"
 
 #. type: itemize
 #: original_texis/tips.texi:86
@@ -446,10 +442,8 @@ msgstr "このルールの理由は任意のコンテキストにおける非プ
 
 #. type: itemize
 #: original_texis/tips.texi:321
-#, fuzzy
-#| msgid "Similarly, don't bind a key sequence ending in @key{C-g}, since that is commonly used to cancel a key sequence."
 msgid "Similarly, don't bind a key sequence ending in @kbd{C-g}, since that is commonly used to cancel a key sequence."
-msgstr "同様に、@key{C-g}は一般的にはキーシーケンスのキャンセルに使用されるので、@key{C-g}で終わるキーシーケンスをバインドしてはならない。"
+msgstr "同様に@kbd{C-g}は一般的にはキーシーケンスのキャンセルに使用されるので、@kbd{C-g}で終わるキーシーケンスをバインドしてはならない。"
 
 #. type: itemize
 #: original_texis/tips.texi:326
@@ -724,22 +718,19 @@ msgstr "同様に@code{declare-function}ステートメントを使用して、@
 
 #. type: itemize
 #: original_texis/tips.texi:541
-#, fuzzy
-#| msgid "If you use many functions and variables from a certain file, you can add a @code{require} for that package to avoid compilation warnings for them.  For instance,"
 msgid "If you use many functions, macros, and variables from a certain file, you can add a @code{require} (@pxref{Named Features, require}) for that package to avoid compilation warnings for them, like this:"
-msgstr "特定のファイルから多くの関数と変数を使用する場合には、それらに関するコンパイラー警告を回避するために、そのパッケージに@code{require}を追加できる。たとえば、"
+msgstr "特定のファイルから多くの関数、マクロ、変数を使用する場合には、それらに関するコンパイラー警告を回避するために、以下のようにパッケージに@code{require}を追加できる(@ref{Named Features, require}を参照):"
 
 #. type: example
 #: original_texis/tips.texi:544
-#, fuzzy, no-wrap
-#| msgid "(defvar foo)\n"
+#, no-wrap
 msgid "(require 'foo)\n"
-msgstr "(defvar foo)\n"
+msgstr "(require 'foo)\n"
 
 #. type: itemize
 #: original_texis/tips.texi:549
 msgid "If you need only macros from some file, you can require it only at compile time (@pxref{Eval During Compile}).  For instance,"
-msgstr ""
+msgstr "何らかののファイルのマクロだけが必要ならコンパイル時だけrequireできる(@ref{Eval During Compile}を参照)。たとえば、"
 
 #. type: example
 #: original_texis/tips.texi:553
@@ -911,7 +902,7 @@ msgstr "ドキュメント文字列がLispシンボルを参照する際には�
 #. type: itemize
 #: original_texis/tips.texi:697
 msgid "Documentation strings can also use an older single-quoting convention, which quotes symbols with grave accent @t{`} and apostrophe @t{'}: @t{`like-this'} rather than @t{‘like-this’}.  This older convention was designed for now-obsolete displays in which grave accent and apostrophe were mirror images.  Documentation using this convention is converted to the user's preferred format when it is copied into a help buffer.  @xref{Keys in Documentation}."
-msgstr ""
+msgstr "ドキュメント文字列は@t{‘like-this’}ではなく@t{`like-this'}のように、grave accent @t{`}とapostrophe @t{'}でシンボルをクォートする古いシングルクォートの慣習も使用できる。この古い慣習はgrave accentとapostropheが鏡像となる今では時代遅れのディスプレイ用にデザインされている。この慣習を使用するドキュメントはhelpバッファーへコピー時にはユーザーが望む形式に変換される。@ref{Keys in Documentation}を参照のこと。"
 
 #. type: cindex
 #: original_texis/tips.texi:698
@@ -985,16 +976,13 @@ msgstr "最後にURLのハイパーリンクを作成するには@samp{URL}の�
 
 #. type: smallexample
 #: original_texis/tips.texi:757
-#, fuzzy, no-wrap
-#| msgid ""
-#| "The home page for the GNU project has more information (see URL\n"
-#| "`http://www.gnu.org/').\n"
+#, no-wrap
 msgid ""
 "The home page for the GNU project has more information (see URL\n"
 "`https://www.gnu.org/').\n"
 msgstr ""
 "The home page for the GNU project has more information (see URL\n"
-"`http://www.gnu.org/').\n"
+"`https://www.gnu.org/').\n"
 
 #. type: itemize
 #: original_texis/tips.texi:767
@@ -1239,10 +1227,9 @@ msgstr ""
 
 #. type: group
 #: original_texis/tips.texi:946
-#, fuzzy, no-wrap
-#| msgid ";; Copyright (C) 2010-2015 Your Name\n"
+#, no-wrap
 msgid ";; Copyright (C) 2010-2018 Your Name\n"
-msgstr ";; Copyright (C) 2010-2015 Your Name\n"
+msgstr ";; Copyright (C) 2010-2018 Your Name\n"
 
 #. type: smallexample
 #: original_texis/tips.texi:951
@@ -1280,11 +1267,7 @@ msgstr ""
 
 #. type: group
 #: original_texis/tips.texi:960
-#, fuzzy, no-wrap
-#| msgid ""
-#| ";; This file is free software@dots{}\n"
-#| "@dots{}\n"
-#| ";; along with this file.  If not, see <http://www.gnu.org/licenses/>.\n"
+#, no-wrap
 msgid ""
 ";; This file is free software@dots{}\n"
 "@dots{}\n"
@@ -1292,7 +1275,7 @@ msgid ""
 msgstr ""
 ";; This file is free software@dots{}\n"
 "@dots{}\n"
-";; along with this file.  If not, see <http://www.gnu.org/licenses/>.\n"
+";; along with this file.  If not, see <https://www.gnu.org/licenses/>.\n"
 
 #. type: Plain text
 #: original_texis/tips.texi:964
@@ -1312,10 +1295,8 @@ msgstr "この説明は1行に収まる必要があります。そのファイ�
 
 #. type: Plain text
 #: original_texis/tips.texi:983
-#, fuzzy
-#| msgid "The copyright notice usually lists your name (if you wrote the file).  If you have an employer who claims copyright on your work, you might need to list them instead.  Do not say that the copyright holder is the Free Software Foundation (or that the file is part of GNU Emacs) unless your file has been accepted into the Emacs distribution.  For more information on the form of copyright and license notices, see @uref{http://www.gnu.org/licenses/gpl-howto.html, the guide on the GNU website}."
 msgid "The copyright notice usually lists your name (if you wrote the file).  If you have an employer who claims copyright on your work, you might need to list them instead.  Do not say that the copyright holder is the Free Software Foundation (or that the file is part of GNU Emacs) unless your file has been accepted into the Emacs distribution.  For more information on the form of copyright and license notices, see @uref{https://www.gnu.org/licenses/gpl-howto.html, the guide on the GNU website}."
-msgstr "著作権表示には、(あなたがそのファイルを記述したなら)通常はあなたの名前をリストします。あなたの作業の著作権を主張する雇用者がいる場合には、かわりに彼らをリストする必要があるかもしれません。Emacsディストリビューションにあなたのファイルが受け入れられていなければ、著作権者がFree Software Foundation(またはそのファイルがGNU Emacsの一部)だと告げないでください。著作権とライセンス通知の形式に関するより詳細な情報は、@uref{http://www.gnu.org/licenses/gpl-howto.html, the guide on the GNU website}を参照してください。"
+msgstr "著作権表示には、(あなたがそのファイルを記述したなら)通常はあなたの名前をリストします。あなたの作業の著作権を主張する雇用者がいる場合には、かわりに彼らをリストする必要があるかもしれません。Emacsディストリビューションにあなたのファイルが受け入れられていなければ、著作権者をFree Software Foundation(またはそのファイルがGNU Emacsの一部)だと告知しないでください。著作権とライセンス通知の形式に関するより詳細な情報は@uref{https://www.gnu.org/licenses/gpl-howto.html, the guide on the GNU website}を参照してください。"
 
 #. type: Plain text
 #: original_texis/tips.texi:987
@@ -1404,7 +1385,7 @@ msgstr "checkdoc-package-keywords"
 #. type: table
 #: original_texis/tips.texi:1036
 msgid "This line lists keywords for the @code{finder-by-keyword} help command.  Please use that command to see a list of the meaningful keywords.  The command @kbd{M-x checkdoc-package-keywords @key{RET}} will find and display any keywords that are not in @code{finder-known-keywords}.  If you set the variable @code{checkdoc-package-keywords-flag} non-@code{nil}, checkdoc commands will include the keyword verification in its checks."
-msgstr ""
+msgstr "この行はヘルプコマンド@code{finder-by-keyword}でリストするキーワード。意味のあるキーワードのリストの確認にこのコマンドを使用してほしい。コマンド@kbd{M-x checkdoc-package-keywords @key{RET}}は@code{finder-known-keywords}にないすべてのキーワードを探して表示する。変数@code{checkdoc-package-keywords-flag}を非@code{nil}にセットすると、checkdocコマンドはチェックにキーワード検証を含める。"
 
 #. type: table
 #: original_texis/tips.texi:1040
@@ -1426,14 +1407,12 @@ msgstr "Homepage"
 #: original_texis/tips.texi:1046
 #, no-wrap
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #. type: table
 #: original_texis/tips.texi:1048
-#, fuzzy
-#| msgid "This line states the homepage of the library."
 msgid "These lines state the homepage of the library."
-msgstr "この行は、そのライブラリーのホームページを示す。"
+msgstr "この行はライブラリーのホームページを示す。"
 
 #. type: item
 #: original_texis/tips.texi:1049
