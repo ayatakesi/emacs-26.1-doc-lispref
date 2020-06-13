@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-03-08 09:40+0900\n"
-"PO-Revision-Date: 2020-06-14 00:55+0900\n"
+"PO-Revision-Date: 2020-06-14 05:41+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -86,7 +86,7 @@ msgstr "同様の理由により関数@code{char-from-name}を削除しました
 #. type: itemize
 #: original_texis/anti.texi:94
 msgid "Various functions that accept file names as arguments, such as @code{file-attributes}, @code{file-symlink-p}, and @code{make-symbolic-link} gained back the special support for file names quoted with @samp{/:}, and they now interpret @samp{~} in symlink targets as you'd expect: to mean your home directory.  The confusing differences between the operation of these functions in interactive and non-interactive invocations has been removed."
-msgstr "@code{file-attributes}、@code{file-symlink-p}、@code{make-symbolic-link}のような引数としてファイル名を受け取る種々の関数は@samp{/:}でクォートされたファイル名にたいする特別なサポートを取り戻し、シンボリックリンクのターット内の@samp{~}はあなたが期待する通り(すなわちホームディレクトリー)に解釈されるようになりました。これらの関数の呼び出しが対話的か否かによる操作の差異による混乱は削除されました。"
+msgstr "@code{file-attributes}、@code{file-symlink-p}、@code{make-symbolic-link}のような引数としてファイル名を受け取る種々の関数は@samp{/:}でクォートされたファイル名にたいする特別なサポートを取り戻し、シンボリックリンクのターゲット内の@samp{~}はあなたが期待する通り(すなわちホームディレクトリー)に解釈されるようになりました。これらの関数の呼び出しが対話的か否かによる操作の差異による混乱は削除されました。"
 
 #. type: itemize
 #: original_texis/anti.texi:102
@@ -111,7 +111,7 @@ msgstr "数値比較と関数@code{format}、@code{make-hash-table}、@code{min}
 #. type: itemize
 #: original_texis/anti.texi:126
 msgid "The functions @code{ffloor}, @code{fceiling}l, @code{ftruncate} and @code{fround} now accept integer arguments.  Conversely, functions like @code{decode-char} that accept floating-point integers now accept arguments that are not integers.  In both cases the results are amusingly nonsensical sometimes."
-msgstr "関数@code{ffloor}、@code{fceiling}、@code{ftruncate}、@code{fround}が整数の引数を受け取るようになりました。それとは逆に@code{decode-char}のような浮動小数点整数を受け取る関数は、整数の引数を受け取らなくなります。いずれの場合でも結果は時に面白いほど無意味です。"
+msgstr "関数@code{ffloor}、@code{fceiling}、@code{ftruncate}、@code{fround}が整数の引数を受け取るようになりました。それとは逆に@code{decode-char}のような浮動小数点整数を受け取る関数は、整数の引数を受け取らなくなります。いずれの場合でも結果は時として愉快なほど無意味です。"
 
 #. type: itemize
 #: original_texis/anti.texi:131
