@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-03-08 09:41+0900\n"
-"PO-Revision-Date: 2020-03-01 00:19+0900\n"
+"PO-Revision-Date: 2020-06-14 20:38+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -204,25 +204,24 @@ msgstr "ダンプされた@file{emacs}実行可能形式(@dfn{純粋}なEmacsと
 #: original_texis/internals.texi:69
 #, no-wrap
 msgid "build details"
-msgstr ""
+msgstr "build details"
 
 #. type: cindex
 #: original_texis/internals.texi:70
 #, no-wrap
 msgid "deterministic build"
-msgstr ""
+msgstr "deterministic build"
 
 #. type: cindex
 #: original_texis/internals.texi:71
-#, fuzzy, no-wrap
-#| msgid "@option{--enable-locallisppath} option to @command{configure}"
+#, no-wrap
 msgid "@option{--disable-build-details} option to @command{configure}"
-msgstr "@option{--enable-locallisppath} option to @command{configure}"
+msgstr "@option{--disable-build-details} option to @command{configure}"
 
 #. type: Plain text
 #: original_texis/internals.texi:78
 msgid "By default the dumped @file{emacs} executable records details such as the build time and host name.  Use the @option{--disable-build-details} option of @command{configure} to suppress these details, so that building and installing Emacs twice from the same sources is more likely to result in identical copies of Emacs."
-msgstr ""
+msgstr "ダンプされた@file{emacs}にはデフォルトではビルド時刻やホスト名のような詳細が記録されます。これらの詳細を抑制するために@command{configure}のオプションに@option{--disable-build-details}を使用すれば、同一のソースからEmacsを2回ビルドしてインストールする際に同一のEmacsのコピーが生成される可能性が高くなります。"
 
 #. type: file{#1}
 #: original_texis/internals.texi:79
@@ -437,10 +436,8 @@ msgstr "storage of vector-like Lisp objects"
 
 #. type: Plain text
 #: original_texis/internals.texi:257
-#, fuzzy
-#| msgid "Beyond the basic vector, a lot of objects like window, buffer, and frame are managed as if they were vectors.  The corresponding C data structures include the @code{struct vectorlike_header} field whose @code{size} member contains the subtype enumerated by @code{enum pvec_type} and an information about how many @code{Lisp_Object} fields this structure contains and what the size of the rest data is.  This information is needed to calculate the memory footprint of an object, and used by the vector allocation code while iterating over the vector blocks."
 msgid "Beyond the basic vector, a lot of objects like window, buffer, and frame are managed as if they were vectors.  The corresponding C data structures include the @code{union vectorlike_header} field whose @code{size} member contains the subtype enumerated by @code{enum pvec_type} and an information about how many @code{Lisp_Object} fields this structure contains and what the size of the rest data is.  This information is needed to calculate the memory footprint of an object, and used by the vector allocation code while iterating over the vector blocks."
-msgstr "基本的なベクトではないウィンドウ、バッファー、フレームがあたかもベクターであるかのように管理されています。対応するCデータ構造体には@code{struct vectorlike_header}フィールドが含まれ、そのメンバー@code{size}には@code{enum pvec_type}で列挙されたサブタイプ、その構造体が含む@code{Lisp_Object}フィールドの数に関する情報、および残りのデータのサイズが含まれます。この情報は、オブジェクトのメモリーフットプリントの計算に必要であり、ベクターブロックの繰り返し処理の際のベクター割り当てコードにより使用されます。"
+msgstr "基本的なベクトではないウィンドウ、バッファー、フレームがあたかもベクターであるかのように管理されています。対応するCデータ構造体には@code{union vectorlike_header}フィールドが含まれ、そのメンバー@code{size}には@code{enum pvec_type}で列挙されたサブタイプ、その構造体が含む@code{Lisp_Object}フィールドの数に関する情報、および残りのデータのサイズが含まれます。この情報は、オブジェクトのメモリーフットプリントの計算に必要であり、ベクターブロックの繰り返し処理の際のベクター割り当てコードにより使用されます。"
 
 #. type: cindex
 #: original_texis/internals.texi:258
@@ -1225,15 +1222,7 @@ msgstr ""
 
 #. type: group
 #: original_texis/internals.texi:677
-#, fuzzy, no-wrap
-#| msgid ""
-#| "  while (CONSP (args))\n"
-#| "    @{\n"
-#| "      val = eval_sub (XCAR (args));\n"
-#| "      if (!NILP (val))\n"
-#| "        break;\n"
-#| "      args = XCDR (args);\n"
-#| "    @}\n"
+#, no-wrap
 msgid ""
 "  while (CONSP (args))\n"
 "    @{\n"
@@ -1250,6 +1239,7 @@ msgstr ""
 "      if (!NILP (val))\n"
 "        break;\n"
 "      args = XCDR (args);\n"
+"      maybe_quit ();\n"
 "    @}\n"
 
 #. type: group
@@ -1353,13 +1343,7 @@ msgstr "これはLisp関数で@code{interactive}の引数として使用され�
 
 #. type: group
 #: original_texis/internals.texi:743
-#, fuzzy, no-wrap
-#| msgid ""
-#| "DEFUN (\"foo\", Ffoo, Sfoo, 0, UNEVALLED,\n"
-#| "       \"(list (read-char-by-name \\\"Insert character: \\\")\\\n"
-#| "              (prefix-numeric-value current-prefix-arg)\\\n"
-#| "              t))\",\n"
-#| "  doc: /* @dots{} /*)\n"
+#, no-wrap
 msgid ""
 "DEFUN (\"foo\", Ffoo, Sfoo, 0, UNEVALLED, 0\n"
 "       \"(list (read-char-by-name \\\"Insert character: \\\")\\\n"
@@ -1367,11 +1351,11 @@ msgid ""
 "              t))\",\n"
 "  doc: /* @dots{} */)\n"
 msgstr ""
-"DEFUN (\"foo\", Ffoo, Sfoo, 0, UNEVALLED,\n"
+"DEFUN (\"foo\", Ffoo, Sfoo, 0, UNEVALLED, 0\n"
 "       \"(list (read-char-by-name \\\"Insert character: \\\")\\\n"
 "              (prefix-numeric-value current-prefix-arg)\\\n"
 "              t))\",\n"
-"  doc: /* @dots{} /*)\n"
+"  doc: /* @dots{} */)\n"
 
 #. type: item
 #: original_texis/internals.texi:746
@@ -1397,7 +1381,7 @@ msgstr "Lispコードでのドキュメント文字列にたいするすべて�
 #. type: table
 #: original_texis/internals.texi:768
 msgid "The documentation string can be followed by a list of C function attributes for the C function that implements the primitive, like this:"
-msgstr ""
+msgstr "以下のようにドキュメント文字列の後に、そのプリミティブを実装するC関数にたいするC関数属性のリストがあるかもしれない:"
 
 #. type: group
 #: original_texis/internals.texi:774
@@ -1407,45 +1391,47 @@ msgid ""
 "  doc: /* @dots{} */\n"
 "  attributes: @var{attr1} @var{attr2} @dots{})\n"
 msgstr ""
+"DEFUN (\"bar\", Fbar, Sbar, 0, UNEVALLED, 0\n"
+"  doc: /* @dots{} */\n"
+"  attributes: @var{attr1} @var{attr2} @dots{})\n"
 
 #. type: table
 #: original_texis/internals.texi:780
 msgid "You can specify more than a single attribute, one after the other.  Currently, only the following attributes are recognized:"
-msgstr ""
+msgstr "後に続けることにより複数の属性を指定できる。現在のところ以下の属性が認識される:"
 
 #. type: item
 #: original_texis/internals.texi:782
 #, no-wrap
 msgid "noreturn"
-msgstr ""
+msgstr "noreturn"
 
 #. type: table
 #: original_texis/internals.texi:787
 msgid "Declares the C function as one that never returns.  This corresponds to the C11 keyword @code{_Noreturn} and to @w{@code{__attribute__ ((__noreturn__))}} attribute of GCC (@pxref{Function Attributes,,, gcc, Using the GNU Compiler Collection})."
-msgstr ""
+msgstr "決してリターンしないC関数を宣言する。これはC11のキーワード@code{_Noreturn}、GCCの属性@w{@code{__attribute__ ((__noreturn__))}}に対応している(@ref{Function Attributes,,, gcc, Using the GNU Compiler Collection}を参照)。"
 
 #. type: item
 #: original_texis/internals.texi:788
 #, no-wrap
 msgid "const"
-msgstr ""
+msgstr "const"
 
 #. type: table
 #: original_texis/internals.texi:793
 msgid "Declares that the function does not examine any values except its arguments, and has no effects except the return value.  This corresponds to @w{@code{__attribute__ ((__const__))}} attribute of GCC."
-msgstr ""
+msgstr "引数以外の値を検査せず、リターン値以外に影響しない関数を宣言する。これはGCCの属性@w{@code{__attribute__ ((__const__))}}に対応している。"
 
 #. type: item
 #: original_texis/internals.texi:794
-#, fuzzy, no-wrap
-#| msgid "top_line"
+#, no-wrap
 msgid "noinline"
-msgstr "top_line"
+msgstr "noinline"
 
 #. type: table
 #: original_texis/internals.texi:799
 msgid "This corresponds to @w{@code{__attribute__ ((__noinline__))}} attribute of GCC, which prevents the function from being considered for inlining.  This might be needed, e.g., to countermand effects of link-time optimizations on stack-based variables."
-msgstr ""
+msgstr "これは関数がインラインとみなされることを抑止するGCCの属性@w{@code{__attribute__ ((__noinline__))}}に対応している。これはたとえばスタックベースの変数にたいするリンク時の最適化の効果を取り消すために必要になるかもしれない。"
 
 #. type: Plain text
 #: original_texis/internals.texi:818
@@ -1477,15 +1463,14 @@ msgstr "関数@code{For}自体ではローカル変数@code{args}はEmacsのス�
 
 #. type: cindex
 #: original_texis/internals.texi:832
-#, fuzzy, no-wrap
-#| msgid "@code{DEFUN}, C macro to define Lisp primitives"
+#, no-wrap
 msgid "@code{maybe_quit}, use in Lisp primitives"
-msgstr "@code{DEFUN}, C macro to define Lisp primitives"
+msgstr "@code{maybe_quit}, use in Lisp primitives"
 
 #. type: Plain text
 #: original_texis/internals.texi:839
 msgid "Note the call to @code{maybe_quit} inside the loop: this function checks whether the user pressed @kbd{C-g}, and if so, aborts the processing.  You should do that in any loop that can potentially require a large number of iterations; in this case, the list of arguments could be very long.  This increases Emacs responsiveness and improves user experience."
-msgstr ""
+msgstr "ループ内部の@code{maybe_quit}呼び出しに注意してください。この関数はユーザーが@kbd{C-g}を渡したかどうかをチェックして、もしそうなら処理をabortします。多数の繰り返しを要する可能性があるすべてのループ内でこれを行うべきです。この場合には引数のリストは非常に長くなるかもしれません。これはEmacsの応答性とユーザーエクスペリエンスを向上させます。"
 
 #. type: Plain text
 #: original_texis/internals.texi:845
@@ -1555,10 +1540,8 @@ msgstr "defining customization variables in C"
 
 #. type: Plain text
 #: original_texis/internals.texi:886
-#, fuzzy
-#| msgid "If you want to make a Lisp variables that is defined in C behave like one declared with @code{defcustom}, add an appropriate entry to @file{cus-start.el}."
 msgid "If you want to make a Lisp variable that is defined in C behave like one declared with @code{defcustom}, add an appropriate entry to @file{cus-start.el}."
-msgstr "Cで定義されたLisp変数を、@code{defcustom}で宣言された変数のように振る舞わせたい場合は、@file{cus-start.el}に適切なエントリーを追加してください。"
+msgstr "Cで定義されたLisp変数を@code{defcustom}で宣言された変数のように振る舞わせたい場合には、@file{cus-start.el}に適切なエントリーを追加してください。"
 
 #. type: cindex
 #: original_texis/internals.texi:887
@@ -2031,10 +2014,8 @@ msgstr "header"
 
 #. type: table
 #: original_texis/internals.texi:1127
-#, fuzzy
-#| msgid "A header of type @code{struct vectorlike_header} is common to all vectorlike objects."
 msgid "A header of type @code{union vectorlike_header} is common to all vectorlike objects."
-msgstr "タイプ@code{struct vectorlike_header}のヘッダーは、すべてのベクター類似のオブジェクトに共通。"
+msgstr "タイプ@code{union vectorlike_header}のヘッダーは、すべてのベクター類似のオブジェクトに共通。"
 
 #. type: item
 #: original_texis/internals.texi:1128
