@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 25.1\n"
 "POT-Creation-Date: 2020-03-08 09:41+0900\n"
-"PO-Revision-Date: 2020-03-08 09:18+0900\n"
+"PO-Revision-Date: 2020-06-14 22:11+0900\n"
 "Last-Translator: Ayanokoji Takesi <ayanokoji.takesi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -243,14 +243,12 @@ msgstr "このエラーメッセージは、通常はエラー条件@code{file-e
 #: original_texis/errors.texi:110
 #, no-wrap
 msgid "file-missing"
-msgstr ""
+msgstr "file-missing"
 
 #. type: table
 #: original_texis/errors.texi:114
-#, fuzzy
-#| msgid "This is a subcategory of @code{file-error}.  It occurs when @code{copy-file} tries and fails to set the last-modification time of the output file.  @xref{Changing Files}."
 msgid "This is a subcategory of @code{file-error}.  It occurs when an operation attempts to act on a file that is missing.  @xref{Changing Files}."
-msgstr "これは@code{file-error}のサブカテゴリーである。これは@code{copy-file}を試行して、出力ファイルの最終変更時刻のセットに失敗したときに発生する。@ref{Changing Files}を参照のこと。"
+msgstr "これは@code{file-error}のサブカテゴリー。これは存在しないファイルの処理を試みた際に発生する。@ref{Changing Files}を参照のこと。"
 
 #. type: item
 #: original_texis/errors.texi:116
@@ -398,10 +396,8 @@ msgstr "setting-constant"
 
 #. type: table
 #: original_texis/errors.texi:180
-#, fuzzy
-#| msgid "The message is @samp{Attempt to set a constant symbol}.  This happens when attempting to assign values to @code{nil}, @code{t}, and keyword symbols.  @xref{Constant Variables}."
 msgid "The message is @samp{Attempt to set a constant symbol}.  This happens when attempting to assign values to @code{nil}, @code{t}, @code{most-positive-fixnum}, @code{most-negative-fixnum}, and keyword symbols.  It also happens when attempting to assign values to @code{enable-multibyte-characters} and some other symbols whose direct assignment is not allowed for some reason.  @xref{Constant Variables}."
-msgstr "メッセージは@samp{Attempt to set a constant symbol}。これは@code{nil}、@code{t}、およびキーワードシンボルへの値の割り当て時に発生する。@ref{Constant Variables}を参照のこと。"
+msgstr "メッセージは@samp{Attempt to set a constant symbol}。これは@code{nil}、@code{t}、@code{most-positive-fixnum}、@code{most-negative-fixnum}およびキーワードシンボルへの値の割り当て時に発生する。これは@code{enable-multibyte-characters}や何らかの理由により値の直接割り当てが許されていないインボルへの値の割り当て時にも発生する。@ref{Constant Variables}を参照のこと。"
 
 #. type: item
 #: original_texis/errors.texi:182
@@ -438,15 +434,14 @@ msgstr "メッセージは空文字列。@ref{Signaling Errors}を参照のこ�
 
 #. type: item
 #: original_texis/errors.texi:192
-#, fuzzy, no-wrap
-#| msgid "search-failed"
+#, no-wrap
 msgid "user-search-failed"
-msgstr "search-failed"
+msgstr "user-search-failed"
 
 #. type: table
 #: original_texis/errors.texi:197
 msgid "This is like @samp{search-failed}, but doesn't trigger the debugger, like @samp{user-error}.  @xref{Signaling Errors}, and @xref{Searching and Matching}.  This is used for searching in Info files, @xref{Search Text,,,info,Info}."
-msgstr ""
+msgstr "これは@samp{search-failed}と似ているが、@samp{user-error}のようにデバッガーをトリガーしない。@ref{Signaling Errors}と@ref{Searching and Matching}を参照のこと。これはInfoファイル内での検索に使用される。@ref{Search Text,,,info,Info}を参照のこと。"
 
 #. type: item
 #: original_texis/errors.texi:198
