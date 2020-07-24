@@ -39,6 +39,7 @@ customize.texi \
 hash.texi \
 macros.texi \
 sequences.texi \
+records.texi \
 variables.texi \
 eval.texi \
 intro.texi \

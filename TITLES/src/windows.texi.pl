@@ -1,0 +1,40 @@
+#!/usr/bin/perl
+use Locale::TextDomain ("windows.texi" => "TITLES/");
+my ($en, $ja);
+while (<>) {
+	($en, $ja) = (quotemeta('@chapter Windows'), quotemeta(__ '@chapter Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Basic Concepts of Emacs Windows'), quotemeta(__ '@section Basic Concepts of Emacs Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Windows and Frames'), quotemeta(__ '@section Windows and Frames')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Window Sizes'), quotemeta(__ '@section Window Sizes')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Resizing Windows'), quotemeta(__ '@section Resizing Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Preserving Window Sizes'), quotemeta(__ '@section Preserving Window Sizes')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Splitting Windows'), quotemeta(__ '@section Splitting Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Deleting Windows'), quotemeta(__ '@section Deleting Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Recombining Windows'), quotemeta(__ '@section Recombining Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Selecting Windows'), quotemeta(__ '@section Selecting Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Cyclic Ordering of Windows'), quotemeta(__ '@section Cyclic Ordering of Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Buffers and Windows'), quotemeta(__ '@section Buffers and Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Switching to a Buffer in a Window'), quotemeta(__ '@section Switching to a Buffer in a Window')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Choosing a Window for Display'), quotemeta(__ '@section Choosing a Window for Display')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Action Functions for @code{display-buffer}'), quotemeta(__ '@section Action Functions for @code{display-buffer}')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Additional Options for Displaying Buffers'), quotemeta(__ '@section Additional Options for Displaying Buffers')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Window History'), quotemeta(__ '@section Window History')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Dedicated Windows'), quotemeta(__ '@section Dedicated Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Quitting Windows'), quotemeta(__ '@section Quitting Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Side Windows'), quotemeta(__ '@section Side Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Displaying Buffers in Side Windows'), quotemeta(__ '@subsection Displaying Buffers in Side Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Side Window Options and Functions'), quotemeta(__ '@subsection Side Window Options and Functions')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Frame Layouts with Side Windows'), quotemeta(__ '@subsection Frame Layouts with Side Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Atomic Windows'), quotemeta(__ '@section Atomic Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Windows and Point'), quotemeta(__ '@section Windows and Point')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section The Window Start and End Positions'), quotemeta(__ '@section The Window Start and End Positions')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Textual Scrolling'), quotemeta(__ '@section Textual Scrolling')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Vertical Fractional Scrolling'), quotemeta(__ '@section Vertical Fractional Scrolling')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Horizontal Scrolling'), quotemeta(__ '@section Horizontal Scrolling')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Coordinates and Windows'), quotemeta(__ '@section Coordinates and Windows')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Mouse Window Auto-selection'), quotemeta(__ '@section Mouse Window Auto-selection')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Window Configurations'), quotemeta(__ '@section Window Configurations')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Window Parameters'), quotemeta(__ '@section Window Parameters')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Hooks for Window Scrolling and Changes'), quotemeta(__ '@section Hooks for Window Scrolling and Changes')); s/$en/$ja/;
+}
+print;

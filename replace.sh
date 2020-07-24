@@ -2,21 +2,13 @@
 
 case ${1} in
     intro-ja.texi)
-	perl -pe 's/\@chapter Introduction/\@chapter イントロダクション/' -i intro-ja.texi;
-	perl -pe 's/\@section Caveats/\@section 注意事項/' -i intro-ja.texi;
-	perl -pe 's/\@section Lisp History/\@section Lispの歴史/' -i intro-ja.texi;
-	perl -pe 's/\@section Conventions/\@section 表記について/' -i intro-ja.texi;
-	perl -pe 's/\@subsection Some Terms/\@subsection 用語について/' -i intro-ja.texi;
-	perl -pe 's/\@subsection \@code\{nil\} and \@code\{t\}/\@subsection \@code\{nil\}と\@code\{t\}/' -i intro-ja.texi;
-	perl -pe 's/\@subsection Evaluation Notation/\@subsection 評価の表記/' -i intro-ja.texi;
-	perl -pe 's/\@subsection Printing Notation/\@subsection プリントの表記/' -i intro-ja.texi;
-	perl -pe 's/\@subsection Error Messages/\@subsection エラーメッセージ/' -i intro-ja.texi;
-	perl -pe 's/\@subsection Buffer Text Notation/\@subsection バッファーテキストの表記/' -i intro-ja.texi;
-	perl -pe 's/\@subsection Format of Descriptions/\@subsection 説明のフォーマット/' -i intro-ja.texi;
-	perl -pe 's/\@subsubsection A Sample Function Description/\@subsubsection 関数の説明例/' -i intro-ja.texi;
-	perl -pe 's/\@subsubsection A Sample Variable Description/\@subsubsection 変数の説明例/' -i intro-ja.texi;
-	perl -pe 's/\@section Version Information/\@section バージョンの情報/' -i intro-ja.texi;
-	perl -pe 's/\@section Acknowledgments/\@section 謝辞/' -i intro-ja.texi;
+	if [ -f intro.texi.titles.po ];
+	then
+	    cp -pf intro-ja.texi intro-ja.texi.work;
+	    perl -pe 's/^(((\@chapter)|(\@(sub)*section)|(\@appendix)).*)$/\n\1\n/g' -i intro-ja.texi.work;
+	    po4a-translate -f text -k 0 -M utf8 -m intro-ja.texi.work -p intro.texi.titles.po -l intro-ja.texi;
+	    perl -0pe 's/\n(((\@chapter)|(\@(sub)*section)|(\@appendix)).*)\n/\1/m' -i intro-ja.texi;	    
+	fi;
 	;;
     objects-ja.texi)
 	perl -pe 's/\@chapter Lisp Data Types/\@chapter Lispのデータ型/' -i objects-ja.texi;
@@ -480,7 +472,7 @@ case ${1} in
 	perl -pe 's/\@subsection The Data Structure of the Mode Line/\@subsection モードラインのデータ構造/' -i modes-ja.texi;
 	perl -pe 's/\@subsection The Top Level of Mode Line Control/\@subsection モードライン制御のトップレベル/' -i modes-ja.texi;
 	perl -pe 's/\@subsection Variables Used in the Mode Line/\@subsection モードラインで使用される変数/' -i modes-ja.texi;
-	perl -pe 's/\@subsection \@code\{%\}-Constructs in the Mode Line/\@subsection モードラインでの\@code\{%\}構造/' -i modes-ja.texi;
+	perl -pe 's/\@subsection \@code\{%\}-Constructs in the Mode Line/\@subsection モードラインでの\@code\{%\}構文/' -i modes-ja.texi;
 	perl -pe 's/\@subsection Properties in the Mode Line/\@subsection モードラインでのプロパティ/' -i modes-ja.texi;
 	perl -pe 's/\@subsection Window Header Lines/\@subsection ウィンドウのヘッダーライン/' -i modes-ja.texi;
 	perl -pe 's/\@subsection Emulating Mode Line Formatting/\@subsection モードラインのフォーマットのエミュレート/' -i modes-ja.texi;

@@ -1,0 +1,48 @@
+#!/usr/bin/perl
+use Locale::TextDomain ("commands.texi" => "TITLES/");
+my ($en, $ja);
+while (<>) {
+	($en, $ja) = (quotemeta('@chapter Command Loop'), quotemeta(__ '@chapter Command Loop')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Command Loop Overview'), quotemeta(__ '@section Command Loop Overview')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Defining Commands'), quotemeta(__ '@section Defining Commands')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Using @code{interactive}'), quotemeta(__ '@subsection Using @code{interactive}')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Code Characters for @code{interactive}'), quotemeta(__ '@subsection Code Characters for @code{interactive}')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Examples of Using @code{interactive}'), quotemeta(__ '@subsection Examples of Using @code{interactive}')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Select among Command Alternatives'), quotemeta(__ '@subsection Select among Command Alternatives')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Interactive Call'), quotemeta(__ '@section Interactive Call')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Distinguish Interactive Calls'), quotemeta(__ '@section Distinguish Interactive Calls')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Information from the Command Loop'), quotemeta(__ '@section Information from the Command Loop')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Adjusting Point After Commands'), quotemeta(__ '@section Adjusting Point After Commands')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Input Events'), quotemeta(__ '@section Input Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Keyboard Events'), quotemeta(__ '@subsection Keyboard Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Function Keys'), quotemeta(__ '@subsection Function Keys')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Mouse Events'), quotemeta(__ '@subsection Mouse Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Click Events'), quotemeta(__ '@subsection Click Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Drag Events'), quotemeta(__ '@subsection Drag Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Button-Down Events'), quotemeta(__ '@subsection Button-Down Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Repeat Events'), quotemeta(__ '@subsection Repeat Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Motion Events'), quotemeta(__ '@subsection Motion Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Focus Events'), quotemeta(__ '@subsection Focus Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Miscellaneous System Events'), quotemeta(__ '@subsection Miscellaneous System Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Event Examples'), quotemeta(__ '@subsection Event Examples')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Classifying Events'), quotemeta(__ '@subsection Classifying Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Accessing Mouse Events'), quotemeta(__ '@subsection Accessing Mouse Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Accessing Scroll Bar Events'), quotemeta(__ '@subsection Accessing Scroll Bar Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Putting Keyboard Events in Strings'), quotemeta(__ '@subsection Putting Keyboard Events in Strings')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Reading Input'), quotemeta(__ '@section Reading Input')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Key Sequence Input'), quotemeta(__ '@subsection Key Sequence Input')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Reading One Event'), quotemeta(__ '@subsection Reading One Event')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Modifying and Translating Input Events'), quotemeta(__ '@subsection Modifying and Translating Input Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Invoking the Input Method'), quotemeta(__ '@subsection Invoking the Input Method')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Quoted Character Input'), quotemeta(__ '@subsection Quoted Character Input')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@subsection Miscellaneous Event Input Features'), quotemeta(__ '@subsection Miscellaneous Event Input Features')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Special Events'), quotemeta(__ '@section Special Events')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Waiting for Elapsed Time or Input'), quotemeta(__ '@section Waiting for Elapsed Time or Input')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Quitting'), quotemeta(__ '@section Quitting')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Prefix Command Arguments'), quotemeta(__ '@section Prefix Command Arguments')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Recursive Editing'), quotemeta(__ '@section Recursive Editing')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Disabling Commands'), quotemeta(__ '@section Disabling Commands')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Command History'), quotemeta(__ '@section Command History')); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Keyboard Macros'), quotemeta(__ '@section Keyboard Macros')); s/$en/$ja/;
+}
+print;
