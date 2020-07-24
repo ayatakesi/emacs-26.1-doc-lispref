@@ -15,5 +15,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Unloading'), __ '@section Unloading'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Hooks for Loading'), __ '@section Hooks for Loading'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Emacs Dynamic Modules'), __ '@section Emacs Dynamic Modules'); s/$en/$ja/;
+	print;
 }
-print;

@@ -17,5 +17,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsubsection A Sample Variable Description'), __ '@subsubsection A Sample Variable Description'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Version Information'), __ '@section Version Information'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Acknowledgments'), __ '@section Acknowledgments'); s/$en/$ja/;
+	print;
 }
-print;

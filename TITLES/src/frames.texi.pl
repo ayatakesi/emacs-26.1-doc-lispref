@@ -47,5 +47,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Text Terminal Colors'), __ '@section Text Terminal Colors'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section X Resources'), __ '@section X Resources'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Display Feature Testing'), __ '@section Display Feature Testing'); s/$en/$ja/;
+	print;
 }
-print;

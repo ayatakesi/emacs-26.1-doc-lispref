@@ -2,5 +2,5 @@
 use Locale::TextDomain ("docstyle.texi" => "TITLES/");
 my ($en, $ja);
 while (<>) {
+	print;
 }
-print;

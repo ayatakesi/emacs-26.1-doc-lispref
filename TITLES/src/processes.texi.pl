@@ -34,5 +34,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsection Describing Data Layout'), __ '@subsection Describing Data Layout'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Functions to Unpack and Pack Bytes'), __ '@subsection Functions to Unpack and Pack Bytes'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Examples of Byte Unpacking and Packing'), __ '@subsection Examples of Byte Unpacking and Packing'); s/$en/$ja/;
+	print;
 }
-print;

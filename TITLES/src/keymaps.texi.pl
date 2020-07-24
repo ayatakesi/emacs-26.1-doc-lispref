@@ -33,5 +33,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsection Tool bars'), __ '@subsection Tool bars'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Modifying Menus'), __ '@subsection Modifying Menus'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Easy Menu'), __ '@subsection Easy Menu'); s/$en/$ja/;
+	print;
 }
-print;

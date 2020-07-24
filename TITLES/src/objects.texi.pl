@@ -57,5 +57,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Read Syntax for Circular Objects'), __ '@section Read Syntax for Circular Objects'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Type Predicates'), __ '@section Type Predicates'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Equality Predicates'), __ '@section Equality Predicates'); s/$en/$ja/;
+	print;
 }
-print;

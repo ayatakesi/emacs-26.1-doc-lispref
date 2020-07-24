@@ -14,5 +14,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsection Defining New Types'), __ '@subsection Defining New Types'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Applying Customizations'), __ '@section Applying Customizations'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Custom Themes'), __ '@section Custom Themes'); s/$en/$ja/;
+	print;
 }
-print;

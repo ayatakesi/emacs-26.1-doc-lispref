@@ -16,5 +16,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Indirect Buffers'), __ '@section Indirect Buffers'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Swapping Text Between Two Buffers'), __ '@section Swapping Text Between Two Buffers'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section The Buffer Gap'), __ '@section The Buffer Gap'); s/$en/$ja/;
+	print;
 }
-print;

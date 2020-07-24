@@ -29,5 +29,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsubsection Backtracking in Specifications'), __ '@subsubsection Backtracking in Specifications'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsubsection Specification Examples'), __ '@subsubsection Specification Examples'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Edebug Options'), __ '@subsection Edebug Options'); s/$en/$ja/;
+	print;
 }
-print;

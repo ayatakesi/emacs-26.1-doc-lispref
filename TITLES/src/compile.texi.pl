@@ -11,5 +11,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Compiler Errors'), __ '@section Compiler Errors'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Byte-Code Function Objects'), __ '@section Byte-Code Function Objects'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Disassembled Byte-Code'), __ '@section Disassembled Byte-Code'); s/$en/$ja/;
+	print;
 }
-print;

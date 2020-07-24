@@ -14,5 +14,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsection Evaluating Macro Arguments in Expansion'), __ '@subsection Evaluating Macro Arguments in Expansion'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection How Many Times is the Macro Expanded?'), __ '@subsection How Many Times is the Macro Expanded?'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Indenting Macros'), __ '@section Indenting Macros'); s/$en/$ja/;
+	print;
 }
-print;

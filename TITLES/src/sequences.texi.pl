@@ -11,5 +11,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Char-Tables'), __ '@section Char-Tables'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Bool-vectors'), __ '@section Bool-vectors'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Managing a Fixed-Size Ring of Objects'), __ '@section Managing a Fixed-Size Ring of Objects'); s/$en/$ja/;
+	print;
 }
-print;

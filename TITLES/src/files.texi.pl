@@ -29,10 +29,10 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsection Standard File Names'), __ '@subsection Standard File Names'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Contents of Directories'), __ '@section Contents of Directories'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Creating, Copying and Deleting Directories'), __ '@section Creating, Copying and Deleting Directories'); s/$en/$ja/;
-	($en, $ja) = (quotemeta('@section Making Certain File Names ``Magic'''), __ '@section Making Certain File Names ``Magic'''); s/$en/$ja/;
+	($en, $ja) = (quotemeta('@section Making Certain File Names ``Magic\'\''), __ '@section Making Certain File Names ``Magic\'\''); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section File Format Conversion'), __ '@section File Format Conversion'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Overview'), __ '@subsection Overview'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Round-Trip Specification'), __ '@subsection Round-Trip Specification'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Piecemeal Specification'), __ '@subsection Piecemeal Specification'); s/$en/$ja/;
+	print;
 }
-print;

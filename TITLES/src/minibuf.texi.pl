@@ -25,5 +25,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Minibuffer Contents'), __ '@section Minibuffer Contents'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Recursive Minibuffers'), __ '@section Recursive Minibuffers'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Minibuffer Miscellany'), __ '@section Minibuffer Miscellany'); s/$en/$ja/;
+	print;
 }
-print;

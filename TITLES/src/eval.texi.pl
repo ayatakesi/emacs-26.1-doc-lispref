@@ -16,5 +16,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Quoting'), __ '@section Quoting'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Backquote'), __ '@section Backquote'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Eval'), __ '@section Eval'); s/$en/$ja/;
+	print;
 }
-print;

@@ -18,5 +18,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsection Parameters to Control Parsing'), __ '@subsection Parameters to Control Parsing'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Syntax Table Internals'), __ '@section Syntax Table Internals'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Categories'), __ '@section Categories'); s/$en/$ja/;
+	print;
 }
-print;

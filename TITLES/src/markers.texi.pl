@@ -11,5 +11,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Moving Marker Positions'), __ '@section Moving Marker Positions'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section The Mark'), __ '@section The Mark'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section The Region'), __ '@section The Region'); s/$en/$ja/;
+	print;
 }
-print;

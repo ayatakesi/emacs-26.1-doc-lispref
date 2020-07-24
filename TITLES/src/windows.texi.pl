@@ -36,5 +36,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Window Configurations'), __ '@section Window Configurations'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Window Parameters'), __ '@section Window Parameters'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Hooks for Window Scrolling and Changes'), __ '@section Hooks for Window Scrolling and Changes'); s/$en/$ja/;
+	print;
 }
-print;

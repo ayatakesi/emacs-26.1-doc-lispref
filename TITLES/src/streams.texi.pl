@@ -9,5 +9,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Output Streams'), __ '@section Output Streams'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Output Functions'), __ '@section Output Functions'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Variables Affecting Output'), __ '@section Variables Affecting Output'); s/$en/$ja/;
+	print;
 }
-print;

@@ -10,5 +10,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsection Naming Backup Files'), __ '@subsection Naming Backup Files'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Auto-Saving'), __ '@section Auto-Saving'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Reverting'), __ '@section Reverting'); s/$en/$ja/;
+	print;
 }
-print;

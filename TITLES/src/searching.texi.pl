@@ -21,5 +21,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsection Saving and Restoring the Match Data'), __ '@subsection Saving and Restoring the Match Data'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Search and Replace'), __ '@section Search and Replace'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Standard Regular Expressions Used in Editing'), __ '@section Standard Regular Expressions Used in Editing'); s/$en/$ja/;
+	print;
 }
-print;

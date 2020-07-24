@@ -11,5 +11,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Tips for Documentation Strings'), __ '@section Tips for Documentation Strings'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Tips on Writing Comments'), __ '@section Tips on Writing Comments'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Conventional Headers for Emacs Libraries'), __ '@section Conventional Headers for Emacs Libraries'); s/$en/$ja/;
+	print;
 }
-print;

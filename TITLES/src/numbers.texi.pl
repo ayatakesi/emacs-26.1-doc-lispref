@@ -13,5 +13,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Bitwise Operations on Integers'), __ '@section Bitwise Operations on Integers'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Standard Mathematical Functions'), __ '@section Standard Mathematical Functions'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Random Numbers'), __ '@section Random Numbers'); s/$en/$ja/;
+	print;
 }
-print;

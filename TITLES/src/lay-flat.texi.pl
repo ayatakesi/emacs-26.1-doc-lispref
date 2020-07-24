@@ -2,5 +2,5 @@
 use Locale::TextDomain ("lay-flat.texi" => "TITLES/");
 my ($en, $ja);
 while (<>) {
+	print;
 }
-print;

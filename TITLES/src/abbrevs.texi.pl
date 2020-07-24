@@ -10,5 +10,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Standard Abbrev Tables'), __ '@section Standard Abbrev Tables'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Abbrev Properties'), __ '@section Abbrev Properties'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Abbrev Table Properties'), __ '@section Abbrev Table Properties'); s/$en/$ja/;
+	print;
 }
-print;

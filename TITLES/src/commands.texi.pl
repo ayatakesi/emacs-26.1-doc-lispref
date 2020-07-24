@@ -44,5 +44,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Disabling Commands'), __ '@section Disabling Commands'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Command History'), __ '@section Command History'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Keyboard Macros'), __ '@section Keyboard Macros'); s/$en/$ja/;
+	print;
 }
-print;

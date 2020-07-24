@@ -17,5 +17,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Property Lists'), __ '@section Property Lists'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Property Lists and Association Lists'), __ '@subsection Property Lists and Association Lists'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Property Lists Outside Symbols'), __ '@subsection Property Lists Outside Symbols'); s/$en/$ja/;
+	print;
 }
-print;

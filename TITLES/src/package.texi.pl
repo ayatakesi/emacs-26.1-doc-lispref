@@ -7,5 +7,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Simple Packages'), __ '@section Simple Packages'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Multi-file Packages'), __ '@section Multi-file Packages'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Creating and Maintaining Package Archives'), __ '@section Creating and Maintaining Package Archives'); s/$en/$ja/;
+	print;
 }
-print;

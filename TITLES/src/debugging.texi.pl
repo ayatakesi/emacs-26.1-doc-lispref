@@ -18,5 +18,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsection Excess Close Parentheses'), __ '@subsection Excess Close Parentheses'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Test Coverage'), __ '@section Test Coverage'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Profiling'), __ '@section Profiling'); s/$en/$ja/;
+	print;
 }
-print;

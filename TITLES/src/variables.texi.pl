@@ -30,5 +30,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Generalized Variables'), __ '@section Generalized Variables'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection The @code{setf} Macro'), __ '@subsection The @code{setf} Macro'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Defining new @code{setf} forms'), __ '@subsection Defining new @code{setf} forms'); s/$en/$ja/;
+	print;
 }
-print;

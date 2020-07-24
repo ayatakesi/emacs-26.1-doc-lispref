@@ -58,5 +58,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsection Document Object Model'), __ '@subsection Document Object Model'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Atomic Change Groups'), __ '@section Atomic Change Groups'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Change Hooks'), __ '@section Change Hooks'); s/$en/$ja/;
+	print;
 }
-print;

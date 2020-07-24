@@ -15,5 +15,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsection Window Internals'), __ '@subsection Window Internals'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Process Internals'), __ '@subsection Process Internals'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section C Integer Types'), __ '@section C Integer Types'); s/$en/$ja/;
+	print;
 }
-print;

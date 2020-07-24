@@ -23,5 +23,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsection Terminal I/O Encoding'), __ '@subsection Terminal I/O Encoding'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Input Methods'), __ '@section Input Methods'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Locales'), __ '@section Locales'); s/$en/$ja/;
+	print;
 }
-print;

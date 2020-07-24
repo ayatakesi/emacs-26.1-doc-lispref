@@ -33,5 +33,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Notifications on File Changes'), __ '@section Notifications on File Changes'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Dynamically Loaded Libraries'), __ '@section Dynamically Loaded Libraries'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Security Considerations'), __ '@section Security Considerations'); s/$en/$ja/;
+	print;
 }
-print;

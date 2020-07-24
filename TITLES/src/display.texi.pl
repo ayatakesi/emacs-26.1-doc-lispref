@@ -86,5 +86,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Window Systems'), __ '@section Window Systems'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Tooltips'), __ '@section Tooltips'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Bidirectional Display'), __ '@section Bidirectional Display'); s/$en/$ja/;
+	print;
 }
-print;

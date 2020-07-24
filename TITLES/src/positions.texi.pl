@@ -14,5 +14,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsection Skipping Characters'), __ '@subsection Skipping Characters'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Excursions'), __ '@section Excursions'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Narrowing'), __ '@section Narrowing'); s/$en/$ja/;
+	print;
 }
-print;

@@ -28,5 +28,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Telling the Compiler that a Function is Defined'), __ '@section Telling the Compiler that a Function is Defined'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Determining whether a Function is Safe to Call'), __ '@section Determining whether a Function is Safe to Call'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Other Topics Related to Functions'), __ '@section Other Topics Related to Functions'); s/$en/$ja/;
+	print;
 }
-print;

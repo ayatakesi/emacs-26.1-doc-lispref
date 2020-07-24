@@ -6,5 +6,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Basic Thread Functions'), __ '@section Basic Thread Functions'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Mutexes'), __ '@section Mutexes'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Condition Variables'), __ '@section Condition Variables'); s/$en/$ja/;
+	print;
 }
-print;

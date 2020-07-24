@@ -12,5 +12,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Formatting Strings'), __ '@section Formatting Strings'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Case Conversion in Lisp'), __ '@section Case Conversion in Lisp'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section The Case Table'), __ '@section The Case Table'); s/$en/$ja/;
+	print;
 }
-print;

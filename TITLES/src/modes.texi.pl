@@ -54,5 +54,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsubsection Sample Indentation Rules'), __ '@subsubsection Sample Indentation Rules'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsubsection Customizing Indentation'), __ '@subsubsection Customizing Indentation'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@section Desktop Save Mode'), __ '@section Desktop Save Mode'); s/$en/$ja/;
+	print;
 }
-print;

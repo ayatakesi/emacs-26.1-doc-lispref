@@ -18,5 +18,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@subsubsection Writing Code to Handle Errors'), __ '@subsubsection Writing Code to Handle Errors'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsubsection Error Symbols and Condition Names'), __ '@subsubsection Error Symbols and Condition Names'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Cleaning Up from Nonlocal Exits'), __ '@subsection Cleaning Up from Nonlocal Exits'); s/$en/$ja/;
+	print;
 }
-print;

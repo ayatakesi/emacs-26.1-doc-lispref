@@ -9,5 +9,5 @@ while (<>) {
 	($en, $ja) = (quotemeta('@section Symbol Properties'), __ '@section Symbol Properties'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Accessing Symbol Properties'), __ '@subsection Accessing Symbol Properties'); s/$en/$ja/;
 	($en, $ja) = (quotemeta('@subsection Standard Symbol Properties'), __ '@subsection Standard Symbol Properties'); s/$en/$ja/;
+	print;
 }
-print;
