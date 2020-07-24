@@ -12,7 +12,7 @@ my (\$en, \$ja);
 while (<>) {
 EOT
     grep -E '^@((chapter)|((sub)*(section))|(appendix))' ${TEXI} |
-	sed -r "s|(.+)$|\t\(\$en, \$ja\) = \(quotemeta\('&'\), quotemeta\(__ '&'\)\); s/\$en/\$ja/;|" >>${PERL};
+	sed -r "s|(.+)$|\t\(\$en, \$ja\) = \(quotemeta\('&'\), __ '&'\); s/\$en/\$ja/;|" >>${PERL};
     echo "}" >>${PERL}
     echo "print;" >>${PERL}
     xgettext -L Perl -k__ -o TITLES/ja/LC_MESSAGES/${BASE}.po ${PERL}
