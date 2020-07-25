@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Emacs 26.1-\n"
 "POT-Creation-Date: 2020-03-08 09:42+0900\n"
-"PO-Revision-Date: 2020-03-17 19:22+0900\n"
+"PO-Revision-Date: 2020-07-26 05:57+0900\n"
 "Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
 "Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
 "Language: ja\n"
@@ -137,7 +137,7 @@ msgstr "Watching Variables"
 #: original_texis/variables.texi:47 original_texis/variables.texi:810
 #, no-wrap
 msgid "Running a function when a variable is changed."
-msgstr "変数が変更されたときに実行される関数。"
+msgstr "Running a function when a variable is changed."
 
 #. type: node
 #: original_texis/variables.texi:47 original_texis/variables.texi:869
