@@ -3,13 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-25 08:16+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-07-28 01:59+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,8 +18,8 @@ msgstr ""
 
 #: TITLES/src/anti.texi.pl:5
 msgid "@appendix Emacs 25 Antinews"
-msgstr ""
+msgstr "@appendix Emacs 25のアンチニュース"
 
 #: TITLES/src/anti.texi.pl:6
 msgid "@section Old Lisp Features in Emacs 25"
-msgstr ""
+msgstr "@section Emacs 25の古い機能"
