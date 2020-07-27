@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-25 08:16+0900\n"
-"PO-Revision-Date: 2020-07-27 20:40+0900\n"
+"PO-Revision-Date: 2020-07-28 02:12+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -38,7 +38,7 @@ msgstr "@section マーカーからの情報"
 
 #: TITLES/src/markers.texi.pl:10
 msgid "@section Marker Insertion Types"
-msgstr "マーカーの挿入タイプ"
+msgstr "@section マーカーの挿入タイプ"
 
 #: TITLES/src/markers.texi.pl:11
 msgid "@section Moving Marker Positions"
